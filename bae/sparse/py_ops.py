@@ -125,6 +125,25 @@ def diagonal_op_(input, offset: int=0, op: Optional[Callable]=None):
             diag_mask = (indices[0] == indices[1])
         else:
             diag_mask = diagonal_op_triton_(input)
+            # Reconstruct indices for the else branch usage below
+            # This is a fallback/hack because diagonal_op_triton_ doesn't return indices
+            # but the code below relies on 'indices' variable when diag_indices.shape[-1] != n_diag_blocks
+            # Ideally we should refactor this, but for now let's ensure indices exists if needed.
+            # However, diagonal_op_triton_ is likely efficient and we might not need indices if we trust it.
+            # But the crash happens at: results[indices[0, diag_indices]] = values
+            # This implies we entered the 'else' block of 'if diag_indices.shape[-1] == n_diag_blocks:'
+            
+            # Let's just compute indices the slow way if we are in this branch, or initialize it.
+            # Since we are here, it means USE_TRITON is True.
+            # We need 'indices' to map back to the original sparse structure.
+            
+            # Re-running the CPU sparse conversion just to get indices is slow but safe for now to fix the crash.
+            dummy_val = torch.zeros(bsr_values.shape[0], device='cpu')
+            dummy = torch.sparse_csr_tensor(crow_indices=crow_indices.to('cpu'),
+                                            col_indices=col_indices.to('cpu'),
+                                            values=dummy_val)
+            dummy_coo = dummy.to_sparse(layout=torch.sparse_coo).coalesce()
+            indices = dummy_coo.indices().to(input.device)
         diag_indices = diag_mask.nonzero().squeeze(-1)
         if bsr_values.ndim > 1:
             block_diags = bsr_values.diagonal(dim1=-2, dim2=-1)
@@ -134,18 +153,31 @@ def diagonal_op_(input, offset: int=0, op: Optional[Callable]=None):
         n_diag_blocks = sm if sm < sn else sn
         if diag_indices.shape[-1] == n_diag_blocks:
             results = values
+            if bsr_values.ndim > 1:
+                results = torch.flatten(results, start_dim=-2, end_dim=-1)
+            # apply the inplace op
+            if op is not None:
+                results = op(results)
+                block_diags[diag_indices] = results.view(n_diag_blocks, dm) if bsr_values.ndim > 1 else results
+            return results
         else:
+            # Sparse diagonal case
+            if op is not None:
+                values_flat = values
+                if bsr_values.ndim > 1:
+                    values_flat = torch.flatten(values, start_dim=-2, end_dim=-1)
+                values_flat = op(values_flat)
+                reshaped_values = values_flat.view(-1, dm) if bsr_values.ndim > 1 else values_flat
+                block_diags[diag_indices] = reshaped_values
+                values = reshaped_values
+
             results_shape = (n_diag_blocks, dm)
             results = torch.zeros(results_shape, dtype=values.dtype, device=values.device)
-            results[indices[0, diag_indices]] = values
-            assert op is None, "op is not supported for diagonal that has empty values."
-        if bsr_values.ndim > 1:
-            results = torch.flatten(results, start_dim=-2, end_dim=-1)
-        # apply the inplace op
-        if op is not None:
-            results = op(results)
-            block_diags[diag_indices] = results.view(n_diag_blocks, dm) if bsr_values.ndim > 1 else results
-        return results
+            results[indices[0, diag_indices]] = values.view(-1, dm)
+            
+            if bsr_values.ndim > 1:
+                results = torch.flatten(results, start_dim=-2, end_dim=-1)
+            return results
     else:
         raise NotImplementedError('Only square block and offset 0 is supported.')
 

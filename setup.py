@@ -52,13 +52,13 @@ if __name__ == '__main__':
             ]
         }
         
+        include_dirs = ['/usr/include/libcudss/12/']
+        library_dirs = ['/usr/lib/x86_64-linux-gnu/libcudss/12/']
+
         # Add CUDSS directory paths if specified
         if CUDSS_DIR:
-            extra_compile_args['nvcc'].extend([
-                f'-I{CUDSS_DIR}/include',
-                f'-L{CUDSS_DIR}/lib',
-                f'-Xlinker={CUDSS_DIR}/lib/libcudss_static.a',
-            ])
+            include_dirs.append(os.path.join(CUDSS_DIR, 'include'))
+            library_dirs.append(os.path.join(CUDSS_DIR, 'lib'))
             
         ext_modules.append(
             CUDAExtension(
@@ -66,8 +66,8 @@ if __name__ == '__main__':
                 [os.path.join('bae', 'sparse', 'sparse_cusolve.cu')],
                 libraries=libraries,
                 extra_compile_args=extra_compile_args,
-                include_dirs=['/usr/include/libcudss/12/'],
-                library_dirs=['/usr/lib/x86_64-linux-gnu/libcudss/12/']
+                include_dirs=include_dirs,
+                library_dirs=library_dirs
             )
         )
 
