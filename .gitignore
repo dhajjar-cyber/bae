@@ -7,4 +7,4 @@ datapipes/bal_data/*
 .ipynb_checkpoints/*
 .idea/*
 dump_Ab/*
-tmp_debug/*
+tmp_debug/*install/
