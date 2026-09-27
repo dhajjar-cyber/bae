@@ -60,7 +60,7 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What is in this pack', 'Ten sections: the framing, the dimensions, the plan.');
+  head(s, 'What is in this pack', 'Ten sections, plus an appendix of blank templates.');
   const items = [
     ['What this document is', 'Method, not conclusion'],
     ['Eight questions to answer', 'The dimensions the strategy must close'],
@@ -83,6 +83,9 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
     s.addText(d, { x: x + 0.85, y: y + 0.42, w: 4.7, h: 0.3, fontSize: 11.5, color: MUTE,
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
+  s.addText('Appendix: a blank template for every artefact the cycle produces — the strategy log itself.',
+    { x: 0.7, y: 6.6, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
   s.addNotes(`Walk the pack in two halves. Sections 1 to 5 are the method: what this document is, the questions, the principles, the approach and the workstreams. Sections 6 to 8 are the dimensions that were called out as needing their own treatment — talent, eminence and alliances. Sections 9 and 10 are the plan and the governance.
 
 If time is short, the three slides that carry the decision are: the eight questions, the five-step approach, and how we run it.`);
@@ -453,6 +456,122 @@ Decisions requested at sign-off: priority markets and segments, the target accou
 
 Open items to resolve at kick-off: audience for this pack, the definition of partner for account ownership, and the start date.`);
 }
+
+/* Appendix divider */
+{
+  const s = pres.addSlide();
+  s.background = { color: NAVY };
+  s.addShape(pres.ShapeType.ellipse, { x: 9.6, y: 3.6, w: 5.2, h: 5.2, fill: { color: SLATE, transparency: 50 } });
+  s.addText('Appendix', { x: 0.9, y: 2.6, w: 8, h: 0.9, fontSize: 44, bold: true, color: WHITE,
+    fontFace: HEAD, isTextBox: true, margin: 0 });
+  s.addText('Blank templates for every artefact the cycle produces', { x: 0.95, y: 3.6, w: 8.5, h: 0.5,
+    fontSize: 17, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('These are the working formats. They are filled during the three weeks and become the strategy record.',
+    { x: 0.95, y: 4.25, w: 8.5, h: 0.6, fontSize: 13.5, italic: true, color: '9AA7C4',
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addNotes(`The appendix is the strategy log: the templates we fill in as the cycle runs. Each one maps to a workstream artefact, so at sign-off the completed appendix is the strategy itself, not a separate write-up.
+
+Keep them as living tables — one file, versioned, updated at each weekly checkpoint rather than rebuilt at the end.`);
+}
+
+function tmplSlide(title, sub, cols, colW, rowCount, footer, notes) {
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, title, sub);
+  const rows = [cols.map(c => ({ text: c, options: { bold: true, color: WHITE } }))];
+  for (let r = 0; r < rowCount; r++) rows.push(cols.map(() => ' '));
+  const rowH = [0.46];
+  for (let r = 0; r < rowCount; r++) rowH.push(0.6);
+  s.addTable(rows, {
+    x: 0.7, y: 2.15, w: 11.9, colW, rowH, fontSize: 12, fontFace: SANS, color: BODY,
+    border: { type: 'solid', color: 'D8E0EE', pt: 1 }, align: 'left', valign: 'middle',
+    margin: 7, fill: { color: WHITE },
+  });
+  s.addShape(pres.ShapeType.rect, { x: 0.7, y: 2.15, w: 11.9, h: 0.46, fill: { color: NAVY } });
+  let cx = 0.7;
+  cols.forEach((c, i) => {
+    s.addText([{ text: c, options: { bold: true } }], { x: cx + 0.12, y: 2.15, w: colW[i] - 0.2, h: 0.46,
+      valign: 'middle', fontSize: 11.5, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    cx += colW[i];
+  });
+  s.addText(footer, { x: 0.7, y: 2.3 + 0.46 + rowCount * 0.6, w: 11.9, h: 0.4, fontSize: 12,
+    italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addNotes(notes);
+  return s;
+}
+
+tmplSlide('Template — market prioritisation', 'Workstream 2 · one row per market.',
+  ['Market', 'Segments in focus', 'Why this market', 'Priority', 'Owner'],
+  [2.4, 3.5, 3.6, 1.2, 1.2], 6,
+  'Priority: primary, secondary or watch. Rationale should stand on evidence, not familiarity.',
+  `Fill one row per market under consideration, including the ones we decide against — the rejected rows are as useful as the accepted ones when this is revisited.
+
+Context: Saudi Arabia, UAE and Qatar are the expected primary markets; Kuwait, Oman and Jordan the secondary set where our key relationships sit. Both to be confirmed against evidence in week 1.`);
+
+tmplSlide('Template — target accounts', 'Workstream 2 · one row per named account.',
+  ['Account', 'Market', 'Segment', 'Propositions to lead with', 'Alliance', 'Owner', 'Stage'],
+  [2.3, 1.3, 1.4, 3.2, 1.5, 1.2, 1.0], 6,
+  'Stage: relationship only, qualified, active pursuit. Every account carries exactly one owner.',
+  `This is the core artefact of the whole exercise — the named account list with account mapping.
+
+Rules: one owner per account, never two. The propositions column names what we lead with, not everything we could sell. The alliance column links to the alliance map, so we can see which accounts a partner opens.`);
+
+tmplSlide('Template — proposition catalogue', 'Workstream 1 · one row per integrated proposition.',
+  ['Proposition', 'Pillars involved', 'Buyer', 'Permitted variants', 'Lead pillar'],
+  [2.9, 2.4, 2.2, 2.6, 1.8], 6,
+  'Integrated propositions first. A single-pillar offer is recorded as a variant, not as its own row.',
+  `The principle bites hardest here: the catalogue is integrated propositions across Industry Solutions, Data and AI, and Engineering and Cloud. Focused offers such as enterprise AI are recorded as permitted variants of an integrated proposition and sold as entry points.
+
+Buyer means the actual role that signs: COO, CIO, head of retail banking, chief data officer, and so on.`);
+
+tmplSlide('Template — sizing and pricing', 'Workstream 3 · one row per offering.',
+  ['Offering', 'What drives scope', 'Typical deal size', 'Market price band', 'Notes'],
+  [2.6, 3.2, 2.0, 2.1, 2.0], 6,
+  'Bands, not point prices. Name the drivers that move the number.',
+  `Pricing will not reduce to one number per offering. For core banking modernisation and migration the drivers include retail versus corporate versus SME scope, single-country versus multi-country, and whether full data migration is in scope. Record the drivers alongside the band so the number can be reconstructed.
+
+Same discipline for data platform work, AI activation, and cloud and integration engagements.`);
+
+tmplSlide('Template — revenue targets', 'Workstream 3 · one row per market, one column per offering group.',
+  ['Market', 'Industry Solutions', 'Data & AI', 'Engineering & Cloud', 'Integrated', 'Total'],
+  [2.4, 2.1, 1.9, 2.2, 1.7, 1.6], 6,
+  'Targets are set by market and by offering, then reconciled against capacity before they are agreed.',
+  `The integrated column is deliberate: if most revenue sits in single-pillar columns, the strategy has not been followed.
+
+Reconcile every target against the talent template before sign-off. A number we cannot staff is not a target.`);
+
+tmplSlide('Template — coverage and ownership', 'Workstream 4 · one row per priority account.',
+  ['Account', 'Partner owner', 'Alliance lead', 'Delivery lead', 'Contact cadence'],
+  [2.9, 2.4, 2.3, 2.3, 2.0], 6,
+  'Partner owner means our accountable partner. Alliance lead is the vendor relationship behind the account.',
+  `Two different mappings live side by side here: our own consulting partners, who own the client relationship, and the alliance or vendor partner we go to market with on that account.
+
+Cadence keeps this honest — an owner with no contact rhythm is a name on a page.`);
+
+tmplSlide('Template — team and talent', 'Workstream 6 · one row per role and level.',
+  ['Role and level', 'Dedicated today', 'Shared available', 'Gap', 'Build, borrow or buy', 'By when'],
+  [2.6, 2.0, 2.0, 1.4, 2.1, 1.8], 6,
+  'Dedicated means FSI-exclusive. Shared means time we can genuinely count on, not headcount that exists.',
+  `Three numbers per row: who is ours exclusively, what we can draw on from the wider portfolio, and what is missing once both are counted.
+
+The gap is expressed by level — partners, directors, managers, specialists — because that is how recruitment is approved. Each gap then gets a route (build from within, borrow from another portfolio, or hire) and a date tied to the targets it supports.`);
+
+tmplSlide('Template — eminence calendar', 'Workstream 7 · one row per planned activity.',
+  ['Activity', 'Channel', 'Target accounts or markets', 'Owner', 'Date', 'How we measure it'],
+  [2.6, 1.8, 3.0, 1.5, 1.4, 1.6], 6,
+  'Every activity points at named accounts or markets. General brand-building does not earn a row.',
+  `Channels in scope: published views and articles, conference stages and flagship FSI events, executive workshops, seminars and roundtables, podcasts and webinars, and joint activity with alliance partners.
+
+Measurement should be concrete: inbound enquiries, meetings created, shortlist and RFP invitations — not impressions.`);
+
+tmplSlide('Template — alliance map', 'Workstream 8 · one row per alliance.',
+  ['Alliance', 'Role', 'Offerings it sits behind', 'Markets', 'Accounts it opens', 'What we owe them'],
+  [1.8, 1.7, 2.9, 1.6, 2.2, 1.7], 6,
+  'Role: co-sell, resell, delivery partner or referral. Commitments run both ways.',
+  `Start from the alliances we already hold: Oracle, Google and Amazon as primary; Temenos and Intellect as specialised banking-platform alliances. Add any others the cycle identifies.
+
+The last column matters as much as the rest — certifications, accredited staff and pipeline commitments are a cost that lands in the talent plan and the budget.`);
+
 
 pres.writeFile({ fileName: '/home/user/bae/FSI strategy/EAIND-FSI-Strategy-Development-Plan.pptx' })
   .then(f => console.log('wrote', f));

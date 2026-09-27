@@ -39,3 +39,22 @@ brief. The detail lives there so the slides stay clean.
 - Audience: leadership approval pack vs. team working document
 - Definition of "partner" for account ownership (our partners vs. alliance partners)
 - Start date for the three-week cycle
+
+## Appendix — the strategy log
+
+Slides 13 onward are the strategy document itself in template form: a blank
+table per artefact, filled as the cycle runs, so the completed appendix *is*
+the strategy record rather than a separate write-up.
+
+13. Appendix divider
+14. Market prioritisation (WS2)
+15. Target accounts (WS2)
+16. Proposition catalogue (WS1)
+17. Sizing and pricing (WS3)
+18. Revenue targets (WS3)
+19. Coverage and ownership (WS4)
+20. Team and talent (WS6)
+21. Eminence calendar (WS7)
+22. Alliance map (WS8)
+
+Each template slide carries notes on how to fill it and the rules that apply.
