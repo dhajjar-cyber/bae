@@ -17,12 +17,19 @@ go-to-market and activation strategy.
 
 1. Title
 2. What this document is — method, not conclusion
-3. Five questions to answer — where to play, what we offer, how we win, how much, who covers what
+3. Seven questions to answer — where to play, what we offer, how we win, how much,
+   who covers what, who delivers it, how we are known
 4. Principles we hold going in
 5. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
-6. Five workstreams, five artefacts
-7. The three-week journey — Frame, Define, Commit, with a gate each week
-8. How we run it — cadence, inputs needed, decisions requested
+6. Seven workstreams, seven artefacts
+7. Team and talent — dedicated team, shared capacity, the recruitment gap
+8. Eminence and positioning — published views, stages, client formats, digital, partner-led
+9. The three-week journey — Frame, Define, Commit, with a gate each week
+10. How we run it — cadence, inputs needed, decisions requested
+
+Every slide carries speaker notes holding the background and context behind it —
+portfolio definition, known markets, pricing nuances, the talent and eminence
+brief. The detail lives there so the slides stay clean.
 
 ## Still open
 
