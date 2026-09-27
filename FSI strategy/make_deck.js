@@ -56,7 +56,39 @@ Three pillars:
 This deck is the plan for developing the FSI strategy, not the strategy. Target: strategy finalised within three weeks.`);
 }
 
-/* 2 — How to use */
+/* 2 — Outline */
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'What is in this pack', 'Ten sections: the framing, the dimensions, the plan.');
+  const items = [
+    ['What this document is', 'Method, not conclusion'],
+    ['Eight questions to answer', 'The dimensions the strategy must close'],
+    ['Principles we hold going in', 'Constraints agreed before the work starts'],
+    ['How we will get there', 'The five-step approach'],
+    ['Eight workstreams, eight artefacts', 'Who owns what, and what each produces'],
+    ['Team and talent', 'Dedicated, shared and the gap to close'],
+    ['Eminence and positioning', 'How the market comes to know us'],
+    ['Alliances', 'Who we go to market with, and for what'],
+    ['The three-week journey', 'Week by week, with a gate each week'],
+    ['How we run it', 'Cadence, inputs and decisions requested'],
+  ];
+  items.forEach(([t, d], i) => {
+    const x = 0.7 + (i % 2) * 6.15, y = 1.95 + Math.floor(i / 2) * 0.93;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 5.75, h: 0.78, rectRadius: 0.08,
+      fill: { color: i % 2 ? MIST : 'F2F6FC' } });
+    disc(s, x + 0.22, y + 0.17, String(i + 1), i % 2 ? SLATE : NAVY, 0.44);
+    s.addText(t, { x: x + 0.85, y: y + 0.08, w: 4.7, h: 0.34, fontSize: 15, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(d, { x: x + 0.85, y: y + 0.42, w: 4.7, h: 0.3, fontSize: 11.5, color: MUTE,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addNotes(`Walk the pack in two halves. Sections 1 to 5 are the method: what this document is, the questions, the principles, the approach and the workstreams. Sections 6 to 8 are the dimensions that were called out as needing their own treatment — talent, eminence and alliances. Sections 9 and 10 are the plan and the governance.
+
+If time is short, the three slides that carry the decision are: the eight questions, the five-step approach, and how we run it.`);
+}
+
+/* 3 — How to use */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
