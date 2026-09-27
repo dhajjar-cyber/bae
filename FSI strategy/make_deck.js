@@ -93,7 +93,7 @@ Still open before we finalise this pack:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Seven questions to answer', 'Each dimension is owned by one workstream and closed at sign-off.');
+  head(s, 'Eight questions to answer', 'Each dimension is owned by one workstream and closed at sign-off.');
   const dims = [
     ['Where to play', ['Which markets, in what priority?', 'Which client segments?', 'Which named accounts?']],
     ['What we offer', ['Which integrated propositions across the three pillars?', 'Which partial offerings are permitted?']],
@@ -102,6 +102,7 @@ Still open before we finalise this pack:
     ['Who covers what', ['Which partner owns which account?', 'What coverage model across markets?']],
     ['Who delivers it', ['Who is dedicated to FSI?', 'What shared capacity can we draw on?', 'What must we recruit?']],
     ['How we are known', ['Where must we be visible?', 'What do we publish, host or speak at?', 'How do we measure it?']],
+    ['Who we go with', ['Which alliances matter for which offering?', 'What do we leverage each one for?', 'What do they expect back?']],
   ];
   dims.forEach(([t, qs], i) => {
     const x = 0.7 + (i % 4) * 3.0, y = 2.0 + Math.floor(i / 4) * 2.15;
@@ -194,7 +195,7 @@ Baseline also covers people: who we have today, dedicated and shared.`);
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Seven workstreams, seven artefacts', 'Each workstream owns one dimension and produces one deliverable.');
+  head(s, 'Eight workstreams, eight artefacts', 'Each workstream owns one dimension and produces one deliverable.');
   const rows = [
     [{ text: 'Workstream', options: { bold: true } }, { text: 'Question it closes', options: { bold: true } }, { text: 'Artefact produced', options: { bold: true } }],
     ['1 · Proposition & catalogue', 'What we offer', 'Integrated proposition catalogue with permitted variants'],
@@ -204,11 +205,12 @@ Baseline also covers people: who we have today, dedicated and shared.`);
     ['5 · Delivery model & readiness', 'How we win', 'Delivery approach and delivery standards'],
     ['6 · Team & talent', 'Who delivers it', 'Dedicated FSI team, shared capacity view, recruitment plan'],
     ['7 · Eminence & positioning', 'How we are known', 'Eminence plan: content, events and speaking calendar'],
+    ['8 · Alliances', 'Who we go with', 'Alliance map: role, offerings and accounts per partner'],
   ];
   s.addTable(rows, {
     x: 0.7, y: 2.0, w: 11.9, colW: [3.3, 2.6, 6.0], fontSize: 12.5, fontFace: SANS, color: BODY,
     border: { type: 'solid', color: 'D8E0EE', pt: 1 }, align: 'left', valign: 'middle',
-    rowH: [0.48, 0.56, 0.56, 0.56, 0.56, 0.56, 0.56, 0.56], margin: 7, fontSize: 12,
+    rowH: [0.46, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5], margin: 6, fontSize: 11.5,
     fill: { color: WHITE },
   });
   s.addShape(pres.ShapeType.rect, { x: 0.7, y: 2.0, w: 11.9, h: 0.48, fill: { color: NAVY } });
@@ -219,7 +221,7 @@ Baseline also covers people: who we have today, dedicated and shared.`);
   s.addText([{ text: 'Artefact produced', options: { bold: true } }],
     { x: 6.75, y: 2.0, w: 5.6, h: 0.48, valign: 'middle', fontSize: 12.5, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addText('Workstreams run in parallel; dependencies are resolved at the weekly checkpoint.',
-    { x: 0.7, y: 6.45, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+    { x: 0.7, y: 6.6, w: 11.9, h: 0.4, fontSize: 12.5, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`Artefact templates are blank at this stage and are populated during the cycle.
 
 Notes per workstream:
@@ -229,7 +231,8 @@ Notes per workstream:
 - WS4 Coverage and ownership: two distinct mappings — our partners to accounts (who owns the relationship) and alliance partners to accounts (who we go to market with, and what they drive).
 - WS5 Delivery model and readiness: largely inherited; confirm and note gaps.
 - WS6 Team and talent: see the talent slide.
-- WS7 Eminence and positioning: see the eminence slide.`);
+- WS7 Eminence and positioning: see the eminence slide.
+- WS8 Alliances: see the alliances slide. Primary alliances today are Oracle, Google and Amazon; specialised alliances are Temenos and Intellect.`);
 }
 
 /* 7 — Team and talent */
@@ -303,14 +306,63 @@ For each channel the plan answers: do we commit, how often, who fronts it, which
 Worth linking eminence to the account list: eminence activity should point at the accounts and markets the strategy has prioritised, not at general brand awareness.`);
 }
 
-/* 9 — Three-week journey */
+/* 9 — Alliances */
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Alliances', 'Who we go to market with, and what we use each one for.');
+  const groups = [
+    ['Primary alliances', NAVY, ['Oracle', 'Google', 'Amazon'], 0.7, 5.6],
+    ['Specialised alliances', SLATE, ['Temenos', 'Intellect'], 6.9, 5.7],
+  ];
+  groups.forEach(([t, c, names, x, w]) => {
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w, h: 2.25, rectRadius: 0.12, fill: { color: MIST } });
+    s.addText(t, { x: x + 0.3, y: 2.15, w: w - 0.6, h: 0.4, fontSize: 17, bold: true, color: c,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    const cw = (w - 0.6 - 0.2 * (names.length - 1)) / names.length;
+    names.forEach((n, j) => {
+      const nx = x + 0.3 + j * (cw + 0.2);
+      s.addShape(pres.ShapeType.roundRect, { x: nx, y: 2.7, w: cw, h: 1.15, rectRadius: 0.1, fill: { color: c } });
+      s.addText(n, { x: nx, y: 2.7, w: cw, h: 1.15, align: 'center', valign: 'middle', fontSize: 17,
+        bold: true, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    });
+  });
+  openTag(s, 4.4, 4.4, 4.5, 'further alliances ' + TBD + ' in the cycle');
+  s.addText('For every alliance the plan must answer:', { x: 0.7, y: 5.05, w: 11.9, h: 0.35,
+    fontSize: 14, bold: true, color: INK, fontFace: SANS, isTextBox: true, margin: 0 });
+  const qs = [
+    ['What we leverage it for', 'Which propositions and which pillars it sits behind'],
+    ['What the relationship is', 'Co-sell, resell, delivery partner or referral'],
+    ['Where it opens doors', 'Which markets and which accounts it gives us access to'],
+    ['What it costs us', 'Certifications, credentials and commitments they expect back'],
+  ];
+  qs.forEach(([h, b], i) => {
+    const x = 0.7 + (i % 2) * 6.15, y = 5.5 + Math.floor(i / 2) * 0.75;
+    disc(s, x, y, String(i + 1), i < 2 ? NAVY : SLATE, 0.34);
+    s.addText(h, { x: x + 0.5, y: y - 0.04, w: 2.6, h: 0.35, fontSize: 13, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(b, { x: x + 3.1, y: y - 0.04, w: 2.75, h: 0.45, fontSize: 12, color: BODY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addNotes(`Alliances were called out as important in implementation and technology work.
+
+Current alliances named: Oracle, Google and Amazon as the primary ones; Temenos and Intellect as specialised, banking-platform alliances. They are on the slide as current state, not as a conclusion — what we do with each is the open question.
+
+The work is to decide, per alliance: what we leverage it for, which of our integrated propositions it sits behind, what kind of relationship it is (co-sell, resell, delivery, referral), which markets and accounts it opens, and what it demands from us in certifications, trained staff and pipeline commitments.
+
+Two links to the rest of the strategy: the alliance map must reconcile with the account coverage map (an alliance that opens an account should show up against that account), and with the talent plan (certifications and accredited staff are a recruitment and training cost).
+
+If other alliances belong here — hyperscaler or platform vendors we do not yet work with, or regional players — the cycle is where we add them.`);
+}
+
+/* 10 — Three-week journey */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
   head(s, 'The three-week journey', 'Three weeks, three gates, one decision.');
   const weeks = [
     ['Week 1', 'Frame', ['Baseline current position and credentials', 'Prioritise markets and segments', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and segment priorities'],
-    ['Week 2', 'Define', ['Lock propositions and permitted variants', 'Benchmark deal sizes and pricing', 'Shortlist target accounts', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
+    ['Week 2', 'Define', ['Lock propositions and permitted variants', 'Benchmark deal sizes and pricing', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
     ['Week 3', 'Commit', ['Set revenue targets by market and offering', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Build the activation plan and sign off'], 'Gate: strategy signed off'],
   ];
   weeks.forEach(([w, label, acts, gate], i) => {
@@ -336,7 +388,7 @@ Each week ends at a gate, and a gate is a decision taken, not a document circula
 Start date to be set at kick-off.`);
 }
 
-/* 10 — Governance */
+/* 11 — Governance */
 {
   const s = pres.addSlide();
   s.background = { color: NAVY };
@@ -348,7 +400,7 @@ Start date to be set at kick-off.`);
   const cols = [
     ['Cadence', ['Kick-off to confirm scope and principles', 'Weekly working session per workstream', 'Checkpoint at the end of each week', 'Sign-off session in week three']],
     ['Inputs we need', ['Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
-    ['Decisions requested', ['Priority markets and segments', 'Target account list', 'Revenue and margin targets', 'Account ownership', 'Investment and hiring asks']],
+    ['Decisions requested', ['Priority markets and segments', 'Target account list', 'Revenue and margin targets', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
   ];
   cols.forEach(([h, items], i) => {
     const x = 0.8 + i * 4.05;
