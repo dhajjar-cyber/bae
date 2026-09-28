@@ -60,13 +60,14 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What is in this pack', 'Eleven sections, plus an appendix of blank templates.');
+  head(s, 'What is in this pack', 'Twelve sections, plus an appendix of blank templates.');
   const items = [
     ['What this document is', 'Method, not conclusion'],
-    ['Ten questions, in five layers', 'Ambition, choices, commercial, enablers, execution'],
+    ['Eleven questions, in five layers', 'Ambition, choices, commercial, enablers, execution'],
     ['Principles we hold going in', 'Constraints agreed before the work starts'],
     ['How we will get there', 'The five-step approach'],
     ['Nine workstreams, nine artefacts', 'Who owns what, and what each produces'],
+    ['Pricing and delivery economics', 'Price, construct, ADR and margin'],
     ['Team and talent', 'Dedicated, shared and the gap to close'],
     ['Eminence and positioning', 'How the market comes to know us'],
     ['Alliances', 'Who we go to market with, and for what'],
@@ -129,13 +130,14 @@ Still open before we finalise this pack:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Ten questions, in five layers', 'Ambition first, then the choices, then what makes them real.');
+  head(s, 'Eleven questions, in five layers', 'Ambition first, then the choices, then what makes them real.');
   const groups = [
     ['Ambition', [['What winning looks like', 'What must be true in three years, in numbers?']]],
     ['Choices', [['Where to play', 'Which markets, segments and named accounts?'],
                  ['What we offer', 'Which integrated propositions and variants?'],
                  ['How we win', 'What differentiates us, and how do we deliver?']]],
-    ['Commercial', [['How much', 'Revenue by market and offering, deal sizes, price bands']]],
+    ['Commercial', [['How much', 'Revenue by market and offering, deal sizes, price bands'],
+                    ['At what margin', 'Delivery construct, blended ADR, target gross margin']]],
     ['Enablers', [['Coverage', 'Which partner owns which account?'],
                   ['People', 'Dedicated, shared and recruited capacity'],
                   ['Alliances', 'Who we go with, and what each unlocks'],
@@ -210,7 +212,7 @@ Confirm all five principles at kick-off; they bound every later decision.`);
     ['Mobilise', ['Frame the ambition: what winning looks like', 'Confirm scope, principles and owners'], 'Week 1'],
     ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
     ['Define', ['Markets, segments and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
-    ['Quantify', ['Deal sizes and market price bands', 'Revenue targets and the capacity to service them'], 'Week 2'],
+    ['Quantify', ['Price bands, ADR and target margin', 'Revenue targets and the capacity to service them'], 'Week 2'],
     ['Commit', ['Account ownership and coverage', 'Team, eminence and activation plans signed off'], 'Week 3'],
   ];
   steps.forEach(([name, pts, wk], i) => {
@@ -245,9 +247,9 @@ Baseline also covers people: who we have today, dedicated and shared.`);
     [{ text: 'Workstream', options: { bold: true } }, { text: 'Question it closes', options: { bold: true } }, { text: 'Artefact produced', options: { bold: true } }],
     ['1 · Proposition & catalogue', 'What we offer', 'Integrated proposition catalogue with permitted variants'],
     ['2 · Market & account targeting', 'Where to play', 'Prioritised markets, segments and named account list'],
-    ['3 · Commercial sizing & pricing', 'How much', 'Deal-size bands, price benchmarks, revenue targets'],
+    ['3 · Commercial model & pricing', 'How much', 'Deal-size bands, price benchmarks, revenue targets'],
     ['4 · Coverage & ownership', 'Who covers what', 'Account-to-partner map and coverage model'],
-    ['5 · Delivery model & readiness', 'How we win', 'Delivery approach and delivery standards'],
+    ['5 · Delivery model & economics', 'At what margin', 'Delivery construct, blended ADR and target margin per offering'],
     ['6 · Team & talent', 'Who delivers it', 'Dedicated FSI team, shared capacity view, recruitment plan'],
     ['7 · Eminence & positioning', 'How we are known', 'Eminence plan: content, events and speaking calendar'],
     ['8 · Alliances', 'Who we go with', 'Alliance map: role, offerings and accounts per partner'],
@@ -281,7 +283,60 @@ Notes per workstream:
 - WS8 Alliances: see the alliances slide. Primary alliances today are Oracle, Google and Amazon; specialised alliances are Temenos and Intellect.`);
 }
 
-/* 7 — Team and talent */
+/* 7 — Pricing and delivery economics */
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Pricing and delivery economics', 'Price, delivery construct and margin are one decision, not three.');
+  const chain = [
+    ['Target price', 'What the market pays for this offering, in bands'],
+    ['Delivery construct', 'The onshore, nearshore and offshore mix it is priced on'],
+    ['Blended ADR', 'The average daily rate that construct implies'],
+    ['Target margin', 'The gross margin we commit to for this offering'],
+  ];
+  chain.forEach(([t, d], i) => {
+    const x = 0.7 + i * 3.05;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 2.7, h: 1.75, rectRadius: 0.12,
+      fill: { color: i % 2 ? MIST : 'E4EBF7' } });
+    disc(s, x + 0.25, 2.22, String(i + 1), NAVY, 0.4);
+    s.addText(t, { x: x + 0.25, y: 2.72, w: 2.2, h: 0.35, fontSize: 15, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(d, { x: x + 0.25, y: 3.1, w: 2.25, h: 0.6, fontSize: 11.5, color: BODY, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+    if (i < 3) s.addText('→', { x: x + 2.72, y: 2.65, w: 0.3, h: 0.4, align: 'center', fontSize: 18,
+      color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 3.95, w: 11.9, h: 0.75, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('Set per offering, not per portfolio: a core banking programme and an AI activation carry different constructs, different rates and different margins.',
+    { x: 1.0, y: 3.95, w: 11.3, h: 0.75, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  const qs = [
+    ['What must stay onshore', 'Client-facing, regulatory and data-residency constrained roles'],
+    ['What can move', 'Which roles run nearshore or offshore, and at what ratio'],
+    ['What margin we hold', 'The target gross margin per offering, and the floor'],
+    ['What happens below it', 'Approval route when a deal prices under the floor'],
+  ];
+  qs.forEach(([h, b], i) => {
+    const x = 0.7 + (i % 2) * 6.15, y = 5.0 + Math.floor(i / 2) * 0.9;
+    disc(s, x, y, String.fromCharCode(65 + i), i < 2 ? SLATE : NAVY, 0.36);
+    s.addText(h, { x: x + 0.52, y: y - 0.04, w: 2.6, h: 0.35, fontSize: 13, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(b, { x: x + 3.15, y: y - 0.04, w: 2.7, h: 0.55, fontSize: 11.5, color: BODY, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  });
+  s.addText('Rates, ratios and margin targets are set in the cycle and recorded in the offering economics template.',
+    { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11.5, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Costing and delivery model are treated as one topic because they determine each other: the price the market will pay only becomes a business if the delivery construct behind it produces the blended ADR and the gross margin we want.
+
+The chain to work through, per offering: target price band, then the delivery construct it assumes (the split across onshore, nearshore and offshore or global delivery centres), then the blended average daily rate that construct implies, then the gross margin that falls out. If the margin is short, one of the first three has to change — usually the construct.
+
+Nuance to carry: this varies sharply by offering. A core banking modernisation with heavy onshore functional and governance presence looks nothing like an AI use-case activation or an integration build that can run largely offshore. Regulatory and data-residency rules in Saudi and the UAE constrain what can leave the country, and some clients contractually require onshore staffing — both drive the construct before commercial preference does.
+
+The delivery model itself is largely inherited from the firm; what we are setting here is the construct and the economics per offering, plus the margin floor and the approval route when a deal prices below it.`);
+}
+
+/* 8 — Team and talent */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -408,7 +463,7 @@ If other alliances belong here — hyperscaler or platform vendors we do not yet
   head(s, 'The three-week journey', 'Three weeks, three gates, one decision.');
   const weeks = [
     ['Week 1', 'Frame', ['Baseline current position and credentials', 'Prioritise markets and segments', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and segment priorities'],
-    ['Week 2', 'Define', ['Lock propositions and permitted variants', 'Benchmark deal sizes and pricing', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
+    ['Week 2', 'Define', ['Lock propositions and permitted variants', 'Benchmark deal sizes and pricing', 'Set delivery construct, ADR and margin', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
     ['Week 3', 'Commit', ['Set revenue targets by market and offering', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Build the activation plan and sign off'], 'Gate: strategy signed off'],
   ];
   weeks.forEach(([w, label, acts, gate], i) => {
@@ -624,6 +679,18 @@ tmplSlide('Template — eminence calendar', 'Workstream 7 · one row per planned
   `Channels in scope: published views and articles, conference stages and flagship FSI events, executive workshops, seminars and roundtables, podcasts and webinars, and joint activity with alliance partners.
 
 Measurement should be concrete: inbound enquiries, meetings created, shortlist and RFP invitations — not impressions.`);
+
+tmplSlide('Template — offering economics', 'Workstream 5 · one row per offering.',
+  ['Offering', 'Price basis', 'Onshore %', 'Nearshore %', 'Offshore %', 'Blended ADR', 'Target GM'],
+  [2.6, 2.3, 1.4, 1.5, 1.4, 1.4, 1.3], 6,
+  'The construct drives the rate, the rate drives the margin. Record the floor as well as the target.',
+  `The bridge between what the market pays and what we keep. One row per offering, because the construct differs sharply between a core banking programme, a data platform build and an AI activation.
+
+Price basis: fixed price, time and materials, outcome-based or a managed service — it changes how margin is earned and where the risk sits.
+
+Keep the onshore split honest. Regulatory and data-residency requirements in Saudi and the UAE, and client contractual terms, often set the floor for onshore presence before commercial preference does.
+
+Record both the target gross margin and the floor, and note the approval route for anything below it. A margin floor that nobody enforces is not a floor.`);
 
 tmplSlide('Template — execution scorecard', 'Workstream 9 · one row per measure.',
   ['Measure', 'What it tells us', 'Target', 'Frequency', 'Owner', 'Forum'],
