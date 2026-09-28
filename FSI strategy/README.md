@@ -22,7 +22,7 @@ go-to-market and activation strategy.
    (was: eight questions to answer)
 5. Principles we hold going in
 6. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
-7. Five workstreams, one per pillar
+7. Four workstreams, one per pillar
 8. Delivery and pricing economics — construct, price, blended ADR, target margin
 9. Team and talent — dedicated team, shared capacity, the recruitment gap
 10. Eminence and positioning — published views, stages, client formats, digital, partner-led
@@ -44,11 +44,13 @@ brief. The detail lives there so the slides stay clean.
 
 ## Appendix — the strategy log
 
-Slides 15 onward are the strategy document itself in template form: a blank
+Slide 4 shows the *shape* of the strategy; the appendix holds the strategy
+itself in template form. Slides 15 onward: a blank
 table per artefact, filled as the cycle runs, so the completed appendix *is*
 the strategy record rather than a separate write-up.
 
 15. Appendix divider
+16. The strategy on a page — the one-sheet the completed strategy fills
 16. Market prioritisation (WS2)
 17. Target accounts (WS2)
 18. Proposition catalogue (WS1)
@@ -69,10 +71,9 @@ Two levels, not a flat list.
 
 **Level 1 — the ambition**: what winning looks like, in numbers, by when.
 
-**Level 1 — four pillars**, each with one owner and its level-2 topics:
+**Level 1 — three pillars**, each with one owner and its level-2 topics:
 - **Market and clients** — markets and segments · named target accounts · coverage and ownership
-- **Offerings, delivery and economics** — proposition catalogue · delivery model and construct · pricing, ADR and margin · revenue targets
-- **People and capacity** — dedicated FSI team · shared capacity we can draw on · recruitment plan
+- **Offerings, delivery and capability** — proposition catalogue · delivery model and construct · pricing, ADR and margin · team, capacity and recruitment · revenue targets
 - **Route to market** — alliances · eminence and positioning · how we differentiate
 
 **Level 1 — the discipline**: operating rhythm, scorecard and decision rights that keep the pillars honest.
