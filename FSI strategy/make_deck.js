@@ -466,7 +466,7 @@ Context we already hold, to be validated rather than assumed during the cycle:
   s.addText('Tiering applies to geographies and to accounts, across all three segments. Tier two keeps us present in what is emerging without diluting tier one.',
     { x: 1.0, y: 5.8, w: 11.3, h: 0.95, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addText('Promotion and demotion criteria, and the tier one list itself, are set in the cycle.',
+  s.addText('Tiering is our prioritisation inside the firm\u2019s single account plan, not a separate account list.',
     { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`Tiering applies twice — to geographies and to accounts — and independently of segment. A tier one account can sit in a tier two market, and occasionally the reverse.
@@ -1083,15 +1083,17 @@ tmplSlide('Template — market prioritisation', 'Pillar 1 · Market and clients 
 
 Context: Saudi Arabia, UAE and Qatar are the expected primary markets; Kuwait, Oman and Jordan the secondary set where our key relationships sit. Both to be confirmed against evidence in week 1.`);
 
-tmplSlide('Template — target accounts', 'Pillar 1 · Market and clients · one row per named account.',
+tmplSlide('Template — target accounts', 'Pillar 1 · our view inside the single firm account plan — one row per named account.',
   ['Account', 'Segment', 'Market', 'Tier', 'Offerings we target there', 'Alliance', 'Owner', 'Stage'],
   [2.1, 1.3, 1.2, 0.8, 2.8, 1.3, 1.3, 1.1], 6,
-  'Segment: banking, funds or insurance. Tier one accounts are named individually; tier two may be grouped.',
+  'One plan per account, owned by the firm. This is the EAI&D layer inside it, not a second plan.',
   `This is the core artefact of the whole exercise — the named account list with account mapping.
+
+One account, one plan. The firm runs a single account plan per client and it is not ours to duplicate: this table is the EAI&D view that attaches to it. What is genuinely ours to decide is which offerings we prioritise in each account, what we target from them, and who from our side carries it — all of which lands inside the existing plan rather than beside it.
 
 Rules: one owner per account, never two. The propositions column names what we lead with, not everything we could sell. The alliance column links to the alliance map, so we can see which accounts a partner opens.`);
 
-tmplSlide('Template — account revenue plan', 'Pillar 1 · Market and clients · one row per account and offering.',
+tmplSlide('Template — account revenue plan', 'Pillar 1 · the EAI&D ambition inside each account plan — one row per account and offering.',
   ['Account', 'Offering targeted', 'Timeframe', 'Gross revenue', 'Net revenue', 'Confidence'],
   [2.5, 3.0, 1.5, 1.7, 1.7, 1.5], 6,
   'Gross and net on every line. The account total and the market total must reconcile to the portfolio target.',
@@ -1105,11 +1107,11 @@ Confidence keeps the plan honest: relationship-only ambition and a qualified pur
 
 Three reconciliations to hold: account lines roll up to the market total, market totals roll up to the portfolio ambition, and net revenue reconciles to the capacity we have or plan to hire.`);
 
-tmplSlide('Template — coverage and ownership', 'Pillar 1 · Market and clients · one row per priority account.',
+tmplSlide('Template — coverage and ownership', 'Pillar 1 · who carries EAI&D inside each account team — one row per priority account.',
   ['Account', 'Partner owner', 'Alliance lead', 'Delivery lead', 'Contact cadence'],
   [2.9, 2.4, 2.3, 2.3, 2.0], 6,
-  'Partner owner means our accountable partner. Alliance lead is the vendor relationship behind the account.',
-  `Two different mappings live side by side here: our own consulting partners, who own the client relationship, and the alliance or vendor partner we go to market with on that account.
+  'Our owner sits inside the existing account team; the account relationship stays with its account leader.',
+  `Two different mappings live side by side here: the EAI&D partner accountable for our content in the account, and the alliance or vendor partner we go to market with there. Neither displaces the account leader named in the firm's account plan — where one exists, our owner works inside that account team, and the strategy should say so explicitly to avoid a second chain of accountability forming.
 
 Cadence keeps this honest — an owner with no contact rhythm is a name on a page.`);
 
