@@ -61,9 +61,9 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
   s.background = { color: WHITE };
   head(s, 'How this pack runs', 'Five parts, in the order the strategy actually gets built.');
   const parts5 = [
-    ['One', 'The frame', 'What this document is \u00b7 how this fits both parent strategies \u00b7 the industry we mean', 3],
+    ['One', 'The frame', 'What this document is \u00b7 how this fits \u00b7 the words we use \u00b7 the industry we mean', 4],
     ['Two', 'The destination', 'Vision drivers \u00b7 candidate statements \u00b7 principles', 3],
-    ['Three', 'What the strategy must cover', 'The architecture \u00b7 markets and tiers \u00b7 delivery, economics and people \u00b7 alliances and eminence', 6],
+    ['Three', 'What the strategy must cover', 'The architecture \u00b7 markets and tiers \u00b7 the catalogue \u00b7 delivery, economics and people \u00b7 alliances and eminence', 7],
     ['Four', 'How we build it', 'The approach \u00b7 workstreams and owners \u00b7 the three-week journey \u00b7 how we run the cycle', 5],
     ['Five', 'After sign-off', 'Governing the execution', 1],
   ];
@@ -195,6 +195,45 @@ What is genuinely ours sits at the intersection: how EAI&D propositions land in 
 The practical rule, and the one most likely to be broken: no parallel machinery. We do not build a second account plan next to the industry one, a second set of forums, or a separate eminence calendar. Our account view attaches to the existing account plan, our reviews sit inside the existing forums where they exist, and our eminence rides the industry programme, adding EAI&D content rather than competing for the same audience.
 
 Two things to confirm at kick-off: who owns the account relationship where the industry strategy has already named an account leader, and which forum our operating rhythm plugs into rather than replaces. Where the two parent strategies disagree — different segment priority, an alliance one supports and the other does not — that is an escalation, not something for this team to resolve quietly.`);
+}
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'The words we use', 'Agreed before anything else, because half the arguments are vocabulary.');
+  const terms = [
+    ['Portfolio', 'EAI&D — Engineering, AI and Data. One portfolio, several industries.'],
+    ['Offering', 'An internal capability unit of the portfolio: Industry Solutions, AI and Data, Engineering.'],
+    ['Proposition', 'What we take to market. Integrated when it spans two or more offerings, focused when it sits within one.'],
+    ['Flavour', 'A permitted variation of a proposition — by scope, segment or delivery shape.'],
+    ['Use case', 'The specific client problem a proposition is sold against.'],
+    ['Segment', 'Banking, funds or insurance. Not a market, and not interchangeable.'],
+    ['Market', 'A country we sell into, each tiered one or two.'],
+    ['Account plan', 'The firm’s single plan per client. Our content is a layer inside it, never a second plan.'],
+    ['Pillar', 'A section of this strategy: market and clients, propositions, delivery and economics, route to market.'],
+  ];
+  terms.forEach(([t, d], i) => {
+    const x = 0.7 + (i % 3) * 4.03, y = 2.0 + Math.floor(i / 3) * 1.6;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.4, rectRadius: 0.1,
+      fill: { color: i % 2 ? MIST : 'F2F6FC' } });
+    s.addText(t, { x: x + 0.28, y: y + 0.15, w: 3.3, h: 0.35, fontSize: 15, bold: true, color: NAVY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(d, { x: x + 0.28, y: y + 0.55, w: 3.3, h: 0.75, fontSize: 10.5, color: BODY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.75, w: 11.9, h: 0.6, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('Offerings are how we are organised. Propositions are what the client buys. The catalogue is made of propositions, not offerings.',
+    { x: 1.0, y: 6.75, w: 11.3, h: 0.6, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Worth two minutes at kick-off. Most of the circular discussion in strategy work is two people using one word for different things.
+
+The distinction that matters most: an offering is an internal unit — how the portfolio is organised and where people sit. A proposition is what we take to market. Clients do not buy offerings; they buy propositions. So the catalogue is a list of propositions, and each one records which offerings it draws on.
+
+From that, integrated and focused fall out naturally. A proposition that needs two or more offerings is integrated — a greenfield digital bank setup needs all three. A proposition that genuinely sits inside one is focused — a cloud migration strategy never leaves Engineering. Integrated is the default; focused is permitted and sold as a way in.
+
+Two more worth holding: segment is not market — banking, funds and insurance are segments, while Saudi, the UAE and Qatar are markets, and both carry a tier. And account plan means the firm’s single plan per client; what we produce attaches to it rather than competing with it.
+
+Pillar is used only for the structure of this strategy, so it should never be heard as a synonym for offering.`);
 }
 
 {
@@ -409,7 +448,7 @@ Confirm all five principles at kick-off; they bound every later decision.`);
     valign: 'middle', fontSize: 15, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   const pillars = [
     ['Market\nand clients', ['Markets and FSI segments', 'Tier one and tier two', 'Named target accounts', 'Offerings and revenue per account', 'Coverage and ownership']],
-    ['Offerings\n(what we sell)', ['Integrated propositions', 'Use cases we lead with', 'Flavours and permitted variants']],
+    ['Propositions\n(what we sell)', ['Integrated propositions', 'Use cases we lead with', 'Flavours and permitted variants']],
     ['Delivery\nand economics', ['Delivery model, assets and accelerators', 'Construct, pricing, ADR and margin', 'Team, skills, certification and capacity', 'Revenue targets']],
     ['Route\nto market', ['Alliances and what they unlock', 'Eminence and positioning', 'How we differentiate']],
   ];
@@ -484,6 +523,53 @@ Watch the balance. If almost everything lands in tier one, nothing is prioritise
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
+  head(s, 'Integrated by default, focused by exception', 'Pillar 2 · most propositions span the practices. Some genuinely do not, and that is allowed.');
+  const offerings = ['Industry Solutions', 'AI and Data', 'Engineering'];
+  offerings.forEach((t, i) => {
+    s.addText(t, { x: 6.5 + i * 2.05, y: 2.0, w: 1.95, h: 0.5, align: 'center', valign: 'middle',
+      fontSize: 11.5, bold: true, color: NAVY, fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  const rows = [
+    ['Greenfield digital bank setup', [1, 1, 1], 'Integrated'],
+    ['Core modernisation and migration', [1, 1, 1], 'Integrated'],
+    ['Intelligent operations for claims', [1, 1, 0], 'Integrated'],
+    ['Enterprise AI activation', [0, 1, 1], 'Integrated'],
+    ['Cloud migration strategy', [0, 0, 1], 'Focused'],
+  ];
+  rows.forEach(([name, marks, kind], r) => {
+    const y = 2.6 + r * 0.72;
+    s.addShape(pres.ShapeType.roundRect, { x: 0.7, y, w: 11.9, h: 0.62, rectRadius: 0.08,
+      fill: { color: r % 2 ? MIST : 'F2F6FC' } });
+    s.addText(name, { x: 1.0, y, w: 4.4, h: 0.62, valign: 'middle', fontSize: 12.5, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(kind, { x: 5.4, y, w: 1.1, h: 0.62, valign: 'middle', fontSize: 10.5, bold: true,
+      color: kind === 'Focused' ? ACCENT : SLATE, fontFace: SANS, isTextBox: true, margin: 0 });
+    marks.forEach((m, i) => {
+      const cx = 6.5 + i * 2.05 + 0.82;
+      s.addShape(pres.ShapeType.ellipse, { x: cx, y: y + 0.16, w: 0.3, h: 0.3,
+        fill: { color: m ? NAVY : 'FFFFFF' }, line: { color: m ? NAVY : 'C9D4E6', width: 1.25 } });
+    });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.3, w: 11.9, h: 0.85, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('The rule: integrated is the default and the catalogue is built that way. A focused offering is permitted where the work genuinely does not span — and it is sold as a way in, not as the destination.',
+    { x: 1.0, y: 6.3, w: 11.3, h: 0.85, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addText('Illustrative only — the catalogue itself is built in the cycle.', { x: 0.7, y: 7.2, w: 6, h: 0.3,
+    fontSize: 10.5, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addNotes(`This is the principle made concrete, and the examples are the clearest way to settle the argument.
+
+A greenfield digital bank setup pulls from every practice: the core platform and functional design from Industry Solutions, the data foundation and intelligence from AI and Data, the integration layer, cloud and channels from Engineering. Nobody sells that as three engagements.
+
+A cloud migration strategy will never span beyond Engineering, and pretending otherwise to satisfy a principle makes us look like we are padding. It is a legitimate focused offering.
+
+So the rule has two halves. Integrated is the default: the catalogue is built as cross-practice propositions, and that is what we lead with. Focused offerings stay in the catalogue where the work genuinely does not span, and they are sold as an entry point into a larger relationship rather than as the whole of it.
+
+Two practical consequences for the cycle. First, every proposition in the catalogue records which practices it involves, which is why the catalogue template has that column. Second, a focused offering should carry a named follow-on: what it typically opens next. A focused sale with no onward path is just a small job.`);
+}
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
   head(s, 'Delivery and pricing economics', 'Pillar 3 · delivery model, price and margin are one decision, not three.');
   const chain = [
     ['Target price', 'What the market pays for this offering, in bands'],
@@ -543,7 +629,7 @@ It also changes the economics, which is why it belongs here. Reuse raises margin
   s.background = { color: WHITE };
   head(s, 'Team, skills and enablement', 'Pillar 3 \u00b7 the capacity behind the construct, and the capability behind the capacity.');
   const cols = [
-    ['The dedicated team', NAVY, ['Who works on FSI exclusively, across the three practices?', 'Which roles and levels do they hold?', 'What is realistically deliverable with them alone?']],
+    ['The dedicated team', NAVY, ['Who works on FSI exclusively, across the three offerings?', 'Which roles and levels do they hold?', 'What is realistically deliverable with them alone?']],
     ['Shared capacity', SLATE, ['Which resources are shared with other portfolios?', 'How much of their time can we count on?', 'Which skills do we borrow rather than own?']],
     ['Skills and enablement', NAVY, ['Which capabilities does the catalogue actually require?', 'What domain training and FSI certification is needed?', 'What alliance and platform certification must we hold?']],
     ['The gap to close', SLATE, ['How many partners, directors and delivery staff are missing?', 'Build, borrow or buy for each gap?', 'By when, to support the targets we set?']],
@@ -730,7 +816,7 @@ Baseline also covers people: who we have today, dedicated and shared.`);
   const ws = [
     ['1 · Market and clients', 'Markets, segments, tiering, named accounts, offerings and revenue per account, coverage',
      'Market prioritisation · target account list · account revenue plan · coverage map'],
-    ['2 · Offerings', 'What we sell: integrated propositions, use cases and permitted flavours',
+    ['2 · Propositions', 'What we sell: integrated propositions, use cases and permitted flavours',
      'Proposition catalogue'],
     ['3 · Delivery and economics', 'Delivery model and assets, construct, pricing, margin, team, skills and targets',
      'Pricing bands · offering economics · team model · revenue targets'],
@@ -968,7 +1054,7 @@ Keep them as living tables — one file, versioned, updated at each weekly check
   s.addShape(pres.ShapeType.line, { x: 3.2, y: 2.62, w: 9.1, h: 0, line: { color: 'C9D4E6', width: 1 } });
   const cols = [
     ['Market and clients', ['Markets and segments', 'Top accounts and offerings', 'Revenue: gross / net']],
-    ['Offerings', ['Propositions', 'Use cases', 'Flavours']],
+    ['Propositions', ['Integrated', 'Use cases', 'Flavours']],
     ['Delivery and economics', ['Construct and ADR', 'Margin', 'Team and gap']],
     ['Route to market', ['Alliances', 'Eminence', 'Differentiation']],
   ];
@@ -1014,7 +1100,7 @@ Keep it dated and versioned. When the quarterly review changes a choice, this sh
   s.addText('PROPOSITION', { x: 1.0, y: 1.95, w: 2.1, h: 0.72, valign: 'middle', fontSize: 11.5, bold: true,
     color: ICE, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addShape(pres.ShapeType.line, { x: 3.2, y: 2.42, w: 5.4, h: 0, line: { color: '5C6E96', width: 1 } });
-  s.addText('LEAD PILLAR / PRACTICE', { x: 8.9, y: 1.95, w: 2.4, h: 0.72, valign: 'middle', fontSize: 9.5,
+  s.addText('LEAD OFFERING', { x: 8.9, y: 1.95, w: 2.4, h: 0.72, valign: 'middle', fontSize: 9.5,
     bold: true, color: '9AA7C4', charSpacing: 1, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addShape(pres.ShapeType.line, { x: 11.3, y: 2.42, w: 1.1, h: 0, line: { color: '5C6E96', width: 1 } });
   const boxes = [
@@ -1084,7 +1170,7 @@ tmplSlide('Template — market prioritisation', 'Pillar 1 · Market and clients 
 Context: Saudi Arabia, UAE and Qatar are the expected primary markets; Kuwait, Oman and Jordan the secondary set where our key relationships sit. Both to be confirmed against evidence in week 1.`);
 
 tmplSlide('Template — target accounts', 'Pillar 1 · our view inside the single firm account plan — one row per named account.',
-  ['Account', 'Segment', 'Market', 'Tier', 'Offerings we target there', 'Alliance', 'Owner', 'Stage'],
+  ['Account', 'Segment', 'Market', 'Tier', 'Propositions we lead with', 'Alliance', 'Owner', 'Stage'],
   [2.1, 1.3, 1.2, 0.8, 2.8, 1.3, 1.3, 1.1], 6,
   'One plan per account, owned by the firm. This is the EAI&D layer inside it, not a second plan.',
   `This is the core artefact of the whole exercise — the named account list with account mapping.
@@ -1094,7 +1180,7 @@ One account, one plan. The firm runs a single account plan per client and it is 
 Rules: one owner per account, never two. The propositions column names what we lead with, not everything we could sell. The alliance column links to the alliance map, so we can see which accounts a partner opens.`);
 
 tmplSlide('Template — account revenue plan', 'Pillar 1 · the EAI&D ambition inside each account plan — one row per account and offering.',
-  ['Account', 'Offering targeted', 'Timeframe', 'Gross revenue', 'Net revenue', 'Confidence'],
+  ['Account', 'Proposition targeted', 'Timeframe', 'Gross revenue', 'Net revenue', 'Confidence'],
   [2.5, 3.0, 1.5, 1.7, 1.7, 1.5], 6,
   'Gross and net on every line. The account total and the market total must reconcile to the portfolio target.',
   `This is what turns a target account list into a plan: for each account, which offerings we are going there with, and how much revenue each is expected to carry.
@@ -1116,23 +1202,23 @@ tmplSlide('Template — coverage and ownership', 'Pillar 1 · who carries EAI&D 
 Cadence keeps this honest — an owner with no contact rhythm is a name on a page.`);
 
 tmplSlide('Template — proposition catalogue', 'Pillar 2 · Offerings · one row per integrated proposition.',
-  ['Proposition', 'Segments it serves', 'Practices involved', 'Buyer per segment', 'Permitted variants'],
+  ['Proposition', 'Segments it serves', 'Offerings involved', 'Buyer per segment', 'Permitted variants'],
   [2.6, 2.1, 2.2, 2.4, 2.6], 6,
   'Integrated propositions first. A single-pillar offer is recorded as a variant, not as its own row.',
   `The principle bites hardest here: the catalogue is integrated propositions across Industry Solutions, Data and AI, and Engineering and Cloud. Focused offers such as enterprise AI are recorded as permitted variants of an integrated proposition and sold as entry points.
 
 Buyer means the actual role that signs, and it differs by segment: COO, CIO or head of retail banking in a bank; COO or head of investment operations in a fund; chief underwriting or claims officer in an insurer.`);
 
-tmplSlide('Template — sizing and pricing', 'Pillar 3 · Delivery and economics · one row per offering.',
-  ['Offering', 'What drives scope', 'Typical deal size', 'Market price band', 'Notes'],
+tmplSlide('Template — sizing and pricing', 'Pillar 3 · Delivery and economics · one row per proposition.',
+  ['Proposition', 'What drives scope', 'Typical deal size', 'Market price band', 'Notes'],
   [2.6, 3.2, 2.0, 2.1, 2.0], 6,
   'Bands, not point prices. Name the drivers that move the number.',
   `Pricing will not reduce to one number per offering. For core modernisation and migration the drivers include segment and scope (retail, corporate or SME in banking; life or general in insurance; fund accounting or front-office in funds), single-country versus multi-country, and whether full data migration is in scope. Record the drivers alongside the band so the number can be reconstructed.
 
 Same discipline for data platform work, AI activation, and cloud and integration engagements.`);
 
-tmplSlide('Template — offering economics', 'Pillar 3 · Delivery and economics · one row per offering.',
-  ['Offering', 'Assets and accelerators', 'Price basis', 'On %', 'Near %', 'Off %', 'Blended ADR', 'Target GM'],
+tmplSlide('Template — proposition economics', 'Pillar 3 · Delivery and economics · one row per proposition.',
+  ['Proposition', 'Assets and accelerators', 'Price basis', 'On %', 'Near %', 'Off %', 'Blended ADR', 'Target GM'],
   [2.1, 2.3, 1.7, 1.0, 1.1, 1.0, 1.5, 1.2], 6,
   'Assets are what make the construct hold: reuse raises margin at the same price and shortens time to value.',
   `The bridge between what the market pays and what we keep. One row per offering, because the construct differs sharply between a core platform programme, a data platform build and an AI activation \u2014 and again between segments.
@@ -1144,7 +1230,7 @@ Keep the onshore split honest. Regulatory and data-residency requirements in Sau
 Record both the target gross margin and the floor, and note the approval route for anything below it. A margin floor that nobody enforces is not a floor.`);
 
 tmplSlide('Template — revenue targets', 'Pillar 3 · Delivery and economics · one row per market.',
-  ['Market', 'Segment', 'Industry Solutions', 'Data & AI', 'Engineering & Cloud', 'Integrated', 'Total'],
+  ['Market', 'Segment', 'Industry Solutions', 'AI and Data', 'Engineering', 'Integrated', 'Total'],
   [1.9, 1.6, 2.0, 1.7, 2.1, 1.4, 1.2], 6,
   'One row per market and segment. Reconciles to the account revenue plan and to capacity.',
   `The integrated column is deliberate: if most revenue sits in single-pillar columns, the strategy has not been followed.
@@ -1180,7 +1266,7 @@ Four kinds of row, and they should not be blurred together:
 Who needs it should say how many and at what level, not simply the practice name. A capability held by one person is a dependency, not a capability.`);
 
 tmplSlide('Template — alliance map', 'Pillar 4 · Route to market · one row per alliance.',
-  ['Alliance', 'Type', 'Role', 'Offerings and segments it sits behind', 'Accounts it opens', 'What we owe them'],
+  ['Alliance', 'Type', 'Role', 'Propositions and segments it sits behind', 'Accounts it opens', 'What we owe them'],
   [1.7, 1.5, 1.6, 3.1, 2.1, 1.9], 6,
   'Type: broad technology alliance, or specialised product vendor. Role: co-sell, resell, delivery or referral.',
   `Start from the alliances we already hold: Oracle, Google and Amazon as primary; Temenos and Intellect as specialised platform alliances, both weighted to banking. The cycle should decide what we do about funds and insurance platforms, where we currently hold no specialised alliance.

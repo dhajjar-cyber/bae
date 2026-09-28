@@ -20,7 +20,8 @@ Five parts, each opening with a divider slide.
 **Part one — The frame**
 1. What this document is — method, not conclusion
 2. How this fits — where this sits between the EAI&D portfolio strategy and the FSI industry strategy
-3. The industry we mean — banking, funds, insurance, in priority order
+3. The words we use — portfolio, offering, proposition, flavour, segment, market, tier
+4. The industry we mean — banking, funds, insurance, in priority order
 
 **Part two — The destination**
 3. What the vision has to earn — six drivers, agreed before the words
@@ -91,6 +92,18 @@ targets. Geographies and accounts are tiered: tier one gets active coverage, nam
 targets and the metrics; tier two is managed as clusters, reactive, and promoted
 when the signal justifies it.
 
+## Vocabulary
+
+- **Portfolio** — EAI&D: Engineering, AI and Data
+- **Offering** — an internal capability unit: Industry Solutions · AI and Data · Engineering
+- **Proposition** — what we take to market; *integrated* when it spans two or more
+  offerings, *focused* when it sits within one
+- **Flavour** — a permitted variation of a proposition
+- **Use case** — the client problem a proposition is sold against
+- **Segment** — banking, funds, insurance · **Market** — a country, tiered one or two
+- **Account plan** — the firm's single plan per client; our content is a layer inside it
+- **Pillar** — a section of this strategy, never a synonym for offering
+
 ## Structure
 
 Two levels, not a flat list.
@@ -145,6 +158,18 @@ then **insurance**. Segment is a dimension throughout — propositions, accounts
 targets. Geographies and accounts are tiered: tier one gets active coverage, named
 targets and the metrics; tier two is managed as clusters, reactive, and promoted
 when the signal justifies it.
+
+## Vocabulary
+
+- **Portfolio** — EAI&D: Engineering, AI and Data
+- **Offering** — an internal capability unit: Industry Solutions · AI and Data · Engineering
+- **Proposition** — what we take to market; *integrated* when it spans two or more
+  offerings, *focused* when it sits within one
+- **Flavour** — a permitted variation of a proposition
+- **Use case** — the client problem a proposition is sold against
+- **Segment** — banking, funds, insurance · **Market** — a country, tiered one or two
+- **Account plan** — the firm's single plan per client; our content is a layer inside it
+- **Pillar** — a section of this strategy, never a synonym for offering
 
 ## Structure note
 
