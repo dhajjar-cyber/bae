@@ -205,7 +205,7 @@ Two things to confirm at kick-off: who owns the account relationship where the i
     ['Portfolio', 'EAI&D — Engineering, AI and Data. One portfolio, several industries.'],
     ['Offering', 'An internal capability unit of the portfolio: Industry Solutions, AI and Data, Engineering.'],
     ['Proposition', 'What we take to market. Integrated when it spans two or more offerings, focused when it sits within one.'],
-    ['Flavour', 'A permitted variation of a proposition — by scope, segment or delivery shape.'],
+    ['Archetype', 'A recognised shape a proposition takes — by scope, segment or delivery model. Each carries its own economics.'],
     ['Use case', 'The specific client problem a proposition is sold against.'],
     ['Segment', 'Banking, funds or insurance. Not a market, and not interchangeable.'],
     ['Market', 'A country we sell into, each tiered one or two.'],
@@ -414,7 +414,7 @@ One integrated market team: every partner and director in the portfolio is expec
 
 This is what makes the integrated-propositions principle real in practice rather than on paper. It also creates an enablement obligation: the proposition one-pagers in the appendix are the tool for it, and the cycle should say how the portfolio is trained on them and how often it is refreshed.
 
-The hard rule from the portfolio: no siloed solutions. Our primary go-to-market catalogue is integrated propositions across the three pillars. Even where we sell a focused solution — enterprise AI, for example — it is sold as an entry point into an integrated play, and the catalogue is built that way. Flavours and partial offerings are permitted as variants of an integrated proposition, not as the default.
+The hard rule from the portfolio: no siloed solutions. Our primary go-to-market catalogue is integrated propositions across the three pillars. Even where we sell a focused solution — enterprise AI, for example — it is sold as an entry point into an integrated play, and the catalogue is built that way. Archetypes and partial offerings are permitted as variants of an integrated proposition, not as the default.
 
 Delivery model: we expect to inherit the standard firm delivery model rather than invent one. The work here is to confirm it and note where FSI-specific governance (design authority, functional governance, stream management on large SI programmes) needs to be explicit.
 
@@ -448,7 +448,7 @@ Confirm all five principles at kick-off; they bound every later decision.`);
     valign: 'middle', fontSize: 15, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   const pillars = [
     ['Market\nand clients', ['Markets and FSI segments', 'Tier one and tier two', 'Named target accounts', 'Offerings and revenue per account', 'Coverage and ownership']],
-    ['Propositions\n(what we sell)', ['Integrated propositions', 'Use cases we lead with', 'Flavours and permitted variants']],
+    ['Propositions\n(what we sell)', ['Integrated propositions', 'Use cases we lead with', 'Archetypes and permitted variants']],
     ['Delivery\nand economics', ['Delivery model, assets and accelerators', 'Construct, pricing, ADR and margin', 'Team, skills, certification and capacity', 'Revenue targets']],
     ['Route\nto market', ['Alliances and what they unlock', 'Eminence and positioning', 'How we differentiate']],
   ];
@@ -816,7 +816,7 @@ Baseline also covers people: who we have today, dedicated and shared.`);
   const ws = [
     ['1 · Market and clients', 'Markets, segments, tiering, named accounts, offerings and revenue per account, coverage',
      'Market prioritisation · target account list · account revenue plan · coverage map'],
-    ['2 · Propositions', 'What we sell: integrated propositions, use cases and permitted flavours',
+    ['2 · Propositions', 'What we sell: integrated propositions, use cases and permitted archetypes',
      'Proposition catalogue'],
     ['3 · Delivery and economics', 'Delivery model and assets, construct, pricing, margin, team, skills and targets',
      'Pricing bands · offering economics · team model · revenue targets'],
@@ -843,7 +843,7 @@ Baseline also covers people: who we have today, dedicated and shared.`);
 
 What each pillar carries:
 - Market and clients: markets and segments (primary expected to be Saudi, UAE and Qatar; secondary Kuwait, Oman and Jordan, all to be validated), the named account list, and the coverage map. Two mappings live here — our own partners who own the relationship, and the alliance partner behind the account.
-- Offerings: the catalogue itself, and nothing else — integrated propositions, the use cases we lead with, and the permitted flavours or partial offerings. It stands alone because it is the What: everything else in the strategy either sells it, delivers it or prices it.
+- Offerings: the catalogue itself, and nothing else — integrated propositions, the use cases we lead with, and the permitted archetypes or partial offerings. It stands alone because it is the What: everything else in the strategy either sells it, delivers it or prices it.
 - Delivery and economics: the delivery model and the construct behind each offering price bands with the drivers that move them, blended ADR and target margin, and the revenue targets that fall out. Delivery model and pricing sit in one pillar because they determine each other: the construct sets the cost, the cost sets the achievable price and margin.
   Capability sits in the same pillar: the dedicated FSI team, the shared capacity we can genuinely draw on, and the recruitment gap by level. It belongs here because the construct and the margin only hold if the people behind them exist — a target we cannot staff is not a target.
 - Route to market: alliances (Oracle, Google, Amazon as primary; Temenos and Intellect as specialised) and the eminence plan.
@@ -1054,7 +1054,7 @@ Keep them as living tables — one file, versioned, updated at each weekly check
   s.addShape(pres.ShapeType.line, { x: 3.2, y: 2.62, w: 9.1, h: 0, line: { color: 'C9D4E6', width: 1 } });
   const cols = [
     ['Market and clients', ['Markets and segments', 'Top accounts and offerings', 'Revenue: gross / net']],
-    ['Propositions', ['Integrated', 'Use cases', 'Flavours']],
+    ['Propositions', ['Integrated', 'Use cases', 'Archetypes']],
     ['Delivery and economics', ['Construct and ADR', 'Margin', 'Team and gap']],
     ['Route to market', ['Alliances', 'Eminence', 'Differentiation']],
   ];
@@ -1106,7 +1106,7 @@ Keep it dated and versioned. When the quarterly review changes a choice, this sh
   const boxes = [
     'What it is, and the use cases we lead with',
     'Segments it serves, and the buyer in each',
-    'Permitted flavours and variants',
+    'Archetypes and permitted variants',
     'Target markets and accounts',
     'Deal size and price band',
     'Delivery construct, accelerators, ADR and margin',
@@ -1128,7 +1128,7 @@ Keep it dated and versioned. When the quarterly review changes a choice, this sh
   s.addText('One page per proposition. If a box cannot be filled, the proposition is not ready for the catalogue.',
     { x: 0.7, y: 7.0, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addNotes(`The summary sheet for each proposition, pulling every dimension we have discussed onto one page: what it is and the use cases, the buyer, the permitted flavours, where and to whom we sell it, the price band, the delivery construct with ADR and margin, the AI and innovation content, the alliance behind it, and the credentials and roles needed to sell and deliver it.
+  s.addNotes(`The summary sheet for each proposition, pulling every dimension we have discussed onto one page: what it is and the use cases, the buyer, the permitted archetypes, where and to whom we sell it, the price band, the delivery construct with ADR and margin, the AI and innovation content, the alliance behind it, and the credentials and roles needed to sell and deliver it.
 
 It doubles as the readiness test. The principles bite here: if the AI and innovation box is empty, the proposition breaches the embedded-AI principle. If the delivery construct and margin box is empty, it is priced without knowing whether it makes money. If the credentials box is empty, we cannot yet sell it in this domain. An unfillable box is a gap, not a formatting problem.
 
@@ -1202,7 +1202,7 @@ tmplSlide('Template — coverage and ownership', 'Pillar 1 · who carries EAI&D 
 Cadence keeps this honest — an owner with no contact rhythm is a name on a page.`);
 
 tmplSlide('Template — proposition catalogue', 'Pillar 2 · Offerings · one row per integrated proposition.',
-  ['Proposition', 'Segments it serves', 'Offerings involved', 'Buyer per segment', 'Permitted variants'],
+  ['Proposition', 'Segments it serves', 'Offerings involved', 'Buyer per segment', 'Archetypes permitted'],
   [2.6, 2.1, 2.2, 2.4, 2.6], 6,
   'Integrated propositions first. A single-pillar offer is recorded as a variant, not as its own row.',
   `The principle bites hardest here: the catalogue is integrated propositions across Industry Solutions, Data and AI, and Engineering and Cloud. Focused offers such as enterprise AI are recorded as permitted variants of an integrated proposition and sold as entry points.

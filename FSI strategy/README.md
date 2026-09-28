@@ -98,7 +98,7 @@ when the signal justifies it.
 - **Offering** — an internal capability unit: Industry Solutions · AI and Data · Engineering
 - **Proposition** — what we take to market; *integrated* when it spans two or more
   offerings, *focused* when it sits within one
-- **Flavour** — a permitted variation of a proposition
+- **Archetype** — a recognised shape a proposition takes, each with its own economics
 - **Use case** — the client problem a proposition is sold against
 - **Segment** — banking, funds, insurance · **Market** — a country, tiered one or two
 - **Account plan** — the firm's single plan per client; our content is a layer inside it
@@ -165,7 +165,7 @@ when the signal justifies it.
 - **Offering** — an internal capability unit: Industry Solutions · AI and Data · Engineering
 - **Proposition** — what we take to market; *integrated* when it spans two or more
   offerings, *focused* when it sits within one
-- **Flavour** — a permitted variation of a proposition
+- **Archetype** — a recognised shape a proposition takes, each with its own economics
 - **Use case** — the client problem a proposition is sold against
 - **Segment** — banking, funds, insurance · **Market** — a country, tiered one or two
 - **Account plan** — the firm's single plan per client; our content is a layer inside it
