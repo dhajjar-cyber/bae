@@ -60,13 +60,14 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What is in this pack', 'Twelve sections, plus an appendix of blank templates.');
+  head(s, 'What is in this pack', 'Thirteen sections, plus an appendix of blank templates.');
   const items = [
     ['What this document is', 'Method, not conclusion'],
     ['What the strategy must cover', 'Ambition, four pillars, operating discipline'],
     ['Principles we hold going in', 'Constraints agreed before the work starts'],
     ['How we will get there', 'The five-step approach'],
     ['Five workstreams, one per pillar', 'Who owns what, and what each produces'],
+    ['Who is doing this', 'The strategy development team'],
     ['Pillar 3 · Delivery and pricing economics', 'Construct, price, ADR and margin'],
     ['Pillar 3 · Team and talent', 'Dedicated, shared and the gap to close'],
     ['Pillar 4 · Eminence and positioning', 'How the market comes to know us'],
@@ -76,17 +77,17 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
     ['How we run the cycle', 'Cadence, inputs and decisions requested'],
   ];
   items.forEach(([t, d], i) => {
-    const x = 0.7 + (i % 2) * 6.15, y = 1.95 + Math.floor(i / 2) * 0.8;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 5.75, h: 0.68, rectRadius: 0.08,
+    const x = 0.7 + (i % 2) * 6.15, y = 1.9 + Math.floor(i / 2) * 0.72;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 5.75, h: 0.63, rectRadius: 0.08,
       fill: { color: i % 2 ? MIST : 'F2F6FC' } });
-    disc(s, x + 0.22, y + 0.12, String(i + 1), i % 2 ? SLATE : NAVY, 0.42);
-    s.addText(t, { x: x + 0.85, y: y + 0.05, w: 4.7, h: 0.34, fontSize: 14.5, bold: true, color: INK,
+    disc(s, x + 0.2, y + 0.11, String(i + 1), i % 2 ? SLATE : NAVY, 0.4);
+    s.addText(t, { x: x + 0.78, y: y + 0.03, w: 4.8, h: 0.32, fontSize: 13.5, bold: true, color: INK,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(d, { x: x + 0.85, y: y + 0.36, w: 4.7, h: 0.3, fontSize: 11, color: MUTE,
+    s.addText(d, { x: x + 0.78, y: y + 0.33, w: 4.8, h: 0.28, fontSize: 10.5, color: MUTE,
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addText('Appendix: a blank template for every artefact the cycle produces — the strategy log itself.',
-    { x: 0.7, y: 6.85, w: 11.9, h: 0.4, fontSize: 12.5, italic: true, color: SLATE, fontFace: SANS,
+    { x: 0.7, y: 6.95, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: SLATE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`Walk the pack in two halves. Sections 1 to 5 are the method: what this document is, the questions, the principles, the approach and the workstreams. Sections 6 to 8 are the dimensions that were called out as needing their own treatment — talent, eminence and alliances. Sections 9 and 10 are the plan and the governance.
 
@@ -180,20 +181,23 @@ Context we already hold, to be validated rather than assumed during the cycle:
     ['Covered by a partner', 'Every priority account has one accountable owner and a defined partner play.'],
     ['Deliverable by design', 'Nothing enters the catalogue that we cannot staff and deliver to standard.'],
     ['Domain-specific, not agnostic', 'Banking is specialised and clients expect it: every proposition, credential and CV speaks the domain.'],
+    ['AI and innovation embedded', 'Not a separate offering: every proposition carries an AI and innovation component by design.'],
   ];
   pr.forEach(([h, b], i) => {
-    const x = 0.7 + (i % 2) * 6.15, y = 1.95 + Math.floor(i / 2) * 1.62;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 5.75, h: 1.4, rectRadius: 0.1, fill: { color: MIST } });
-    disc(s, x + 0.3, y + 0.28, String(i + 1), i % 2 ? SLATE : NAVY, 0.42);
-    s.addText(h, { x: x + 0.92, y: y + 0.22, w: 4.6, h: 0.35, fontSize: 17, bold: true, color: INK,
+    const x = 0.7 + (i % 2) * 6.15, y = 1.85 + Math.floor(i / 2) * 1.28;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 5.75, h: 1.15, rectRadius: 0.1, fill: { color: MIST } });
+    disc(s, x + 0.28, y + 0.22, String(i + 1), i % 2 ? SLATE : NAVY, 0.4);
+    s.addText(h, { x: x + 0.85, y: y + 0.16, w: 4.7, h: 0.32, fontSize: 15.5, bold: true, color: INK,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(b, { x: x + 0.92, y: y + 0.63, w: 4.55, h: 0.65, fontSize: 12.5, color: BODY,
+    s.addText(b, { x: x + 0.85, y: y + 0.52, w: 4.7, h: 0.58, fontSize: 11.5, color: BODY,
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addText('These are the rules the strategy must obey. Anything else remains open.',
-    { x: 0.7, y: 6.9, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE,
+    { x: 6.85, y: 6.45, w: 5.6, h: 0.5, fontSize: 12.5, italic: true, color: SLATE,
       fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addNotes(`Two rules carry the most weight here.
+  s.addNotes(`Three rules carry the most weight here.
+
+AI and innovation embedded: AI is not a separate line item we sell when asked. Every proposition in the catalogue carries an AI or innovation component by design — a core modernisation that lands with intelligent operations and automated testing, an integration programme that ships with AI-assisted engineering, a data platform that arrives with use cases already running. Two reasons: it is where client expectation is heading in this region, and it is what stops the catalogue reading like commodity systems integration. Practically it becomes a test applied to the catalogue in the offerings workstream: if a proposition has no AI or innovation content, say why, or change it.
 
 Domain-specific, not agnostic: financial services, and banking in particular, is specialised enough that generic technology credentials do not travel. Clients expect the team in the room to know core banking, payments, regulatory reporting or wealth operations — not just cloud, data or integration in the abstract. Practically this means propositions are written in banking language and mapped to banking outcomes; credentials and case studies are FSI ones; CVs put domain experience forward; and where we borrow capability from a horizontal pool, it is fronted by people who know the domain. It also bounds what we take on: a generic engagement we could win anywhere is not automatically ours to chase.
 
@@ -283,7 +287,49 @@ What each pillar carries:
 Dependencies to watch: revenue targets cannot be set without the capacity view, and the alliance map must reconcile with the coverage map.`);
 }
 
-/* 7 — Pricing and delivery economics */
+/* 8 — The team */
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Who is doing this', 'The strategy development team.');
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 2.0, w: 11.9, h: 1.15, rectRadius: 0.1, fill: { color: NAVY } });
+  disc(s, 1.05, 2.28, 'D', SLATE, 0.6);
+  s.addText('Dany', { x: 1.85, y: 2.22, w: 3.2, h: 0.4, fontSize: 20, bold: true, color: WHITE,
+    fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('Overall lead — owns the cycle, chairs the checkpoints, takes the strategy to sign-off',
+    { x: 1.85, y: 2.66, w: 10.3, h: 0.4, fontSize: 13, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
+  const leads = [
+    ['Tanay', 'Industry Solutions', 'Core-led transformation, core banking and packages, full SI'],
+    ['Rachel', 'AI and Data', 'Enterprise and core AI, use-case activation, data platforms'],
+    ['Clifford', 'Engineering', 'Cloud, integration, microservices, API and bespoke build'],
+  ];
+  leads.forEach(([n, role, scope], i) => {
+    const x = 0.7 + i * 4.03;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 3.4, w: 3.85, h: 2.15, rectRadius: 0.12, fill: { color: MIST } });
+    disc(s, x + 0.3, 3.7, n.charAt(0), i % 2 ? SLATE : NAVY, 0.52);
+    s.addText(n, { x: x + 1.0, y: 3.68, w: 2.6, h: 0.4, fontSize: 19, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(role, { x: x + 0.3, y: 4.35, w: 3.25, h: 0.35, fontSize: 14, bold: true, color: NAVY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(scope, { x: x + 0.3, y: 4.72, w: 3.25, h: 0.7, fontSize: 11.5, color: BODY, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  });
+  s.addText('Pillar ownership across the five workstreams is assigned from this group at kick-off; every artefact carries one name.',
+    { x: 0.7, y: 5.8, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addText('Wider contributors — account partners, alliance leads, resourcing and finance — are pulled in per workstream rather than sitting on the core team.',
+    { x: 0.7, y: 6.3, w: 11.9, h: 0.4, fontSize: 12, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addNotes(`Core team as agreed: Dany leads overall; Tanay leads Industry Solutions; Rachel leads AI and Data; Clifford leads Engineering.
+
+Note the shape difference: the three leads represent the three practices, while the workstreams are cut by pillar, which is deliberate — the strategy is one portfolio strategy, not three practice strategies stapled together. Each pillar therefore needs a named owner drawn from this group, with the other two contributing their practice view into it.
+
+A workable split to propose at kick-off: Dany takes the ambition and the operating discipline; the offerings catalogue is owned jointly but chaired by one lead, since integrated propositions cut across all three practices; market and clients sits with whoever carries the strongest regional relationships; delivery and economics sits with the lead whose practice has the largest delivery footprint. Confirm rather than assume.
+
+Everything else — account partners, alliance leads, resourcing, finance — is pulled in per workstream and not standing members.`);
+}
+
+/* 9 — Delivery and pricing economics */
+/* 9 — Pricing and delivery economics */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -562,7 +608,7 @@ Still to set at sign-off: who chairs each forum, what decisions each can take wi
       { x, y: 2.85, w: 3.6, h: 2.8, fontSize: 13, color: ICE, fontFace: SANS, isTextBox: true,
         margin: 0, paraSpaceAfter: 10 });
   });
-  s.addText('Owners, dates and participants are set at kick-off.', { x: 0.8, y: 6.4, w: 7, h: 0.4,
+  s.addText('Dates and participants beyond the core team are set at kick-off.', { x: 0.8, y: 6.4, w: 7, h: 0.4,
     fontSize: 12, italic: true, color: '9AA7C4', fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`Close on two asks: confirm the principles, and nominate the workstream owners.
 
@@ -636,6 +682,51 @@ It mirrors the architecture slide earlier in the pack, but where that one names 
 Rule of thumb: if something cannot be said on this sheet, it belongs in one of the artefacts behind it, not in the strategy. The sheet is what leadership signs and what the quarterly review is held against; the artefacts are the working record.
 
 Keep it dated and versioned. When the quarterly review changes a choice, this sheet is reissued rather than annotated.`);
+}
+
+/* Appendix — proposition one-pager */
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Template — proposition one-pager', 'One sheet per proposition in the catalogue. Every dimension on a single page.');
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.95, w: 11.9, h: 0.72, rectRadius: 0.1,
+    fill: { color: NAVY } });
+  s.addText('PROPOSITION', { x: 1.0, y: 1.95, w: 2.1, h: 0.72, valign: 'middle', fontSize: 11.5, bold: true,
+    color: ICE, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addShape(pres.ShapeType.line, { x: 3.2, y: 2.42, w: 5.4, h: 0, line: { color: '5C6E96', width: 1 } });
+  s.addText('LEAD PILLAR / PRACTICE', { x: 8.9, y: 1.95, w: 2.4, h: 0.72, valign: 'middle', fontSize: 9.5,
+    bold: true, color: '9AA7C4', charSpacing: 1, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addShape(pres.ShapeType.line, { x: 11.3, y: 2.42, w: 1.1, h: 0, line: { color: '5C6E96', width: 1 } });
+  const boxes = [
+    'What it is, and the use cases we lead with',
+    'Buyer and client segments',
+    'Permitted flavours and variants',
+    'Target markets and accounts',
+    'Deal size and price band',
+    'Delivery construct, ADR and target margin',
+    'AI and innovation embedded in it',
+    'Alliance behind it, and what they bring',
+    'Credentials, eminence hooks and key roles',
+  ];
+  boxes.forEach((label, i) => {
+    const x = 0.7 + (i % 3) * 4.03, y = 2.85 + Math.floor(i / 3) * 1.4;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.25, rectRadius: 0.1,
+      fill: { color: WHITE }, line: { color: 'C9D4E6', width: 1 } });
+    s.addText(label, { x: x + 0.2, y: y + 0.08, w: 3.45, h: 0.45, fontSize: 10.5, bold: true, color: NAVY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    [0, 1].forEach(k => {
+      s.addShape(pres.ShapeType.line, { x: x + 0.2, y: y + 0.72 + k * 0.32, w: 3.45, h: 0,
+        line: { color: 'E1E8F2', width: 1 } });
+    });
+  });
+  s.addText('One page per proposition. If a box cannot be filled, the proposition is not ready for the catalogue.',
+    { x: 0.7, y: 7.0, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`The summary sheet for each proposition, pulling every dimension we have discussed onto one page: what it is and the use cases, the buyer, the permitted flavours, where and to whom we sell it, the price band, the delivery construct with ADR and margin, the AI and innovation content, the alliance behind it, and the credentials and roles needed to sell and deliver it.
+
+It doubles as the readiness test. The principles bite here: if the AI and innovation box is empty, the proposition breaches the embedded-AI principle. If the delivery construct and margin box is empty, it is priced without knowing whether it makes money. If the credentials box is empty, we cannot yet sell it in this domain. An unfillable box is a gap, not a formatting problem.
+
+Keep one sheet per proposition rather than a long catalogue document — it is what a partner takes into an account conversation.`);
 }
 
 function tmplSlide(title, sub, cols, colW, rowCount, footer, notes) {

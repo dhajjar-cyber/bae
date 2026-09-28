@@ -51,6 +51,7 @@ the strategy record rather than a separate write-up.
 
 15. Appendix divider
 16. The strategy on a page — the one-sheet the completed strategy fills
+17. Proposition one-pager — one sheet per proposition, every dimension on a page
 16. Market prioritisation (WS2)
 17. Target accounts (WS2)
 18. Proposition catalogue (WS1)
@@ -84,10 +85,17 @@ one artefact.
 
 ### Principles
 
-Six, agreed before the work starts: integrated not siloed · named accounts not
+Seven, agreed before the work starts: integrated not siloed · named accounts not
 averages · sized and priced · covered by a partner · deliverable by design ·
-**domain-specific, not agnostic** (banking is specialised and clients expect it —
-propositions, credentials and CVs speak the domain).
+**domain-specific, not agnostic** (banking is specialised and clients expect it) ·
+**AI and innovation embedded** (not a separate offering — every proposition carries
+an AI and innovation component by design).
+
+### Team
+
+Dany leads overall. Tanay leads Industry Solutions, Rachel leads AI and Data,
+Clifford leads Engineering. Pillar ownership across the five workstreams is
+assigned from this group at kick-off.
 
 ## Structure note
 
