@@ -22,7 +22,7 @@ go-to-market and activation strategy.
    (was: eight questions to answer)
 5. Principles we hold going in
 6. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
-7. Four workstreams, one per pillar
+7. Five workstreams, one per pillar
 8. Delivery and pricing economics — construct, price, blended ADR, target margin
 9. Team and talent — dedicated team, shared capacity, the recruitment gap
 10. Eminence and positioning — published views, stages, client formats, digital, partner-led
@@ -71,15 +71,23 @@ Two levels, not a flat list.
 
 **Level 1 — the ambition**: what winning looks like, in numbers, by when.
 
-**Level 1 — three pillars**, each with one owner and its level-2 topics:
+**Level 1 — four pillars**, each with one owner and its level-2 topics:
 - **Market and clients** — markets and segments · named target accounts · offerings targeted per account · revenue per account (gross and net) · coverage and ownership
-- **Offerings, delivery and capability** — proposition catalogue · delivery model and construct · pricing, ADR and margin · team, capacity and recruitment · revenue targets
+- **Offerings (what we sell)** — integrated propositions · use cases we lead with · flavours and permitted variants
+- **Delivery and economics** — delivery model and construct · pricing, ADR and margin · team, capacity and recruitment · revenue targets
 - **Route to market** — alliances · eminence and positioning · how we differentiate
 
 **Level 1 — the discipline**: operating rhythm, scorecard and decision rights that keep the pillars honest.
 
 Appendix templates are ordered by pillar, and every level-2 topic ends in exactly
 one artefact.
+
+### Principles
+
+Six, agreed before the work starts: integrated not siloed · named accounts not
+averages · sized and priced · covered by a partner · deliverable by design ·
+**domain-specific, not agnostic** (banking is specialised and clients expect it —
+propositions, credentials and CVs speak the domain).
 
 ## Structure note
 
