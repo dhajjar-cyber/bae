@@ -19,7 +19,8 @@ Five parts, each opening with a divider slide.
 
 **Part one — The frame**
 1. What this document is — method, not conclusion
-2. The industry we mean — banking, funds, insurance, in priority order
+2. How this fits — alignment with the EAIND portfolio strategy
+3. The industry we mean — banking, funds, insurance, in priority order
 
 **Part two — The destination**
 3. What the vision has to earn — six drivers, agreed before the words
