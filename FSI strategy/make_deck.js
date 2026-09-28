@@ -45,11 +45,11 @@ function openTag(s, x, y, w, text) {
     { x: 0.93, y: 6.35, w: 8, h: 0.4, fontSize: 12, color: '9AA7C4', fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`CONTEXT FOR THE TEAM — do not put on the slide.
 
-The portfolio is EAI&D: Engineering, AI and Data. It is a consulting portfolio — think technology advisory and delivery. We design, advise on and implement end-to-end technology transformation for the financial services industry. FSI here means three segments, in priority order: banking first, then funds (sovereign wealth funds, national and development funds, fund and investment management), then insurance.
+The portfolio is EAI&D: Engineering, AI and Data. It is a consulting portfolio — think technology advisory and delivery. We design, advise on and implement end-to-end technology transformation for the financial services industry. FSI here means three sectors, in priority order: banking first, then funds (sovereign wealth funds, national and development funds, fund and investment management), then insurance.
 
 Three pillars:
-1. Industry Solutions — core-led transformation: core modernisation and core platform packages, whatever the segment calls its core (core banking, policy administration and claims in insurance, portfolio, fund accounting and investment platforms in funds). Also full systems-integration capability: we can take the SI role and own the end-to-end setup, including design governance, functional governance, delivery management and individual stream management, to stand up a greenfield institution or modernise an incumbent.
-2. Data and AI — enterprise AI, core AI, AI use-case activation, and standard data work: data platforms, warehouses, ETL, reporting, across all three segments.
+1. Industry Solutions — core-led transformation: core modernisation and core platform packages, whatever the sector calls its core (core banking, policy administration and claims in insurance, portfolio, fund accounting and investment platforms in funds). Also full systems-integration capability: we can take the SI role and own the end-to-end setup, including design governance, functional governance, delivery management and individual stream management, to stand up a greenfield institution or modernise an incumbent.
+2. Data and AI — enterprise AI, core AI, AI use-case activation, and standard data work: data platforms, warehouses, ETL, reporting, across all three sectors.
 3. Engineering and Cloud — cloud advisory and implementation, plus custom engineered solutions: integration management, microservices, API gateways, and bespoke core engineering. Less common around the core; likeliest in investments, wealth and fund operations.
 
 This deck is the plan for developing the FSI strategy, not the strategy. Target: strategy finalised within three weeks.`);
@@ -168,7 +168,7 @@ Still open before we finalise this pack:
   const cols3 = [
     ['From the portfolio', NAVY, ['Vision and direction of travel', 'Delivery model and quality bars', 'Alliance framework and partner tiers', 'Talent and career model', 'Cascaded financial targets']],
     ['From the industry', SLATE, ['The firm\u2019s FSI account list and tiering', 'Account leadership and partner mappings', 'Industry governance forums and cadence', 'The industry eminence programme', 'Client relationship plans already in flight']],
-    ['Ours to set', NAVY, ['How our propositions land in those accounts', 'Offering economics: construct, ADR, margin', 'Segment platform alliances', 'FSI capability, certification and hiring', 'Our revenue targets by account and offering']],
+    ['Ours to set', NAVY, ['How our propositions land in those accounts', 'Offering economics: construct, ADR, margin', 'Sector platform alliances', 'FSI capability, certification and hiring', 'Our revenue targets by account and offering']],
   ];
   cols3.forEach(([t, c, items], i) => {
     const x = 0.7 + i * 4.03;
@@ -190,11 +190,11 @@ The EAI&D portfolio strategy is the capability axis: it serves several industrie
 
 The FSI industry strategy is the industry axis: the firm already has one, and it comes with its own account list and tiering, account leadership and partner-to-account mappings, governance forums and cadence, an eminence programme, and client relationship plans already running. That is not ours to duplicate.
 
-What is genuinely ours sits at the intersection: how EAI&D propositions land in those accounts, the economics of delivering them, segment platform alliances, FSI capability and certification, and our own revenue targets by account and offering.
+What is genuinely ours sits at the intersection: how EAI&D propositions land in those accounts, the economics of delivering them, sector platform alliances, FSI capability and certification, and our own revenue targets by account and offering.
 
 The practical rule, and the one most likely to be broken: no parallel machinery. We do not build a second account plan next to the industry one, a second set of forums, or a separate eminence calendar. Our account view attaches to the existing account plan, our reviews sit inside the existing forums where they exist, and our eminence rides the industry programme, adding EAI&D content rather than competing for the same audience.
 
-Two things to confirm at kick-off: who owns the account relationship where the industry strategy has already named an account leader, and which forum our operating rhythm plugs into rather than replaces. Where the two parent strategies disagree — different segment priority, an alliance one supports and the other does not — that is an escalation, not something for this team to resolve quietly.`);
+Two things to confirm at kick-off: who owns the account relationship where the industry strategy has already named an account leader, and which forum our operating rhythm plugs into rather than replaces. Where the two parent strategies disagree — different sector priority, an alliance one supports and the other does not — that is an escalation, not something for this team to resolve quietly.`);
 }
 
 {
@@ -205,25 +205,26 @@ Two things to confirm at kick-off: who owns the account relationship where the i
     ['Portfolio', 'EAI&D — Engineering, AI and Data. One portfolio, several industries.'],
     ['Offering', 'An internal capability unit of the portfolio: Industry Solutions, AI and Data, Engineering.'],
     ['Proposition', 'What we take to market. Integrated when it spans two or more offerings, focused when it sits within one.'],
-    ['Archetype', 'A recognised shape a proposition takes — by scope, segment or delivery model. Each carries its own economics.'],
+    ['Archetype', 'A recognised shape a proposition takes — by scope, sector or delivery model. Each carries its own economics.'],
     ['Use case', 'The specific client problem a proposition is sold against.'],
-    ['Segment', 'Banking, funds or insurance. Not a market, and not interchangeable.'],
+    ['Sector', 'Banking, funds or insurance. Not a market, and not interchangeable.'],
+    ['Segment', 'A slice within a sector — retail, corporate, SME, life, general, and so on.'],
     ['Market', 'A country we sell into, each tiered one or two.'],
     ['Account plan', 'The firm’s single plan per client. Our content is a layer inside it, never a second plan.'],
-    ['Pillar', 'A section of this strategy: market and clients, propositions, delivery and economics, route to market.'],
+    ['Pillar', 'A section of this strategy — never a synonym for offering.'],
   ];
   terms.forEach(([t, d], i) => {
-    const x = 0.7 + (i % 3) * 4.03, y = 2.0 + Math.floor(i / 3) * 1.6;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.4, rectRadius: 0.1,
+    const x = 0.7 + (i % 3) * 4.03, y = 1.95 + Math.floor(i / 3) * 1.16;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.02, rectRadius: 0.1,
       fill: { color: i % 2 ? MIST : 'F2F6FC' } });
-    s.addText(t, { x: x + 0.28, y: y + 0.15, w: 3.3, h: 0.35, fontSize: 15, bold: true, color: NAVY,
+    s.addText(t, { x: x + 0.28, y: y + 0.1, w: 3.3, h: 0.32, fontSize: 14, bold: true, color: NAVY,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(d, { x: x + 0.28, y: y + 0.55, w: 3.3, h: 0.75, fontSize: 10.5, color: BODY,
+    s.addText(d, { x: x + 0.28, y: y + 0.42, w: 3.3, h: 0.56, fontSize: 10, color: BODY,
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.75, w: 11.9, h: 0.6, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.7, w: 11.9, h: 0.62, rectRadius: 0.1, fill: { color: NAVY } });
   s.addText('Offerings are how we are organised. Propositions are what the client buys. The catalogue is made of propositions, not offerings.',
-    { x: 1.0, y: 6.75, w: 11.3, h: 0.6, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
+    { x: 1.0, y: 6.7, w: 11.3, h: 0.62, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`Worth two minutes at kick-off. Most of the circular discussion in strategy work is two people using one word for different things.
 
@@ -231,7 +232,7 @@ The distinction that matters most: an offering is an internal unit — how the p
 
 From that, integrated and focused fall out naturally. A proposition that needs two or more offerings is integrated — a greenfield digital bank setup needs all three. A proposition that genuinely sits inside one is focused — a cloud migration strategy never leaves Engineering. Integrated is the default; focused is permitted and sold as a way in.
 
-Two more worth holding: segment is not market — banking, funds and insurance are segments, while Saudi, the UAE and Qatar are markets, and both carry a tier. And account plan means the firm’s single plan per client; what we produce attaches to it rather than competing with it.
+Two more worth holding: sector is not market — banking, funds and insurance are sectors, retail or corporate are segments within them, while Saudi, the UAE and Qatar are markets, and both carry a tier. And account plan means the firm’s single plan per client; what we produce attaches to it rather than competing with it.
 
 Pillar is used only for the structure of this strategy, so it should never be heard as a synonym for offering.`);
 }
@@ -239,9 +240,9 @@ Pillar is used only for the structure of this strategy, so it should never be he
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'The industry we mean', 'Financial services is three segments, and they are not interchangeable.');
+  head(s, 'The industry we mean', 'Financial services is three sectors, and they are not interchangeable.');
   const segs = [
-    ['1', 'Banking', 'Priority segment', ['Retail, corporate and SME banking', 'Islamic banking', 'Payments and cards', 'Greenfield and challenger banks'], NAVY],
+    ['1', 'Banking', 'Priority sector', ['Retail, corporate and SME banking', 'Islamic banking', 'Payments and cards', 'Greenfield and challenger banks'], NAVY],
     ['2', 'Funds', 'Second priority', ['Sovereign wealth funds', 'National and development funds', 'Fund and investment management', 'Investment operations and custody'], SLATE],
     ['3', 'Insurance', 'Third priority', ['Life and general insurance', 'Takaful', 'Health insurance', 'Brokers and reinsurance'], NAVY],
   ];
@@ -260,21 +261,21 @@ Pillar is used only for the structure of this strategy, so it should never be he
         isTextBox: true, margin: 0, paraSpaceAfter: 8 });
   });
   s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.7, w: 11.9, h: 1.0, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Segment is a dimension throughout: every proposition says which segments it serves, every account carries its segment, and targets are set by market and segment, not for FSI as a whole.',
+  s.addText('Sector is a dimension throughout: every proposition says which sectors it serves, every account carries its sector, and targets are set by market and sector, not for FSI as a whole.',
     { x: 1.0, y: 5.7, w: 11.3, h: 1.0, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addText('Sub-segments are indicative; the cycle confirms which we actually pursue.',
+  s.addText('Segments within each sector are indicative; the cycle confirms which we actually pursue.',
     { x: 0.7, y: 6.8, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addNotes(`Correcting the frame: this is a financial services strategy, not a banking strategy. Three segments, in this priority order.
+  s.addNotes(`Correcting the frame: this is a financial services strategy, not a banking strategy. Three sectors, in this priority order.
 
-1. Banking — the priority segment, and where most of the existing capability and credentials sit.
+1. Banking — the priority sector, and where most of the existing capability and credentials sit.
 2. Funds — sovereign wealth funds, national and development funds, and fund or investment management. Often a small number of very large institutions rather than a market of many, which changes how coverage and pursuit work: fewer accounts, longer cycles, far higher stakes per relationship.
 3. Insurance — life, general, takaful, health, brokers and reinsurance. Different core platforms, different regulators, different buyers.
 
-They are not interchangeable. The core platform, the regulator, the buyer and the language all change between them, which is exactly why the domain-specific principle is stated per segment rather than per industry: a core banking reference does not win a policy administration programme.
+They are not interchangeable. The core platform, the regulator, the buyer and the language all change between them, which is exactly why the domain-specific principle is stated per sector rather than per industry: a core banking reference does not win a policy administration programme.
 
-Practical consequence for the cycle: segment is a column in the market prioritisation, the account list, the proposition catalogue and the revenue targets. Where we are thin — and funds and insurance are where we are thin — the strategy has to say whether we build, borrow, hire or partner into them, and the alliance map has to answer the platform question for each.`);
+Practical consequence for the cycle: sector is a column in the market prioritisation, the account list, the proposition catalogue and the revenue targets. Where we are thin — and funds and insurance are where we are thin — the strategy has to say whether we build, borrow, hire or partner into them, and the alliance map has to answer the platform question for each.`);
 }
 
 
@@ -326,7 +327,7 @@ Complexity, handled: our real competition is not another integrated pitch. It is
 
 AI at the core, not on the badge: AI-native is oversubscribed and clients have heard it from everyone. Leading with it makes us sound like the crowd; putting it late and proving it makes it credible. It shows up twice in practice — in what we build for the client, and in how we deliver, through assets, accelerators and AI-assisted engineering.
 
-The remaining four are straightforward but non-negotiable: end-to-end accountability including alliances, acceleration, both halves of the institution, and all three segments.`);
+The remaining four are straightforward but non-negotiable: end-to-end accountability including alliances, acceleration, both halves of the institution, and all three sectors.`);
 }
 
 
@@ -338,7 +339,7 @@ The remaining four are straightforward but non-negotiable: end-to-end accountabi
     ['A', 'Complexity, compressed', 'We take on the change financial institutions cannot afford to get wrong \u2014 modern platforms for their customers, intelligence and better tools for their people \u2014 brought end to end by one accountable team, with the assets and partnerships that compress the path.',
      'Lead candidate.', 'Hard programmes and acceleration, in two words.'],
     ['B', 'Complex change, delivered at pace', 'For the region\u2019s banks, funds and insurers we turn the hardest change into working outcomes \u2014 platforms live for their customers, intelligence at work inside \u2014 one team across every stream, with the assets and alliances that shorten the path.',
-     'Alternate.', 'Most literal; names the segments explicitly.'],
+     'Alternate.', 'Most literal; names the sectors explicitly.'],
     ['C', 'The hard things, on time', 'We are the partner for the change that cannot slip \u2014 what they take to market and how they run inside \u2014 every stream under one accountable team, with proven assets behind it.',
      'Alternate.', 'Understated; argues against the alternatives, not for us.'],
   ];
@@ -368,7 +369,7 @@ Six themes every candidate has to carry, held deliberately so revisions do not t
 3. Acceleration — time to market and time to value, because a platform that is not live is cost carried or revenue missed.
 4. Both halves of the institution — what it takes to market, and how it runs inside. The second half is where enterprise AI, workplace tooling and intelligent operations sit.
 5. AI present but never the headline. AI-native is oversubscribed; the credibility comes from AI at the core of what we build and how we deliver, stated once and late.
-6. All three segments — banks, funds and insurers.
+6. All three sectors — banks, funds and insurers.
 
 Why "compressed" rather than "sooner" or "faster": it reads as engineering rather than marketing, and it carries the complexity claim and the speed claim in the same word.
 
@@ -388,7 +389,7 @@ Whichever is chosen, the ambition then puts numbers and a date against it.`);
     ['Sized and priced', 'Every proposition carries a buyer, an indicative deal size and a price band.'],
     ['Covered by a partner', 'Every priority account has one accountable owner and a defined partner play.'],
     ['Deliverable by design', 'Nothing enters the catalogue that we cannot staff and deliver to standard.'],
-    ['Domain-specific, not agnostic', 'Each FSI segment is specialised and clients expect it: propositions, credentials and CVs speak that segment\u2019s language.'],
+    ['Domain-specific, not agnostic', 'Each FSI sector is specialised and clients expect it: propositions, credentials and CVs speak that sector\u2019s language.'],
     ['AI and innovation embedded', 'Not a separate offering: every proposition carries an AI and innovation component by design.'],
     ['One integrated market team', 'Every partner and director knows the whole catalogue, reads the signals, positions level one, then pulls in the specialist.'],
   ];
@@ -408,7 +409,7 @@ Whichever is chosen, the ambition then puts numbers and a date against it.`);
 
 AI and innovation embedded: AI is not a separate line item we sell when asked. Every proposition in the catalogue carries an AI or innovation component by design — a core modernisation that lands with intelligent operations and automated testing, an integration programme that ships with AI-assisted engineering, a data platform that arrives with use cases already running. Two reasons: it is where client expectation is heading in this region, and it is what stops the catalogue reading like commodity systems integration. Practically it becomes a test applied to the catalogue in the offerings workstream: if a proposition has no AI or innovation content, say why, or change it.
 
-Domain-specific, not agnostic: financial services is specialised enough that generic technology credentials do not travel, and the three segments do not transfer to each other either. A banking client expects us to know core banking, payments and regulatory reporting; a fund expects portfolio, fund accounting, valuations and investor reporting; an insurer expects policy administration, claims, underwriting and actuarial. Credibility is per segment, not per industry. Practically this means propositions are written in banking language and mapped to banking outcomes; credentials and case studies are FSI ones; CVs put domain experience forward; and where we borrow capability from a horizontal pool, it is fronted by people who know the domain. It also bounds what we take on: a generic engagement we could win anywhere is not automatically ours to chase.
+Domain-specific, not agnostic: financial services is specialised enough that generic technology credentials do not travel, and the three sectors do not transfer to each other either. A banking client expects us to know core banking, payments and regulatory reporting; a fund expects portfolio, fund accounting, valuations and investor reporting; an insurer expects policy administration, claims, underwriting and actuarial. Credibility is per sector, not per industry. Practically this means propositions are written in banking language and mapped to banking outcomes; credentials and case studies are FSI ones; CVs put domain experience forward; and where we borrow capability from a horizontal pool, it is fronted by people who know the domain. It also bounds what we take on: a generic engagement we could win anywhere is not automatically ours to chase.
 
 One integrated market team: every partner and director in the portfolio is expected to know the full catalogue, not only their own practice. In a client conversation they should recognise the signal — a core replacement being considered, a data estate that cannot answer regulatory questions, an integration layer at end of life, an AI ambition with no platform underneath it — position the first level of our answer credibly, and then pull in the specialist lead. Nobody is expected to be expert in everything; everybody is expected to open the door rather than let it pass because it sits outside their pillar.
 
@@ -447,7 +448,7 @@ Confirm all five principles at kick-off; they bound every later decision.`);
   s.addText('What winning looks like, in numbers, by when', { x: 3.7, y: 1.9, w: 8.6, h: 0.78,
     valign: 'middle', fontSize: 15, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   const pillars = [
-    ['Market\nand clients', ['Markets and FSI segments', 'Tier one and tier two', 'Named target accounts', 'Offerings and revenue per account', 'Coverage and ownership']],
+    ['Market\nand clients', ['Markets and FSI sectors', 'Tier one and tier two', 'Named target accounts', 'Offerings and revenue per account', 'Coverage and ownership']],
     ['Propositions\n(what we sell)', ['Integrated propositions', 'Use cases we lead with', 'Archetypes and permitted variants']],
     ['Delivery\nand economics', ['Delivery model, assets and accelerators', 'Construct, pricing, ADR and margin', 'Team, skills, certification and capacity', 'Revenue targets']],
     ['Route\nto market', ['Alliances and what they unlock', 'Eminence and positioning', 'How we differentiate']],
@@ -502,13 +503,13 @@ Context we already hold, to be validated rather than assumed during the cycle:
         isTextBox: true, margin: 0, paraSpaceAfter: 10 });
   });
   s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.8, w: 11.9, h: 0.95, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Tiering applies to geographies and to accounts, across all three segments. Tier two keeps us present in what is emerging without diluting tier one.',
+  s.addText('Tiering applies to geographies and to accounts, across all three sectors. Tier two keeps us present in what is emerging without diluting tier one.',
     { x: 1.0, y: 5.8, w: 11.3, h: 0.95, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addText('Tiering is our prioritisation inside the firm\u2019s single account plan, not a separate account list.',
     { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addNotes(`Tiering applies twice — to geographies and to accounts — and independently of segment. A tier one account can sit in a tier two market, and occasionally the reverse.
+  s.addNotes(`Tiering applies twice — to geographies and to accounts — and independently of sector. A tier one account can sit in a tier two market, and occasionally the reverse.
 
 Tier one is where the energy goes: deliberate coverage with people physically present working the relationships, named individual targets each with an owner, individual gross and net revenue targets, and the eminence and investment concentrated there. The scorecard is read against tier one.
 
@@ -590,7 +591,7 @@ Two practical consequences for the cycle. First, every proposition in the catalo
       color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 3.95, w: 11.9, h: 0.75, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Set per offering and per segment: a core banking programme, a fund platform build and an AI activation carry different constructs, rates and margins.',
+  s.addText('Set per offering and per sector: a core banking programme, a fund platform build and an AI activation carry different constructs, rates and margins.',
     { x: 1.0, y: 3.95, w: 11.3, h: 0.75, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   const qs = [
@@ -614,7 +615,7 @@ Two practical consequences for the cycle. First, every proposition in the catalo
 
 The chain to work through, per offering: target price band, then the delivery construct it assumes (the split across onshore, nearshore and offshore or global delivery centres), then the blended average daily rate that construct implies, then the gross margin that falls out. If the margin is short, one of the first three has to change — usually the construct.
 
-Nuance to carry: this varies sharply by offering and by segment. A core banking modernisation with heavy onshore functional and governance presence looks nothing like a fund platform implementation, an insurance policy-administration migration, or an AI use-case activation that can run largely offshore. Regulatory and data-residency rules in Saudi and the UAE constrain what can leave the country, and some clients contractually require onshore staffing — both drive the construct before commercial preference does.
+Nuance to carry: this varies sharply by offering and by sector. A core banking modernisation with heavy onshore functional and governance presence looks nothing like a fund platform implementation, an insurance policy-administration migration, or an AI use-case activation that can run largely offshore. Regulatory and data-residency rules in Saudi and the UAE constrain what can leave the country, and some clients contractually require onshore staffing — both drive the construct before commercial preference does.
 
 The delivery model itself is largely inherited from the firm; what we are setting here is the construct and the economics per offering, plus the margin floor and the approval route when a deal prices below it.
 
@@ -698,14 +699,14 @@ The link to the rest of the strategy is direct: a revenue target we cannot staff
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.35, w: 11.9, h: 0.8, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Per alliance the plan answers: what we leverage it for, the relationship type, which offerings and segments it sits behind, which accounts it opens, and what it costs us back.',
+  s.addText('Per alliance the plan answers: what we leverage it for, the relationship type, which offerings and sectors it sits behind, which accounts it opens, and what it costs us back.',
     { x: 1.0, y: 6.35, w: 11.3, h: 0.8, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`Alliances split into two categories that behave differently, and the plan should treat them differently.
 
 Broad technology alliances — the hyperscalers and platform players: Google, AWS, Microsoft and Oracle. They are relevant to every proposition in the catalogue, so they are a portfolio-level relationship rather than an offering-level one. Three things we take from them: co-sell into their own account relationships, funding and credits to activate use cases on their platforms (a real commercial lever, not a nicety — it can fund the first proof of value), and the certifications and platform credibility clients increasingly ask for.
 
-Specialised product vendors — relevant only where the offering matches. Core banking and origination platforms (Temenos and Intellect today), specialised data vendors such as Informatica, and, as the segment priorities imply, the insurance core and fund platform vendors where we currently hold nothing. These are offering-level and segment-level relationships, so the map must show which propositions each sits behind rather than treating them as general alliances.
+Specialised product vendors — relevant only where the offering matches. Core banking and origination platforms (Temenos and Intellect today), specialised data vendors such as Informatica, and, as the sector priorities imply, the insurance core and fund platform vendors where we currently hold nothing. These are offering-level and sector-level relationships, so the map must show which propositions each sits behind rather than treating them as general alliances.
 
 The gap to close in the cycle: our specialised alliances are banking-weighted. Funds and insurance are priority two and three with no platform partner named, which is a decision the strategy has to make rather than defer.
 
@@ -781,7 +782,7 @@ Internal eminence matters as much as external here. The FS partners and director
   const steps = [
     ['Mobilise', ['Choose the vision, then frame the ambition', 'Confirm scope, principles and owners'], 'Week 1'],
     ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
-    ['Define', ['Markets, segments and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
+    ['Define', ['Markets, sectors and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
     ['Quantify', ['Price bands, ADR and target margin', 'Revenue per account, gross and net, against capacity'], 'Week 2'],
     ['Commit', ['Account ownership and coverage', 'Team, eminence and activation plans signed off'], 'Week 3'],
   ];
@@ -803,7 +804,7 @@ Internal eminence matters as much as external here. The FS partners and director
       fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`The five steps are the process view; the workstream and calendar views that follow are the same journey cut by owner and by week.
 
-Note on Quantify: pricing will not reduce to a single number per offering. Core modernisation and migration varies by segment and by scope — retail, corporate or SME in banking; life versus general in insurance; fund accounting versus front-office in funds — and by single-country versus multi-country, and by whether full data migration is in scope. So the artefact is price bands and deal-size ranges with the drivers named, not a price list. Same logic for AI and data platform work, and for cloud and integration engagements.
+Note on Quantify: pricing will not reduce to a single number per offering. Core modernisation and migration varies by sector and by segment — retail, corporate or SME in banking; life versus general in insurance; fund accounting versus front-office in funds — and by single-country versus multi-country, and by whether full data migration is in scope. So the artefact is price bands and deal-size ranges with the drivers named, not a price list. Same logic for AI and data platform work, and for cloud and integration engagements.
 
 Baseline also covers people: who we have today, dedicated and shared.`);
 }
@@ -814,7 +815,7 @@ Baseline also covers people: who we have today, dedicated and shared.`);
   s.background = { color: WHITE };
   head(s, 'Five workstreams, one per pillar', 'Each pillar has one owner and a defined set of artefacts.');
   const ws = [
-    ['1 · Market and clients', 'Markets, segments, tiering, named accounts, offerings and revenue per account, coverage',
+    ['1 · Market and clients', 'Markets, sectors, tiering, named accounts, offerings and revenue per account, coverage',
      'Market prioritisation · target account list · account revenue plan · coverage map'],
     ['2 · Propositions', 'What we sell: integrated propositions, use cases and permitted archetypes',
      'Proposition catalogue'],
@@ -842,7 +843,7 @@ Baseline also covers people: who we have today, dedicated and shared.`);
   s.addNotes(`The structure is two levels on purpose. Level 1 is the pillar — one owner, one accountable partner. Level 2 is the topic inside it, and each topic ends in exactly one artefact in the appendix.
 
 What each pillar carries:
-- Market and clients: markets and segments (primary expected to be Saudi, UAE and Qatar; secondary Kuwait, Oman and Jordan, all to be validated), the named account list, and the coverage map. Two mappings live here — our own partners who own the relationship, and the alliance partner behind the account.
+- Market and clients: markets and sectors (primary expected to be Saudi, UAE and Qatar; secondary Kuwait, Oman and Jordan, all to be validated), the named account list, and the coverage map. Two mappings live here — our own partners who own the relationship, and the alliance partner behind the account.
 - Offerings: the catalogue itself, and nothing else — integrated propositions, the use cases we lead with, and the permitted archetypes or partial offerings. It stands alone because it is the What: everything else in the strategy either sells it, delivers it or prices it.
 - Delivery and economics: the delivery model and the construct behind each offering price bands with the drivers that move them, blended ADR and target margin, and the revenue targets that fall out. Delivery model and pricing sit in one pillar because they determine each other: the construct sets the cost, the cost sets the achievable price and margin.
   Capability sits in the same pillar: the dedicated FSI team, the shared capacity we can genuinely draw on, and the recruitment gap by level. It belongs here because the construct and the margin only hold if the people behind them exist — a target we cannot staff is not a target.
@@ -899,7 +900,7 @@ Everything else — account partners, alliance leads, resourcing, finance — is
   s.background = { color: WHITE };
   head(s, 'The three-week journey', 'Three weeks, three gates, one decision.');
   const weeks = [
-    ['Week 1', 'Frame', ['Agree the vision and the ambition', 'Baseline current position and credentials', 'Prioritise markets and segments', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and segment priorities'],
+    ['Week 1', 'Frame', ['Agree the vision and the ambition', 'Baseline current position and credentials', 'Prioritise markets and sectors', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and sector priorities'],
     ['Week 2', 'Define', ['Lock propositions and permitted variants', 'Benchmark deal sizes and pricing', 'Set delivery construct, ADR and margin', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
     ['Week 3', 'Commit', ['Set revenue targets by account, offering and market', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Build the activation plan and sign off'], 'Gate: strategy signed off'],
   ];
@@ -955,7 +956,7 @@ Start date to be set at kick-off.`);
 
 Inputs are the long pole — pipeline, revenue by pillar and market, existing relationships, alliance status, delivery capacity and historical deal values all sit with different people. Chase them in the first 48 hours or week 1 slips.
 
-Decisions requested at sign-off: priority markets and segments, the target account list, revenue and margin targets, account ownership, and the investment and hiring asks coming out of the talent and eminence workstreams.
+Decisions requested at sign-off: priority markets and sectors, the target account list, revenue and margin targets, account ownership, and the investment and hiring asks coming out of the talent and eminence workstreams.
 
 Open items to resolve at kick-off: audience for this pack, the definition of partner for account ownership, and the start date.`);
 }
@@ -1053,7 +1054,7 @@ Keep them as living tables — one file, versioned, updated at each weekly check
     color: NAVY, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addShape(pres.ShapeType.line, { x: 3.2, y: 2.62, w: 9.1, h: 0, line: { color: 'C9D4E6', width: 1 } });
   const cols = [
-    ['Market and clients', ['Markets and segments', 'Top accounts and offerings', 'Revenue: gross / net']],
+    ['Market and clients', ['Markets and sectors', 'Top accounts and offerings', 'Revenue: gross / net']],
     ['Propositions', ['Integrated', 'Use cases', 'Archetypes']],
     ['Delivery and economics', ['Construct and ADR', 'Margin', 'Team and gap']],
     ['Route to market', ['Alliances', 'Eminence', 'Differentiation']],
@@ -1105,7 +1106,7 @@ Keep it dated and versioned. When the quarterly review changes a choice, this sh
   s.addShape(pres.ShapeType.line, { x: 11.3, y: 2.42, w: 1.1, h: 0, line: { color: '5C6E96', width: 1 } });
   const boxes = [
     'What it is, and the use cases we lead with',
-    'Segments it serves, and the buyer in each',
+    'Sectors it serves, and the buyer in each',
     'Archetypes and permitted variants',
     'Target markets and accounts',
     'Deal size and price band',
@@ -1162,15 +1163,15 @@ function tmplSlide(title, sub, cols, colW, rowCount, footer, notes) {
 }
 
 tmplSlide('Template — market prioritisation', 'Pillar 1 · Market and clients · one row per market.',
-  ['Market', 'Segments in focus', 'Why this market', 'Tier', 'Owner'],
+  ['Market', 'Sectors and segments in focus', 'Why this market', 'Tier', 'Owner'],
   [2.4, 3.5, 3.6, 1.2, 1.2], 6,
-  'Tier one or tier two, per segment where they differ. Rationale should stand on evidence, not familiarity.',
+  'Tier one or tier two, per sector where they differ. Rationale should stand on evidence, not familiarity.',
   `Fill one row per market under consideration, including the ones we decide against — the rejected rows are as useful as the accepted ones when this is revisited.
 
 Context: Saudi Arabia, UAE and Qatar are the expected primary markets; Kuwait, Oman and Jordan the secondary set where our key relationships sit. Both to be confirmed against evidence in week 1.`);
 
 tmplSlide('Template — target accounts', 'Pillar 1 · our view inside the single firm account plan — one row per named account.',
-  ['Account', 'Segment', 'Market', 'Tier', 'Propositions we lead with', 'Alliance', 'Owner', 'Stage'],
+  ['Account', 'Sector', 'Market', 'Tier', 'Propositions we lead with', 'Alliance', 'Owner', 'Stage'],
   [2.1, 1.3, 1.2, 0.8, 2.8, 1.3, 1.3, 1.1], 6,
   'One plan per account, owned by the firm. This is the EAI&D layer inside it, not a second plan.',
   `This is the core artefact of the whole exercise — the named account list with account mapping.
@@ -1202,18 +1203,18 @@ tmplSlide('Template — coverage and ownership', 'Pillar 1 · who carries EAI&D 
 Cadence keeps this honest — an owner with no contact rhythm is a name on a page.`);
 
 tmplSlide('Template — proposition catalogue', 'Pillar 2 · Offerings · one row per integrated proposition.',
-  ['Proposition', 'Segments it serves', 'Offerings involved', 'Buyer per segment', 'Archetypes permitted'],
+  ['Proposition', 'Sectors it serves', 'Offerings involved', 'Buyer per sector', 'Archetypes permitted'],
   [2.6, 2.1, 2.2, 2.4, 2.6], 6,
   'Integrated propositions first. A single-pillar offer is recorded as a variant, not as its own row.',
   `The principle bites hardest here: the catalogue is integrated propositions across Industry Solutions, Data and AI, and Engineering and Cloud. Focused offers such as enterprise AI are recorded as permitted variants of an integrated proposition and sold as entry points.
 
-Buyer means the actual role that signs, and it differs by segment: COO, CIO or head of retail banking in a bank; COO or head of investment operations in a fund; chief underwriting or claims officer in an insurer.`);
+Buyer means the actual role that signs, and it differs by sector: COO, CIO or head of retail banking in a bank; COO or head of investment operations in a fund; chief underwriting or claims officer in an insurer.`);
 
 tmplSlide('Template — sizing and pricing', 'Pillar 3 · Delivery and economics · one row per proposition.',
   ['Proposition', 'What drives scope', 'Typical deal size', 'Market price band', 'Notes'],
   [2.6, 3.2, 2.0, 2.1, 2.0], 6,
   'Bands, not point prices. Name the drivers that move the number.',
-  `Pricing will not reduce to one number per offering. For core modernisation and migration the drivers include segment and scope (retail, corporate or SME in banking; life or general in insurance; fund accounting or front-office in funds), single-country versus multi-country, and whether full data migration is in scope. Record the drivers alongside the band so the number can be reconstructed.
+  `Pricing will not reduce to one number per offering. For core modernisation and migration the drivers include sector and segment (retail, corporate or SME in banking; life or general in insurance; fund accounting or front-office in funds), single-country versus multi-country, and whether full data migration is in scope. Record the drivers alongside the band so the number can be reconstructed.
 
 Same discipline for data platform work, AI activation, and cloud and integration engagements.`);
 
@@ -1221,7 +1222,7 @@ tmplSlide('Template — proposition economics', 'Pillar 3 · Delivery and econom
   ['Proposition', 'Assets and accelerators', 'Price basis', 'On %', 'Near %', 'Off %', 'Blended ADR', 'Target GM'],
   [2.1, 2.3, 1.7, 1.0, 1.1, 1.0, 1.5, 1.2], 6,
   'Assets are what make the construct hold: reuse raises margin at the same price and shortens time to value.',
-  `The bridge between what the market pays and what we keep. One row per offering, because the construct differs sharply between a core platform programme, a data platform build and an AI activation \u2014 and again between segments.
+  `The bridge between what the market pays and what we keep. One row per offering, because the construct differs sharply between a core platform programme, a data platform build and an AI activation \u2014 and again between sectors.
 
 Price basis: fixed price, time and materials, outcome-based or a managed service — it changes how margin is earned and where the risk sits.
 
@@ -1230,9 +1231,9 @@ Keep the onshore split honest. Regulatory and data-residency requirements in Sau
 Record both the target gross margin and the floor, and note the approval route for anything below it. A margin floor that nobody enforces is not a floor.`);
 
 tmplSlide('Template — revenue targets', 'Pillar 3 · Delivery and economics · one row per market.',
-  ['Market', 'Segment', 'Industry Solutions', 'AI and Data', 'Engineering', 'Integrated', 'Total'],
+  ['Market', 'Sector', 'Industry Solutions', 'AI and Data', 'Engineering', 'Integrated', 'Total'],
   [1.9, 1.6, 2.0, 1.7, 2.1, 1.4, 1.2], 6,
-  'One row per market and segment. Reconciles to the account revenue plan and to capacity.',
+  'One row per market and sector. Reconciles to the account revenue plan and to capacity.',
   `The integrated column is deliberate: if most revenue sits in single-pillar columns, the strategy has not been followed.
 
 Reconcile every target against the talent template before sign-off. A number we cannot staff is not a target.`);
@@ -1248,7 +1249,7 @@ The gap is expressed by level — partners, directors, managers, specialists —
 Skills and enablement is the part most easily left implicit, so it is called out here. Four distinct needs, and they are not the same thing:
 - Capability mapping: which skills the catalogue actually requires, offering by offering. Start from the propositions, not from the org chart.
 - Offering enablement: the portfolio trained on the catalogue itself, using the proposition one-pagers. This is what makes the integrated market team principle real — a partner who cannot describe the catalogue cannot recognise the signal or position the first level.
-- Domain training and industry certification: financial services specific, and specific by segment. Banking, funds and insurance each have their own qualifications, regulatory context and language, and this is what backs the domain-specific principle. Where we are thin in funds and insurance, training is one of the routes in, alongside hiring.
+- Domain training and industry certification: financial services specific, and specific by sector. Banking, funds and insurance each have their own qualifications, regulatory context and language, and this is what backs the domain-specific principle. Where we are thin in funds and insurance, training is one of the routes in, alongside hiring.
 - Alliance and platform certification: the hyperscalers and product vendors require accredited people, and certification levels often gate partner status, funding and co-sell eligibility. It is a cost with a commercial return attached, so it belongs in the plan rather than in someone's development objectives.`);
 
 tmplSlide('Template — capability and enablement plan', 'Pillar 3 \u00b7 Delivery and economics \u00b7 one row per capability.',
@@ -1259,14 +1260,14 @@ tmplSlide('Template — capability and enablement plan', 'Pillar 3 \u00b7 Delive
 
 Four kinds of row, and they should not be blurred together:
 - Offering enablement — the portfolio trained on the catalogue itself, so any partner or director can recognise the signal and position the first level before pulling in a specialist.
-- Domain capability — financial services knowledge by segment. Banking, funds and insurance carry different qualifications, regulators and vocabulary, and this is what makes the domain-specific claim true rather than asserted.
+- Domain capability — financial services knowledge by sector. Banking, funds and insurance carry different qualifications, regulators and vocabulary, and this is what makes the domain-specific claim true rather than asserted.
 - Technical and platform capability — the skills the delivery construct assumes, including the assets and accelerators.
 - Certification — alliance and vendor accreditations. These gate partner tier, funding and co-sell eligibility, so they carry a commercial return, not just a development benefit.
 
 Who needs it should say how many and at what level, not simply the practice name. A capability held by one person is a dependency, not a capability.`);
 
 tmplSlide('Template — alliance map', 'Pillar 4 · Route to market · one row per alliance.',
-  ['Alliance', 'Type', 'Role', 'Propositions and segments it sits behind', 'Accounts it opens', 'What we owe them'],
+  ['Alliance', 'Type', 'Role', 'Propositions and sectors it sits behind', 'Accounts it opens', 'What we owe them'],
   [1.7, 1.5, 1.6, 3.1, 2.1, 1.9], 6,
   'Type: broad technology alliance, or specialised product vendor. Role: co-sell, resell, delivery or referral.',
   `Start from the alliances we already hold: Oracle, Google and Amazon as primary; Temenos and Intellect as specialised platform alliances, both weighted to banking. The cycle should decide what we do about funds and insurance platforms, where we currently hold no specialised alliance.

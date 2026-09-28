@@ -87,7 +87,7 @@ internal · AI present but not the headline · all three segments.
 
 Financial services, three segments in priority order: **banking**, then **funds**
 (sovereign wealth, national and development funds, fund and investment management),
-then **insurance**. Segment is a dimension throughout — propositions, accounts,
+then **insurance**. Sector is a dimension throughout — propositions, accounts,
 targets. Geographies and accounts are tiered: tier one gets active coverage, named
 targets and the metrics; tier two is managed as clusters, reactive, and promoted
 when the signal justifies it.
@@ -100,7 +100,7 @@ when the signal justifies it.
   offerings, *focused* when it sits within one
 - **Archetype** — a recognised shape a proposition takes, each with its own economics
 - **Use case** — the client problem a proposition is sold against
-- **Segment** — banking, funds, insurance · **Market** — a country, tiered one or two
+- **Sector** — banking, funds, insurance · **Segment** — a slice within a sector (retail, corporate, SME, life, general) · **Market** — a country, tiered one or two
 - **Account plan** — the firm's single plan per client; our content is a layer inside it
 - **Pillar** — a section of this strategy, never a synonym for offering
 
@@ -111,7 +111,7 @@ Two levels, not a flat list.
 **Level 1 — the ambition**: what winning looks like, in numbers, by when.
 
 **Level 1 — four pillars**, each with one owner and its level-2 topics:
-- **Market and clients** — markets and FSI segments · tier one and tier two · named target accounts · offerings and revenue per account (gross and net) · coverage and ownership
+- **Market and clients** — markets and FSI sectors · tier one and tier two · named target accounts · offerings and revenue per account (gross and net) · coverage and ownership
 - **Offerings (what we sell)** — integrated propositions · use cases we lead with · flavours and permitted variants
 - **Delivery and economics** — delivery model, assets and accelerators · construct, pricing, ADR and margin · team, capacity and recruitment · revenue targets
 - **Route to market** — alliances (broad technology: Google, AWS, Microsoft, Oracle; specialised product vendors by offering) · eminence and positioning, external and internal · how we differentiate
@@ -154,7 +154,7 @@ internal · AI present but not the headline · all three segments.
 
 Financial services, three segments in priority order: **banking**, then **funds**
 (sovereign wealth, national and development funds, fund and investment management),
-then **insurance**. Segment is a dimension throughout — propositions, accounts,
+then **insurance**. Sector is a dimension throughout — propositions, accounts,
 targets. Geographies and accounts are tiered: tier one gets active coverage, named
 targets and the metrics; tier two is managed as clusters, reactive, and promoted
 when the signal justifies it.
@@ -167,7 +167,7 @@ when the signal justifies it.
   offerings, *focused* when it sits within one
 - **Archetype** — a recognised shape a proposition takes, each with its own economics
 - **Use case** — the client problem a proposition is sold against
-- **Segment** — banking, funds, insurance · **Market** — a country, tiered one or two
+- **Sector** — banking, funds, insurance · **Segment** — a slice within a sector (retail, corporate, SME, life, general) · **Market** — a country, tiered one or two
 - **Account plan** — the firm's single plan per client; our content is a layer inside it
 - **Pillar** — a section of this strategy, never a synonym for offering
 
