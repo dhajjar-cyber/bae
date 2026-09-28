@@ -20,7 +20,8 @@ go-to-market and activation strategy.
 3. What this document is — method, not conclusion
 4. Eleven questions, in five layers — ambition, choices, commercial, enablers, execution
    (was: eight questions to answer)
-5. Principles we hold going in
+5. Where we start: the vision — three candidate statements to deliberate
+6. Principles we hold going in
 6. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
 7. Five workstreams, one per pillar
 8. Delivery and pricing economics — construct, price, blended ADR, target margin

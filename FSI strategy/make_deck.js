@@ -60,10 +60,11 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What is in this pack', 'Thirteen sections, plus an appendix of blank templates.');
+  head(s, 'What is in this pack', 'Fourteen sections, plus an appendix of blank templates.');
   const items = [
     ['What this document is', 'Method, not conclusion'],
     ['What the strategy must cover', 'Ambition, four pillars, operating discipline'],
+    ['Where we start: the vision', 'Three candidate statements to deliberate'],
     ['Principles we hold going in', 'Constraints agreed before the work starts'],
     ['How we will get there', 'The five-step approach'],
     ['Five workstreams, one per pillar', 'Who owns what, and what each produces'],
@@ -169,7 +170,53 @@ Context we already hold, to be validated rather than assumed during the cycle:
 - Offerings must be expressed as products and services with a buyer attached: who buys this, and what do they typically pay.`);
 }
 
-/* 4 — Principles */
+/* 5 — Vision options */
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Where we start: the vision', 'Three candidate statements to deliberate. One gets chosen; the ambition then puts numbers to it.');
+  const opts = [
+    ['A', 'The integrator', 'One team that designs, builds and runs the core, the data and the engineering behind every bank we serve in the region.',
+     'Bets on: integrated propositions and full SI ownership.', 'Risk: reads as scale, not distinctiveness.'],
+    ['B', 'AI-native banking', 'We make the banks we work with AI-native: modernising the core, the data and the engineering so intelligence runs through the bank, not beside it.',
+     'Bets on: AI embedded in everything we sell.', 'Risk: must be provable, or it is a slogan.'],
+    ['C', 'Domain depth', 'The team banks call first, because we understand their business as deeply as their technology — and can build what we advise.',
+     'Bets on: domain specificity and advise-plus-deliver.', 'Risk: quieter claim, harder to headline.'],
+  ];
+  opts.forEach(([k, name, text, bet, risk], i) => {
+    const x = 0.7 + i * 4.03;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.05, w: 3.85, h: 3.9, rectRadius: 0.12,
+      fill: { color: i % 2 ? MIST : 'E4EBF7' } });
+    disc(s, x + 0.3, 2.3, k, i % 2 ? SLATE : NAVY, 0.46);
+    s.addText(name, { x: x + 0.95, y: 2.3, w: 2.6, h: 0.45, valign: 'middle', fontSize: 17, bold: true,
+      color: INK, fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText('“' + text + '”', { x: x + 0.3, y: 2.95, w: 3.25, h: 1.8, fontSize: 13,
+      italic: true, color: NAVY, fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(bet, { x: x + 0.3, y: 4.85, w: 3.25, h: 0.5, fontSize: 11.5, bold: true, color: BODY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(risk, { x: x + 0.3, y: 5.38, w: 3.25, h: 0.45, fontSize: 11, color: MUTE,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.15, w: 11.9, h: 0.85, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('Test to apply: does it say what we do, for whom, and what makes us different — and would a competitor struggle to claim it?',
+    { x: 1.0, y: 6.15, w: 11.3, h: 0.85, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Deliberation material, not a recommendation. The three take genuinely different stances so the choice is real:
+
+A. The integrator — leads with breadth and ownership: core, data and engineering under one team, including full SI. Closest to how the portfolio is already built, and easiest to evidence. Weakest on differentiation, since every large SI claims some version of it.
+
+B. AI-native banking — leads with AI as the through-line rather than a separate offering, which is the strongest differentiator available right now and matches regional client ambition. It obliges us to prove it: if the catalogue does not visibly carry AI in every proposition, the vision undercuts itself. It also risks sounding like every other AI claim unless the proof is concrete.
+
+C. Domain depth — leads with knowing banking, and being able to both advise and build. Quietest of the three and the hardest to headline, but it is the one clients actually reward in this region, and it is defensible against both global SIs and product vendors.
+
+A combination is possible and may be where this lands: for example domain depth as the base claim with AI-native as the edge. Resist merging all three, which produces a sentence that says nothing.
+
+Test to apply: what we do, for whom, what makes us different — and whether a competitor could lift it word for word. If they could, it is positioning, not vision.
+
+Whichever is chosen, the ambition slide then puts numbers and a date against it.`);
+}
+
+/* 6 — Principles */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -219,7 +266,7 @@ Confirm all five principles at kick-off; they bound every later decision.`);
   s.background = { color: WHITE };
   head(s, 'How we will get there', 'A five-step approach, run once, end to end.');
   const steps = [
-    ['Mobilise', ['Frame the ambition: what winning looks like', 'Confirm scope, principles and owners'], 'Week 1'],
+    ['Mobilise', ['Choose the vision, then frame the ambition', 'Confirm scope, principles and owners'], 'Week 1'],
     ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
     ['Define', ['Markets, segments and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
     ['Quantify', ['Price bands, ADR and target margin', 'Revenue per account, gross and net, against capacity'], 'Week 2'],
@@ -522,7 +569,7 @@ If other alliances belong here — hyperscaler or platform vendors we do not yet
   s.background = { color: WHITE };
   head(s, 'The three-week journey', 'Three weeks, three gates, one decision.');
   const weeks = [
-    ['Week 1', 'Frame', ['Baseline current position and credentials', 'Prioritise markets and segments', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and segment priorities'],
+    ['Week 1', 'Frame', ['Agree the vision and the ambition', 'Baseline current position and credentials', 'Prioritise markets and segments', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and segment priorities'],
     ['Week 2', 'Define', ['Lock propositions and permitted variants', 'Benchmark deal sizes and pricing', 'Set delivery construct, ADR and margin', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
     ['Week 3', 'Commit', ['Set revenue targets by account, offering and market', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Build the activation plan and sign off'], 'Gate: strategy signed off'],
   ];
@@ -611,7 +658,7 @@ Still to set at sign-off: who chairs each forum, what decisions each can take wi
   const cols = [
     ['Cadence', ['Kick-off to confirm scope and principles', 'Weekly working session per workstream', 'Checkpoint at the end of each week', 'Sign-off session in week three']],
     ['Inputs we need', ['Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
-    ['Decisions requested', ['The ambition, in numbers', 'Priority markets and segments', 'Target account list', 'Revenue and margin targets by account', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
+    ['Decisions requested', ['The vision, then the ambition in numbers', 'Priority markets and segments', 'Target account list', 'Revenue and margin targets by account', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
   ];
   cols.forEach(([h, items], i) => {
     const x = 0.8 + i * 4.05;
