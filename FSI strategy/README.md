@@ -21,7 +21,7 @@ go-to-market and activation strategy.
 4. Eleven questions, in five layers — ambition, choices, commercial, enablers, execution
    (was: eight questions to answer)
 5. The industry we mean — banking, funds and insurance, in priority order
-6. Where we start: the vision — three candidate statements to deliberate
+6. Where we start: the vision — lead candidate "Complexity, compressed", plus two alternates
 7. Pillar 1 · Tier one and tier two — where the energy goes
 6. Principles we hold going in
 6. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
@@ -69,6 +69,19 @@ the strategy record rather than a separate write-up.
 
 Each template slide carries notes on how to fill it and the rules that apply.
 
+## Vision (working)
+
+Lead candidate: **"Complexity, compressed."**
+
+> We take on the change financial institutions cannot afford to get wrong — modern
+> platforms for their customers, intelligence and better tools for their people —
+> brought end to end by one accountable team, with the assets and partnerships that
+> compress the path.
+
+Six themes every candidate must carry: end-to-end accountability · complexity
+handled (never the word risk) · acceleration · both halves, market-facing and
+internal · AI present but not the headline · all three segments.
+
 ## Scope
 
 Financial services, three segments in priority order: **banking**, then **funds**
@@ -110,6 +123,19 @@ conversations, positions level one, then pulls in the specialist).
 Dany leads overall. Tanay leads Industry Solutions, Rachel leads AI and Data,
 Clifford leads Engineering. Pillar ownership across the five workstreams is
 assigned from this group at kick-off.
+
+## Vision (working)
+
+Lead candidate: **"Complexity, compressed."**
+
+> We take on the change financial institutions cannot afford to get wrong — modern
+> platforms for their customers, intelligence and better tools for their people —
+> brought end to end by one accountable team, with the assets and partnerships that
+> compress the path.
+
+Six themes every candidate must carry: end-to-end accountability · complexity
+handled (never the word risk) · acceleration · both halves, market-facing and
+internal · AI present but not the headline · all three segments.
 
 ## Scope
 

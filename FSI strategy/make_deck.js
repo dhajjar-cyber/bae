@@ -218,14 +218,14 @@ Practical consequence for the cycle: segment is a column in the market prioritis
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Where we start: the vision', 'All three carry the integrated, end-to-end theme. They differ on the edge we claim on top of it.');
+  head(s, 'Where we start: the vision', 'Lead candidate and two alternates. Each carries the same six themes; they differ in register.');
   const opts = [
-    ['A', 'The end-to-end partner', 'One partner for everything technology in financial services: whatever a bank, a fund or an insurer needs designed, built, modernised or run, we bring it end to end \u2014 our capabilities and our alliances working as one team.',
-     'Edge: breadth and single accountability.', 'Risk: breadth alone is claimable by every large SI.'],
-    ['B', 'AI-native, end to end', 'We make financial institutions AI-native: core, data, engineering and alliances brought as one team, so intelligence runs through the institution rather than beside it \u2014 and one partner is accountable for all of it.',
-     'Edge: AI as the through-line of everything we sell.', 'Risk: must be provable in every proposition, or it is a slogan.'],
-    ['C', 'Known for the industry, built to execute', 'The team banks, funds and insurers call first: we know their business as deeply as their technology, and we bring everything needed to execute \u2014 ours and our partners\u2019 \u2014 as one team.',
-     'Edge: domain depth plus end-to-end delivery.', 'Risk: quieter claim, harder to headline.'],
+    ['A', 'Complexity, compressed', 'We take on the change financial institutions cannot afford to get wrong \u2014 modern platforms for their customers, intelligence and better tools for their people \u2014 brought end to end by one accountable team, with the assets and partnerships that compress the path.',
+     'Lead candidate.', 'Hard programmes and acceleration, in two words.'],
+    ['B', 'Complex change, delivered at pace', 'For the region\u2019s banks, funds and insurers we turn the hardest change into working outcomes \u2014 platforms live for their customers, intelligence at work inside \u2014 one team across every stream, with the assets and alliances that shorten the path.',
+     'Alternate.', 'Most literal; names the segments explicitly.'],
+    ['C', 'The hard things, on time', 'We are the partner for the change that cannot slip \u2014 what they take to market and how they run inside \u2014 every stream under one accountable team, with proven assets behind it.',
+     'Alternate.', 'Understated; argues against the alternatives, not for us.'],
   ];
   opts.forEach(([k, name, text, bet, risk], i) => {
     const x = 0.7 + i * 4.03;
@@ -242,22 +242,24 @@ Practical consequence for the cycle: segment is a column in the market prioritis
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.1, w: 11.9, h: 0.9, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Common to all three: one partner, end to end, our capabilities and our alliances as one team. The test is what we claim on top of that \u2014 and whether a competitor could lift it word for word.',
+  s.addText('Every candidate must carry: end-to-end accountability \u00b7 complexity handled, never the word risk \u00b7 acceleration \u00b7 both halves, market and internal \u00b7 AI present but not the headline \u00b7 all three segments.',
     { x: 1.0, y: 6.1, w: 11.3, h: 0.9, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addNotes(`Deliberation material, not a recommendation. All three now carry the portfolio's core claim — integrated propositions, integrated teams, integrated capabilities, one partner accountable for execution end to end, with the alliances counted as part of what we bring rather than a separate arrangement. They differ on the edge claimed on top of that.
+  s.addNotes(`Lead candidate: "Complexity, compressed." Two alternates kept for the discussion.
 
-A. The end-to-end partner — leads with breadth and single accountability: whatever the institution needs designed, built, modernised or run. Closest to how the portfolio is already built and easiest to evidence. Weakest on differentiation, since scale is claimable by every large SI.
+Six themes every candidate has to carry, held deliberately so revisions do not trade one away for another:
+1. Integrated and end to end — one accountable team, alliances counted as part of what we bring.
+2. Complexity handled reliably — implied through words like landed, on time, cannot afford to get wrong. Never stated as carrying or underwriting risk: that is a procurement and legal conversation we do not want the vision to start.
+3. Acceleration — time to market and time to value, because a platform that is not live is cost carried or revenue missed.
+4. Both halves of the institution — what it takes to market, and how it runs inside. The second half is where enterprise AI, workplace tooling and intelligent operations sit.
+5. AI present but never the headline. AI-native is oversubscribed; the credibility comes from AI at the core of what we build and how we deliver, stated once and late.
+6. All three segments — banks, funds and insurers.
 
-B. AI-native, end to end — keeps the end-to-end claim and adds AI as the through-line of everything we sell. Strongest differentiator available now and matched to regional ambition, but it obliges us to prove it: if the catalogue does not visibly carry AI in every proposition, the vision undercuts itself.
+Why "compressed" rather than "sooner" or "faster": it reads as engineering rather than marketing, and it carries the complexity claim and the speed claim in the same word.
 
-C. Known for the industry, built to execute — keeps the end-to-end claim and adds domain depth per segment, plus the ability to both advise and build. Quietest of the three and hardest to headline, but the one clients reward, and defensible against global SIs and product vendors alike. It obliges depth in funds and insurance, not only banking.
+What the vision obliges elsewhere in the strategy: the catalogue must show the internal-facing propositions, not only client-facing platforms, or the second half of the claim is unsupported; the delivery model must show the assets, accelerators and AI-assisted delivery that make compression real; and the differentiation argument — why an internal team or a lower-cost integrator cannot do this — belongs in how we win, with evidence, rather than in the vision itself.
 
-Wording to avoid: "one-stop shop" carries a commodity, lowest-common-denominator connotation. The same idea lands better as one partner, one accountable team, end to end.
-
-A combination is plausible and may be where this lands — for example C as the base claim with B as the edge. Resist merging all three into a sentence that commits to nothing.
-
-Test to apply: what we do, for whom, what makes us different, and whether a competitor could lift it word for word. If they could, it is positioning, not vision. Whichever is chosen, the ambition then puts numbers and a date against it.`);
+Whichever is chosen, the ambition then puts numbers and a date against it.`);
 }
 
 /* 6 — Tiering */
