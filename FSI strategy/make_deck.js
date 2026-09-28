@@ -60,12 +60,13 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What is in this pack', 'Sixteen sections, plus an appendix of blank templates.');
+  head(s, 'What is in this pack', 'Seventeen sections, plus an appendix of blank templates.');
   const items = [
     ['What this document is', 'Method, not conclusion'],
     ['What the strategy must cover', 'Ambition, four pillars, operating discipline'],
     ['The industry we mean', 'Banking, funds and insurance, in priority order'],
-    ['Where we start: the vision', 'Three candidate statements to deliberate'],
+    ['What the vision has to carry', 'Six drivers agreed before the words'],
+    ['Three candidate statements', 'Lead candidate and two alternates'],
     ['Pillar 1 · Tier one and tier two', 'Where the energy goes'],
     ['Principles we hold going in', 'Constraints agreed before the work starts'],
     ['How we will get there', 'The five-step approach'],
@@ -80,17 +81,17 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
     ['How we run the cycle', 'Cadence, inputs and decisions requested'],
   ];
   items.forEach(([t, d], i) => {
-    const x = 0.7 + (i % 2) * 6.15, y = 1.9 + Math.floor(i / 2) * 0.72;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 5.75, h: 0.63, rectRadius: 0.08,
+    const x = 0.7 + (i % 3) * 4.03, y = 1.95 + Math.floor(i / 3) * 0.78;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 0.7, rectRadius: 0.08,
       fill: { color: i % 2 ? MIST : 'F2F6FC' } });
-    disc(s, x + 0.2, y + 0.11, String(i + 1), i % 2 ? SLATE : NAVY, 0.4);
-    s.addText(t, { x: x + 0.78, y: y + 0.03, w: 4.8, h: 0.32, fontSize: 13.5, bold: true, color: INK,
+    disc(s, x + 0.18, y + 0.14, String(i + 1), i % 2 ? SLATE : NAVY, 0.42);
+    s.addText(t, { x: x + 0.72, y: y + 0.05, w: 3.0, h: 0.32, fontSize: 11.5, bold: true, color: INK,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(d, { x: x + 0.78, y: y + 0.33, w: 4.8, h: 0.28, fontSize: 10.5, color: MUTE,
+    s.addText(d, { x: x + 0.72, y: y + 0.36, w: 3.0, h: 0.28, fontSize: 9, color: MUTE,
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addText('Appendix: a blank template for every artefact the cycle produces — the strategy log itself.',
-    { x: 0.7, y: 6.95, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: SLATE, fontFace: SANS,
+    { x: 0.7, y: 6.75, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: SLATE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`Walk the pack in two halves. Sections 1 to 5 are the method: what this document is, the questions, the principles, the approach and the workstreams. Sections 6 to 8 are the dimensions that were called out as needing their own treatment — talent, eminence and alliances. Sections 9 and 10 are the plan and the governance.
 
@@ -214,11 +215,48 @@ They are not interchangeable. The core platform, the regulator, the buyer and th
 Practical consequence for the cycle: segment is a column in the market prioritisation, the account list, the proposition catalogue and the revenue targets. Where we are thin — and funds and insurance are where we are thin — the strategy has to say whether we build, borrow, hire or partner into them, and the alliance map has to answer the platform question for each.`);
 }
 
-/* 5 — Vision options */
+/* 6 — Vision drivers */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Where we start: the vision', 'Lead candidate and two alternates. Each carries the same six themes; they differ in register.');
+  head(s, 'What the vision has to carry', 'Six drivers agreed first. Every candidate statement is then tested against them.');
+  const dr = [
+    ['End to end', 'One accountable team across every stream, with our alliances counted as part of what we bring — not a separate arrangement.'],
+    ['Complexity, handled', 'The programmes that stall elsewhere. Implied through language, never stated as carrying or underwriting risk.'],
+    ['Acceleration', 'Time to market and time to value: every month a platform is not live is cost carried or revenue missed.'],
+    ['Both halves', 'What the institution takes to market, and how it runs inside — smarter operations and better tools for its people.'],
+    ['AI at the core, not on the badge', 'Present in what we build and how we deliver. AI-native is oversubscribed; the credibility is in the proof.'],
+    ['All three segments', 'Banking, funds and insurance. The statement cannot read as a banking-only claim.'],
+  ];
+  dr.forEach(([t, b], i) => {
+    const x = 0.7 + (i % 3) * 4.03, y = 2.05 + Math.floor(i / 3) * 2.15;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.95, rectRadius: 0.12,
+      fill: { color: i % 2 ? MIST : 'E4EBF7' } });
+    disc(s, x + 0.28, y + 0.26, String(i + 1), i % 2 ? SLATE : NAVY, 0.42);
+    s.addText(t, { x: x + 0.85, y: y + 0.22, w: 2.8, h: 0.5, fontSize: 15, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(b, { x: x + 0.3, y: y + 0.85, w: 3.25, h: 0.95, fontSize: 11.5, color: BODY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addText('A statement that drops one of these is not a shorter vision — it is a different one.',
+    { x: 0.7, y: 6.45, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Agreeing the drivers before the words stops the discussion turning into a wordsmithing exercise, and stops later revisions quietly trading one theme away for another.
+
+Two of them carry most of the weight and deserve to be explained in the room.
+
+Complexity, handled: our real competition is not another integrated pitch. It is the institution doing it internally, and the lower-cost integrator quoting half the price. Neither can absorb a multi-stream, regulated, interconnected programme. We say that through words like landed, on time, cannot afford to get wrong — never by claiming we carry or underwrite the risk, which starts a procurement and legal conversation the vision should not start.
+
+AI at the core, not on the badge: AI-native is oversubscribed and clients have heard it from everyone. Leading with it makes us sound like the crowd; putting it late and proving it makes it credible. It shows up twice in practice — in what we build for the client, and in how we deliver, through assets, accelerators and AI-assisted engineering.
+
+The remaining four are straightforward but non-negotiable: end-to-end accountability including alliances, acceleration, both halves of the institution, and all three segments.`);
+}
+
+/* 7 — Vision options */
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Three candidate statements', 'All three carry the six drivers. They differ in register and in what the headline claims.');
   const opts = [
     ['A', 'Complexity, compressed', 'We take on the change financial institutions cannot afford to get wrong \u2014 modern platforms for their customers, intelligence and better tools for their people \u2014 brought end to end by one accountable team, with the assets and partnerships that compress the path.',
      'Lead candidate.', 'Hard programmes and acceleration, in two words.'],
@@ -242,7 +280,7 @@ Practical consequence for the cycle: segment is a column in the market prioritis
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.1, w: 11.9, h: 0.9, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Every candidate must carry: end-to-end accountability \u00b7 complexity handled, never the word risk \u00b7 acceleration \u00b7 both halves, market and internal \u00b7 AI present but not the headline \u00b7 all three segments.',
+  s.addText('The test: does the headline alone already exclude an internal team and a lower-cost integrator \u2014 and could a competitor lift it word for word?',
     { x: 1.0, y: 6.1, w: 11.3, h: 0.9, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`Lead candidate: "Complexity, compressed." Two alternates kept for the discussion.

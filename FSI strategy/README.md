@@ -21,8 +21,9 @@ go-to-market and activation strategy.
 4. Eleven questions, in five layers — ambition, choices, commercial, enablers, execution
    (was: eight questions to answer)
 5. The industry we mean — banking, funds and insurance, in priority order
-6. Where we start: the vision — lead candidate "Complexity, compressed", plus two alternates
-7. Pillar 1 · Tier one and tier two — where the energy goes
+6. What the vision has to carry — six drivers agreed before the words
+7. Three candidate statements — lead candidate "Complexity, compressed", plus two alternates
+8. Pillar 1 · Tier one and tier two — where the energy goes
 6. Principles we hold going in
 6. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
 7. Five workstreams, one per pillar
