@@ -20,7 +20,9 @@ go-to-market and activation strategy.
 3. What this document is — method, not conclusion
 4. Eleven questions, in five layers — ambition, choices, commercial, enablers, execution
    (was: eight questions to answer)
-5. Where we start: the vision — three candidate statements to deliberate
+5. The industry we mean — banking, funds and insurance, in priority order
+6. Where we start: the vision — three candidate statements to deliberate
+7. Pillar 1 · Tier one and tier two — where the energy goes
 6. Principles we hold going in
 6. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
 7. Five workstreams, one per pillar
@@ -67,6 +69,15 @@ the strategy record rather than a separate write-up.
 
 Each template slide carries notes on how to fill it and the rules that apply.
 
+## Scope
+
+Financial services, three segments in priority order: **banking**, then **funds**
+(sovereign wealth, national and development funds, fund and investment management),
+then **insurance**. Segment is a dimension throughout — propositions, accounts,
+targets. Geographies and accounts are tiered: tier one gets active coverage, named
+targets and the metrics; tier two is managed as clusters, reactive, and promoted
+when the signal justifies it.
+
 ## Structure
 
 Two levels, not a flat list.
@@ -74,7 +85,7 @@ Two levels, not a flat list.
 **Level 1 — the ambition**: what winning looks like, in numbers, by when.
 
 **Level 1 — four pillars**, each with one owner and its level-2 topics:
-- **Market and clients** — markets and segments · named target accounts · offerings targeted per account · revenue per account (gross and net) · coverage and ownership
+- **Market and clients** — markets and FSI segments · tier one and tier two · named target accounts · offerings and revenue per account (gross and net) · coverage and ownership
 - **Offerings (what we sell)** — integrated propositions · use cases we lead with · flavours and permitted variants
 - **Delivery and economics** — delivery model and construct · pricing, ADR and margin · team, capacity and recruitment · revenue targets
 - **Route to market** — alliances · eminence and positioning, external and internal · how we differentiate
@@ -99,6 +110,15 @@ conversations, positions level one, then pulls in the specialist).
 Dany leads overall. Tanay leads Industry Solutions, Rachel leads AI and Data,
 Clifford leads Engineering. Pillar ownership across the five workstreams is
 assigned from this group at kick-off.
+
+## Scope
+
+Financial services, three segments in priority order: **banking**, then **funds**
+(sovereign wealth, national and development funds, fund and investment management),
+then **insurance**. Segment is a dimension throughout — propositions, accounts,
+targets. Geographies and accounts are tiered: tier one gets active coverage, named
+targets and the metrics; tier two is managed as clusters, reactive, and promoted
+when the signal justifies it.
 
 ## Structure note
 
