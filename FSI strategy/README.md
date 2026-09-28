@@ -87,7 +87,7 @@ Two levels, not a flat list.
 **Level 1 — four pillars**, each with one owner and its level-2 topics:
 - **Market and clients** — markets and FSI segments · tier one and tier two · named target accounts · offerings and revenue per account (gross and net) · coverage and ownership
 - **Offerings (what we sell)** — integrated propositions · use cases we lead with · flavours and permitted variants
-- **Delivery and economics** — delivery model and construct · pricing, ADR and margin · team, capacity and recruitment · revenue targets
+- **Delivery and economics** — delivery model, assets and accelerators · construct, pricing, ADR and margin · team, capacity and recruitment · revenue targets
 - **Route to market** — alliances (broad technology: Google, AWS, Microsoft, Oracle; specialised product vendors by offering) · eminence and positioning, external and internal · how we differentiate
 
 **Level 1 — the discipline**: operating rhythm, scorecard and decision rights that keep the pillars honest.

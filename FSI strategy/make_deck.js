@@ -143,7 +143,7 @@ Still open before we finalise this pack:
   const pillars = [
     ['Market\nand clients', ['Markets and FSI segments', 'Tier one and tier two', 'Named target accounts', 'Offerings and revenue per account', 'Coverage and ownership']],
     ['Offerings\n(what we sell)', ['Integrated propositions', 'Use cases we lead with', 'Flavours and permitted variants']],
-    ['Delivery\nand economics', ['Delivery model and construct', 'Pricing, ADR and margin', 'Team, capacity and recruitment', 'Revenue targets']],
+    ['Delivery\nand economics', ['Delivery model, assets and accelerators', 'Construct, pricing, ADR and margin', 'Team, capacity and recruitment', 'Revenue targets']],
     ['Route\nto market', ['Alliances and what they unlock', 'Eminence and positioning', 'How we differentiate']],
   ];
   pillars.forEach(([t, items], i) => {
@@ -390,7 +390,7 @@ Baseline also covers people: who we have today, dedicated and shared.`);
      'Market prioritisation · target account list · account revenue plan · coverage map'],
     ['2 · Offerings', 'What we sell: integrated propositions, use cases and permitted flavours',
      'Proposition catalogue'],
-    ['3 · Delivery and economics', 'Delivery model and construct, pricing, margin, team and targets',
+    ['3 · Delivery and economics', 'Delivery model, assets and accelerators, construct, pricing, margin, team and targets',
      'Pricing bands · offering economics · team model · revenue targets'],
     ['4 · Route to market', 'Alliances, eminence and differentiation',
      'Alliance map · eminence calendar'],
@@ -473,7 +473,7 @@ Everything else — account partners, alliance leads, resourcing, finance — is
   head(s, 'Delivery and pricing economics', 'Pillar 3 · delivery model, price and margin are one decision, not three.');
   const chain = [
     ['Target price', 'What the market pays for this offering, in bands'],
-    ['Delivery construct', 'The onshore, nearshore and offshore mix it is priced on'],
+    ['Delivery construct', 'The shore mix, and the assets and accelerators behind it'],
     ['Blended ADR', 'The average daily rate that construct implies'],
     ['Target margin', 'The gross margin we commit to for this offering'],
   ];
@@ -507,7 +507,7 @@ Everything else — account partners, alliance leads, resourcing, finance — is
     s.addText(b, { x: x + 3.15, y: y - 0.04, w: 2.7, h: 0.55, fontSize: 11.5, color: BODY, fontFace: SANS,
       isTextBox: true, margin: 0 });
   });
-  s.addText('Rates, ratios and margin targets are set in the cycle and recorded in the offering economics template.',
+  s.addText('Industrialised delivery is how acceleration gets paid for: reuse raises margin at the same price, and shortens time to value.',
     { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11.5, italic: true, color: MUTE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`Costing and delivery model are treated as one topic because they determine each other: the price the market will pay only becomes a business if the delivery construct behind it produces the blended ADR and the gross margin we want.
@@ -516,7 +516,11 @@ The chain to work through, per offering: target price band, then the delivery co
 
 Nuance to carry: this varies sharply by offering and by segment. A core banking modernisation with heavy onshore functional and governance presence looks nothing like a fund platform implementation, an insurance policy-administration migration, or an AI use-case activation that can run largely offshore. Regulatory and data-residency rules in Saudi and the UAE constrain what can leave the country, and some clients contractually require onshore staffing — both drive the construct before commercial preference does.
 
-The delivery model itself is largely inherited from the firm; what we are setting here is the construct and the economics per offering, plus the margin floor and the approval route when a deal prices below it.`);
+The delivery model itself is largely inherited from the firm; what we are setting here is the construct and the economics per offering, plus the margin floor and the approval route when a deal prices below it.
+
+Acceleration sits inside the delivery model, not beside it. If we position on time to market — and the client problem is real, since every month a platform is not live is cost carried or revenue missed — then the delivery model has to show how we go faster than a standard build: reusable assets and accelerators, reference architectures and pre-configured builds, templated stream setup and governance, alliance-provided integrations and platform accelerators, and AI applied to our own delivery (code, test, migration, documentation) rather than only to what we build for the client.
+
+It also changes the economics, which is why it belongs here. Reuse raises margin at the same price, and it makes fixed-price and outcome-based pricing viable where time and materials was the only safe basis. The offering economics template records the assets behind each offering for exactly that reason: an offering with no asset behind it is a bespoke build, and bespoke is both slower and thinner.`);
 }
 
 /* 8 — Team and talent */
@@ -854,7 +858,7 @@ Keep it dated and versioned. When the quarterly review changes a choice, this sh
     'Permitted flavours and variants',
     'Target markets and accounts',
     'Deal size and price band',
-    'Delivery construct, ADR and target margin',
+    'Delivery construct, accelerators, ADR and margin',
     'AI and innovation embedded in it',
     'Alliance behind it, and what they bring',
     'Credentials, eminence hooks and key roles',
@@ -961,9 +965,9 @@ tmplSlide('Template — sizing and pricing', 'Pillar 3 · Delivery and economics
 Same discipline for data platform work, AI activation, and cloud and integration engagements.`);
 
 tmplSlide('Template — offering economics', 'Pillar 3 · Delivery and economics · one row per offering.',
-  ['Offering', 'Price basis', 'Onshore %', 'Nearshore %', 'Offshore %', 'Blended ADR', 'Target GM'],
-  [2.6, 2.3, 1.4, 1.5, 1.4, 1.4, 1.3], 6,
-  'The construct drives the rate, the rate drives the margin. Record the floor as well as the target.',
+  ['Offering', 'Assets and accelerators', 'Price basis', 'On %', 'Near %', 'Off %', 'Blended ADR', 'Target GM'],
+  [2.1, 2.3, 1.7, 1.0, 1.1, 1.0, 1.5, 1.2], 6,
+  'Assets are what make the construct hold: reuse raises margin at the same price and shortens time to value.',
   `The bridge between what the market pays and what we keep. One row per offering, because the construct differs sharply between a core platform programme, a data platform build and an AI activation \u2014 and again between segments.
 
 Price basis: fixed price, time and materials, outcome-based or a managed service — it changes how margin is earned and where the risk sits.
