@@ -63,9 +63,9 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
   const parts5 = [
     ['One', 'The frame', 'What this document is \u00b7 how this fits \u00b7 the words we use \u00b7 the industry we mean', 4],
     ['Two', 'The destination', 'Vision drivers \u00b7 candidate statements \u00b7 principles', 3],
-    ['Three', 'What the strategy must cover', 'The architecture \u00b7 markets and tiers \u00b7 the catalogue \u00b7 delivery, economics and people \u00b7 alliances and eminence', 7],
-    ['Four', 'How we build it', 'The approach \u00b7 workstreams and owners \u00b7 initiatives \u00b7 the three-week journey \u00b7 how we run the cycle', 6],
-    ['Five', 'After sign-off', 'Governing the execution', 1],
+    ['Three', 'What the strategy must cover', 'The architecture \u00b7 markets and tiers \u00b7 the catalogue \u00b7 delivery and economics \u00b7 why us \u00b7 alliances and eminence', 8],
+    ['Four', 'How we build it', 'The approach \u00b7 workstreams and owners \u00b7 the journey \u00b7 how we run it \u00b7 what could derail it', 6],
+    ['Five', 'What comes next', 'Initiatives that outlive the cycle \u00b7 governing the execution', 3],
   ];
   parts5.forEach(([n, t, d, count], i) => {
     const y = 1.95 + i * 0.98;
@@ -125,7 +125,7 @@ If time is short, the three slides that carry the decision are: the eight questi
   s.addShape(pres.ShapeType.roundRect, { x: 8.6, y: 1.95, w: 4.0, h: 4.2, rectRadius: 0.12, fill: { color: MIST } });
   s.addText('What "done" looks like', { x: 8.95, y: 2.25, w: 3.4, h: 0.4, fontSize: 17, bold: true,
     color: NAVY, fontFace: SANS, isTextBox: true, margin: 0 });
-  const done = ['An agreed service catalogue', 'A named target account list', 'Revenue and pricing targets', 'An owner against every account', 'A first-90-days activation plan'];
+  const done = ['A strategy on one page \u2014 the direction', 'An initiative register \u2014 the work that follows', 'A named target account list with owners', 'A proposition catalogue with economics', 'Revenue targets by account and market'];
   s.addText(done.map((t, i) => ({ text: t, options: { bullet: true, breakLine: i < done.length - 1 } })),
     { x: 8.95, y: 2.8, w: 3.4, h: 3.0, fontSize: 13.5, color: BODY, fontFace: SANS,
       isTextBox: true, margin: 0, paraSpaceAfter: 10 });
@@ -442,7 +442,7 @@ Confirm all five principles at kick-off; they bound every later decision.`);
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What the strategy must cover', 'The shape of the strategy we are going to build \u2014 not the strategy itself.');
+  head(s, 'The architecture', 'The shape of the strategy we are going to build \u2014 not the strategy itself.');
   s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.9, w: 11.9, h: 0.78, rectRadius: 0.1, fill: { color: NAVY } });
   s.addText('THE AMBITION', { x: 1.0, y: 1.9, w: 2.6, h: 0.78, valign: 'middle', fontSize: 13, bold: true,
     color: ICE, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
@@ -664,6 +664,45 @@ The link to the rest of the strategy is direct: a revenue target we cannot staff
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
+  head(s, 'Why us and not them', 'Pillar 4 · the argument we have to be able to make, and the evidence it needs.');
+  const alts = [
+    ['They do it themselves', 'An internal team can build. It cannot govern a dozen streams, a vendor ecosystem and a regulator at once while running the institution.'],
+    ['A lower-cost integrator', 'Cheaper capacity is everywhere. What is scarce is the judgement to sequence complex change, and accountability when it moves.'],
+    ['A product vendor', 'The vendor knows its platform. It does not own the data estate, the integration layer or the operating model around it.'],
+    ['A global SI', 'Scale is not scarce here either. Sector depth, regional presence and a team that stays after go-live are.'],
+  ];
+  alts.forEach(([t, b], i) => {
+    const x = 0.7 + (i % 2) * 6.15, y = 2.0 + Math.floor(i / 2) * 1.5;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 5.75, h: 1.3, rectRadius: 0.1, fill: { color: MIST } });
+    s.addText(t, { x: x + 0.3, y: y + 0.14, w: 5.1, h: 0.34, fontSize: 14.5, bold: true, color: NAVY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(b, { x: x + 0.3, y: y + 0.52, w: 5.15, h: 0.7, fontSize: 11, color: BODY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addText('The evidence this argument needs', { x: 0.7, y: 5.15, w: 11.9, h: 0.35, fontSize: 14,
+    bold: true, color: INK, fontFace: SANS, isTextBox: true, margin: 0 });
+  const ev = ['Programmes that landed — named, including what went wrong and how it was recovered',
+              'Multi-stream governance depth we can point to, not describe',
+              'Sector credentials in each of banking, funds and insurance',
+              'Assets and accelerators a client can see working'];
+  s.addText(ev.map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < ev.length - 1 } })),
+    { x: 0.7, y: 5.55, w: 11.9, h: 1.2, fontSize: 12, color: BODY, fontFace: SANS,
+      isTextBox: true, margin: 0, paraSpaceAfter: 5 });
+  s.addText('The cycle names the evidence we have — and turns what we are missing into an initiative.',
+    { x: 0.7, y: 6.9, w: 11.9, h: 0.35, fontSize: 12, italic: true, color: SLATE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`The differentiation argument was living only in speaker notes, which is where arguments go to die. It belongs on the page, because every pursuit runs into one of these four alternatives.
+
+It can be said without ever using the word risk: complex, multi-stream, regulated change lands with us and stalls elsewhere. That is a claim about judgement and accountability, not a contractual promise.
+
+The honest half is the bottom of the slide. An argument without evidence is a boast, and the evidence is where we are thin — particularly sector credentials in funds and insurance, and assets a client can actually see working. Naming that gap here is what turns it into an initiative rather than a slide.
+
+Worth rehearsing as a team: each alternative needs a different counter. Against an internal team it is capacity and governance; against a low-cost integrator it is what happens when the programme moves; against a product vendor it is everything around the platform; against a global SI it is depth and presence. Lost pursuits usually mean the wrong counter was used.`);
+}
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
   head(s, 'Alliances', 'Pillar 4 \u00b7 two categories, used for different things.');
   s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.95, w: 11.9, h: 2.05, rectRadius: 0.12, fill: { color: MIST } });
   s.addShape(pres.ShapeType.rect, { x: 0.7, y: 1.95, w: 2.75, h: 2.05, fill: { color: NAVY } });
@@ -771,7 +810,7 @@ Internal eminence matters as much as external here. The FS partners and director
     fontFace: HEAD, isTextBox: true, margin: 0 });
   s.addText('The approach, the owners and the calendar.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5, fontSize: 15, color: ICE, fontFace: SANS,
     isTextBox: true, margin: 0 });
-  s.addText(['The five-step approach', 'Workstreams and who owns them', 'The three-week journey', 'How we run the cycle'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 3 } })),
+  s.addText(['The five-step approach', 'Workstreams and who owns them', 'The three-week journey', 'How we run the cycle', 'What could derail this'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 4 } })),
     { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
       isTextBox: true, margin: 0, paraSpaceAfter: 7 });
 }
@@ -896,47 +935,6 @@ Everything else — account partners, alliance leads, resourcing, finance — is
 }
 
 
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  head(s, 'Initiatives that outlive the cycle', 'Three weeks sets the direction. Some of the work then runs for months — named, owned and tracked.');
-  const inits = [
-    ['Proposal and orals quality', 'Propositions', 'Reusable proposal foundations and demo-led orals, so pursuits are fast, polished and differentiated'],
-    ['Assets and accelerators', 'Delivery', 'Build the reusable delivery IP behind the propositions we commit to'],
-    ['Capability and certification', 'Delivery', 'Close the domain, platform and alliance certification gaps by level'],
-    ['Alliance activation', 'Route to market', 'Answer the funds and insurance platform gap; activate co-sell and funding'],
-    ['Eminence programme', 'Route to market', 'Stand up the calendar, internal and external, against the target accounts'],
-    ['Account activation', 'Market and clients', 'Turn the tier one list into live pursuits inside the existing account plans'],
-  ];
-  inits.forEach(([t, pillar, d], i) => {
-    const x = 0.7 + (i % 3) * 4.03, y = 2.0 + Math.floor(i / 3) * 1.95;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.75, rectRadius: 0.12,
-      fill: { color: i === 0 ? 'E4EBF7' : MIST } });
-    s.addText(pillar.toUpperCase(), { x: x + 0.28, y: y + 0.18, w: 3.3, h: 0.28, fontSize: 9,
-      bold: true, color: SLATE, charSpacing: 1, fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(t, { x: x + 0.28, y: y + 0.5, w: 3.3, h: 0.4, fontSize: 14, bold: true, color: INK,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(d, { x: x + 0.28, y: y + 0.95, w: 3.3, h: 0.72, fontSize: 10.5, color: BODY,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-  });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.95, w: 11.9, h: 0.85, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Every initiative carries a pillar, an owner, an outcome and a date — and is reviewed in the monthly rhythm alongside the numbers.',
-    { x: 1.0, y: 5.95, w: 11.3, h: 0.85, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addText('Illustrative — the register is built in week three and tracked from there.', { x: 0.7, y: 6.9,
-    w: 8, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addNotes(`The cycle produces decisions, but several of them imply work that cannot finish in three weeks. Naming those as initiatives, with an owner and a date, is what stops the strategy becoming a document that describes an intention nobody is building.
-
-The flagship one is proposal and orals quality, and it is worth stating plainly because it is a live complaint about our own work rather than a theoretical gap.
-
-What good looks like on proposals: a reusable foundation rather than a blank page every time — a modular content library of proposition descriptions, credentials, CVs and case studies kept current; storyline patterns that carry a narrative rather than a list of capabilities; differentiation proof points that answer why us and not an internal team or a cheaper integrator; and a way to bring the whole firm into the answer rather than only our portfolio. The outcome is speed and polish at the same time: assembled, not written.
-
-What good looks like on orals: show, do not tell. Demos of the assets and accelerators, showcases of comparable work, a walk through what the first ninety days actually look like — not a deck read aloud. Rehearsed, with the people who will deliver in the room.
-
-The other initiatives fall out of the pillars: assets and accelerators behind the committed propositions; capability and certification gaps closed by level; alliance activation, especially the funds and insurance platform gap; the eminence calendar stood up; and the tier one account list turned into live pursuits inside the existing account plans.
-
-Mechanics: the register is built in week three as part of the activation plan, each initiative carries pillar, owner, outcome, milestone and date, and it is reviewed monthly alongside the numbers. Initiatives without an owner and a date are wishes.`);
-}
 
 {
   const s = pres.addSlide();
@@ -1004,6 +1002,37 @@ Decisions requested at sign-off: priority markets and sectors, the target accoun
 Open items to resolve at kick-off: audience for this pack, the definition of partner for account ownership, and the start date.`);
 }
 
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'What could derail this', 'Named now, so they are managed rather than discovered.');
+  const rk = [
+    ['Inputs arrive late', 'Pipeline, revenue, capacity and deal history sit with several people. Chase in the first 48 hours or week one slips.'],
+    ['The parent strategies disagree', 'A different sector priority or an unsigned alliance is an escalation, not something this team settles quietly.'],
+    ['People are not available', 'The cycle needs the four leads in the room weekly. Partial attendance produces partial decisions.'],
+    ['No platform alliance in funds or insurance', 'Two of three sectors have no specialised vendor relationship. We can name it; we cannot close it in three weeks.'],
+    ['Evidence gaps surface late', 'Credentials we assume we hold may not exist per sector. Test in week one, then make it an initiative.'],
+    ['The timebox slips', 'Three weeks holds only if gates are decisions. A gate deferred twice means the cycle has failed, not paused.'],
+  ];
+  rk.forEach(([t, b], i) => {
+    const x = 0.7 + (i % 3) * 4.03, y = 2.0 + Math.floor(i / 3) * 2.15;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.95, rectRadius: 0.12, fill: { color: MIST } });
+    disc(s, x + 0.28, y + 0.24, String(i + 1), i % 2 ? SLATE : NAVY, 0.4);
+    s.addText(t, { x: x + 0.8, y: y + 0.2, w: 2.85, h: 0.5, fontSize: 13, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(b, { x: x + 0.3, y: y + 0.82, w: 3.25, h: 1.0, fontSize: 10.5, color: BODY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addText('Each has an owner from kick-off. Two of them — the alliance gap and the evidence gap — become initiatives rather than risks.',
+    { x: 0.7, y: 6.45, w: 11.9, h: 0.4, fontSize: 12.5, italic: true, color: SLATE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Short and honest. A three-week cycle fails in predictable ways, and naming them at kick-off costs nothing.
+
+The two that matter most: inputs arriving late, which is the most common cause of a compressed cycle slipping, and gates being deferred. A gate is a decision taken with the information available, not a decision waited for. If one cannot close, escalate at the checkpoint rather than letting the week drift.
+
+Two items here are not really risks and should move to the initiative register as soon as they are confirmed: the missing platform alliances in funds and insurance, and whatever credential gaps the baseline exposes. Neither can be solved inside three weeks, and pretending otherwise is how a strategy ends up carrying commitments nobody can meet.`);
+}
+
 
 {
   const s = pres.addSlide();
@@ -1011,13 +1040,55 @@ Open items to resolve at kick-off: audience for this pack, the definition of par
   s.addShape(pres.ShapeType.ellipse, { x: 9.8, y: 3.4, w: 5.6, h: 5.6, fill: { color: SLATE, transparency: 55 } });
   s.addText('PART FIVE', { x: 0.9, y: 2.15, w: 5, h: 0.4, fontSize: 13, bold: true, color: '9AA7C4',
     charSpacing: 2, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText('After sign-off', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
+  s.addText('What comes next', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
     fontFace: HEAD, isTextBox: true, margin: 0 });
   s.addText('Keeping the strategy alive once it is agreed.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5, fontSize: 15, color: ICE, fontFace: SANS,
     isTextBox: true, margin: 0 });
-  s.addText(['Governing the execution: rhythm, scorecard and decision rights'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 0 } })),
+  s.addText(['Initiatives that outlive the cycle','Governing the execution: rhythm, scorecard and decision rights'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 0 } })),
     { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
       isTextBox: true, margin: 0, paraSpaceAfter: 7 });
+}
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Initiatives that outlive the cycle', 'Three weeks sets the direction. Some of the work then runs for months — named, owned and tracked.');
+  const inits = [
+    ['Proposal and orals quality', 'Propositions', 'Reusable proposal foundations and demo-led orals, so pursuits are fast, polished and differentiated'],
+    ['Assets and accelerators', 'Delivery', 'Build the reusable delivery IP behind the propositions we commit to'],
+    ['Capability and certification', 'Delivery', 'Close the domain, platform and alliance certification gaps by level'],
+    ['Alliance activation', 'Route to market', 'Answer the funds and insurance platform gap; activate co-sell and funding'],
+    ['Eminence programme', 'Route to market', 'Stand up the calendar, internal and external, against the target accounts'],
+    ['Account activation', 'Market and clients', 'Turn the tier one list into live pursuits inside the existing account plans'],
+  ];
+  inits.forEach(([t, pillar, d], i) => {
+    const x = 0.7 + (i % 3) * 4.03, y = 2.0 + Math.floor(i / 3) * 1.95;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.75, rectRadius: 0.12,
+      fill: { color: i === 0 ? 'E4EBF7' : MIST } });
+    s.addText(pillar.toUpperCase(), { x: x + 0.28, y: y + 0.18, w: 3.3, h: 0.28, fontSize: 9,
+      bold: true, color: SLATE, charSpacing: 1, fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(t, { x: x + 0.28, y: y + 0.5, w: 3.3, h: 0.4, fontSize: 14, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(d, { x: x + 0.28, y: y + 0.95, w: 3.3, h: 0.72, fontSize: 10.5, color: BODY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.95, w: 11.9, h: 0.85, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('Every initiative carries a pillar, an owner, an outcome and a date — and is reviewed in the monthly rhythm alongside the numbers.',
+    { x: 1.0, y: 5.95, w: 11.3, h: 0.85, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addText('Illustrative — the register is built in week three and tracked from there.', { x: 0.7, y: 6.9,
+    w: 8, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addNotes(`The cycle produces decisions, but several of them imply work that cannot finish in three weeks. Naming those as initiatives, with an owner and a date, is what stops the strategy becoming a document that describes an intention nobody is building.
+
+The flagship one is proposal and orals quality, and it is worth stating plainly because it is a live complaint about our own work rather than a theoretical gap.
+
+What good looks like on proposals: a reusable foundation rather than a blank page every time — a modular content library of proposition descriptions, credentials, CVs and case studies kept current; storyline patterns that carry a narrative rather than a list of capabilities; differentiation proof points that answer why us and not an internal team or a cheaper integrator; and a way to bring the whole firm into the answer rather than only our portfolio. The outcome is speed and polish at the same time: assembled, not written.
+
+What good looks like on orals: show, do not tell. Demos of the assets and accelerators, showcases of comparable work, a walk through what the first ninety days actually look like — not a deck read aloud. Rehearsed, with the people who will deliver in the room.
+
+The other initiatives fall out of the pillars: assets and accelerators behind the committed propositions; capability and certification gaps closed by level; alliance activation, especially the funds and insurance platform gap; the eminence calendar stood up; and the tier one account list turned into live pursuits inside the existing account plans.
+
+Mechanics: the register is built in week three as part of the activation plan, each initiative carries pillar, owner, outcome, milestone and date, and it is reviewed monthly alongside the numbers. Initiatives without an owner and a date are wishes.`);
 }
 
 {
