@@ -7,7 +7,7 @@ const TBD = 'to be defined';
 
 const pres = new pptxgen();
 pres.layout = 'LAYOUT_WIDE';
-pres.title = 'EAIND — FSI Strategy Development Plan';
+pres.title = 'EAI&D — FSI Strategy Development Plan';
 pres.author = 'Engineering, AI and Data';
 
 function head(s, title, sub) {
@@ -34,7 +34,7 @@ function openTag(s, x, y, w, text) {
   s.background = { color: NAVY };
   s.addShape(pres.ShapeType.ellipse, { x: 9.3, y: -1.8, w: 6.6, h: 6.6, fill: { color: SLATE, transparency: 45 } });
   s.addShape(pres.ShapeType.ellipse, { x: 11.0, y: 3.9, w: 3.6, h: 3.6, fill: { color: ICE, transparency: 80 } });
-  s.addText('Engineering, AI and Data', { x: 0.9, y: 1.9, w: 9, h: 0.45, fontSize: 16,
+  s.addText('EAI&D  ·  Engineering, AI and Data', { x: 0.9, y: 1.9, w: 9, h: 0.45, fontSize: 16,
     color: ICE, charSpacing: 2, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addText('FSI Strategy\nDevelopment Plan', { x: 0.88, y: 2.45, w: 9, h: 2.0, fontSize: 48,
     bold: true, color: WHITE, fontFace: HEAD, isTextBox: true, margin: 0, lineSpacing: 52 });
@@ -45,7 +45,7 @@ function openTag(s, x, y, w, text) {
     { x: 0.93, y: 6.35, w: 8, h: 0.4, fontSize: 12, color: '9AA7C4', fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`CONTEXT FOR THE TEAM — do not put on the slide.
 
-The portfolio is EAIND: Engineering, AI and Data. It is a consulting portfolio — think technology advisory and delivery. We design, advise on and implement end-to-end technology transformation for the financial services industry. FSI here means three segments, in priority order: banking first, then funds (sovereign wealth funds, national and development funds, fund and investment management), then insurance.
+The portfolio is EAI&D: Engineering, AI and Data. It is a consulting portfolio — think technology advisory and delivery. We design, advise on and implement end-to-end technology transformation for the financial services industry. FSI here means three segments, in priority order: banking first, then funds (sovereign wealth funds, national and development funds, fund and investment management), then insurance.
 
 Three pillars:
 1. Industry Solutions — core-led transformation: core modernisation and core platform packages, whatever the segment calls its core (core banking, policy administration and claims in insurance, portfolio, fund accounting and investment platforms in funds). Also full systems-integration capability: we can take the SI role and own the end-to-end setup, including design governance, functional governance, delivery management and individual stream management, to stand up a greenfield institution or modernise an incumbent.
@@ -61,7 +61,7 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
   s.background = { color: WHITE };
   head(s, 'How this pack runs', 'Five parts, in the order the strategy actually gets built.');
   const parts5 = [
-    ['One', 'The frame', 'What this document is \u00b7 how this fits the EAIND strategy \u00b7 the industry we mean', 3],
+    ['One', 'The frame', 'What this document is \u00b7 how this fits the EAI&D strategy \u00b7 the industry we mean', 3],
     ['Two', 'The destination', 'Vision drivers \u00b7 candidate statements \u00b7 principles', 3],
     ['Three', 'What the strategy must cover', 'The architecture \u00b7 markets and tiers \u00b7 delivery, economics and people \u00b7 alliances and eminence', 6],
     ['Four', 'How we build it', 'The approach \u00b7 workstreams and owners \u00b7 the three-week journey \u00b7 how we run the cycle', 5],
@@ -141,9 +141,9 @@ Still open before we finalise this pack:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'How this fits', 'FSI is one industry strategy inside the EAIND portfolio strategy — not a parallel one.');
+  head(s, 'How this fits', 'FSI is one industry strategy inside the EAI&D portfolio strategy — not a parallel one.');
   s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.95, w: 11.9, h: 0.85, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('EAIND PORTFOLIO STRATEGY', { x: 1.0, y: 1.95, w: 4.2, h: 0.85, valign: 'middle', fontSize: 12.5,
+  s.addText('EAI&D PORTFOLIO STRATEGY', { x: 1.0, y: 1.95, w: 4.2, h: 0.85, valign: 'middle', fontSize: 12.5,
     bold: true, color: ICE, charSpacing: 1.2, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addText('Engineering, AI and Data — across every industry we serve', { x: 5.3, y: 1.95, w: 7.0, h: 0.85,
     valign: 'middle', fontSize: 13, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
@@ -172,7 +172,7 @@ Still open before we finalise this pack:
   s.addText('Sign-off test: nothing here contradicts the portfolio strategy, and anything that diverges is named and escalated rather than quietly assumed.',
     { x: 0.7, y: 6.65, w: 11.9, h: 0.4, fontSize: 12.5, italic: true, color: SLATE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addNotes(`EAIND is a portfolio serving several industries, and it already has its own strategy. This is the financial services cut of it, not a parallel strategy, and the pack says so early so nobody reads it as the portfolio going its own way.
+  s.addNotes(`EAI&D is a portfolio serving several industries, and it already has its own strategy. This is the financial services cut of it, not a parallel strategy, and the pack says so early so nobody reads it as the portfolio going its own way.
 
 Three relationships to keep straight:
 
@@ -839,7 +839,7 @@ Start date to be set at kick-off.`);
     fontSize: 14.5, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
   const cols = [
     ['Cadence', ['Kick-off to confirm scope and principles', 'Weekly working session per workstream', 'Checkpoint at the end of each week', 'Sign-off session in week three']],
-    ['Inputs we need', ['The current EAIND portfolio strategy', 'Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
+    ['Inputs we need', ['The current EAI&D portfolio strategy', 'Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
     ['Decisions requested', ['Alignment with the portfolio strategy', 'The vision, then the ambition in numbers', 'Target account list', 'Revenue and margin targets by account', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
   ];
   cols.forEach(([h, items], i) => {
@@ -1189,5 +1189,5 @@ tmplSlide('Template — execution scorecard', 'The discipline · one row per mea
 
 The measure to fight for is the mix: share of revenue coming from integrated propositions. It is the only number that tells us whether the integrated-not-siloed principle survived contact with the market.`);
 
-pres.writeFile({ fileName: '/home/user/bae/FSI strategy/EAIND-FSI-Strategy-Development-Plan.pptx' })
+pres.writeFile({ fileName: '/home/user/bae/FSI strategy/EAI&D-FSI-Strategy-Development-Plan.pptx' })
   .then(f => console.log('wrote', f));

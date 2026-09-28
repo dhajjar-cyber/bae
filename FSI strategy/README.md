@@ -1,11 +1,11 @@
-# EAIND — FSI Strategy
+# EAI&D — FSI Strategy
 
-Working folder for the Engineering, AI and Data (EAIND) financial services
+Working folder for the Engineering, AI and Data (EAI&D) financial services
 go-to-market and activation strategy.
 
 ## Contents
 
-- `EAIND-FSI-Strategy-Development-Plan.pptx` — the plan for *developing* the
+- `EAI&D-FSI-Strategy-Development-Plan.pptx` — the plan for *developing* the
   strategy. Framework only: it sets out the questions, the principles, the
   five-step approach, the workstreams and the three-week cycle. It deliberately
   contains no answers — no markets, accounts, offerings, targets or owners.
@@ -19,7 +19,7 @@ Five parts, each opening with a divider slide.
 
 **Part one — The frame**
 1. What this document is — method, not conclusion
-2. How this fits — alignment with the EAIND portfolio strategy
+2. How this fits — alignment with the EAI&D portfolio strategy
 3. The industry we mean — banking, funds, insurance, in priority order
 
 **Part two — The destination**
