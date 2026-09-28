@@ -525,7 +525,7 @@ Watch the balance. If almost everything lands in tier one, nothing is prioritise
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Integrated by default, focused by exception', 'Pillar 2 · most propositions span the practices. Some genuinely do not, and that is allowed.');
+  head(s, 'Integrated by default', 'Pillar 2 · most propositions span the offerings; some genuinely do not, and that is allowed.');
   const offerings = ['Industry Solutions', 'AI and Data', 'Engineering'];
   offerings.forEach((t, i) => {
     s.addText(t, { x: 6.5 + i * 2.05, y: 2.0, w: 1.95, h: 0.5, align: 'center', valign: 'middle',
@@ -1250,7 +1250,7 @@ tmplSlide('Template — coverage and ownership', 'Pillar 1 · who carries EAI&D 
 
 Cadence keeps this honest — an owner with no contact rhythm is a name on a page.`);
 
-tmplSlide('Template — proposition catalogue', 'Pillar 2 · Offerings · one row per integrated proposition.',
+tmplSlide('Template — proposition catalogue', 'Pillar 2 · Propositions · one row per proposition.',
   ['Proposition', 'Sectors it serves', 'Offerings involved', 'Buyer per sector', 'Archetypes permitted'],
   [2.6, 2.1, 2.2, 2.4, 2.6], 6,
   'Integrated propositions first. A single-pillar offer is recorded as a variant, not as its own row.',
