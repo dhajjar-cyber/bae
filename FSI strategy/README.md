@@ -72,7 +72,7 @@ Two levels, not a flat list.
 **Level 1 — the ambition**: what winning looks like, in numbers, by when.
 
 **Level 1 — three pillars**, each with one owner and its level-2 topics:
-- **Market and clients** — markets and segments · named target accounts · coverage and ownership
+- **Market and clients** — markets and segments · named target accounts · offerings targeted per account · revenue per account (gross and net) · coverage and ownership
 - **Offerings, delivery and capability** — proposition catalogue · delivery model and construct · pricing, ADR and margin · team, capacity and recruitment · revenue targets
 - **Route to market** — alliances · eminence and positioning · how we differentiate
 

@@ -137,7 +137,7 @@ Still open before we finalise this pack:
   s.addText('What winning looks like, in numbers, by when', { x: 3.7, y: 1.9, w: 8.6, h: 0.78,
     valign: 'middle', fontSize: 15, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   const pillars = [
-    ['Market\nand clients', ['Markets and segments', 'Named target accounts', 'Coverage and ownership']],
+    ['Market\nand clients', ['Markets and segments', 'Named target accounts', 'Offerings targeted per account', 'Revenue per account, gross and net', 'Coverage and ownership']],
     ['Offerings, delivery\nand capability', ['Proposition catalogue', 'Delivery model and construct', 'Pricing, ADR and margin', 'Team, capacity and recruitment', 'Revenue targets']],
     ['Route\nto market', ['Alliances and what they unlock', 'Eminence and positioning', 'How we differentiate']],
   ];
@@ -207,7 +207,7 @@ Confirm all five principles at kick-off; they bound every later decision.`);
     ['Mobilise', ['Frame the ambition: what winning looks like', 'Confirm scope, principles and owners'], 'Week 1'],
     ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
     ['Define', ['Markets, segments and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
-    ['Quantify', ['Price bands, ADR and target margin', 'Revenue targets and the capacity to service them'], 'Week 2'],
+    ['Quantify', ['Price bands, ADR and target margin', 'Revenue per account, gross and net, against capacity'], 'Week 2'],
     ['Commit', ['Account ownership and coverage', 'Team, eminence and activation plans signed off'], 'Week 3'],
   ];
   steps.forEach(([name, pts, wk], i) => {
@@ -239,8 +239,8 @@ Baseline also covers people: who we have today, dedicated and shared.`);
   s.background = { color: WHITE };
   head(s, 'Four workstreams, one per pillar', 'Each pillar has one owner and a defined set of artefacts.');
   const ws = [
-    ['1 · Market and clients', 'Markets, segments, named accounts, coverage and ownership',
-     'Market prioritisation · target account list · coverage map'],
+    ['1 · Market and clients', 'Markets, segments, named accounts, offerings and revenue per account, coverage',
+     'Market prioritisation · target account list · account revenue plan · coverage map'],
     ['2 · Offerings, delivery and capability', 'Catalogue, delivery model and construct, pricing, margin, team and targets',
      'Proposition catalogue · pricing bands · offering economics · team model · revenue targets'],
     ['3 · Route to market', 'Alliances, eminence and differentiation',
@@ -455,7 +455,7 @@ If other alliances belong here — hyperscaler or platform vendors we do not yet
   const weeks = [
     ['Week 1', 'Frame', ['Baseline current position and credentials', 'Prioritise markets and segments', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and segment priorities'],
     ['Week 2', 'Define', ['Lock propositions and permitted variants', 'Benchmark deal sizes and pricing', 'Set delivery construct, ADR and margin', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
-    ['Week 3', 'Commit', ['Set revenue targets by market and offering', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Build the activation plan and sign off'], 'Gate: strategy signed off'],
+    ['Week 3', 'Commit', ['Set revenue targets by account, offering and market', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Build the activation plan and sign off'], 'Gate: strategy signed off'],
   ];
   weeks.forEach(([w, label, acts, gate], i) => {
     const x = 0.7 + i * 4.07;
@@ -542,7 +542,7 @@ Still to set at sign-off: who chairs each forum, what decisions each can take wi
   const cols = [
     ['Cadence', ['Kick-off to confirm scope and principles', 'Weekly working session per workstream', 'Checkpoint at the end of each week', 'Sign-off session in week three']],
     ['Inputs we need', ['Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
-    ['Decisions requested', ['The ambition, in numbers', 'Priority markets and segments', 'Target account list', 'Revenue and margin targets', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
+    ['Decisions requested', ['The ambition, in numbers', 'Priority markets and segments', 'Target account list', 'Revenue and margin targets by account', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
   ];
   cols.forEach(([h, items], i) => {
     const x = 0.8 + i * 4.05;
@@ -592,7 +592,7 @@ Keep them as living tables — one file, versioned, updated at each weekly check
     color: NAVY, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addShape(pres.ShapeType.line, { x: 3.2, y: 2.62, w: 9.1, h: 0, line: { color: 'C9D4E6', width: 1 } });
   const cols = [
-    ['Market and clients', ['Markets', 'Segments', 'Top accounts']],
+    ['Market and clients', ['Markets and segments', 'Top accounts and offerings', 'Revenue: gross / net']],
     ['Offerings, delivery and capability', ['Propositions', 'Construct and margin', 'Team and gap']],
     ['Route to market', ['Alliances', 'Eminence', 'Differentiation']],
   ];
@@ -663,12 +663,26 @@ tmplSlide('Template — market prioritisation', 'Pillar 1 · Market and clients 
 Context: Saudi Arabia, UAE and Qatar are the expected primary markets; Kuwait, Oman and Jordan the secondary set where our key relationships sit. Both to be confirmed against evidence in week 1.`);
 
 tmplSlide('Template — target accounts', 'Pillar 1 · Market and clients · one row per named account.',
-  ['Account', 'Market', 'Segment', 'Propositions to lead with', 'Alliance', 'Owner', 'Stage'],
+  ['Account', 'Market', 'Segment', 'Offerings we target there', 'Alliance', 'Owner', 'Stage'],
   [2.3, 1.3, 1.4, 3.2, 1.5, 1.2, 1.0], 6,
   'Stage: relationship only, qualified, active pursuit. Every account carries exactly one owner.',
   `This is the core artefact of the whole exercise — the named account list with account mapping.
 
 Rules: one owner per account, never two. The propositions column names what we lead with, not everything we could sell. The alliance column links to the alliance map, so we can see which accounts a partner opens.`);
+
+tmplSlide('Template — account revenue plan', 'Pillar 1 · Market and clients · one row per account and offering.',
+  ['Account', 'Offering targeted', 'Timeframe', 'Gross revenue', 'Net revenue', 'Confidence'],
+  [2.5, 3.0, 1.5, 1.7, 1.7, 1.5], 6,
+  'Gross and net on every line. The account total and the market total must reconcile to the portfolio target.',
+  `This is what turns a target account list into a plan: for each account, which offerings we are going there with, and how much revenue each is expected to carry.
+
+Both numbers are recorded. Gross is the full contract value we bill, including pass-through, third-party software and partner or subcontract content. Net is the revenue delivered by our own people — what the capacity plan and the margin calculation actually run on. Fix the exact definition at kick-off; different parts of the firm use these words differently, and mixing them makes the roll-up meaningless.
+
+Timeframe matters because a core banking programme books over years while an AI activation books in a quarter; without it, an account total is unreadable.
+
+Confidence keeps the plan honest: relationship-only ambition and a qualified pursuit should not be added together as if they were the same thing.
+
+Three reconciliations to hold: account lines roll up to the market total, market totals roll up to the portfolio ambition, and net revenue reconciles to the capacity we have or plan to hire.`);
 
 tmplSlide('Template — coverage and ownership', 'Pillar 1 · Market and clients · one row per priority account.',
   ['Account', 'Partner owner', 'Alliance lead', 'Delivery lead', 'Contact cadence'],
@@ -709,7 +723,7 @@ Record both the target gross margin and the floor, and note the approval route f
 tmplSlide('Template — revenue targets', 'Pillar 2 · Offerings, delivery and capability · one row per market.',
   ['Market', 'Industry Solutions', 'Data & AI', 'Engineering & Cloud', 'Integrated', 'Total'],
   [2.4, 2.1, 1.9, 2.2, 1.7, 1.6], 6,
-  'Targets are set by market and by offering, then reconciled against capacity before they are agreed.',
+  'Set by market and offering, reconciled against the account revenue plan and against capacity.',
   `The integrated column is deliberate: if most revenue sits in single-pillar columns, the strategy has not been followed.
 
 Reconcile every target against the talent template before sign-off. A number we cannot staff is not a target.`);
