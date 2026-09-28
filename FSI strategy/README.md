@@ -76,7 +76,7 @@ Two levels, not a flat list.
 - **Market and clients** — markets and segments · named target accounts · offerings targeted per account · revenue per account (gross and net) · coverage and ownership
 - **Offerings (what we sell)** — integrated propositions · use cases we lead with · flavours and permitted variants
 - **Delivery and economics** — delivery model and construct · pricing, ADR and margin · team, capacity and recruitment · revenue targets
-- **Route to market** — alliances · eminence and positioning · how we differentiate
+- **Route to market** — alliances · eminence and positioning, external and internal · how we differentiate
 
 **Level 1 — the discipline**: operating rhythm, scorecard and decision rights that keep the pillars honest.
 

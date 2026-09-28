@@ -393,7 +393,7 @@ The delivery model itself is largely inherited from the firm; what we are settin
   s.background = { color: WHITE };
   head(s, 'Team and talent', 'Pillar 3 · the capacity behind the construct, in three parts.');
   const cols = [
-    ['The dedicated team', NAVY, ['Who works on FSI exclusively, across the three pillars?', 'Which roles and levels do they hold?', 'What is realistically deliverable with them alone?']],
+    ['The dedicated team', NAVY, ['Who works on FSI exclusively, across the three practices?', 'Which roles and levels do they hold?', 'What is realistically deliverable with them alone?']],
     ['Shared capacity', SLATE, ['Which resources are shared with other portfolios?', 'How much of their time can we count on?', 'Which skills do we borrow rather than own?']],
     ['The gap to close', NAVY, ['How many partners, directors and delivery staff are missing?', 'Build, borrow or buy for each gap?', 'By when, to support the targets we set?']],
   ];
@@ -425,7 +425,7 @@ The link to the rest of the strategy is direct: a revenue target we cannot staff
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Eminence and positioning', 'Pillar 4 · how the market comes to know us for this.');
+  head(s, 'Eminence and positioning', 'Pillar 4 · how the market \u2014 outside and inside the firm \u2014 comes to know us for this.');
   const ch = [
     ['Published views', ['Points of view', 'Articles', 'Benchmark reports']],
     ['Stages', ['Industry conferences', 'Flagship FSI events', 'Panels and keynotes']],
@@ -435,27 +435,36 @@ The link to the rest of the strategy is direct: a revenue target we cannot staff
   ];
   ch.forEach(([t, items], i) => {
     const x = 0.7 + i * 2.42;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 2.05, w: 2.22, h: 2.9, rectRadius: 0.12,
+    s.addShape(pres.ShapeType.roundRect, { x, y: 1.95, w: 2.22, h: 2.35, rectRadius: 0.12,
       fill: { color: i % 2 ? MIST : 'E4EBF7' } });
-    disc(s, x + 0.25, 2.3, String(i + 1), SLATE, 0.4);
-    s.addText(t, { x: x + 0.25, y: 2.82, w: 1.85, h: 0.4, fontSize: 15, bold: true, color: INK,
+    s.addText(t, { x: x + 0.22, y: 2.08, w: 1.9, h: 0.4, fontSize: 14, bold: true, color: INK,
       fontFace: SANS, isTextBox: true, margin: 0 });
     s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
-      { x: x + 0.25, y: 3.35, w: 1.8, h: 1.4, fontSize: 11.5, color: BODY, fontFace: SANS,
-        isTextBox: true, margin: 0, paraSpaceAfter: 6 });
+      { x: x + 0.22, y: 2.55, w: 1.85, h: 1.6, fontSize: 11, color: BODY, fontFace: SANS,
+        isTextBox: true, margin: 0, paraSpaceAfter: 5 });
   });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.25, w: 11.9, h: 1.05, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('For each channel the plan must answer: which ones we commit to, at what frequency, who fronts them, which accounts they target, and how we measure the return.',
-    { x: 1.0, y: 5.25, w: 11.3, h: 1.05, valign: 'middle', fontSize: 13.5, color: ICE,
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 4.5, w: 11.9, h: 1.3, rectRadius: 0.12, fill: { color: MIST } });
+  s.addShape(pres.ShapeType.rect, { x: 0.7, y: 4.5, w: 2.55, h: 1.3, fill: { color: SLATE } });
+  s.addText('Internal\neminence', { x: 0.92, y: 4.5, w: 2.2, h: 1.3, valign: 'middle', fontSize: 15, bold: true,
+    color: WHITE, fontFace: SANS, isTextBox: true, margin: 0, lineSpacing: 17 });
+  s.addText('The FS partners and directors in other portfolios are a market in their own right \u2014 they are in front of our clients every week. Catalogue briefings, enablement on the proposition one-pagers, deal clinics and internally circulated wins belong in the plan alongside the external channels.',
+    { x: 3.5, y: 4.5, w: 8.9, h: 1.3, valign: 'middle', fontSize: 12.5, color: BODY, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.0, w: 11.9, h: 0.9, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('For each activity: internal or external, which channel, how often, who fronts it, which accounts or audiences it targets, and how we measure the return.',
+    { x: 1.0, y: 6.0, w: 11.3, h: 0.9, valign: 'middle', fontSize: 13, color: ICE,
       fontFace: SANS, isTextBox: true, margin: 0 });
-  openTag(s, 4.65, 6.55, 4.0, 'channel mix ' + TBD + ' in the cycle');
+  s.addText('Channel mix and cadence ' + TBD + ' in the cycle.', { x: 0.7, y: 7.0, w: 11.9, h: 0.35,
+    fontSize: 11, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`Raised as a distinct part of the plan: how we enhance our positioning in the market, specifically in FSI, around what we do.
 
 Channels mentioned: workshops, seminars, podcasts, articles, and participation in key industry events — Money20/20 was named as an example of the class of event we should consider. The plan should decide which of these are relevant to us rather than assume all of them.
 
 For each channel the plan answers: do we commit, how often, who fronts it, which accounts or markets it targets, and how we measure return — inbound enquiries, meetings created, inclusion on shortlists and RFP invitations.
 
-Worth linking eminence to the account list: eminence activity should point at the accounts and markets the strategy has prioritised, not at general brand awareness.`);
+Worth linking eminence to the account list: eminence activity should point at the accounts and markets the strategy has prioritised, not at general brand awareness.
+
+Internal eminence matters as much as external here. The FS partners and directors sitting in other portfolios are in front of our target clients constantly, and they can only pull us in if they know what we sell. That means scheduled briefings on the catalogue, enablement on the proposition one-pagers, deal clinics where they bring a live situation and we shape the play, and our wins circulated internally rather than only externally. It is the mechanism behind the integrated-market-team principle — the principle sets the expectation, the internal eminence plan is how it is actually resourced and scheduled.`);
 }
 
 /* 9 — Alliances */
@@ -851,9 +860,9 @@ tmplSlide('Template — alliance map', 'Pillar 4 · Route to market · one row p
 The last column matters as much as the rest — certifications, accredited staff and pipeline commitments are a cost that lands in the talent plan and the budget.`);
 
 tmplSlide('Template — eminence calendar', 'Pillar 4 · Route to market · one row per planned activity.',
-  ['Activity', 'Channel', 'Target accounts or markets', 'Owner', 'Date', 'How we measure it'],
-  [2.6, 1.8, 3.0, 1.5, 1.4, 1.6], 6,
-  'Every activity points at named accounts or markets. General brand-building does not earn a row.',
+  ['Activity', 'Audience', 'Channel', 'Target accounts or audience', 'Owner', 'Date', 'Measure'],
+  [2.3, 1.4, 1.7, 2.6, 1.4, 1.2, 1.3], 6,
+  'Audience: external client market, or internal \u2014 FS partners and directors in other portfolios.',
   `Channels in scope: published views and articles, conference stages and flagship FSI events, executive workshops, seminars and roundtables, podcasts and webinars, and joint activity with alliance partners.
 
 Measurement should be concrete: inbound enquiries, meetings created, shortlist and RFP invitations — not impressions.`);
