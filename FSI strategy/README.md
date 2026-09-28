@@ -40,11 +40,12 @@ Five parts, each opening with a divider slide.
 12. How we will get there — the five-step approach
 13. Five workstreams, one per pillar
 14. Who is doing this — the strategy development team
-15. The three-week journey
-16. How we run the cycle
+15. Initiatives that outlive the cycle — named, owned, tracked
+16. The three-week journey
+17. How we run the cycle
 
 **Part five — After sign-off**
-17. Governing the execution — rhythm, scorecard, decision rights
+18. Governing the execution — rhythm, scorecard, decision rights
 
 ## Appendix — the strategy log
 
@@ -128,8 +129,10 @@ averages · sized and priced · covered by a partner · deliverable by design ·
 **domain-specific, not agnostic** (banking is specialised and clients expect it) ·
 **AI and innovation embedded** (not a separate offering — every proposition carries
 an AI and innovation component by design) · **one integrated market team** (every
-partner and director knows the whole catalogue, reads the signals in client
-conversations, positions level one, then pulls in the specialist).
+partner and director knows the whole catalogue, reads the signals, positions level
+one, then pulls in the specialist) · **show, don't tell** (pursuits are won with
+demos, showcases and a story; proposals are assembled from reusable foundations,
+not written from scratch).
 
 ### Team
 
