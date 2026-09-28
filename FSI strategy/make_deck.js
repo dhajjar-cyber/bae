@@ -29,7 +29,6 @@ function openTag(s, x, y, w, text) {
     italic: true, color: ACCENT, fontFace: SANS, isTextBox: true, margin: 0 });
 }
 
-/* 1 — Title */
 {
   const s = pres.addSlide();
   s.background = { color: NAVY };
@@ -56,39 +55,31 @@ Three pillars:
 This deck is the plan for developing the FSI strategy, not the strategy. Target: strategy finalised within three weeks.`);
 }
 
-/* 2 — Outline */
+
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What is in this pack', 'Seventeen sections, plus an appendix of blank templates.');
-  const items = [
-    ['What this document is', 'Method, not conclusion'],
-    ['What the strategy must cover', 'Ambition, four pillars, operating discipline'],
-    ['The industry we mean', 'Banking, funds and insurance, in priority order'],
-    ['What the vision has to carry', 'Six drivers agreed before the words'],
-    ['Three candidate statements', 'Lead candidate and two alternates'],
-    ['Pillar 1 · Tier one and tier two', 'Where the energy goes'],
-    ['Principles we hold going in', 'Constraints agreed before the work starts'],
-    ['How we will get there', 'The five-step approach'],
-    ['Five workstreams, one per pillar', 'Who owns what, and what each produces'],
-    ['Who is doing this', 'The strategy development team'],
-    ['Pillar 3 · Delivery and pricing economics', 'Construct, price, ADR and margin'],
-    ['Pillar 3 · Team and talent', 'Dedicated, shared and the gap to close'],
-    ['Pillar 4 · Eminence and positioning', 'How the market comes to know us'],
-    ['Pillar 4 · Alliances', 'Who we go to market with, and for what'],
-    ['The three-week journey', 'Week by week, with a gate each week'],
-    ['The discipline · Governing the execution', 'Rhythm and scorecard after sign-off'],
-    ['How we run the cycle', 'Cadence, inputs and decisions requested'],
+  head(s, 'How this pack runs', 'Five parts, in the order the strategy actually gets built.');
+  const parts5 = [
+    ['One', 'The frame', 'What this document is \u00b7 the industry we mean', 2],
+    ['Two', 'The destination', 'Vision drivers \u00b7 candidate statements \u00b7 principles', 3],
+    ['Three', 'What the strategy must cover', 'The architecture \u00b7 markets and tiers \u00b7 delivery, economics and people \u00b7 alliances and eminence', 6],
+    ['Four', 'How we build it', 'The approach \u00b7 workstreams and owners \u00b7 the three-week journey \u00b7 how we run the cycle', 5],
+    ['Five', 'After sign-off', 'Governing the execution', 1],
   ];
-  items.forEach(([t, d], i) => {
-    const x = 0.7 + (i % 3) * 4.03, y = 1.95 + Math.floor(i / 3) * 0.78;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 0.7, rectRadius: 0.08,
+  parts5.forEach(([n, t, d, count], i) => {
+    const y = 1.95 + i * 0.98;
+    s.addShape(pres.ShapeType.roundRect, { x: 0.7, y, w: 11.9, h: 0.85, rectRadius: 0.1,
       fill: { color: i % 2 ? MIST : 'F2F6FC' } });
-    disc(s, x + 0.18, y + 0.14, String(i + 1), i % 2 ? SLATE : NAVY, 0.42);
-    s.addText(t, { x: x + 0.72, y: y + 0.05, w: 3.0, h: 0.32, fontSize: 11.5, bold: true, color: INK,
+    s.addShape(pres.ShapeType.rect, { x: 0.7, y, w: 1.9, h: 0.85, fill: { color: i % 2 ? SLATE : NAVY } });
+    s.addText('PART ' + n.toUpperCase(), { x: 0.7, y, w: 1.9, h: 0.85, align: 'center', valign: 'middle',
+      fontSize: 11.5, bold: true, color: WHITE, charSpacing: 1, fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(t, { x: 2.85, y: y + 0.1, w: 4.2, h: 0.35, fontSize: 15.5, bold: true, color: INK,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(d, { x: x + 0.72, y: y + 0.36, w: 3.0, h: 0.28, fontSize: 9, color: MUTE,
+    s.addText(d, { x: 2.85, y: y + 0.45, w: 8.4, h: 0.32, fontSize: 11, color: MUTE,
       fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(count + (count === 1 ? ' slide' : ' slides'), { x: 11.1, y, w: 1.3, h: 0.85,
+      align: 'right', valign: 'middle', fontSize: 11, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addText('Appendix: a blank template for every artefact the cycle produces — the strategy log itself.',
     { x: 0.7, y: 6.75, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: SLATE, fontFace: SANS,
@@ -98,7 +89,22 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
 If time is short, the three slides that carry the decision are: the eight questions, the five-step approach, and how we run it.`);
 }
 
-/* 3 — How to use */
+
+{
+  const s = pres.addSlide();
+  s.background = { color: NAVY };
+  s.addShape(pres.ShapeType.ellipse, { x: 9.8, y: 3.4, w: 5.6, h: 5.6, fill: { color: SLATE, transparency: 55 } });
+  s.addText('PART ONE', { x: 0.9, y: 2.15, w: 5, h: 0.4, fontSize: 13, bold: true, color: '9AA7C4',
+    charSpacing: 2, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('The frame', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
+    fontFace: HEAD, isTextBox: true, margin: 0 });
+  s.addText('What this document is, and the industry it is for.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5, fontSize: 15, color: ICE, fontFace: SANS,
+    isTextBox: true, margin: 0 });
+  s.addText(['What this document is \u2014 method, not conclusion', 'The industry we mean: banking, funds and insurance'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 1 } })),
+    { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
+      isTextBox: true, margin: 0, paraSpaceAfter: 7 });
+}
+
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -131,49 +137,7 @@ Still open before we finalise this pack:
 - Start date for the three-week cycle.`);
 }
 
-/* 3 — Framework */
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  head(s, 'What the strategy must cover', 'The shape of the strategy we are going to build \u2014 not the strategy itself.');
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.9, w: 11.9, h: 0.78, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('THE AMBITION', { x: 1.0, y: 1.9, w: 2.6, h: 0.78, valign: 'middle', fontSize: 13, bold: true,
-    color: ICE, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText('What winning looks like, in numbers, by when', { x: 3.7, y: 1.9, w: 8.6, h: 0.78,
-    valign: 'middle', fontSize: 15, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
-  const pillars = [
-    ['Market\nand clients', ['Markets and FSI segments', 'Tier one and tier two', 'Named target accounts', 'Offerings and revenue per account', 'Coverage and ownership']],
-    ['Offerings\n(what we sell)', ['Integrated propositions', 'Use cases we lead with', 'Flavours and permitted variants']],
-    ['Delivery\nand economics', ['Delivery model, assets and accelerators', 'Construct, pricing, ADR and margin', 'Team, capacity and recruitment', 'Revenue targets']],
-    ['Route\nto market', ['Alliances and what they unlock', 'Eminence and positioning', 'How we differentiate']],
-  ];
-  pillars.forEach(([t, items], i) => {
-    const x = 0.7 + i * 3.02, w = 2.84;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 2.85, w, h: 3.25, rectRadius: 0.12,
-      fill: { color: i % 2 ? MIST : 'E4EBF7' } });
-    s.addShape(pres.ShapeType.rect, { x, y: 2.85, w, h: 0.92, fill: { color: i % 2 ? SLATE : NAVY } });
-    s.addText(t, { x: x + 0.22, y: 2.85, w: w - 0.44, h: 0.92, valign: 'middle', fontSize: 15, bold: true,
-      color: WHITE, fontFace: SANS, isTextBox: true, margin: 0, lineSpacing: 17 });
-    s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
-      { x: x + 0.22, y: 3.95, w: w - 0.42, h: 2.05, fontSize: 11.5, color: BODY, fontFace: SANS,
-        isTextBox: true, margin: 0, paraSpaceAfter: 7 });
-  });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.25, w: 11.9, h: 0.72, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('THE DISCIPLINE', { x: 1.0, y: 6.25, w: 2.6, h: 0.72, valign: 'middle', fontSize: 13, bold: true,
-    color: ICE, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText('Operating rhythm, scorecard and decision rights that keep the four pillars honest',
-    { x: 3.7, y: 6.25, w: 8.6, h: 0.72, valign: 'middle', fontSize: 14, color: WHITE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addNotes(`Framing is loosely a strategy cascade (where to play, how to play), extended for a consulting portfolio with commercial, coverage, talent and eminence dimensions.
 
-Context we already hold, to be validated rather than assumed during the cycle:
-- Primary markets: Saudi Arabia, UAE, Qatar.
-- Secondary markets: Kuwait, Oman, Jordan — where we focus our key relationships.
-- The output must go further than markets: a specific, named target account list, with account mapping — who covers whom.
-- Offerings must be expressed as products and services with a buyer attached: who buys this, and what do they typically pay.`);
-}
-
-/* 4 — Segments */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -215,18 +179,33 @@ They are not interchangeable. The core platform, the regulator, the buyer and th
 Practical consequence for the cycle: segment is a column in the market prioritisation, the account list, the proposition catalogue and the revenue targets. Where we are thin — and funds and insurance are where we are thin — the strategy has to say whether we build, borrow, hire or partner into them, and the alliance map has to answer the platform question for each.`);
 }
 
-/* 6 — Vision drivers */
+
+{
+  const s = pres.addSlide();
+  s.background = { color: NAVY };
+  s.addShape(pres.ShapeType.ellipse, { x: 9.8, y: 3.4, w: 5.6, h: 5.6, fill: { color: SLATE, transparency: 55 } });
+  s.addText('PART TWO', { x: 0.9, y: 2.15, w: 5, h: 0.4, fontSize: 13, bold: true, color: '9AA7C4',
+    charSpacing: 2, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('The destination', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
+    fontFace: HEAD, isTextBox: true, margin: 0 });
+  s.addText('Where we are going, and the rules we hold going in.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5, fontSize: 15, color: ICE, fontFace: SANS,
+    isTextBox: true, margin: 0 });
+  s.addText(['What the vision has to earn', 'Three candidate statements', 'Principles we hold going in'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 2 } })),
+    { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
+      isTextBox: true, margin: 0, paraSpaceAfter: 7 });
+}
+
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What the vision has to carry', 'Six drivers agreed first. Every candidate statement is then tested against them.');
+  head(s, 'What the vision has to earn', 'Six drivers, agreed before the words. Every candidate is tested against them.');
   const dr = [
-    ['End to end', 'One accountable team across every stream, with our alliances counted as part of what we bring — not a separate arrangement.'],
-    ['Complexity, handled', 'The programmes that stall elsewhere. Implied through language, never stated as carrying or underwriting risk.'],
-    ['Acceleration', 'Time to market and time to value: every month a platform is not live is cost carried or revenue missed.'],
-    ['Both halves', 'What the institution takes to market, and how it runs inside — smarter operations and better tools for its people.'],
-    ['AI at the core, not on the badge', 'Present in what we build and how we deliver. AI-native is oversubscribed; the credibility is in the proof.'],
-    ['All three segments', 'Banking, funds and insurance. The statement cannot read as a banking-only claim.'],
+    ['No seams', 'One accountable team across every stream, with our alliances counted as part of what we bring — not a separate arrangement.'],
+    ['Where others stall', 'The programmes that go sideways in other hands. Said through language, never as carrying or underwriting risk.'],
+    ['Speed that holds', 'Every month a platform is not live is cost carried or revenue missed \u2014 but fast only counts if it survives production.'],
+    ['Outside and in', 'What the institution takes to market, and how it runs inside — smarter operations and better tools for its people.'],
+    ['AI in the engine, not on the badge', 'In what we build and how we deliver. AI-native is oversubscribed; the credibility is in the proof, not the claim.'],
+    ['All three, or it does not count', 'Banking, funds and insurance. A statement that only works for banks is a banking strategy, not ours.'],
   ];
   dr.forEach(([t, b], i) => {
     const x = 0.7 + (i % 3) * 4.03, y = 2.05 + Math.floor(i / 3) * 2.15;
@@ -252,7 +231,7 @@ AI at the core, not on the badge: AI-native is oversubscribed and clients have h
 The remaining four are straightforward but non-negotiable: end-to-end accountability including alliances, acceleration, both halves of the institution, and all three segments.`);
 }
 
-/* 7 — Vision options */
+
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -300,48 +279,7 @@ What the vision obliges elsewhere in the strategy: the catalogue must show the i
 Whichever is chosen, the ambition then puts numbers and a date against it.`);
 }
 
-/* 6 — Tiering */
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  head(s, 'Tier one and tier two', 'Pillar 1 · where the energy goes, and where we stay present without over-investing.');
-  const tiers = [
-    ['Tier one', NAVY, 'Priority geographies and named accounts',
-     ['Active, deliberate coverage — people walking the corridors', 'Named individual account targets, each with an owner', 'Individual revenue targets, gross and net', 'Where the metrics, the eminence and the investment concentrate']],
-    ['Tier two', SLATE, 'Emerging and reactive',
-     ['Managed as clusters and groups, not one by one', 'Reactive pursuit: we respond, we do not camp there', 'Light coverage — a named watcher rather than an owner', 'Promoted to tier one when the signal justifies it']],
-  ];
-  tiers.forEach(([t, c, sub, items], i) => {
-    const x = 0.7 + i * 6.1;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 5.8, h: 3.6, rectRadius: 0.12, fill: { color: MIST } });
-    s.addShape(pres.ShapeType.rect, { x, y: 2.0, w: 5.8, h: 0.95, fill: { color: c } });
-    s.addText(t, { x: x + 0.3, y: 2.08, w: 5.2, h: 0.42, fontSize: 20, bold: true, color: WHITE,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(sub, { x: x + 0.3, y: 2.5, w: 5.2, h: 0.35, fontSize: 12, color: ICE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-    s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
-      { x: x + 0.3, y: 3.15, w: 5.2, h: 2.3, fontSize: 12.5, color: BODY, fontFace: SANS,
-        isTextBox: true, margin: 0, paraSpaceAfter: 10 });
-  });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.8, w: 11.9, h: 0.95, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Tiering applies to geographies and to accounts, across all three segments. Tier two keeps us present in what is emerging without diluting tier one.',
-    { x: 1.0, y: 5.8, w: 11.3, h: 0.95, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addText('Promotion and demotion criteria, and the tier one list itself, are set in the cycle.',
-    { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addNotes(`Tiering applies twice — to geographies and to accounts — and independently of segment. A tier one account can sit in a tier two market, and occasionally the reverse.
 
-Tier one is where the energy goes: deliberate coverage with people physically present working the relationships, named individual targets each with an owner, individual gross and net revenue targets, and the eminence and investment concentrated there. The scorecard is read against tier one.
-
-Tier two is deliberately lighter. Accounts and markets are handled as clusters or groups rather than one by one, pursuit is reactive rather than campaigned, and coverage is a named watcher rather than an accountable owner. It exists for two reasons: to keep us present in what is emerging, and to stop us over-concentrating everything in a handful of names.
-
-Two things the cycle must define rather than leave to instinct: what promotes a tier two account or market to tier one — a real signal, not enthusiasm — and what minimum tier two coverage actually means, so it is not simply a list nobody reads.
-
-Watch the balance. If almost everything lands in tier one, nothing is prioritised. If tier one is too narrow, the plan is fragile to one or two decisions going against us.`);
-}
-
-/* 7 — Principles */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -385,128 +323,105 @@ Delivery model: we expect to inherit the standard firm delivery model rather tha
 Confirm all five principles at kick-off; they bound every later decision.`);
 }
 
-/* 5 — Approach */
+
+{
+  const s = pres.addSlide();
+  s.background = { color: NAVY };
+  s.addShape(pres.ShapeType.ellipse, { x: 9.8, y: 3.4, w: 5.6, h: 5.6, fill: { color: SLATE, transparency: 55 } });
+  s.addText('PART THREE', { x: 0.9, y: 2.15, w: 5, h: 0.4, fontSize: 13, bold: true, color: '9AA7C4',
+    charSpacing: 2, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('What the strategy must cover', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
+    fontFace: HEAD, isTextBox: true, margin: 0 });
+  s.addText('The architecture, then a closer look at each pillar.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5, fontSize: 15, color: ICE, fontFace: SANS,
+    isTextBox: true, margin: 0 });
+  s.addText(['The ambition, four pillars and the discipline', 'Markets, tiers and accounts', 'Delivery, economics and people', 'Alliances and eminence'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 3 } })),
+    { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
+      isTextBox: true, margin: 0, paraSpaceAfter: 7 });
+}
+
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'How we will get there', 'A five-step approach, run once, end to end.');
-  const steps = [
-    ['Mobilise', ['Choose the vision, then frame the ambition', 'Confirm scope, principles and owners'], 'Week 1'],
-    ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
-    ['Define', ['Markets, segments and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
-    ['Quantify', ['Price bands, ADR and target margin', 'Revenue per account, gross and net, against capacity'], 'Week 2'],
-    ['Commit', ['Account ownership and coverage', 'Team, eminence and activation plans signed off'], 'Week 3'],
+  head(s, 'What the strategy must cover', 'The shape of the strategy we are going to build \u2014 not the strategy itself.');
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.9, w: 11.9, h: 0.78, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('THE AMBITION', { x: 1.0, y: 1.9, w: 2.6, h: 0.78, valign: 'middle', fontSize: 13, bold: true,
+    color: ICE, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('What winning looks like, in numbers, by when', { x: 3.7, y: 1.9, w: 8.6, h: 0.78,
+    valign: 'middle', fontSize: 15, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+  const pillars = [
+    ['Market\nand clients', ['Markets and FSI segments', 'Tier one and tier two', 'Named target accounts', 'Offerings and revenue per account', 'Coverage and ownership']],
+    ['Offerings\n(what we sell)', ['Integrated propositions', 'Use cases we lead with', 'Flavours and permitted variants']],
+    ['Delivery\nand economics', ['Delivery model, assets and accelerators', 'Construct, pricing, ADR and margin', 'Team, skills, certification and capacity', 'Revenue targets']],
+    ['Route\nto market', ['Alliances and what they unlock', 'Eminence and positioning', 'How we differentiate']],
   ];
-  steps.forEach(([name, pts, wk], i) => {
-    const x = 0.7 + i * 2.42, cw = 2.22;
-    s.addShape(pres.ShapeType.chevron, { x, y: 2.05, w: cw, h: 0.78,
-      fill: { color: i % 2 ? SLATE : NAVY } });
-    s.addText(name, { x: x + 0.18, y: 2.05, w: cw - 0.3, h: 0.78, align: 'center', valign: 'middle',
-      fontSize: 15, bold: true, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
-    disc(s, x + cw / 2 - 0.19, 3.05, String(i + 1), ACCENT, 0.38);
-    s.addText(pts.map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < pts.length - 1 } })),
-      { x, y: 3.65, w: cw, h: 1.7, fontSize: 12, color: BODY, fontFace: SANS, isTextBox: true,
-        margin: 0, paraSpaceAfter: 8 });
-    s.addText(wk, { x, y: 5.45, w: cw, h: 0.35, align: 'center', fontSize: 11.5, bold: true,
-      color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  pillars.forEach(([t, items], i) => {
+    const x = 0.7 + i * 3.02, w = 2.84;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.85, w, h: 3.25, rectRadius: 0.12,
+      fill: { color: i % 2 ? MIST : 'E4EBF7' } });
+    s.addShape(pres.ShapeType.rect, { x, y: 2.85, w, h: 0.92, fill: { color: i % 2 ? SLATE : NAVY } });
+    s.addText(t, { x: x + 0.22, y: 2.85, w: w - 0.44, h: 0.92, valign: 'middle', fontSize: 15, bold: true,
+      color: WHITE, fontFace: SANS, isTextBox: true, margin: 0, lineSpacing: 17 });
+    s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
+      { x: x + 0.22, y: 3.95, w: w - 0.42, h: 2.05, fontSize: 11.5, color: BODY, fontFace: SANS,
+        isTextBox: true, margin: 0, paraSpaceAfter: 7 });
   });
-  s.addText('Each step closes before the next opens; the gate is a decision, not a document.',
-    { x: 0.7, y: 6.15, w: 11.9, h: 0.4, fontSize: 13.5, italic: true, color: SLATE,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addNotes(`The five steps are the process view; the workstream and calendar views that follow are the same journey cut by owner and by week.
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.25, w: 11.9, h: 0.72, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('THE DISCIPLINE', { x: 1.0, y: 6.25, w: 2.6, h: 0.72, valign: 'middle', fontSize: 13, bold: true,
+    color: ICE, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('Operating rhythm, scorecard and decision rights that keep the four pillars honest',
+    { x: 3.7, y: 6.25, w: 8.6, h: 0.72, valign: 'middle', fontSize: 14, color: WHITE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Framing is loosely a strategy cascade (where to play, how to play), extended for a consulting portfolio with commercial, coverage, talent and eminence dimensions.
 
-Note on Quantify: pricing will not reduce to a single number per offering. Core modernisation and migration varies by segment and by scope — retail, corporate or SME in banking; life versus general in insurance; fund accounting versus front-office in funds — and by single-country versus multi-country, and by whether full data migration is in scope. So the artefact is price bands and deal-size ranges with the drivers named, not a price list. Same logic for AI and data platform work, and for cloud and integration engagements.
-
-Baseline also covers people: who we have today, dedicated and shared.`);
+Context we already hold, to be validated rather than assumed during the cycle:
+- Primary markets: Saudi Arabia, UAE, Qatar.
+- Secondary markets: Kuwait, Oman, Jordan — where we focus our key relationships.
+- The output must go further than markets: a specific, named target account list, with account mapping — who covers whom.
+- Offerings must be expressed as products and services with a buyer attached: who buys this, and what do they typically pay.`);
 }
 
-/* 6 — Workstreams */
+
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Five workstreams, one per pillar', 'Each pillar has one owner and a defined set of artefacts.');
-  const ws = [
-    ['1 · Market and clients', 'Markets, segments, tiering, named accounts, offerings and revenue per account, coverage',
-     'Market prioritisation · target account list · account revenue plan · coverage map'],
-    ['2 · Offerings', 'What we sell: integrated propositions, use cases and permitted flavours',
-     'Proposition catalogue'],
-    ['3 · Delivery and economics', 'Delivery model, assets and accelerators, construct, pricing, margin, team and targets',
-     'Pricing bands · offering economics · team model · revenue targets'],
-    ['4 · Route to market', 'Alliances, eminence and differentiation',
-     'Alliance map · eminence calendar'],
-    ['5 · Operating discipline', 'Rhythm, measures and decision rights after sign-off',
-     'Operating rhythm · KPI scorecard · review calendar'],
+  head(s, 'Tier one and tier two', 'Pillar 1 · where the energy goes, and where we stay present without over-investing.');
+  const tiers = [
+    ['Tier one', NAVY, 'Priority geographies and named accounts',
+     ['Active, deliberate coverage — people walking the corridors', 'Named individual account targets, each with an owner', 'Individual revenue targets, gross and net', 'Where the metrics, the eminence and the investment concentrate']],
+    ['Tier two', SLATE, 'Emerging and reactive',
+     ['Managed as clusters and groups, not one by one', 'Reactive pursuit: we respond, we do not camp there', 'Light coverage — a named watcher rather than an owner', 'Promoted to tier one when the signal justifies it']],
   ];
-  ws.forEach(([t, scope, art], i) => {
-    const y = 2.05 + i * 0.95;
-    s.addShape(pres.ShapeType.roundRect, { x: 0.7, y, w: 11.9, h: 0.82, rectRadius: 0.1,
-      fill: { color: i % 2 ? MIST : 'F2F6FC' } });
-    s.addText(t, { x: 1.0, y: y + 0.04, w: 4.0, h: 0.34, fontSize: 13.5, bold: true, color: NAVY,
+  tiers.forEach(([t, c, sub, items], i) => {
+    const x = 0.7 + i * 6.1;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 5.8, h: 3.6, rectRadius: 0.12, fill: { color: MIST } });
+    s.addShape(pres.ShapeType.rect, { x, y: 2.0, w: 5.8, h: 0.95, fill: { color: c } });
+    s.addText(t, { x: x + 0.3, y: 2.08, w: 5.2, h: 0.42, fontSize: 20, bold: true, color: WHITE,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(scope, { x: 1.0, y: y + 0.4, w: 4.0, h: 0.36, fontSize: 10.5, color: MUTE,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(art, { x: 5.3, y, w: 7.0, h: 0.82, valign: 'middle', fontSize: 12.5, color: BODY,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-  });
-  s.addText('Level 1 is the pillar and its owner. Level 2 is the topic, and every topic ends in one artefact in the appendix.',
-    { x: 0.7, y: 6.9, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: MUTE, fontFace: SANS,
+    s.addText(sub, { x: x + 0.3, y: 2.5, w: 5.2, h: 0.35, fontSize: 12, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addNotes(`The structure is two levels on purpose. Level 1 is the pillar — one owner, one accountable partner. Level 2 is the topic inside it, and each topic ends in exactly one artefact in the appendix.
+    s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
+      { x: x + 0.3, y: 3.15, w: 5.2, h: 2.3, fontSize: 12.5, color: BODY, fontFace: SANS,
+        isTextBox: true, margin: 0, paraSpaceAfter: 10 });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.8, w: 11.9, h: 0.95, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('Tiering applies to geographies and to accounts, across all three segments. Tier two keeps us present in what is emerging without diluting tier one.',
+    { x: 1.0, y: 5.8, w: 11.3, h: 0.95, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addText('Promotion and demotion criteria, and the tier one list itself, are set in the cycle.',
+    { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Tiering applies twice — to geographies and to accounts — and independently of segment. A tier one account can sit in a tier two market, and occasionally the reverse.
 
-What each pillar carries:
-- Market and clients: markets and segments (primary expected to be Saudi, UAE and Qatar; secondary Kuwait, Oman and Jordan, all to be validated), the named account list, and the coverage map. Two mappings live here — our own partners who own the relationship, and the alliance partner behind the account.
-- Offerings: the catalogue itself, and nothing else — integrated propositions, the use cases we lead with, and the permitted flavours or partial offerings. It stands alone because it is the What: everything else in the strategy either sells it, delivers it or prices it.
-- Delivery and economics: the delivery model and the construct behind each offering price bands with the drivers that move them, blended ADR and target margin, and the revenue targets that fall out. Delivery model and pricing sit in one pillar because they determine each other: the construct sets the cost, the cost sets the achievable price and margin.
-  Capability sits in the same pillar: the dedicated FSI team, the shared capacity we can genuinely draw on, and the recruitment gap by level. It belongs here because the construct and the margin only hold if the people behind them exist — a target we cannot staff is not a target.
-- Route to market: alliances (Oracle, Google, Amazon as primary; Temenos and Intellect as specialised) and the eminence plan.
-- Operating discipline: the rhythm, scorecard and decision rights that keep the rest alive after sign-off.
+Tier one is where the energy goes: deliberate coverage with people physically present working the relationships, named individual targets each with an owner, individual gross and net revenue targets, and the eminence and investment concentrated there. The scorecard is read against tier one.
 
-Dependencies to watch: revenue targets cannot be set without the capacity view, and the alliance map must reconcile with the coverage map.`);
+Tier two is deliberately lighter. Accounts and markets are handled as clusters or groups rather than one by one, pursuit is reactive rather than campaigned, and coverage is a named watcher rather than an accountable owner. It exists for two reasons: to keep us present in what is emerging, and to stop us over-concentrating everything in a handful of names.
+
+Two things the cycle must define rather than leave to instinct: what promotes a tier two account or market to tier one — a real signal, not enthusiasm — and what minimum tier two coverage actually means, so it is not simply a list nobody reads.
+
+Watch the balance. If almost everything lands in tier one, nothing is prioritised. If tier one is too narrow, the plan is fragile to one or two decisions going against us.`);
 }
 
-/* 8 — The team */
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  head(s, 'Who is doing this', 'The strategy development team.');
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 2.0, w: 11.9, h: 1.15, rectRadius: 0.1, fill: { color: NAVY } });
-  disc(s, 1.05, 2.28, 'D', SLATE, 0.6);
-  s.addText('Dany', { x: 1.85, y: 2.22, w: 3.2, h: 0.4, fontSize: 20, bold: true, color: WHITE,
-    fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText('Overall lead — owns the cycle, chairs the checkpoints, takes the strategy to sign-off',
-    { x: 1.85, y: 2.66, w: 10.3, h: 0.4, fontSize: 13, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
-  const leads = [
-    ['Tanay', 'Industry Solutions', 'Core-led transformation and core platforms across banking, funds and insurance, full SI'],
-    ['Rachel', 'AI and Data', 'Enterprise and core AI, use-case activation, data platforms'],
-    ['Clifford', 'Engineering', 'Cloud, integration, microservices, API and bespoke build'],
-  ];
-  leads.forEach(([n, role, scope], i) => {
-    const x = 0.7 + i * 4.03;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 3.4, w: 3.85, h: 2.15, rectRadius: 0.12, fill: { color: MIST } });
-    disc(s, x + 0.3, 3.7, n.charAt(0), i % 2 ? SLATE : NAVY, 0.52);
-    s.addText(n, { x: x + 1.0, y: 3.68, w: 2.6, h: 0.4, fontSize: 19, bold: true, color: INK,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(role, { x: x + 0.3, y: 4.35, w: 3.25, h: 0.35, fontSize: 14, bold: true, color: NAVY,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(scope, { x: x + 0.3, y: 4.72, w: 3.25, h: 0.7, fontSize: 11.5, color: BODY, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  });
-  s.addText('Pillar ownership across the five workstreams is assigned from this group at kick-off; every artefact carries one name.',
-    { x: 0.7, y: 5.8, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addText('Wider contributors — account partners, alliance leads, resourcing and finance — are pulled in per workstream rather than sitting on the core team.',
-    { x: 0.7, y: 6.3, w: 11.9, h: 0.4, fontSize: 12, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addNotes(`Core team as agreed: Dany leads overall; Tanay leads Industry Solutions; Rachel leads AI and Data; Clifford leads Engineering.
 
-Note the shape difference: the three leads represent the three practices, while the workstreams are cut by pillar, which is deliberate — the strategy is one portfolio strategy, not three practice strategies stapled together. Each pillar therefore needs a named owner drawn from this group, with the other two contributing their practice view into it.
-
-A workable split to propose at kick-off: Dany takes the ambition and the operating discipline; the offerings catalogue is owned jointly but chaired by one lead, since integrated propositions cut across all three practices; market and clients sits with whoever carries the strongest regional relationships; delivery and economics sits with the lead whose practice has the largest delivery footprint. Confirm rather than assume.
-
-Everything else — account partners, alliance leads, resourcing, finance — is pulled in per workstream and not standing members.`);
-}
-
-/* 9 — Delivery and pricing economics */
-/* 9 — Pricing and delivery economics */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -563,29 +478,30 @@ Acceleration sits inside the delivery model, not beside it. If we position on ti
 It also changes the economics, which is why it belongs here. Reuse raises margin at the same price, and it makes fixed-price and outcome-based pricing viable where time and materials was the only safe basis. The offering economics template records the assets behind each offering for exactly that reason: an offering with no asset behind it is a bespoke build, and bespoke is both slower and thinner.`);
 }
 
-/* 8 — Team and talent */
+
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Team and talent', 'Pillar 3 · the capacity behind the construct, in three parts.');
+  head(s, 'Team, skills and enablement', 'Pillar 3 \u00b7 the capacity behind the construct, and the capability behind the capacity.');
   const cols = [
     ['The dedicated team', NAVY, ['Who works on FSI exclusively, across the three practices?', 'Which roles and levels do they hold?', 'What is realistically deliverable with them alone?']],
     ['Shared capacity', SLATE, ['Which resources are shared with other portfolios?', 'How much of their time can we count on?', 'Which skills do we borrow rather than own?']],
-    ['The gap to close', NAVY, ['How many partners, directors and delivery staff are missing?', 'Build, borrow or buy for each gap?', 'By when, to support the targets we set?']],
+    ['Skills and enablement', NAVY, ['Which capabilities does the catalogue actually require?', 'What domain training and FSI certification is needed?', 'What alliance and platform certification must we hold?']],
+    ['The gap to close', SLATE, ['How many partners, directors and delivery staff are missing?', 'Build, borrow or buy for each gap?', 'By when, to support the targets we set?']],
   ];
   cols.forEach(([t, c, qs], i) => {
-    const x = 0.7 + i * 4.07;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 3.75, h: 3.7, rectRadius: 0.12, fill: { color: MIST } });
-    s.addShape(pres.ShapeType.rect, { x, y: 2.0, w: 3.75, h: 0.72, fill: { color: c } });
-    s.addText(t, { x: x + 0.3, y: 2.0, w: 3.15, h: 0.72, valign: 'middle', fontSize: 17, bold: true,
+    const x = 0.7 + i * 3.02;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 2.84, h: 3.85, rectRadius: 0.12, fill: { color: MIST } });
+    s.addShape(pres.ShapeType.rect, { x, y: 2.0, w: 2.84, h: 0.78, fill: { color: c } });
+    s.addText(t, { x: x + 0.22, y: 2.0, w: 2.4, h: 0.78, valign: 'middle', fontSize: 14, bold: true,
       color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
     s.addText(qs.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < qs.length - 1 } })),
-      { x: x + 0.3, y: 2.95, w: 3.15, h: 2.5, fontSize: 12.5, color: BODY, fontFace: SANS,
-        isTextBox: true, margin: 0, paraSpaceAfter: 10 });
+      { x: x + 0.22, y: 2.95, w: 2.42, h: 2.75, fontSize: 11, color: BODY, fontFace: SANS,
+        isTextBox: true, margin: 0, paraSpaceAfter: 8 });
   });
-  openTag(s, 3.9, 5.95, 5.5, 'names, numbers and dates ' + TBD + ' in the cycle');
-  s.addText('Talent is treated as a strategy output, not an afterthought: targets we cannot staff are not targets.',
-    { x: 0.7, y: 6.55, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE,
+  openTag(s, 3.9, 6.05, 5.5, 'names, numbers and dates ' + TBD + ' in the cycle');
+  s.addText('Targets we cannot staff are not targets \u2014 and staff without the domain credential cannot sell the work.',
+    { x: 0.7, y: 6.6, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE,
       fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`This was called out as an important dimension in its own right.
 
@@ -597,53 +513,7 @@ Three things to establish:
 The link to the rest of the strategy is direct: a revenue target we cannot staff is not a target. Capacity is sized against the targets set in the commercial workstream.`);
 }
 
-/* 8 — Eminence */
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  head(s, 'Eminence and positioning', 'Pillar 4 · how the market \u2014 outside and inside the firm \u2014 comes to know us for this.');
-  const ch = [
-    ['Published views', ['Points of view', 'Articles', 'Benchmark reports']],
-    ['Stages', ['Industry conferences', 'Flagship FSI events', 'Panels and keynotes']],
-    ['Client formats', ['Executive workshops', 'Seminars', 'Roundtables']],
-    ['Digital', ['Podcasts', 'Webinars', 'Social presence']],
-    ['Partner-led', ['Joint content', 'Alliance events', 'Co-branded assets']],
-  ];
-  ch.forEach(([t, items], i) => {
-    const x = 0.7 + i * 2.42;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 1.95, w: 2.22, h: 2.35, rectRadius: 0.12,
-      fill: { color: i % 2 ? MIST : 'E4EBF7' } });
-    s.addText(t, { x: x + 0.22, y: 2.08, w: 1.9, h: 0.4, fontSize: 14, bold: true, color: INK,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
-      { x: x + 0.22, y: 2.55, w: 1.85, h: 1.6, fontSize: 11, color: BODY, fontFace: SANS,
-        isTextBox: true, margin: 0, paraSpaceAfter: 5 });
-  });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 4.5, w: 11.9, h: 1.3, rectRadius: 0.12, fill: { color: MIST } });
-  s.addShape(pres.ShapeType.rect, { x: 0.7, y: 4.5, w: 2.55, h: 1.3, fill: { color: SLATE } });
-  s.addText('Internal\neminence', { x: 0.92, y: 4.5, w: 2.2, h: 1.3, valign: 'middle', fontSize: 15, bold: true,
-    color: WHITE, fontFace: SANS, isTextBox: true, margin: 0, lineSpacing: 17 });
-  s.addText('The FS partners and directors in other portfolios are a market in their own right \u2014 they are in front of our clients every week. Catalogue briefings, enablement on the proposition one-pagers, deal clinics and internally circulated wins belong in the plan alongside the external channels.',
-    { x: 3.5, y: 4.5, w: 8.9, h: 1.3, valign: 'middle', fontSize: 12.5, color: BODY, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.0, w: 11.9, h: 0.9, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('For each activity: internal or external, which channel, how often, who fronts it, which accounts or audiences it targets, and how we measure the return.',
-    { x: 1.0, y: 6.0, w: 11.3, h: 0.9, valign: 'middle', fontSize: 13, color: ICE,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText('Channel mix and cadence ' + TBD + ' in the cycle.', { x: 0.7, y: 7.0, w: 11.9, h: 0.35,
-    fontSize: 11, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addNotes(`Raised as a distinct part of the plan: how we enhance our positioning in the market, specifically in FSI, around what we do.
 
-Channels mentioned: workshops, seminars, podcasts, articles, and participation in key industry events — Money20/20 was named as an example of the class of event we should consider. The plan should decide which of these are relevant to us rather than assume all of them.
-
-For each channel the plan answers: do we commit, how often, who fronts it, which accounts or markets it targets, and how we measure return — inbound enquiries, meetings created, inclusion on shortlists and RFP invitations.
-
-Worth linking eminence to the account list: eminence activity should point at the accounts and markets the strategy has prioritised, not at general brand awareness.
-
-Internal eminence matters as much as external here. The FS partners and directors sitting in other portfolios are in front of our target clients constantly, and they can only pull us in if they know what we sell. That means scheduled briefings on the catalogue, enablement on the proposition one-pagers, deal clinics where they bring a live situation and we shape the play, and our wins circulated internally rather than only externally. It is the mechanism behind the integrated-market-team principle — the principle sets the expectation, the internal eminence plan is how it is actually resourced and scheduled.`);
-}
-
-/* 9 — Alliances */
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -697,7 +567,188 @@ The gap to close in the cycle: our specialised alliances are banking-weighted. F
 Two links to the rest of the strategy: the alliance map must reconcile with the account coverage map (an alliance that opens an account should appear against that account), and with the capacity plan, because certifications and accredited people are a real training and hiring cost. Funding available from the broad alliances should also appear in the commercial view — it changes what a first engagement can be priced at.`);
 }
 
-/* 10 — Three-week journey */
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Eminence and positioning', 'Pillar 4 · how the market \u2014 outside and inside the firm \u2014 comes to know us for this.');
+  const ch = [
+    ['Published views', ['Points of view', 'Articles', 'Benchmark reports']],
+    ['Stages', ['Industry conferences', 'Flagship FSI events', 'Panels and keynotes']],
+    ['Client formats', ['Executive workshops', 'Seminars', 'Roundtables']],
+    ['Digital', ['Podcasts', 'Webinars', 'Social presence']],
+    ['Partner-led', ['Joint content', 'Alliance events', 'Co-branded assets']],
+  ];
+  ch.forEach(([t, items], i) => {
+    const x = 0.7 + i * 2.42;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 1.95, w: 2.22, h: 2.35, rectRadius: 0.12,
+      fill: { color: i % 2 ? MIST : 'E4EBF7' } });
+    s.addText(t, { x: x + 0.22, y: 2.08, w: 1.9, h: 0.4, fontSize: 14, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
+      { x: x + 0.22, y: 2.55, w: 1.85, h: 1.6, fontSize: 11, color: BODY, fontFace: SANS,
+        isTextBox: true, margin: 0, paraSpaceAfter: 5 });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 4.5, w: 11.9, h: 1.3, rectRadius: 0.12, fill: { color: MIST } });
+  s.addShape(pres.ShapeType.rect, { x: 0.7, y: 4.5, w: 2.55, h: 1.3, fill: { color: SLATE } });
+  s.addText('Internal\neminence', { x: 0.92, y: 4.5, w: 2.2, h: 1.3, valign: 'middle', fontSize: 15, bold: true,
+    color: WHITE, fontFace: SANS, isTextBox: true, margin: 0, lineSpacing: 17 });
+  s.addText('The FS partners and directors in other portfolios are a market in their own right \u2014 they are in front of our clients every week. Catalogue briefings, enablement on the proposition one-pagers, deal clinics and internally circulated wins belong in the plan alongside the external channels.',
+    { x: 3.5, y: 4.5, w: 8.9, h: 1.3, valign: 'middle', fontSize: 12.5, color: BODY, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.0, w: 11.9, h: 0.9, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('For each activity: internal or external, which channel, how often, who fronts it, which accounts or audiences it targets, and how we measure the return.',
+    { x: 1.0, y: 6.0, w: 11.3, h: 0.9, valign: 'middle', fontSize: 13, color: ICE,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('Channel mix and cadence ' + TBD + ' in the cycle.', { x: 0.7, y: 7.0, w: 11.9, h: 0.35,
+    fontSize: 11, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addNotes(`Raised as a distinct part of the plan: how we enhance our positioning in the market, specifically in FSI, around what we do.
+
+Channels mentioned: workshops, seminars, podcasts, articles, and participation in key industry events — Money20/20 was named as an example of the class of event we should consider. The plan should decide which of these are relevant to us rather than assume all of them.
+
+For each channel the plan answers: do we commit, how often, who fronts it, which accounts or markets it targets, and how we measure return — inbound enquiries, meetings created, inclusion on shortlists and RFP invitations.
+
+Worth linking eminence to the account list: eminence activity should point at the accounts and markets the strategy has prioritised, not at general brand awareness.
+
+Internal eminence matters as much as external here. The FS partners and directors sitting in other portfolios are in front of our target clients constantly, and they can only pull us in if they know what we sell. That means scheduled briefings on the catalogue, enablement on the proposition one-pagers, deal clinics where they bring a live situation and we shape the play, and our wins circulated internally rather than only externally. It is the mechanism behind the integrated-market-team principle — the principle sets the expectation, the internal eminence plan is how it is actually resourced and scheduled.`);
+}
+
+
+{
+  const s = pres.addSlide();
+  s.background = { color: NAVY };
+  s.addShape(pres.ShapeType.ellipse, { x: 9.8, y: 3.4, w: 5.6, h: 5.6, fill: { color: SLATE, transparency: 55 } });
+  s.addText('PART FOUR', { x: 0.9, y: 2.15, w: 5, h: 0.4, fontSize: 13, bold: true, color: '9AA7C4',
+    charSpacing: 2, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('How we build it', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
+    fontFace: HEAD, isTextBox: true, margin: 0 });
+  s.addText('The approach, the owners and the calendar.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5, fontSize: 15, color: ICE, fontFace: SANS,
+    isTextBox: true, margin: 0 });
+  s.addText(['The five-step approach', 'Workstreams and who owns them', 'The three-week journey', 'How we run the cycle'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 3 } })),
+    { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
+      isTextBox: true, margin: 0, paraSpaceAfter: 7 });
+}
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'How we will get there', 'A five-step approach, run once, end to end.');
+  const steps = [
+    ['Mobilise', ['Choose the vision, then frame the ambition', 'Confirm scope, principles and owners'], 'Week 1'],
+    ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
+    ['Define', ['Markets, segments and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
+    ['Quantify', ['Price bands, ADR and target margin', 'Revenue per account, gross and net, against capacity'], 'Week 2'],
+    ['Commit', ['Account ownership and coverage', 'Team, eminence and activation plans signed off'], 'Week 3'],
+  ];
+  steps.forEach(([name, pts, wk], i) => {
+    const x = 0.7 + i * 2.42, cw = 2.22;
+    s.addShape(pres.ShapeType.chevron, { x, y: 2.05, w: cw, h: 0.78,
+      fill: { color: i % 2 ? SLATE : NAVY } });
+    s.addText(name, { x: x + 0.18, y: 2.05, w: cw - 0.3, h: 0.78, align: 'center', valign: 'middle',
+      fontSize: 15, bold: true, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    disc(s, x + cw / 2 - 0.19, 3.05, String(i + 1), ACCENT, 0.38);
+    s.addText(pts.map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < pts.length - 1 } })),
+      { x, y: 3.65, w: cw, h: 1.7, fontSize: 12, color: BODY, fontFace: SANS, isTextBox: true,
+        margin: 0, paraSpaceAfter: 8 });
+    s.addText(wk, { x, y: 5.45, w: cw, h: 0.35, align: 'center', fontSize: 11.5, bold: true,
+      color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addText('Each step closes before the next opens; the gate is a decision, not a document.',
+    { x: 0.7, y: 6.15, w: 11.9, h: 0.4, fontSize: 13.5, italic: true, color: SLATE,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addNotes(`The five steps are the process view; the workstream and calendar views that follow are the same journey cut by owner and by week.
+
+Note on Quantify: pricing will not reduce to a single number per offering. Core modernisation and migration varies by segment and by scope — retail, corporate or SME in banking; life versus general in insurance; fund accounting versus front-office in funds — and by single-country versus multi-country, and by whether full data migration is in scope. So the artefact is price bands and deal-size ranges with the drivers named, not a price list. Same logic for AI and data platform work, and for cloud and integration engagements.
+
+Baseline also covers people: who we have today, dedicated and shared.`);
+}
+
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Five workstreams, one per pillar', 'Each pillar has one owner and a defined set of artefacts.');
+  const ws = [
+    ['1 · Market and clients', 'Markets, segments, tiering, named accounts, offerings and revenue per account, coverage',
+     'Market prioritisation · target account list · account revenue plan · coverage map'],
+    ['2 · Offerings', 'What we sell: integrated propositions, use cases and permitted flavours',
+     'Proposition catalogue'],
+    ['3 · Delivery and economics', 'Delivery model and assets, construct, pricing, margin, team, skills and targets',
+     'Pricing bands · offering economics · team model · revenue targets'],
+    ['4 · Route to market', 'Alliances, eminence and differentiation',
+     'Alliance map · eminence calendar'],
+    ['5 · Operating discipline', 'Rhythm, measures and decision rights after sign-off',
+     'Operating rhythm · KPI scorecard · review calendar'],
+  ];
+  ws.forEach(([t, scope, art], i) => {
+    const y = 2.05 + i * 0.95;
+    s.addShape(pres.ShapeType.roundRect, { x: 0.7, y, w: 11.9, h: 0.82, rectRadius: 0.1,
+      fill: { color: i % 2 ? MIST : 'F2F6FC' } });
+    s.addText(t, { x: 1.0, y: y + 0.04, w: 4.0, h: 0.34, fontSize: 13.5, bold: true, color: NAVY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(scope, { x: 1.0, y: y + 0.4, w: 4.0, h: 0.36, fontSize: 10.5, color: MUTE,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(art, { x: 5.3, y, w: 7.0, h: 0.82, valign: 'middle', fontSize: 12.5, color: BODY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addText('Level 1 is the pillar and its owner. Level 2 is the topic, and every topic ends in one artefact in the appendix.',
+    { x: 0.7, y: 6.9, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`The structure is two levels on purpose. Level 1 is the pillar — one owner, one accountable partner. Level 2 is the topic inside it, and each topic ends in exactly one artefact in the appendix.
+
+What each pillar carries:
+- Market and clients: markets and segments (primary expected to be Saudi, UAE and Qatar; secondary Kuwait, Oman and Jordan, all to be validated), the named account list, and the coverage map. Two mappings live here — our own partners who own the relationship, and the alliance partner behind the account.
+- Offerings: the catalogue itself, and nothing else — integrated propositions, the use cases we lead with, and the permitted flavours or partial offerings. It stands alone because it is the What: everything else in the strategy either sells it, delivers it or prices it.
+- Delivery and economics: the delivery model and the construct behind each offering price bands with the drivers that move them, blended ADR and target margin, and the revenue targets that fall out. Delivery model and pricing sit in one pillar because they determine each other: the construct sets the cost, the cost sets the achievable price and margin.
+  Capability sits in the same pillar: the dedicated FSI team, the shared capacity we can genuinely draw on, and the recruitment gap by level. It belongs here because the construct and the margin only hold if the people behind them exist — a target we cannot staff is not a target.
+- Route to market: alliances (Oracle, Google, Amazon as primary; Temenos and Intellect as specialised) and the eminence plan.
+- Operating discipline: the rhythm, scorecard and decision rights that keep the rest alive after sign-off.
+
+Dependencies to watch: revenue targets cannot be set without the capacity view, and the alliance map must reconcile with the coverage map.`);
+}
+
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Who is doing this', 'The strategy development team.');
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 2.0, w: 11.9, h: 1.15, rectRadius: 0.1, fill: { color: NAVY } });
+  disc(s, 1.05, 2.28, 'D', SLATE, 0.6);
+  s.addText('Dany', { x: 1.85, y: 2.22, w: 3.2, h: 0.4, fontSize: 20, bold: true, color: WHITE,
+    fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('Overall lead — owns the cycle, chairs the checkpoints, takes the strategy to sign-off',
+    { x: 1.85, y: 2.66, w: 10.3, h: 0.4, fontSize: 13, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
+  const leads = [
+    ['Tanay', 'Industry Solutions', 'Core-led transformation and core platforms across banking, funds and insurance, full SI'],
+    ['Rachel', 'AI and Data', 'Enterprise and core AI, use-case activation, data platforms'],
+    ['Clifford', 'Engineering', 'Cloud, integration, microservices, API and bespoke build'],
+  ];
+  leads.forEach(([n, role, scope], i) => {
+    const x = 0.7 + i * 4.03;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 3.4, w: 3.85, h: 2.15, rectRadius: 0.12, fill: { color: MIST } });
+    disc(s, x + 0.3, 3.7, n.charAt(0), i % 2 ? SLATE : NAVY, 0.52);
+    s.addText(n, { x: x + 1.0, y: 3.68, w: 2.6, h: 0.4, fontSize: 19, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(role, { x: x + 0.3, y: 4.35, w: 3.25, h: 0.35, fontSize: 14, bold: true, color: NAVY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(scope, { x: x + 0.3, y: 4.72, w: 3.25, h: 0.7, fontSize: 11.5, color: BODY, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  });
+  s.addText('Pillar ownership across the five workstreams is assigned from this group at kick-off; every artefact carries one name.',
+    { x: 0.7, y: 5.8, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addText('Wider contributors — account partners, alliance leads, resourcing and finance — are pulled in per workstream rather than sitting on the core team.',
+    { x: 0.7, y: 6.3, w: 11.9, h: 0.4, fontSize: 12, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addNotes(`Core team as agreed: Dany leads overall; Tanay leads Industry Solutions; Rachel leads AI and Data; Clifford leads Engineering.
+
+Note the shape difference: the three leads represent the three practices, while the workstreams are cut by pillar, which is deliberate — the strategy is one portfolio strategy, not three practice strategies stapled together. Each pillar therefore needs a named owner drawn from this group, with the other two contributing their practice view into it.
+
+A workable split to propose at kick-off: Dany takes the ambition and the operating discipline; the offerings catalogue is owned jointly but chaired by one lead, since integrated propositions cut across all three practices; market and clients sits with whoever carries the strongest regional relationships; delivery and economics sits with the lead whose practice has the largest delivery footprint. Confirm rather than assume.
+
+Everything else — account partners, alliance leads, resourcing, finance — is pulled in per workstream and not standing members.`);
+}
+
+
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -730,7 +781,56 @@ Each week ends at a gate, and a gate is a decision taken, not a document circula
 Start date to be set at kick-off.`);
 }
 
-/* 11 — Execution governance */
+
+{
+  const s = pres.addSlide();
+  s.background = { color: NAVY };
+  s.addShape(pres.ShapeType.ellipse, { x: -2.2, y: 4.4, w: 6.2, h: 6.2, fill: { color: SLATE, transparency: 55 } });
+  s.addText('How we run the cycle', { x: 0.8, y: 0.6, w: 11, h: 0.8, fontSize: 36, bold: true,
+    color: WHITE, fontFace: HEAD, isTextBox: true, margin: 0 });
+  s.addText('Cadence, inputs and the decisions we are asking for.', { x: 0.8, y: 1.42, w: 11, h: 0.45,
+    fontSize: 14.5, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
+  const cols = [
+    ['Cadence', ['Kick-off to confirm scope and principles', 'Weekly working session per workstream', 'Checkpoint at the end of each week', 'Sign-off session in week three']],
+    ['Inputs we need', ['Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
+    ['Decisions requested', ['The vision, then the ambition in numbers', 'Priority markets and segments', 'Target account list', 'Revenue and margin targets by account', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
+  ];
+  cols.forEach(([h, items], i) => {
+    const x = 0.8 + i * 4.05;
+    disc(s, x, 2.15, String(i + 1), ICE === ICE ? SLATE : SLATE, 0.42);
+    s.addText(h, { x: x + 0.6, y: 2.13, w: 3.2, h: 0.4, fontSize: 19, bold: true, color: WHITE,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(items.map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < items.length - 1 } })),
+      { x, y: 2.85, w: 3.6, h: 2.8, fontSize: 13, color: ICE, fontFace: SANS, isTextBox: true,
+        margin: 0, paraSpaceAfter: 10 });
+  });
+  s.addText('Dates and participants beyond the core team are set at kick-off.', { x: 0.8, y: 6.4, w: 7, h: 0.4,
+    fontSize: 12, italic: true, color: '9AA7C4', fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addNotes(`Close on two asks: confirm the principles, and nominate the workstream owners.
+
+Inputs are the long pole — pipeline, revenue by pillar and market, existing relationships, alliance status, delivery capacity and historical deal values all sit with different people. Chase them in the first 48 hours or week 1 slips.
+
+Decisions requested at sign-off: priority markets and segments, the target account list, revenue and margin targets, account ownership, and the investment and hiring asks coming out of the talent and eminence workstreams.
+
+Open items to resolve at kick-off: audience for this pack, the definition of partner for account ownership, and the start date.`);
+}
+
+
+{
+  const s = pres.addSlide();
+  s.background = { color: NAVY };
+  s.addShape(pres.ShapeType.ellipse, { x: 9.8, y: 3.4, w: 5.6, h: 5.6, fill: { color: SLATE, transparency: 55 } });
+  s.addText('PART FIVE', { x: 0.9, y: 2.15, w: 5, h: 0.4, fontSize: 13, bold: true, color: '9AA7C4',
+    charSpacing: 2, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('After sign-off', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
+    fontFace: HEAD, isTextBox: true, margin: 0 });
+  s.addText('Keeping the strategy alive once it is agreed.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5, fontSize: 15, color: ICE, fontFace: SANS,
+    isTextBox: true, margin: 0 });
+  s.addText(['Governing the execution: rhythm, scorecard and decision rights'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 0 } })),
+    { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
+      isTextBox: true, margin: 0, paraSpaceAfter: 7 });
+}
+
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -778,40 +878,6 @@ Three loops, deliberately different in purpose: weekly is deal-level and run by 
 The scorecard is designed so that the strategy's own principles are measurable. The mix KPI is the important one: if the share of revenue from integrated propositions does not move, we are back to selling in silos whatever the catalogue says.
 
 Still to set at sign-off: who chairs each forum, what decisions each can take without escalation, and where the strategy log lives so it stays current rather than being rebuilt each quarter.`);
-}
-
-/* 12 — Cycle governance */
-{
-  const s = pres.addSlide();
-  s.background = { color: NAVY };
-  s.addShape(pres.ShapeType.ellipse, { x: -2.2, y: 4.4, w: 6.2, h: 6.2, fill: { color: SLATE, transparency: 55 } });
-  s.addText('How we run the cycle', { x: 0.8, y: 0.6, w: 11, h: 0.8, fontSize: 36, bold: true,
-    color: WHITE, fontFace: HEAD, isTextBox: true, margin: 0 });
-  s.addText('Cadence, inputs and the decisions we are asking for.', { x: 0.8, y: 1.42, w: 11, h: 0.45,
-    fontSize: 14.5, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
-  const cols = [
-    ['Cadence', ['Kick-off to confirm scope and principles', 'Weekly working session per workstream', 'Checkpoint at the end of each week', 'Sign-off session in week three']],
-    ['Inputs we need', ['Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
-    ['Decisions requested', ['The vision, then the ambition in numbers', 'Priority markets and segments', 'Target account list', 'Revenue and margin targets by account', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
-  ];
-  cols.forEach(([h, items], i) => {
-    const x = 0.8 + i * 4.05;
-    disc(s, x, 2.15, String(i + 1), ICE === ICE ? SLATE : SLATE, 0.42);
-    s.addText(h, { x: x + 0.6, y: 2.13, w: 3.2, h: 0.4, fontSize: 19, bold: true, color: WHITE,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(items.map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < items.length - 1 } })),
-      { x, y: 2.85, w: 3.6, h: 2.8, fontSize: 13, color: ICE, fontFace: SANS, isTextBox: true,
-        margin: 0, paraSpaceAfter: 10 });
-  });
-  s.addText('Dates and participants beyond the core team are set at kick-off.', { x: 0.8, y: 6.4, w: 7, h: 0.4,
-    fontSize: 12, italic: true, color: '9AA7C4', fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addNotes(`Close on two asks: confirm the principles, and nominate the workstream owners.
-
-Inputs are the long pole — pipeline, revenue by pillar and market, existing relationships, alliance status, delivery capacity and historical deal values all sit with different people. Chase them in the first 48 hours or week 1 slips.
-
-Decisions requested at sign-off: priority markets and segments, the target account list, revenue and margin targets, account ownership, and the investment and hiring asks coming out of the talent and eminence workstreams.
-
-Open items to resolve at kick-off: audience for this pack, the definition of partner for account ownership, and the start date.`);
 }
 
 /* Appendix divider */
@@ -1030,7 +1096,27 @@ tmplSlide('Template — team and talent', 'Pillar 3 · Delivery and economics ·
   'Dedicated means FSI-exclusive. Shared means time we can genuinely count on, not headcount that exists.',
   `Three numbers per row: who is ours exclusively, what we can draw on from the wider portfolio, and what is missing once both are counted.
 
-The gap is expressed by level — partners, directors, managers, specialists — because that is how recruitment is approved. Each gap then gets a route (build from within, borrow from another portfolio, or hire) and a date tied to the targets it supports.`);
+The gap is expressed by level — partners, directors, managers, specialists — because that is how recruitment is approved. Each gap then gets a route (build from within, borrow from another portfolio, or hire) and a date tied to the targets it supports.
+
+Skills and enablement is the part most easily left implicit, so it is called out here. Four distinct needs, and they are not the same thing:
+- Capability mapping: which skills the catalogue actually requires, offering by offering. Start from the propositions, not from the org chart.
+- Offering enablement: the portfolio trained on the catalogue itself, using the proposition one-pagers. This is what makes the integrated market team principle real — a partner who cannot describe the catalogue cannot recognise the signal or position the first level.
+- Domain training and industry certification: financial services specific, and specific by segment. Banking, funds and insurance each have their own qualifications, regulatory context and language, and this is what backs the domain-specific principle. Where we are thin in funds and insurance, training is one of the routes in, alongside hiring.
+- Alliance and platform certification: the hyperscalers and product vendors require accredited people, and certification levels often gate partner status, funding and co-sell eligibility. It is a cost with a commercial return attached, so it belongs in the plan rather than in someone's development objectives.`);
+
+tmplSlide('Template — capability and enablement plan', 'Pillar 3 \u00b7 Delivery and economics \u00b7 one row per capability.',
+  ['Capability or skill', 'What it supports', 'Who needs it', 'Now', 'Target', 'Route', 'By when'],
+  [2.5, 2.4, 1.9, 1.0, 1.0, 1.6, 1.5], 6,
+  'Route: internal training, industry certification, alliance accreditation, or hire. Every row ends in a date.',
+  `The bridge between the catalogue and the people. Work from the propositions backwards: each one names the capabilities it needs, and this is where they are counted and closed.
+
+Four kinds of row, and they should not be blurred together:
+- Offering enablement — the portfolio trained on the catalogue itself, so any partner or director can recognise the signal and position the first level before pulling in a specialist.
+- Domain capability — financial services knowledge by segment. Banking, funds and insurance carry different qualifications, regulators and vocabulary, and this is what makes the domain-specific claim true rather than asserted.
+- Technical and platform capability — the skills the delivery construct assumes, including the assets and accelerators.
+- Certification — alliance and vendor accreditations. These gate partner tier, funding and co-sell eligibility, so they carry a commercial return, not just a development benefit.
+
+Who needs it should say how many and at what level, not simply the practice name. A capability held by one person is a dependency, not a capability.`);
 
 tmplSlide('Template — alliance map', 'Pillar 4 · Route to market · one row per alliance.',
   ['Alliance', 'Type', 'Role', 'Offerings and segments it sits behind', 'Accounts it opens', 'What we owe them'],

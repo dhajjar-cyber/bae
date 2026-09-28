@@ -15,36 +15,34 @@ go-to-market and activation strategy.
 
 ## Deck contents
 
-1. Title
-2. What is in this pack — outline of the twelve sections
-3. What this document is — method, not conclusion
-4. Eleven questions, in five layers — ambition, choices, commercial, enablers, execution
-   (was: eight questions to answer)
-5. The industry we mean — banking, funds and insurance, in priority order
-6. What the vision has to carry — six drivers agreed before the words
-7. Three candidate statements — lead candidate "Complexity, compressed", plus two alternates
-8. Pillar 1 · Tier one and tier two — where the energy goes
-6. Principles we hold going in
-6. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
-7. Five workstreams, one per pillar
-8. Delivery and pricing economics — construct, price, blended ADR, target margin
-9. Team and talent — dedicated team, shared capacity, the recruitment gap
-10. Eminence and positioning — published views, stages, client formats, digital, partner-led
-11. Alliances — primary (Oracle, Google, Amazon) and specialised (Temenos, Intellect),
-   with the questions to answer for each
-12. The three-week journey — Frame, Define, Commit, with a gate each week
-13. Governing the execution — weekly/monthly/quarterly rhythm and the KPI scorecard
-14. How we run the cycle — cadence, inputs needed, decisions requested
+Five parts, each opening with a divider slide.
 
-Every slide carries speaker notes holding the background and context behind it —
-portfolio definition, known markets, pricing nuances, the talent and eminence
-brief. The detail lives there so the slides stay clean.
+**Part one — The frame**
+1. What this document is — method, not conclusion
+2. The industry we mean — banking, funds, insurance, in priority order
 
-## Still open
+**Part two — The destination**
+3. What the vision has to earn — six drivers, agreed before the words
+4. Three candidate statements — lead: "Complexity, compressed"
+5. Principles we hold going in — eight
 
-- Audience: leadership approval pack vs. team working document
-- Definition of "partner" for account ownership (our partners vs. alliance partners)
-- Start date for the three-week cycle
+**Part three — What the strategy must cover**
+6. The architecture — ambition, four pillars, the discipline
+7. Tier one and tier two — where the energy goes
+8. Delivery and pricing economics — construct, ADR, margin
+9. Team, skills and enablement — capacity, capability, certification
+10. Alliances — broad technology and specialised vendors
+11. Eminence and positioning — external and internal
+
+**Part four — How we build it**
+12. How we will get there — the five-step approach
+13. Five workstreams, one per pillar
+14. Who is doing this — the strategy development team
+15. The three-week journey
+16. How we run the cycle
+
+**Part five — After sign-off**
+17. Governing the execution — rhythm, scorecard, decision rights
 
 ## Appendix — the strategy log
 
