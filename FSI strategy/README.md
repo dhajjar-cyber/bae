@@ -85,11 +85,13 @@ one artefact.
 
 ### Principles
 
-Seven, agreed before the work starts: integrated not siloed · named accounts not
+Eight, agreed before the work starts: integrated not siloed · named accounts not
 averages · sized and priced · covered by a partner · deliverable by design ·
 **domain-specific, not agnostic** (banking is specialised and clients expect it) ·
 **AI and innovation embedded** (not a separate offering — every proposition carries
-an AI and innovation component by design).
+an AI and innovation component by design) · **one integrated market team** (every
+partner and director knows the whole catalogue, reads the signals in client
+conversations, positions level one, then pulls in the specialist).
 
 ### Team
 

@@ -182,6 +182,7 @@ Context we already hold, to be validated rather than assumed during the cycle:
     ['Deliverable by design', 'Nothing enters the catalogue that we cannot staff and deliver to standard.'],
     ['Domain-specific, not agnostic', 'Banking is specialised and clients expect it: every proposition, credential and CV speaks the domain.'],
     ['AI and innovation embedded', 'Not a separate offering: every proposition carries an AI and innovation component by design.'],
+    ['One integrated market team', 'Every partner and director knows the whole catalogue, reads the signals, positions level one, then pulls in the specialist.'],
   ];
   pr.forEach(([h, b], i) => {
     const x = 0.7 + (i % 2) * 6.15, y = 1.85 + Math.floor(i / 2) * 1.28;
@@ -193,13 +194,17 @@ Context we already hold, to be validated rather than assumed during the cycle:
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addText('These are the rules the strategy must obey. Anything else remains open.',
-    { x: 6.85, y: 6.45, w: 5.6, h: 0.5, fontSize: 12.5, italic: true, color: SLATE,
+    { x: 0.7, y: 6.95, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: SLATE,
       fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addNotes(`Three rules carry the most weight here.
+  s.addNotes(`Four rules carry the most weight here.
 
 AI and innovation embedded: AI is not a separate line item we sell when asked. Every proposition in the catalogue carries an AI or innovation component by design — a core modernisation that lands with intelligent operations and automated testing, an integration programme that ships with AI-assisted engineering, a data platform that arrives with use cases already running. Two reasons: it is where client expectation is heading in this region, and it is what stops the catalogue reading like commodity systems integration. Practically it becomes a test applied to the catalogue in the offerings workstream: if a proposition has no AI or innovation content, say why, or change it.
 
 Domain-specific, not agnostic: financial services, and banking in particular, is specialised enough that generic technology credentials do not travel. Clients expect the team in the room to know core banking, payments, regulatory reporting or wealth operations — not just cloud, data or integration in the abstract. Practically this means propositions are written in banking language and mapped to banking outcomes; credentials and case studies are FSI ones; CVs put domain experience forward; and where we borrow capability from a horizontal pool, it is fronted by people who know the domain. It also bounds what we take on: a generic engagement we could win anywhere is not automatically ours to chase.
+
+One integrated market team: every partner and director in the portfolio is expected to know the full catalogue, not only their own practice. In a client conversation they should recognise the signal — a core replacement being considered, a data estate that cannot answer regulatory questions, an integration layer at end of life, an AI ambition with no platform underneath it — position the first level of our answer credibly, and then pull in the specialist lead. Nobody is expected to be expert in everything; everybody is expected to open the door rather than let it pass because it sits outside their pillar.
+
+This is what makes the integrated-propositions principle real in practice rather than on paper. It also creates an enablement obligation: the proposition one-pagers in the appendix are the tool for it, and the cycle should say how the portfolio is trained on them and how often it is refreshed.
 
 The hard rule from the portfolio: no siloed solutions. Our primary go-to-market catalogue is integrated propositions across the three pillars. Even where we sell a focused solution — enterprise AI, for example — it is sold as an entry point into an integrated play, and the catalogue is built that way. Flavours and partial offerings are permitted as variants of an integrated proposition, not as the default.
 
