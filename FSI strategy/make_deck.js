@@ -60,31 +60,32 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What is in this pack', 'Ten sections, plus an appendix of blank templates.');
+  head(s, 'What is in this pack', 'Eleven sections, plus an appendix of blank templates.');
   const items = [
     ['What this document is', 'Method, not conclusion'],
-    ['Eight questions to answer', 'The dimensions the strategy must close'],
+    ['Ten questions, in five layers', 'Ambition, choices, commercial, enablers, execution'],
     ['Principles we hold going in', 'Constraints agreed before the work starts'],
     ['How we will get there', 'The five-step approach'],
-    ['Eight workstreams, eight artefacts', 'Who owns what, and what each produces'],
+    ['Nine workstreams, nine artefacts', 'Who owns what, and what each produces'],
     ['Team and talent', 'Dedicated, shared and the gap to close'],
     ['Eminence and positioning', 'How the market comes to know us'],
     ['Alliances', 'Who we go to market with, and for what'],
     ['The three-week journey', 'Week by week, with a gate each week'],
-    ['How we run it', 'Cadence, inputs and decisions requested'],
+    ['Governing the execution', 'The rhythm and scorecard after sign-off'],
+    ['How we run the cycle', 'Cadence, inputs and decisions requested'],
   ];
   items.forEach(([t, d], i) => {
-    const x = 0.7 + (i % 2) * 6.15, y = 1.95 + Math.floor(i / 2) * 0.93;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 5.75, h: 0.78, rectRadius: 0.08,
+    const x = 0.7 + (i % 2) * 6.15, y = 1.95 + Math.floor(i / 2) * 0.8;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 5.75, h: 0.68, rectRadius: 0.08,
       fill: { color: i % 2 ? MIST : 'F2F6FC' } });
-    disc(s, x + 0.22, y + 0.17, String(i + 1), i % 2 ? SLATE : NAVY, 0.44);
-    s.addText(t, { x: x + 0.85, y: y + 0.08, w: 4.7, h: 0.34, fontSize: 15, bold: true, color: INK,
+    disc(s, x + 0.22, y + 0.12, String(i + 1), i % 2 ? SLATE : NAVY, 0.42);
+    s.addText(t, { x: x + 0.85, y: y + 0.05, w: 4.7, h: 0.34, fontSize: 14.5, bold: true, color: INK,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(d, { x: x + 0.85, y: y + 0.42, w: 4.7, h: 0.3, fontSize: 11.5, color: MUTE,
+    s.addText(d, { x: x + 0.85, y: y + 0.36, w: 4.7, h: 0.3, fontSize: 11, color: MUTE,
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addText('Appendix: a blank template for every artefact the cycle produces — the strategy log itself.',
-    { x: 0.7, y: 6.6, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE, fontFace: SANS,
+    { x: 0.7, y: 6.85, w: 11.9, h: 0.4, fontSize: 12.5, italic: true, color: SLATE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`Walk the pack in two halves. Sections 1 to 5 are the method: what this document is, the questions, the principles, the approach and the workstreams. Sections 6 to 8 are the dimensions that were called out as needing their own treatment — talent, eminence and alliances. Sections 9 and 10 are the plan and the governance.
 
@@ -128,29 +129,38 @@ Still open before we finalise this pack:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Eight questions to answer', 'Each dimension is owned by one workstream and closed at sign-off.');
-  const dims = [
-    ['Where to play', ['Which markets, in what priority?', 'Which client segments?', 'Which named accounts?']],
-    ['What we offer', ['Which integrated propositions across the three pillars?', 'Which partial offerings are permitted?']],
-    ['How we win', ['What differentiates us?', 'Which alliances and credentials are needed?']],
-    ['How much', ['What revenue by market and by offering?', 'What deal sizes and price bands does the market pay?']],
-    ['Who covers what', ['Which partner owns which account?', 'What coverage model across markets?']],
-    ['Who delivers it', ['Who is dedicated to FSI?', 'What shared capacity can we draw on?', 'What must we recruit?']],
-    ['How we are known', ['Where must we be visible?', 'What do we publish, host or speak at?', 'How do we measure it?']],
-    ['Who we go with', ['Which alliances matter for which offering?', 'What do we leverage each one for?', 'What do they expect back?']],
+  head(s, 'Ten questions, in five layers', 'Ambition first, then the choices, then what makes them real.');
+  const groups = [
+    ['Ambition', [['What winning looks like', 'What must be true in three years, in numbers?']]],
+    ['Choices', [['Where to play', 'Which markets, segments and named accounts?'],
+                 ['What we offer', 'Which integrated propositions and variants?'],
+                 ['How we win', 'What differentiates us, and how do we deliver?']]],
+    ['Commercial', [['How much', 'Revenue by market and offering, deal sizes, price bands']]],
+    ['Enablers', [['Coverage', 'Which partner owns which account?'],
+                  ['People', 'Dedicated, shared and recruited capacity'],
+                  ['Alliances', 'Who we go with, and what each unlocks'],
+                  ['Eminence', 'How the market comes to know us']]],
+    ['Execution', [['How we stay on course', 'Operating rhythm, KPIs and review calendar']]],
   ];
-  dims.forEach(([t, qs], i) => {
-    const x = 0.7 + (i % 4) * 3.0, y = 2.0 + Math.floor(i / 4) * 2.15;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 2.85, h: 1.95, rectRadius: 0.12,
-      fill: { color: i % 2 ? MIST : 'E4EBF7' } });
-    disc(s, x + 0.25, y + 0.28, String(i + 1), NAVY, 0.4);
-    s.addText(t, { x: x + 0.78, y: y + 0.26, w: 1.95, h: 0.4, fontSize: 14.5, bold: true, color: INK,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(qs.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < qs.length - 1 } })),
-      { x: x + 0.28, y: y + 0.78, w: 2.4, h: 1.05, fontSize: 10.5, color: BODY, fontFace: SANS,
-        isTextBox: true, margin: 0, paraSpaceAfter: 4 });
+  let n = 0;
+  groups.forEach(([g, cards], r) => {
+    const y = 1.95 + r * 0.95;
+    s.addShape(pres.ShapeType.roundRect, { x: 0.7, y, w: 2.2, h: 0.82, rectRadius: 0.1, fill: { color: NAVY } });
+    s.addText(g, { x: 0.7, y, w: 2.2, h: 0.82, align: 'center', valign: 'middle', fontSize: 14,
+      bold: true, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    const cw = (9.6 - 0.15 * (cards.length - 1)) / cards.length;
+    cards.forEach(([t, q], i) => {
+      const x = 3.0 + i * (cw + 0.15);
+      s.addShape(pres.ShapeType.roundRect, { x, y, w: cw, h: 0.82, rectRadius: 0.1,
+        fill: { color: r % 2 ? MIST : 'E4EBF7' } });
+      n += 1;
+      s.addText(String(n) + '  ' + t, { x: x + 0.18, y: y + 0.08, w: cw - 0.35, h: 0.32, fontSize: 12.5,
+        bold: true, color: INK, fontFace: SANS, isTextBox: true, margin: 0 });
+      s.addText(q, { x: x + 0.18, y: y + 0.42, w: cw - 0.35, h: 0.34, fontSize: 10.5, color: BODY,
+        fontFace: SANS, isTextBox: true, margin: 0 });
+    });
   });
-  openTag(s, 4.65, 6.6, 4.0, 'answers ' + TBD + ' in the cycle');
+  openTag(s, 4.65, 6.85, 4.0, 'answers ' + TBD + ' in the cycle');
   s.addNotes(`Framing is loosely a strategy cascade (where to play, how to play), extended for a consulting portfolio with commercial, coverage, talent and eminence dimensions.
 
 Context we already hold, to be validated rather than assumed during the cycle:
@@ -197,7 +207,7 @@ Confirm all five principles at kick-off; they bound every later decision.`);
   s.background = { color: WHITE };
   head(s, 'How we will get there', 'A five-step approach, run once, end to end.');
   const steps = [
-    ['Mobilise', ['Confirm scope, principles and owners', 'Agree inputs and cadence'], 'Week 1'],
+    ['Mobilise', ['Frame the ambition: what winning looks like', 'Confirm scope, principles and owners'], 'Week 1'],
     ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
     ['Define', ['Markets, segments and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
     ['Quantify', ['Deal sizes and market price bands', 'Revenue targets and the capacity to service them'], 'Week 2'],
@@ -230,7 +240,7 @@ Baseline also covers people: who we have today, dedicated and shared.`);
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Eight workstreams, eight artefacts', 'Each workstream owns one dimension and produces one deliverable.');
+  head(s, 'Nine workstreams, nine artefacts', 'Each workstream owns one dimension and produces one deliverable.');
   const rows = [
     [{ text: 'Workstream', options: { bold: true } }, { text: 'Question it closes', options: { bold: true } }, { text: 'Artefact produced', options: { bold: true } }],
     ['1 · Proposition & catalogue', 'What we offer', 'Integrated proposition catalogue with permitted variants'],
@@ -241,22 +251,23 @@ Baseline also covers people: who we have today, dedicated and shared.`);
     ['6 · Team & talent', 'Who delivers it', 'Dedicated FSI team, shared capacity view, recruitment plan'],
     ['7 · Eminence & positioning', 'How we are known', 'Eminence plan: content, events and speaking calendar'],
     ['8 · Alliances', 'Who we go with', 'Alliance map: role, offerings and accounts per partner'],
+    ['9 · Execution governance', 'How we stay on course', 'Operating rhythm, KPI scorecard and review calendar'],
   ];
   s.addTable(rows, {
-    x: 0.7, y: 2.0, w: 11.9, colW: [3.3, 2.6, 6.0], fontSize: 12.5, fontFace: SANS, color: BODY,
+    x: 0.7, y: 1.95, w: 11.9, colW: [3.3, 2.6, 6.0], fontSize: 11.5, fontFace: SANS, color: BODY,
     border: { type: 'solid', color: 'D8E0EE', pt: 1 }, align: 'left', valign: 'middle',
-    rowH: [0.46, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5], margin: 6, fontSize: 11.5,
+    rowH: [0.44, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47], margin: 6, fontSize: 11.5,
     fill: { color: WHITE },
   });
-  s.addShape(pres.ShapeType.rect, { x: 0.7, y: 2.0, w: 11.9, h: 0.48, fill: { color: NAVY } });
+  s.addShape(pres.ShapeType.rect, { x: 0.7, y: 1.95, w: 11.9, h: 0.44, fill: { color: NAVY } });
   s.addText([{ text: 'Workstream', options: { bold: true } }],
-    { x: 0.85, y: 2.0, w: 3.2, h: 0.48, valign: 'middle', fontSize: 12.5, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    { x: 0.85, y: 1.95, w: 3.2, h: 0.44, valign: 'middle', fontSize: 11.5, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addText([{ text: 'Question it closes', options: { bold: true } }],
-    { x: 4.15, y: 2.0, w: 2.5, h: 0.48, valign: 'middle', fontSize: 12.5, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    { x: 4.15, y: 1.95, w: 2.5, h: 0.44, valign: 'middle', fontSize: 11.5, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addText([{ text: 'Artefact produced', options: { bold: true } }],
-    { x: 6.75, y: 2.0, w: 5.6, h: 0.48, valign: 'middle', fontSize: 12.5, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    { x: 6.75, y: 1.95, w: 5.6, h: 0.44, valign: 'middle', fontSize: 11.5, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addText('Workstreams run in parallel; dependencies are resolved at the weekly checkpoint.',
-    { x: 0.7, y: 6.6, w: 11.9, h: 0.4, fontSize: 12.5, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+    { x: 0.7, y: 6.65, w: 11.9, h: 0.4, fontSize: 12.5, italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`Artefact templates are blank at this stage and are populated during the cycle.
 
 Notes per workstream:
@@ -423,19 +434,69 @@ Each week ends at a gate, and a gate is a decision taken, not a document circula
 Start date to be set at kick-off.`);
 }
 
-/* 11 — Governance */
+/* 11 — Execution governance */
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Governing the execution', 'What happens after sign-off, so the strategy does not drift.');
+  const layers = [
+    ['Weekly', NAVY, ['Pursuit review: live deals, blockers, next actions', 'Owned by the account owners']],
+    ['Monthly', SLATE, ['Pipeline and coverage against target by market and offering', 'Talent and alliance actions tracked to date']],
+    ['Quarterly', NAVY, ['Strategy review: are the choices still right?', 'Reset targets, accounts and eminence calendar']],
+  ];
+  layers.forEach(([t, c, items], i) => {
+    const x = 0.7 + i * 4.07;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 3.75, h: 2.5, rectRadius: 0.12, fill: { color: MIST } });
+    s.addShape(pres.ShapeType.rect, { x, y: 2.0, w: 3.75, h: 0.68, fill: { color: c } });
+    s.addText(t, { x: x + 0.3, y: 2.0, w: 3.15, h: 0.68, valign: 'middle', fontSize: 17, bold: true,
+      color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
+      { x: x + 0.3, y: 2.9, w: 3.15, h: 1.5, fontSize: 12.5, color: BODY, fontFace: SANS,
+        isTextBox: true, margin: 0, paraSpaceAfter: 9 });
+  });
+  s.addText('The scorecard behind the rhythm', { x: 0.7, y: 4.75, w: 11.9, h: 0.35, fontSize: 15,
+    bold: true, color: INK, fontFace: SANS, isTextBox: true, margin: 0 });
+  const kpi = [
+    ['Commercial', 'Pipeline, wins, revenue against target'],
+    ['Mix', 'Share of revenue from integrated propositions'],
+    ['Coverage', 'Target accounts with an active owner and contact'],
+    ['Capacity', 'Recruitment against plan, utilisation'],
+    ['Alliances', 'Partner-sourced pipeline and joint pursuits'],
+    ['Eminence', 'Activities delivered, meetings they created'],
+  ];
+  kpi.forEach(([h, b], i) => {
+    const x = 0.7 + (i % 3) * 4.07, y = 5.2 + Math.floor(i / 3) * 0.72;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.75, h: 0.6, rectRadius: 0.08, fill: { color: 'F2F6FC' } });
+    s.addText(h, { x: x + 0.18, y, w: 1.35, h: 0.6, valign: 'middle', fontSize: 11.5, bold: true, color: NAVY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(b, { x: x + 1.55, y, w: 2.05, h: 0.6, valign: 'middle', fontSize: 10.5, color: BODY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  s.addText('Decision rights, chair and escalation route to be set at sign-off.',
+    { x: 0.7, y: 6.75, w: 11.9, h: 0.35, fontSize: 11.5, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Added because a strategy that is signed off and then unmanaged reverts to whatever the pipeline happens to offer. This is the management-system layer: the rhythm, the measures and the decision rights that keep the choices alive.
+
+Three loops, deliberately different in purpose: weekly is deal-level and run by the account owners; monthly is coverage and progress against target, including talent and alliance commitments; quarterly re-tests the choices themselves — markets, accounts, propositions — rather than just the numbers.
+
+The scorecard is designed so that the strategy's own principles are measurable. The mix KPI is the important one: if the share of revenue from integrated propositions does not move, we are back to selling in silos whatever the catalogue says.
+
+Still to set at sign-off: who chairs each forum, what decisions each can take without escalation, and where the strategy log lives so it stays current rather than being rebuilt each quarter.`);
+}
+
+/* 12 — Cycle governance */
 {
   const s = pres.addSlide();
   s.background = { color: NAVY };
   s.addShape(pres.ShapeType.ellipse, { x: -2.2, y: 4.4, w: 6.2, h: 6.2, fill: { color: SLATE, transparency: 55 } });
-  s.addText('How we run it', { x: 0.8, y: 0.6, w: 11, h: 0.8, fontSize: 36, bold: true,
+  s.addText('How we run the cycle', { x: 0.8, y: 0.6, w: 11, h: 0.8, fontSize: 36, bold: true,
     color: WHITE, fontFace: HEAD, isTextBox: true, margin: 0 });
   s.addText('Cadence, inputs and the decisions we are asking for.', { x: 0.8, y: 1.42, w: 11, h: 0.45,
     fontSize: 14.5, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
   const cols = [
     ['Cadence', ['Kick-off to confirm scope and principles', 'Weekly working session per workstream', 'Checkpoint at the end of each week', 'Sign-off session in week three']],
     ['Inputs we need', ['Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
-    ['Decisions requested', ['Priority markets and segments', 'Target account list', 'Revenue and margin targets', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
+    ['Decisions requested', ['The ambition, in numbers', 'Priority markets and segments', 'Target account list', 'Revenue and margin targets', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
   ];
   cols.forEach(([h, items], i) => {
     const x = 0.8 + i * 4.05;
@@ -563,6 +624,14 @@ tmplSlide('Template — eminence calendar', 'Workstream 7 · one row per planned
   `Channels in scope: published views and articles, conference stages and flagship FSI events, executive workshops, seminars and roundtables, podcasts and webinars, and joint activity with alliance partners.
 
 Measurement should be concrete: inbound enquiries, meetings created, shortlist and RFP invitations — not impressions.`);
+
+tmplSlide('Template — execution scorecard', 'Workstream 9 · one row per measure.',
+  ['Measure', 'What it tells us', 'Target', 'Frequency', 'Owner', 'Forum'],
+  [2.4, 3.2, 1.6, 1.5, 1.6, 1.6], 6,
+  'Every measure has an owner and a forum. A measure nobody presents is a measure nobody acts on.',
+  `The scorecard behind the operating rhythm. Keep it short — six to eight measures — so the review stays a decision meeting rather than a reporting one.
+
+The measure to fight for is the mix: share of revenue coming from integrated propositions. It is the only number that tells us whether the integrated-not-siloed principle survived contact with the market.`);
 
 tmplSlide('Template — alliance map', 'Workstream 8 · one row per alliance.',
   ['Alliance', 'Role', 'Offerings it sits behind', 'Markets', 'Accounts it opens', 'What we owe them'],
