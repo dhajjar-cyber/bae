@@ -22,7 +22,7 @@ go-to-market and activation strategy.
    (was: eight questions to answer)
 5. Principles we hold going in
 6. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
-7. Nine workstreams, nine artefacts
+7. Five workstreams, one per pillar
 8. Pricing and delivery economics — price, construct, blended ADR, target margin
 9. Team and talent — dedicated team, shared capacity, the recruitment gap
 10. Eminence and positioning — published views, stages, client formats, digital, partner-led
@@ -62,6 +62,23 @@ the strategy record rather than a separate write-up.
 26. Alliance map (WS8)
 
 Each template slide carries notes on how to fill it and the rules that apply.
+
+## Structure
+
+Two levels, not a flat list.
+
+**Level 1 — the ambition**: what winning looks like, in numbers, by when.
+
+**Level 1 — four pillars**, each with one owner and its level-2 topics:
+- **Market and clients** — markets and segments · named target accounts · coverage and ownership
+- **Offerings and economics** — proposition catalogue · pricing and deal sizes · construct, ADR and margin · revenue targets
+- **Capability to deliver** — delivery model and standards · dedicated and shared team · recruitment plan
+- **Route to market** — alliances · eminence and positioning · how we differentiate
+
+**Level 1 — the discipline**: operating rhythm, scorecard and decision rights that keep the pillars honest.
+
+Appendix templates are ordered by pillar, and every level-2 topic ends in exactly
+one artefact.
 
 ## Structure note
 
