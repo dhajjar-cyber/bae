@@ -818,28 +818,29 @@ Internal eminence matters as much as external here. The FS partners and director
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'How we will get there', 'A five-step approach, run once, end to end.');
+  head(s, 'How we will get there', 'A six-step approach: five to decide, one to bring everyone with us.');
   const steps = [
     ['Mobilise', ['Choose the vision, then frame the ambition', 'Confirm scope, principles and owners'], 'Week 1'],
     ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
     ['Define', ['Markets, sectors and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
     ['Quantify', ['Price bands, ADR and target margin', 'Revenue per account, gross and net, against capacity'], 'Week 2'],
     ['Commit', ['Account ownership and coverage', 'Team, eminence and activation plans signed off'], 'Week 3'],
+    ['Socialise', ['Present to the wider FSI community', 'Hand initiatives to their owners'], 'Week 3+'],
   ];
   steps.forEach(([name, pts, wk], i) => {
-    const x = 0.7 + i * 2.42, cw = 2.22;
+    const x = 0.7 + i * 2.01, cw = 1.85;
     s.addShape(pres.ShapeType.chevron, { x, y: 2.05, w: cw, h: 0.78,
       fill: { color: i % 2 ? SLATE : NAVY } });
-    s.addText(name, { x: x + 0.18, y: 2.05, w: cw - 0.3, h: 0.78, align: 'center', valign: 'middle',
-      fontSize: 15, bold: true, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(name, { x: x + 0.16, y: 2.05, w: cw - 0.26, h: 0.78, align: 'center', valign: 'middle',
+      fontSize: 13, bold: true, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
     disc(s, x + cw / 2 - 0.19, 3.05, String(i + 1), ACCENT, 0.38);
     s.addText(pts.map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < pts.length - 1 } })),
-      { x, y: 3.65, w: cw, h: 1.7, fontSize: 12, color: BODY, fontFace: SANS, isTextBox: true,
+      { x, y: 3.65, w: cw + 0.1, h: 1.7, fontSize: 10.5, color: BODY, fontFace: SANS, isTextBox: true,
         margin: 0, paraSpaceAfter: 8 });
-    s.addText(wk, { x, y: 5.45, w: cw, h: 0.35, align: 'center', fontSize: 11.5, bold: true,
+    s.addText(wk, { x, y: 5.45, w: cw, h: 0.35, align: 'center', fontSize: 10.5, bold: true,
       color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
   });
-  s.addText('Each step closes before the next opens; the gate is a decision, not a document.',
+  s.addText('Each step closes before the next opens. The last one is not optional \u2014 a strategy nobody has heard is not activated.',
     { x: 0.7, y: 6.15, w: 11.9, h: 0.4, fontSize: 13.5, italic: true, color: SLATE,
       fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`The five steps are the process view; the workstream and calendar views that follow are the same journey cut by owner and by week.
@@ -920,18 +921,24 @@ Dependencies to watch: revenue targets cannot be set without the capacity view, 
     s.addText(scope, { x: x + 0.3, y: 4.72, w: 3.25, h: 0.7, fontSize: 11.5, color: BODY, fontFace: SANS,
       isTextBox: true, margin: 0 });
   });
-  s.addText('Pillar ownership across the five workstreams is assigned from this group at kick-off; every artefact carries one name.',
-    { x: 0.7, y: 5.8, w: 11.9, h: 0.4, fontSize: 13, italic: true, color: SLATE, fontFace: SANS,
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.75, w: 11.9, h: 1.0, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('Each lead is a point of contact and a conduit: they take our thinking back into their own offering, test it with the FSI partners and directors there, and bring that view in. Nobody should meet this strategy for the first time when it is finished.',
+    { x: 1.0, y: 5.75, w: 11.3, h: 1.0, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addText('Wider contributors — account partners, alliance leads, resourcing and finance — are pulled in per workstream rather than sitting on the core team.',
-    { x: 0.7, y: 6.3, w: 11.9, h: 0.4, fontSize: 12, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('Pillar ownership is assigned from this group at kick-off; wider contributors are pulled in per workstream.',
+    { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11.5, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
   s.addNotes(`Core team as agreed: Dany leads overall; Tanay leads Industry Solutions; Rachel leads AI and Data; Clifford leads Engineering.
 
 Note the shape difference: the three leads represent the three practices, while the workstreams are cut by pillar, which is deliberate — the strategy is one portfolio strategy, not three practice strategies stapled together. Each pillar therefore needs a named owner drawn from this group, with the other two contributing their practice view into it.
 
 A workable split to propose at kick-off: Dany takes the ambition and the operating discipline; the offerings catalogue is owned jointly but chaired by one lead, since integrated propositions cut across all three practices; market and clients sits with whoever carries the strongest regional relationships; delivery and economics sits with the lead whose practice has the largest delivery footprint. Confirm rather than assume.
 
-Everything else — account partners, alliance leads, resourcing, finance — is pulled in per workstream and not standing members.`);
+Everything else — account partners, alliance leads, resourcing, finance — is pulled in per workstream and not standing members.
+
+The inclusion point matters as much as the ownership one. Each lead is the point of contact for the cycle, but they are also the conduit into their own offering: taking our emerging thinking to the FSI partners and directors there, collecting ideas we would otherwise miss, and testing conclusions before they harden. Two reasons. The obvious one is better content — the people in front of clients every week know things this group does not. The less obvious one is adoption: a strategy that arrives finished, from four people, gets complied with at best. One that people recognise their own input in gets used.
+
+Practically: each lead runs at least one working conversation inside their offering during weeks one and two, and brings back what they heard. It is a standing item at the weekly checkpoint, not an optional courtesy.`);
 }
 
 
@@ -943,7 +950,7 @@ Everything else — account partners, alliance leads, resourcing, finance — is
   const weeks = [
     ['Week 1', 'Frame', ['Agree the vision and the ambition', 'Baseline current position and credentials', 'Prioritise markets and sectors', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and sector priorities'],
     ['Week 2', 'Define', ['Lock propositions and permitted variants', 'Benchmark deal sizes and pricing', 'Set delivery construct, ADR and margin', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
-    ['Week 3', 'Commit', ['Set revenue targets by account, offering and market', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Build the activation plan and sign off'], 'Gate: strategy signed off'],
+    ['Week 3', 'Commit', ['Set revenue targets by account, offering and market', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Sign off, then socialise to the FSI community'], 'Gate: strategy signed off'],
   ];
   weeks.forEach(([w, label, acts, gate], i) => {
     const x = 0.7 + i * 4.07;
@@ -959,7 +966,7 @@ Everything else — account partners, alliance leads, resourcing, finance — is
     if (i < 2) s.addText('→', { x: x + 3.78, y: 3.8, w: 0.28, h: 0.5, fontSize: 20,
       color: MUTE, align: 'center', fontFace: SANS, isTextBox: true, margin: 0 });
   });
-  s.addText('Start date ' + TBD + ' at kick-off.', { x: 0.7, y: 6.4, w: 6, h: 0.35, fontSize: 12,
+  s.addText('Start date ' + TBD + ' at kick-off. Socialisation follows sign-off, and the initiatives run on from there.', { x: 0.7, y: 6.4, w: 11.9, h: 0.35, fontSize: 12,
     italic: true, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addNotes(`Three weeks is the timebox given: the strategy should be finalised in no more than about three weeks. The constraint is deliberate — it forces decisions rather than analysis.
 

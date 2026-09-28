@@ -137,8 +137,13 @@ not written from scratch).
 ### Team
 
 Dany leads overall. Tanay leads Industry Solutions, Rachel leads AI and Data,
-Clifford leads Engineering. Pillar ownership across the five workstreams is
-assigned from this group at kick-off.
+Clifford leads Engineering. Pillar ownership is assigned from this group at
+kick-off.
+
+Each lead is both a point of contact and a conduit: they take emerging thinking
+back into their own offering, test it with the FSI partners and directors there,
+and bring that view in. The cycle then ends with socialisation to the wider FSI
+community, so the strategy is recognised rather than announced.
 
 ## Vision (working)
 
