@@ -61,7 +61,7 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
   s.background = { color: WHITE };
   head(s, 'How this pack runs', 'Five parts, in the order the strategy actually gets built.');
   const parts5 = [
-    ['One', 'The frame', 'What this document is \u00b7 how this fits the EAI&D strategy \u00b7 the industry we mean', 3],
+    ['One', 'The frame', 'What this document is \u00b7 how this fits both parent strategies \u00b7 the industry we mean', 3],
     ['Two', 'The destination', 'Vision drivers \u00b7 candidate statements \u00b7 principles', 3],
     ['Three', 'What the strategy must cover', 'The architecture \u00b7 markets and tiers \u00b7 delivery, economics and people \u00b7 alliances and eminence', 6],
     ['Four', 'How we build it', 'The approach \u00b7 workstreams and owners \u00b7 the three-week journey \u00b7 how we run the cycle', 5],
@@ -141,48 +141,60 @@ Still open before we finalise this pack:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'How this fits', 'FSI is one industry strategy inside the EAI&D portfolio strategy — not a parallel one.');
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.95, w: 11.9, h: 0.85, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('EAI&D PORTFOLIO STRATEGY', { x: 1.0, y: 1.95, w: 4.2, h: 0.85, valign: 'middle', fontSize: 12.5,
-    bold: true, color: ICE, charSpacing: 1.2, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText('Engineering, AI and Data — across every industry we serve', { x: 5.3, y: 1.95, w: 7.0, h: 0.85,
-    valign: 'middle', fontSize: 13, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
-  ['Financial services — this strategy', 'Other industry strategies'].forEach((t, i) => {
-    const x = 0.7 + i * 6.1;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 2.95, w: 5.8, h: 0.68, rectRadius: 0.1,
-      fill: { color: i ? 'E4EBF7' : SLATE } });
-    s.addText(t, { x, y: 2.95, w: 5.8, h: 0.68, align: 'center', valign: 'middle', fontSize: 13.5,
-      bold: true, color: i ? BODY : WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
-  });
-  const alignCols = [
-    ['What we inherit', NAVY, ['The portfolio vision and direction of travel', 'The standard delivery model and quality bars', 'The alliance framework and partner tiers', 'The talent and career model', 'Financial targets cascaded to us']],
-    ['What we set here', SLATE, ['Segments, markets and tiering', 'Named accounts, coverage and revenue per account', 'FSI propositions, use cases and flavours', 'Segment alliances and industry eminence', 'FSI capability, certification and hiring asks']],
-    ['What we feed back', NAVY, ['Assets and accelerators other industries can reuse', 'Demand signals into portfolio investment', 'Alliance leverage earned through FSI volume', 'Where the portfolio strategy constrains us']],
+  head(s, 'How this fits', 'We sit where two strategies meet \u2014 and we plug into them rather than run beside them.');
+  const parents = [
+    ['EAI&D portfolio strategy', 'Engineering, AI and Data \u2014 across every industry we serve', NAVY],
+    ['FSI industry strategy', 'Financial services \u2014 across the whole firm', SLATE],
   ];
-  alignCols.forEach(([t, c, items], i) => {
+  parents.forEach(([t, d, c], i) => {
+    const x = 0.7 + i * 6.1;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 1.9, w: 5.8, h: 0.95, rectRadius: 0.1, fill: { color: c } });
+    s.addText(t, { x: x + 0.3, y: 1.98, w: 5.2, h: 0.4, fontSize: 15, bold: true, color: WHITE,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(d, { x: x + 0.3, y: 2.38, w: 5.2, h: 0.4, fontSize: 11.5, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  });
+  s.addShape(pres.ShapeType.line, { x: 3.6, y: 2.9, w: 1.6, h: 0.35,
+    line: { color: SLATE, width: 1.5, endArrowType: 'triangle' } });
+  s.addShape(pres.ShapeType.line, { x: 8.1, y: 2.9, w: 1.6, h: 0.35, flipH: true,
+    line: { color: SLATE, width: 1.5, endArrowType: 'triangle' } });
+  s.addShape(pres.ShapeType.roundRect, { x: 4.0, y: 3.25, w: 5.3, h: 0.72, rectRadius: 0.1,
+    fill: { color: 'E4EBF7' }, line: { color: NAVY, width: 1.25 } });
+  s.addText('EAI&D in financial services \u2014 this strategy', { x: 4.0, y: 3.25, w: 5.3, h: 0.72,
+    align: 'center', valign: 'middle', fontSize: 13.5, bold: true, color: NAVY, fontFace: SANS,
+    isTextBox: true, margin: 0 });
+  s.addShape(pres.ShapeType.line, { x: 6.65, y: 3.97, w: 0, h: 0.28,
+    line: { color: SLATE, width: 1.5, endArrowType: 'triangle' } });
+  const cols3 = [
+    ['From the portfolio', NAVY, ['Vision and direction of travel', 'Delivery model and quality bars', 'Alliance framework and partner tiers', 'Talent and career model', 'Cascaded financial targets']],
+    ['From the industry', SLATE, ['The firm\u2019s FSI account list and tiering', 'Account leadership and partner mappings', 'Industry governance forums and cadence', 'The industry eminence programme', 'Client relationship plans already in flight']],
+    ['Ours to set', NAVY, ['How our propositions land in those accounts', 'Offering economics: construct, ADR, margin', 'Segment platform alliances', 'FSI capability, certification and hiring', 'Our revenue targets by account and offering']],
+  ];
+  cols3.forEach(([t, c, items], i) => {
     const x = 0.7 + i * 4.03;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 3.85, w: 3.85, h: 2.65, rectRadius: 0.12, fill: { color: MIST } });
-    s.addShape(pres.ShapeType.rect, { x, y: 3.85, w: 3.85, h: 0.6, fill: { color: c } });
-    s.addText(t, { x: x + 0.25, y: 3.85, w: 3.35, h: 0.6, valign: 'middle', fontSize: 14, bold: true,
+    s.addShape(pres.ShapeType.roundRect, { x, y: 4.3, w: 3.85, h: 2.1, rectRadius: 0.12, fill: { color: MIST } });
+    s.addShape(pres.ShapeType.rect, { x, y: 4.3, w: 3.85, h: 0.52, fill: { color: c } });
+    s.addText(t, { x: x + 0.25, y: 4.3, w: 3.35, h: 0.52, valign: 'middle', fontSize: 13, bold: true,
       color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
     s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
-      { x: x + 0.25, y: 4.6, w: 3.35, h: 1.8, fontSize: 10.5, color: BODY, fontFace: SANS,
-        isTextBox: true, margin: 0, paraSpaceAfter: 5 });
+      { x: x + 0.25, y: 4.95, w: 3.35, h: 1.4, fontSize: 10, color: BODY, fontFace: SANS,
+        isTextBox: true, margin: 0, paraSpaceAfter: 3 });
   });
-  s.addText('Sign-off test: nothing here contradicts the portfolio strategy, and anything that diverges is named and escalated rather than quietly assumed.',
-    { x: 0.7, y: 6.65, w: 11.9, h: 0.4, fontSize: 12.5, italic: true, color: SLATE, fontFace: SANS,
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.55, w: 11.9, h: 0.75, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('No parallel machinery: we use the existing account plans, forums and eminence programme, and add the EAI&D layer inside them.',
+    { x: 1.0, y: 6.55, w: 11.3, h: 0.75, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addNotes(`EAI&D is a portfolio serving several industries, and it already has its own strategy. This is the financial services cut of it, not a parallel strategy, and the pack says so early so nobody reads it as the portfolio going its own way.
+  s.addNotes(`This strategy has two parents, and both matter.
 
-Three relationships to keep straight:
+The EAI&D portfolio strategy is the capability axis: it serves several industries and already sets our vision and direction, the delivery model and quality bars, the alliance framework and partner tiers, the talent model, and the financial targets cascaded to us. We confirm those rather than reinvent them.
 
-Inherited — the portfolio vision and direction, the standard delivery model and quality bars, the alliance framework and partner tiers, the talent and career model, and the financial targets cascaded to us. We confirm these rather than reinvent them; the cycle should not spend time re-deciding them.
+The FSI industry strategy is the industry axis: the firm already has one, and it comes with its own account list and tiering, account leadership and partner-to-account mappings, governance forums and cadence, an eminence programme, and client relationship plans already running. That is not ours to duplicate.
 
-Set here — what is genuinely industry-specific: segments and their priority, markets and tiering, named accounts and coverage, FSI propositions and their flavours, segment-specific alliances such as core platform vendors, eminence in this industry, and the capability, certification and hiring asks that follow.
+What is genuinely ours sits at the intersection: how EAI&D propositions land in those accounts, the economics of delivering them, segment platform alliances, FSI capability and certification, and our own revenue targets by account and offering.
 
-Fed back — the part usually forgotten. Assets and accelerators built for FSI that other industries can reuse; demand signals that should shape portfolio investment; alliance leverage earned through our volume; and, honestly, where the portfolio strategy constrains what we could otherwise do here.
+The practical rule, and the one most likely to be broken: no parallel machinery. We do not build a second account plan next to the industry one, a second set of forums, or a separate eminence calendar. Our account view attaches to the existing account plan, our reviews sit inside the existing forums where they exist, and our eminence rides the industry programme, adding EAI&D content rather than competing for the same audience.
 
-Practical step for the cycle: put the current portfolio strategy in front of the team at kick-off, and add alignment to the sign-off checklist. Where this strategy diverges — a different segment priority, an alliance the portfolio has not signed, an offering outside the standard catalogue — that is an escalation, not a footnote.`);
+Two things to confirm at kick-off: who owns the account relationship where the industry strategy has already named an account leader, and which forum our operating rhythm plugs into rather than replaces. Where the two parent strategies disagree — different segment priority, an alliance one supports and the other does not — that is an escalation, not something for this team to resolve quietly.`);
 }
 
 {
@@ -839,8 +851,8 @@ Start date to be set at kick-off.`);
     fontSize: 14.5, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
   const cols = [
     ['Cadence', ['Kick-off to confirm scope and principles', 'Weekly working session per workstream', 'Checkpoint at the end of each week', 'Sign-off session in week three']],
-    ['Inputs we need', ['The current EAI&D portfolio strategy', 'Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
-    ['Decisions requested', ['Alignment with the portfolio strategy', 'The vision, then the ambition in numbers', 'Target account list', 'Revenue and margin targets by account', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
+    ['Inputs we need', ['The EAI&D portfolio strategy and the FSI industry strategy', 'Current pipeline and revenue by pillar', 'Existing account relationships', 'Alliance and partnership status', 'Delivery capacity and skills view', 'Historical deal values']],
+    ['Decisions requested', ['Alignment with both parent strategies', 'The vision, then the ambition in numbers', 'Target account list', 'Revenue and margin targets by account', 'Account ownership', 'Alliance priorities', 'Investment and hiring asks']],
   ];
   cols.forEach(([h, items], i) => {
     const x = 0.8 + i * 4.05;

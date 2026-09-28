@@ -19,7 +19,7 @@ Five parts, each opening with a divider slide.
 
 **Part one — The frame**
 1. What this document is — method, not conclusion
-2. How this fits — alignment with the EAI&D portfolio strategy
+2. How this fits — where this sits between the EAI&D portfolio strategy and the FSI industry strategy
 3. The industry we mean — banking, funds, insurance, in priority order
 
 **Part two — The destination**
