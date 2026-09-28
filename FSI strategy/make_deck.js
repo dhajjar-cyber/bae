@@ -67,8 +67,8 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
     ['Principles we hold going in', 'Constraints agreed before the work starts'],
     ['How we will get there', 'The five-step approach'],
     ['Five workstreams, one per pillar', 'Who owns what, and what each produces'],
-    ['Pillar 2 · Pricing and delivery economics', 'Price, construct, ADR and margin'],
-    ['Pillar 3 · Team and talent', 'Dedicated, shared and the gap to close'],
+    ['Pillar 2 · Delivery and pricing economics', 'Construct, price, ADR and margin'],
+    ['Pillar 3 · People and capacity', 'Dedicated, shared and the gap to close'],
     ['Pillar 4 · Eminence and positioning', 'How the market comes to know us'],
     ['Pillar 4 · Alliances', 'Who we go to market with, and for what'],
     ['The three-week journey', 'Week by week, with a gate each week'],
@@ -138,8 +138,8 @@ Still open before we finalise this pack:
     valign: 'middle', fontSize: 15, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   const pillars = [
     ['Market\nand clients', ['Markets and segments', 'Named target accounts', 'Coverage and ownership']],
-    ['Offerings\nand economics', ['Proposition catalogue', 'Pricing and deal sizes', 'Construct, ADR and margin', 'Revenue targets']],
-    ['Capability\nto deliver', ['Delivery model and standards', 'Dedicated and shared team', 'Recruitment plan']],
+    ['Offerings, delivery\nand economics', ['Proposition catalogue', 'Delivery model and construct', 'Pricing, ADR and margin', 'Revenue targets']],
+    ['People\nand capacity', ['Dedicated FSI team', 'Shared capacity we can draw on', 'Recruitment plan']],
     ['Route\nto market', ['Alliances and what they unlock', 'Eminence and positioning', 'How we differentiate']],
   ];
   pillars.forEach(([t, items], i) => {
@@ -242,10 +242,10 @@ Baseline also covers people: who we have today, dedicated and shared.`);
   const ws = [
     ['1 · Market and clients', 'Markets, segments, named accounts, coverage and ownership',
      'Market prioritisation · target account list · coverage map'],
-    ['2 · Offerings and economics', 'Catalogue, pricing, delivery construct, margin and revenue targets',
+    ['2 · Offerings, delivery and economics', 'Catalogue, delivery model and construct, pricing, margin and targets',
      'Proposition catalogue · pricing bands · offering economics · revenue targets'],
-    ['3 · Capability to deliver', 'Delivery model, dedicated and shared capacity, recruitment',
-     'Delivery approach · team model · recruitment plan'],
+    ['3 · People and capacity', 'Dedicated team, shared capacity, recruitment',
+     'Team model · recruitment plan'],
     ['4 · Route to market', 'Alliances, eminence and differentiation',
      'Alliance map · eminence calendar'],
     ['5 · Operating discipline', 'Rhythm, measures and decision rights after sign-off',
@@ -269,8 +269,8 @@ Baseline also covers people: who we have today, dedicated and shared.`);
 
 What each pillar carries:
 - Market and clients: markets and segments (primary expected to be Saudi, UAE and Qatar; secondary Kuwait, Oman and Jordan, all to be validated), the named account list, and the coverage map. Two mappings live here — our own partners who own the relationship, and the alliance partner behind the account.
-- Offerings and economics: the integrated proposition catalogue and its permitted variants, price bands with the drivers that move them, the delivery construct with blended ADR and target margin, and the revenue targets that fall out. Costing and delivery model sit together here because they determine each other.
-- Capability to deliver: the inherited delivery model confirmed for FSI, the dedicated and shared team view, and the recruitment gap by level.
+- Offerings, delivery and economics: the integrated proposition catalogue and its permitted variants, the delivery model and the construct behind each offering, price bands with the drivers that move them, blended ADR and target margin, and the revenue targets that fall out. Delivery model and pricing sit in one pillar because they determine each other: the construct sets the cost, the cost sets the achievable price and margin.
+- People and capacity: the dedicated FSI team, the shared capacity we can genuinely draw on, and the recruitment gap by level. Capacity is sized against the targets set in pillar 2.
 - Route to market: alliances (Oracle, Google, Amazon as primary; Temenos and Intellect as specialised) and the eminence plan.
 - Operating discipline: the rhythm, scorecard and decision rights that keep the rest alive after sign-off.
 
@@ -281,7 +281,7 @@ Dependencies to watch: revenue targets cannot be set without the capacity view, 
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Pricing and delivery economics', 'Pillar 2 · price, delivery construct and margin are one decision, not three.');
+  head(s, 'Delivery and pricing economics', 'Pillar 2 · delivery model, price and margin are one decision, not three.');
   const chain = [
     ['Target price', 'What the market pays for this offering, in bands'],
     ['Delivery construct', 'The onshore, nearshore and offshore mix it is priced on'],
@@ -334,7 +334,7 @@ The delivery model itself is largely inherited from the firm; what we are settin
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Team and talent', 'Pillar 3 · the capacity question, answered in three parts.');
+  head(s, 'Team and talent', 'Pillar 3 · People and capacity, answered in three parts.');
   const cols = [
     ['The dedicated team', NAVY, ['Who works on FSI exclusively, across the three pillars?', 'Which roles and levels do they hold?', 'What is realistically deliverable with them alone?']],
     ['Shared capacity', SLATE, ['Which resources are shared with other portfolios?', 'How much of their time can we count on?', 'Which skills do we borrow rather than own?']],
@@ -634,7 +634,7 @@ tmplSlide('Template — coverage and ownership', 'Pillar 1 · Market and clients
 
 Cadence keeps this honest — an owner with no contact rhythm is a name on a page.`);
 
-tmplSlide('Template — proposition catalogue', 'Pillar 2 · Offerings and economics · one row per integrated proposition.',
+tmplSlide('Template — proposition catalogue', 'Pillar 2 · Offerings, delivery and economics · one row per integrated proposition.',
   ['Proposition', 'Pillars involved', 'Buyer', 'Permitted variants', 'Lead pillar'],
   [2.9, 2.4, 2.2, 2.6, 1.8], 6,
   'Integrated propositions first. A single-pillar offer is recorded as a variant, not as its own row.',
@@ -642,7 +642,7 @@ tmplSlide('Template — proposition catalogue', 'Pillar 2 · Offerings and econo
 
 Buyer means the actual role that signs: COO, CIO, head of retail banking, chief data officer, and so on.`);
 
-tmplSlide('Template — sizing and pricing', 'Pillar 2 · Offerings and economics · one row per offering.',
+tmplSlide('Template — sizing and pricing', 'Pillar 2 · Offerings, delivery and economics · one row per offering.',
   ['Offering', 'What drives scope', 'Typical deal size', 'Market price band', 'Notes'],
   [2.6, 3.2, 2.0, 2.1, 2.0], 6,
   'Bands, not point prices. Name the drivers that move the number.',
@@ -650,7 +650,7 @@ tmplSlide('Template — sizing and pricing', 'Pillar 2 · Offerings and economic
 
 Same discipline for data platform work, AI activation, and cloud and integration engagements.`);
 
-tmplSlide('Template — offering economics', 'Pillar 2 · Offerings and economics · one row per offering.',
+tmplSlide('Template — offering economics', 'Pillar 2 · Offerings, delivery and economics · one row per offering.',
   ['Offering', 'Price basis', 'Onshore %', 'Nearshore %', 'Offshore %', 'Blended ADR', 'Target GM'],
   [2.6, 2.3, 1.4, 1.5, 1.4, 1.4, 1.3], 6,
   'The construct drives the rate, the rate drives the margin. Record the floor as well as the target.',
@@ -662,7 +662,7 @@ Keep the onshore split honest. Regulatory and data-residency requirements in Sau
 
 Record both the target gross margin and the floor, and note the approval route for anything below it. A margin floor that nobody enforces is not a floor.`);
 
-tmplSlide('Template — revenue targets', 'Pillar 2 · Offerings and economics · one row per market.',
+tmplSlide('Template — revenue targets', 'Pillar 2 · Offerings, delivery and economics · one row per market.',
   ['Market', 'Industry Solutions', 'Data & AI', 'Engineering & Cloud', 'Integrated', 'Total'],
   [2.4, 2.1, 1.9, 2.2, 1.7, 1.6], 6,
   'Targets are set by market and by offering, then reconciled against capacity before they are agreed.',
@@ -670,7 +670,7 @@ tmplSlide('Template — revenue targets', 'Pillar 2 · Offerings and economics �
 
 Reconcile every target against the talent template before sign-off. A number we cannot staff is not a target.`);
 
-tmplSlide('Template — team and talent', 'Pillar 3 · Capability to deliver · one row per role and level.',
+tmplSlide('Template — team and talent', 'Pillar 3 · People and capacity · one row per role and level.',
   ['Role and level', 'Dedicated today', 'Shared available', 'Gap', 'Build, borrow or buy', 'By when'],
   [2.6, 2.0, 2.0, 1.4, 2.1, 1.8], 6,
   'Dedicated means FSI-exclusive. Shared means time we can genuinely count on, not headcount that exists.',

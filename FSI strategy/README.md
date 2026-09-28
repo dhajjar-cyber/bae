@@ -23,7 +23,7 @@ go-to-market and activation strategy.
 5. Principles we hold going in
 6. How we will get there — five steps: Mobilise, Baseline, Define, Quantify, Commit
 7. Five workstreams, one per pillar
-8. Pricing and delivery economics — price, construct, blended ADR, target margin
+8. Delivery and pricing economics — construct, price, blended ADR, target margin
 9. Team and talent — dedicated team, shared capacity, the recruitment gap
 10. Eminence and positioning — published views, stages, client formats, digital, partner-led
 11. Alliances — primary (Oracle, Google, Amazon) and specialised (Temenos, Intellect),
@@ -71,8 +71,8 @@ Two levels, not a flat list.
 
 **Level 1 — four pillars**, each with one owner and its level-2 topics:
 - **Market and clients** — markets and segments · named target accounts · coverage and ownership
-- **Offerings and economics** — proposition catalogue · pricing and deal sizes · construct, ADR and margin · revenue targets
-- **Capability to deliver** — delivery model and standards · dedicated and shared team · recruitment plan
+- **Offerings, delivery and economics** — proposition catalogue · delivery model and construct · pricing, ADR and margin · revenue targets
+- **People and capacity** — dedicated FSI team · shared capacity we can draw on · recruitment plan
 - **Route to market** — alliances · eminence and positioning · how we differentiate
 
 **Level 1 — the discipline**: operating rhythm, scorecard and decision rights that keep the pillars honest.
