@@ -603,49 +603,54 @@ Internal eminence matters as much as external here. The FS partners and director
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'Alliances', 'Pillar 4 · who we go to market with, and what we use each one for.');
-  const groups = [
-    ['Primary alliances', NAVY, ['Oracle', 'Google', 'Amazon'], 0.7, 5.6],
-    ['Specialised alliances', SLATE, ['Temenos', 'Intellect'], 6.9, 5.7],
-  ];
-  groups.forEach(([t, c, names, x, w]) => {
-    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w, h: 2.25, rectRadius: 0.12, fill: { color: MIST } });
-    s.addText(t, { x: x + 0.3, y: 2.15, w: w - 0.6, h: 0.4, fontSize: 17, bold: true, color: c,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    const cw = (w - 0.6 - 0.2 * (names.length - 1)) / names.length;
-    names.forEach((n, j) => {
-      const nx = x + 0.3 + j * (cw + 0.2);
-      s.addShape(pres.ShapeType.roundRect, { x: nx, y: 2.7, w: cw, h: 1.15, rectRadius: 0.1, fill: { color: c } });
-      s.addText(n, { x: nx, y: 2.7, w: cw, h: 1.15, align: 'center', valign: 'middle', fontSize: 17,
-        bold: true, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
-    });
+  head(s, 'Alliances', 'Pillar 4 \u00b7 two categories, used for different things.');
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.95, w: 11.9, h: 2.05, rectRadius: 0.12, fill: { color: MIST } });
+  s.addShape(pres.ShapeType.rect, { x: 0.7, y: 1.95, w: 2.75, h: 2.05, fill: { color: NAVY } });
+  s.addText('Broad technology\nalliances', { x: 0.92, y: 2.05, w: 2.4, h: 0.85, fontSize: 14.5, bold: true,
+    color: WHITE, fontFace: SANS, isTextBox: true, margin: 0, lineSpacing: 17 });
+  s.addText('Relevant to every proposition', { x: 0.92, y: 3.0, w: 2.4, h: 0.6, fontSize: 11,
+    color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
+  ['Google', 'AWS', 'Microsoft', 'Oracle'].forEach((n, i) => {
+    const x = 3.75 + i * 2.15;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.2, w: 1.95, h: 0.75, rectRadius: 0.1, fill: { color: SLATE } });
+    s.addText(n, { x, y: 2.2, w: 1.95, h: 0.75, align: 'center', valign: 'middle', fontSize: 15, bold: true,
+      color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
   });
-  openTag(s, 4.4, 4.4, 4.5, 'further alliances ' + TBD + ' in the cycle');
-  s.addText('For every alliance the plan must answer:', { x: 0.7, y: 5.05, w: 11.9, h: 0.35,
-    fontSize: 14, bold: true, color: INK, fontFace: SANS, isTextBox: true, margin: 0 });
-  const qs = [
-    ['What we leverage it for', 'Which propositions and which pillars it sits behind'],
-    ['What the relationship is', 'Co-sell, resell, delivery partner or referral'],
-    ['Where it opens doors', 'Which markets and which accounts it gives us access to'],
-    ['What it costs us', 'Certifications, credentials and commitments they expect back'],
+  s.addText('Used for: co-sell into their accounts \u00b7 funding and credits to activate use cases on their platform \u00b7 platform credibility and certifications',
+    { x: 3.75, y: 3.1, w: 8.5, h: 0.75, fontSize: 12, color: BODY, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 4.15, w: 11.9, h: 2.05, rectRadius: 0.12, fill: { color: 'E4EBF7' } });
+  s.addShape(pres.ShapeType.rect, { x: 0.7, y: 4.15, w: 2.75, h: 2.05, fill: { color: SLATE } });
+  s.addText('Specialised\nproduct vendors', { x: 0.92, y: 4.25, w: 2.4, h: 0.85, fontSize: 14.5, bold: true,
+    color: WHITE, fontFace: SANS, isTextBox: true, margin: 0, lineSpacing: 17 });
+  s.addText('Relevant to specific offerings only', { x: 0.92, y: 5.2, w: 2.4, h: 0.6, fontSize: 11,
+    color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
+  const spec = [
+    ['Core banking', 'Temenos \u00b7 Intellect'],
+    ['Data platforms', 'Informatica \u00b7 others'],
+    ['Origination', 'to be defined'],
+    ['Insurance and fund core', 'to be defined'],
   ];
-  qs.forEach(([h, b], i) => {
-    const x = 0.7 + (i % 2) * 6.15, y = 5.5 + Math.floor(i / 2) * 0.75;
-    disc(s, x, y, String(i + 1), i < 2 ? NAVY : SLATE, 0.34);
-    s.addText(h, { x: x + 0.5, y: y - 0.04, w: 2.6, h: 0.35, fontSize: 13, bold: true, color: INK,
+  spec.forEach(([t, v], i) => {
+    const x = 3.75 + (i % 2) * 4.3, y = 4.35 + Math.floor(i / 2) * 0.85;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 4.1, h: 0.72, rectRadius: 0.1, fill: { color: WHITE } });
+    s.addText(t, { x: x + 0.2, y, w: 2.0, h: 0.72, valign: 'middle', fontSize: 12, bold: true, color: NAVY,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(b, { x: x + 3.1, y: y - 0.04, w: 2.75, h: 0.45, fontSize: 12, color: BODY,
+    s.addText(v, { x: x + 2.2, y, w: 1.8, h: 0.72, valign: 'middle', fontSize: 11.5, color: BODY,
       fontFace: SANS, isTextBox: true, margin: 0 });
   });
-  s.addNotes(`Alliances were called out as important in implementation and technology work.
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.35, w: 11.9, h: 0.8, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('Per alliance the plan answers: what we leverage it for, the relationship type, which offerings and segments it sits behind, which accounts it opens, and what it costs us back.',
+    { x: 1.0, y: 6.35, w: 11.3, h: 0.8, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Alliances split into two categories that behave differently, and the plan should treat them differently.
 
-Current alliances named: Oracle, Google and Amazon as the primary ones; Temenos and Intellect as specialised platform alliances, both banking-weighted. A gap to name explicitly in the cycle: we have no specialised alliance yet for funds or insurance platforms, and the segment priorities imply we need a view on both. They are on the slide as current state, not as a conclusion — what we do with each is the open question.
+Broad technology alliances — the hyperscalers and platform players: Google, AWS, Microsoft and Oracle. They are relevant to every proposition in the catalogue, so they are a portfolio-level relationship rather than an offering-level one. Three things we take from them: co-sell into their own account relationships, funding and credits to activate use cases on their platforms (a real commercial lever, not a nicety — it can fund the first proof of value), and the certifications and platform credibility clients increasingly ask for.
 
-The work is to decide, per alliance: what we leverage it for, which of our integrated propositions it sits behind, what kind of relationship it is (co-sell, resell, delivery, referral), which markets and accounts it opens, and what it demands from us in certifications, trained staff and pipeline commitments.
+Specialised product vendors — relevant only where the offering matches. Core banking and origination platforms (Temenos and Intellect today), specialised data vendors such as Informatica, and, as the segment priorities imply, the insurance core and fund platform vendors where we currently hold nothing. These are offering-level and segment-level relationships, so the map must show which propositions each sits behind rather than treating them as general alliances.
 
-Two links to the rest of the strategy: the alliance map must reconcile with the account coverage map (an alliance that opens an account should show up against that account), and with the talent plan (certifications and accredited staff are a recruitment and training cost).
+The gap to close in the cycle: our specialised alliances are banking-weighted. Funds and insurance are priority two and three with no platform partner named, which is a decision the strategy has to make rather than defer.
 
-If other alliances belong here — hyperscaler or platform vendors we do not yet work with, or regional players — the cycle is where we add them.`);
+Two links to the rest of the strategy: the alliance map must reconcile with the account coverage map (an alliance that opens an account should appear against that account), and with the capacity plan, because certifications and accredited people are a real training and hiring cost. Funding available from the broad alliances should also appear in the commercial view — it changes what a first engagement can be priced at.`);
 }
 
 /* 10 — Three-week journey */
@@ -984,9 +989,9 @@ tmplSlide('Template — team and talent', 'Pillar 3 · Delivery and economics ·
 The gap is expressed by level — partners, directors, managers, specialists — because that is how recruitment is approved. Each gap then gets a route (build from within, borrow from another portfolio, or hire) and a date tied to the targets it supports.`);
 
 tmplSlide('Template — alliance map', 'Pillar 4 · Route to market · one row per alliance.',
-  ['Alliance', 'Role', 'Offerings it sits behind', 'Markets', 'Accounts it opens', 'What we owe them'],
-  [1.8, 1.7, 2.9, 1.6, 2.2, 1.7], 6,
-  'Role: co-sell, resell, delivery partner or referral. Commitments run both ways.',
+  ['Alliance', 'Type', 'Role', 'Offerings and segments it sits behind', 'Accounts it opens', 'What we owe them'],
+  [1.7, 1.5, 1.6, 3.1, 2.1, 1.9], 6,
+  'Type: broad technology alliance, or specialised product vendor. Role: co-sell, resell, delivery or referral.',
   `Start from the alliances we already hold: Oracle, Google and Amazon as primary; Temenos and Intellect as specialised platform alliances, both weighted to banking. The cycle should decide what we do about funds and insurance platforms, where we currently hold no specialised alliance.
 
 The last column matters as much as the rest — certifications, accredited staff and pipeline commitments are a cost that lands in the talent plan and the budget.`);
