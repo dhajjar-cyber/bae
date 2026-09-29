@@ -64,7 +64,7 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
     ['One', 'The frame', 'What this document is \u00b7 how this fits \u00b7 the words we use \u00b7 the industry we mean', 4],
     ['Two', 'The destination', 'Vision drivers \u00b7 candidate statements \u00b7 principles', 3],
     ['Three', 'What the strategy must cover', 'The architecture \u00b7 markets and tiers \u00b7 the catalogue \u00b7 delivery and economics \u00b7 why us \u00b7 alliances and eminence', 8],
-    ['Four', 'How we build it', 'The approach \u00b7 workstreams and owners \u00b7 the journey \u00b7 how we run it \u00b7 what could derail it', 6],
+    ['Four', 'How we build it', 'The approach \u00b7 workstreams and owners \u00b7 the journey \u00b7 the session plan \u00b7 what could derail it', 7],
     ['Five', 'What comes next', 'Initiatives that outlive the cycle \u00b7 governing the execution', 3],
   ];
   parts5.forEach(([n, t, d, count], i) => {
@@ -810,7 +810,7 @@ Internal eminence matters as much as external here. The FS partners and director
     fontFace: HEAD, isTextBox: true, margin: 0 });
   s.addText('The approach, the owners and the calendar.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5, fontSize: 15, color: ICE, fontFace: SANS,
     isTextBox: true, margin: 0 });
-  s.addText(['The five-step approach', 'Workstreams and who owns them', 'The three-week journey', 'How we run the cycle', 'What could derail this'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 4 } })),
+  s.addText(['The six-step approach', 'Workstreams and who owns them', 'The three-week journey', 'How we run the cycle', 'Who meets, and when', 'What could derail this'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 5 } })),
     { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
       isTextBox: true, margin: 0, paraSpaceAfter: 7 });
 }
@@ -1007,6 +1007,57 @@ Inputs are the long pole — pipeline, revenue by pillar and market, existing re
 Decisions requested at sign-off: priority markets and sectors, the target account list, revenue and margin targets, account ownership, and the investment and hiring asks coming out of the talent and eminence workstreams.
 
 Open items to resolve at kick-off: audience for this pack, the definition of partner for account ownership, and the start date.`);
+}
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Who meets, and when', 'Three levels of session across the sprint. Everything else is working time.');
+  const colsX = [3.0, 5.42, 7.84, 10.26];
+  ['Week 1', 'Week 2', 'Week 3', 'After sign-off'].forEach((t, i) => {
+    s.addText(t, { x: colsX[i], y: 1.95, w: 2.3, h: 0.4, align: 'center', valign: 'middle',
+      fontSize: 12.5, bold: true, color: NAVY, fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  const rows = [
+    ['Core team', NAVY, ['Kick-off, half a day', 'Two working sessions'],
+     ['Working session per workstream', 'Mid-week checkpoint'],
+     ['Consolidation session', 'Dry run of the strategy on a page'],
+     ['Hand over to initiative owners']],
+    ['Offering level', SLATE, ['Ideas session inside each offering'],
+     ['Validation session on the emerging catalogue and accounts'],
+     ['Read-out of the draft'],
+     ['Socialisation session in each offering']],
+    ['Leadership', NAVY, ['Kick-off attendance', 'Gate 1: markets and sectors'],
+     ['Gate 2: catalogue and shortlist'],
+     ['Sign-off session'],
+     ['Monthly review against the scorecard']],
+  ];
+  rows.forEach(([label, c, w1, w2, w3, after], r) => {
+    const y = 2.45 + r * 1.55;
+    s.addShape(pres.ShapeType.roundRect, { x: 0.7, y, w: 2.15, h: 1.4, rectRadius: 0.1, fill: { color: c } });
+    s.addText(label, { x: 0.8, y, w: 1.95, h: 1.4, valign: 'middle', fontSize: 14, bold: true,
+      color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    [w1, w2, w3, after].forEach((items, i) => {
+      s.addShape(pres.ShapeType.roundRect, { x: colsX[i], y, w: 2.3, h: 1.4, rectRadius: 0.1,
+        fill: { color: (r + i) % 2 ? MIST : 'F2F6FC' } });
+      s.addText(items.map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < items.length - 1 } })),
+        { x: colsX[i] + 0.18, y: y + 0.12, w: 1.95, h: 1.2, fontSize: 9.5, color: BODY, fontFace: SANS,
+          isTextBox: true, margin: 0, paraSpaceAfter: 4 });
+    });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 7.0, w: 11.9, h: 0.0, rectRadius: 0, fill: { color: WHITE } });
+  s.addText('Offering-level sessions are how the leads bring their partners and directors in — and are where socialisation starts, not ends.',
+    { x: 0.7, y: 7.05, w: 11.9, h: 0.35, fontSize: 11.5, italic: true, color: SLATE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`The calendar behind the three weeks, at the three levels that matter. Indicative durations rather than fixed: a kick-off of half a day, working sessions of ninety minutes to two hours, gates of an hour, sign-off of two hours.
+
+Core team is the four leads and whoever they pull in per workstream. This is where the work is actually done, and it is the heaviest load in weeks one and two.
+
+Offering level is the conduit role made concrete. In week one it is an ideas session inside each offering, deliberately before conclusions harden. In week two it is a validation session on the emerging catalogue and account list. In week three it is a read-out so nobody is surprised at sign-off. After sign-off it becomes the socialisation session per offering.
+
+Leadership is deliberately light: attendance at kick-off, two gates, sign-off, then the monthly review. Gates need decisions, not presentations, so pre-reads go out the day before and the session opens on the open questions.
+
+Two scheduling realities to plan around: get the offering-level sessions in the calendar during kick-off week, since partner diaries in this region fill weeks ahead; and hold the gates on a fixed day each week so they cannot drift quietly.`);
 }
 
 {
