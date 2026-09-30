@@ -419,7 +419,7 @@ Confirm all five principles at kick-off; they bound every later decision.`);
   const pillars = [
     ['Market\nand clients', ['Markets and FSI sectors', 'Tier one and tier two', 'Named target accounts', 'Offerings and revenue per account', 'Coverage and ownership']],
     ['Propositions\n(what we sell)', ['Integrated propositions', 'Use cases we lead with', 'Archetypes and permitted variants']],
-    ['Delivery\nand economics', ['Delivery model, assets and accelerators', 'Construct, pricing, ADR and margin', 'Team, skills, certification and capacity', 'Revenue targets']],
+    ['Delivery\nand economics', ['Delivery model, assets and accelerators', 'Construct, pricing, ADR and margin', 'Team, skills, certification and capacity', 'Revenue and the three-year path']],
     ['Route\nto market', ['Alliances and what they unlock', 'Eminence and positioning', 'How we differentiate']],
   ];
   pillars.forEach(([t, items], i) => {
@@ -832,7 +832,7 @@ Internal eminence matters as much as external here. The FS partners and director
     ['Mobilise', ['Choose the vision, then frame the ambition', 'Confirm scope, principles and owners'], 'Week 1'],
     ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
     ['Define', ['Offering views, then merged into one catalogue', 'Markets, sectors and candidate accounts'], 'Weeks 1–2'],
-    ['Quantify', ['Price bands, ADR and target margin', 'Revenue per account, gross and net, against capacity'], 'Week 2'],
+    ['Quantify', ['Price bands, ADR and target margin', 'Revenue and the three-year growth path'], 'Week 2'],
     ['Commit', ['Account ownership and coverage', 'Team, eminence and activation plans signed off'], 'Week 3'],
     ['Socialise', ['Present to the wider FSI community', 'Hand initiatives to their owners'], 'Week 3+'],
   ];
@@ -916,8 +916,8 @@ One warning. Convergence is where the integrated-not-siloed principle is either 
      'Market prioritisation · target account list · account revenue plan · coverage map'],
     ['2 · Propositions', 'What we sell: integrated propositions, use cases and permitted archetypes',
      'Proposition catalogue'],
-    ['3 · Delivery and economics', 'Delivery model and assets, construct, pricing, margin, team, skills and targets',
-     'Pricing bands · offering economics · team model · revenue targets'],
+    ['3 · Delivery and economics', 'Delivery model and assets, construct, pricing, margin, team, skills, targets and the three-year path',
+     'Pricing · economics · team and capability · revenue and the three-year path'],
     ['4 · Route to market', 'Alliances, eminence and differentiation',
      'Alliance map · eminence calendar'],
     ['5 · Operating discipline', 'Rhythm, measures and decision rights after sign-off',
@@ -961,7 +961,7 @@ Dependencies to watch: revenue targets cannot be set without the capacity view, 
   const weeks = [
     ['Week 1', 'Frame', ['Agree the vision and the ambition', 'Baseline current position and credentials', 'Prioritise markets and sectors', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and sector priorities'],
     ['Week 2', 'Define', ['Converge the offering views into integrated propositions', 'Benchmark deal sizes and pricing', 'Set delivery construct, ADR and margin', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
-    ['Week 3', 'Commit', ['Set revenue targets by account, offering and market', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Sign off, then socialise to the FSI community'], 'Gate: strategy signed off'],
+    ['Week 3', 'Commit', ['Set revenue targets and the three-year growth path', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Sign off, then socialise to the FSI community'], 'Gate: strategy signed off'],
   ];
   weeks.forEach(([w, label, acts, gate], i) => {
     const x = 0.7 + i * 4.07;
@@ -1336,7 +1336,7 @@ Keep them as living tables — one file, versioned, updated at each weekly check
   const cols = [
     ['Market and clients', ['Markets and sectors', 'Top accounts and offerings', 'Revenue: gross / net']],
     ['Propositions', ['Integrated', 'Use cases', 'Archetypes']],
-    ['Delivery and economics', ['Construct and ADR', 'Margin', 'Team and gap']],
+    ['Delivery and economics', ['Construct and ADR', 'Margin', 'Three-year growth']],
     ['Route to market', ['Alliances', 'Eminence', 'Differentiation']],
   ];
   cols.forEach(([t, labels], i) => {
@@ -1515,6 +1515,18 @@ Price basis: fixed price, time and materials, outcome-based or a managed service
 Keep the onshore split honest. Regulatory and data-residency requirements in Saudi and the UAE, and client contractual terms, often set the floor for onshore presence before commercial preference does.
 
 Record both the target gross margin and the floor, and note the approval route for anything below it. A margin floor that nobody enforces is not a floor.`);
+
+tmplSlide('Template — three-year growth', 'Pillar 3 \u00b7 Delivery and economics \u00b7 one row per offering, then per proposition.',
+  ['Offering / proposition', 'Current FY', 'Year 1', 'Year 2', 'Year 3', 'CAGR', 'What drives it'],
+  [2.8, 1.4, 1.3, 1.3, 1.3, 1.1, 2.7], 7,
+  'Growth stated year by year, not as a single end-state number. The driver column is what makes it defensible.',
+  `Where the ambition becomes a path rather than a destination. Two levels: the offering, and the propositions inside it that carry the growth.
+
+Year on year matters because the shape differs by proposition. A core platform programme books slowly then heavily; an AI activation books quickly and repeats; an eminence-led proposition may show nothing in year one. A single three-year number hides all of that, and hides whether the plan is front or back loaded.
+
+The driver column is the discipline. Growth comes from a small number of things \u2014 more accounts, larger deals, better price, higher share of an account, a new sector \u2014 and each row should name which. A row whose driver is \"market growth\" is a forecast, not a strategy.
+
+Reconciliations: year one has to sit against the current FY plan from the inputs section; the account revenue plan has to add up to year one; and the capacity plan has to support each year, not just the first.`);
 
 tmplSlide('Template — revenue targets', 'Pillar 3 · Delivery and economics · one row per market.',
   ['Market', 'Sector', 'Industry Solutions', 'AI and Data', 'Engineering', 'Integrated', 'Total'],
