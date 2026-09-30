@@ -61,11 +61,11 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
   s.background = { color: WHITE };
   head(s, 'How this pack runs', 'Five parts, in the order the strategy actually gets built.');
   const parts5 = [
-    ['One', 'The frame', 'What this document is \u00b7 how this fits \u00b7 the words we use \u00b7 the industry we mean', 4],
+    ['One', 'The frame', 'What this journey is, how it fits, and who is involved', 3],
     ['Two', 'The destination', 'Vision drivers \u00b7 candidate statements \u00b7 principles', 3],
-    ['Three', 'What the strategy must cover', 'The architecture \u00b7 markets and tiers \u00b7 the catalogue \u00b7 delivery and economics \u00b7 why us \u00b7 alliances and eminence', 8],
-    ['Four', 'How we build it', 'The approach \u00b7 workstreams and owners \u00b7 the journey \u00b7 the session plan \u00b7 what could derail it', 7],
-    ['Five', 'What comes next', 'Initiatives that outlive the cycle \u00b7 governing the execution', 3],
+    ['Three', 'What the strategy must cover', 'The architecture \u00b7 sectors, markets and tiers \u00b7 the catalogue \u00b7 delivery and economics \u00b7 why us \u00b7 alliances and eminence', 9],
+    ['Four', 'How we build it', 'The approach \u00b7 workstreams \u00b7 the journey \u00b7 how we run it \u00b7 the session plan \u00b7 what could derail it', 6],
+    ['Five', 'What comes next', 'Initiatives that outlive the cycle \u00b7 governing the execution', 2],
   ];
   parts5.forEach(([n, t, d, count], i) => {
     const y = 1.95 + i * 0.98;
@@ -81,7 +81,7 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
     s.addText(count + (count === 1 ? ' slide' : ' slides'), { x: 11.1, y, w: 1.3, h: 0.85,
       align: 'right', valign: 'middle', fontSize: 11, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
   });
-  s.addText('Appendix: a blank template for every artefact the cycle produces — the strategy log itself.',
+  s.addText('Appendix: a blank template for every artefact the cycle produces — the strategy template itself.',
     { x: 0.7, y: 6.75, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: SLATE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`Walk the pack in two halves. Sections 1 to 5 are the method: what this document is, the questions, the principles, the approach and the workstreams. Sections 6 to 8 are the dimensions that were called out as needing their own treatment — talent, eminence and alliances. Sections 9 and 10 are the plan and the governance.
@@ -200,83 +200,50 @@ Two things to confirm at kick-off: who owns the account relationship where the i
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'The words we use', 'Agreed before anything else, because half the arguments are vocabulary.');
-  const terms = [
-    ['Portfolio', 'EAI&D — Engineering, AI and Data. One portfolio, several industries.'],
-    ['Offering', 'An internal capability unit of the portfolio: Industry Solutions, AI and Data, Engineering.'],
-    ['Proposition', 'What we take to market. Integrated when it spans two or more offerings, focused when it sits within one.'],
-    ['Archetype', 'A recognised shape a proposition takes — by scope, sector or delivery model. Each carries its own economics.'],
-    ['Use case', 'The specific client problem a proposition is sold against.'],
-    ['Sector', 'Banking, funds or insurance. Not a market, and not interchangeable.'],
-    ['Segment', 'A slice within a sector — retail, corporate, SME, life, general, and so on.'],
-    ['Market', 'A country we sell into, each tiered one or two.'],
-    ['Account plan', 'The firm’s single plan per client. Our content is a layer inside it, never a second plan.'],
-    ['Pillar', 'A section of this strategy — never a synonym for offering.'],
+  head(s, 'Who is doing this', 'The strategy development team.');
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 2.0, w: 11.9, h: 1.15, rectRadius: 0.1, fill: { color: NAVY } });
+  disc(s, 1.05, 2.28, 'D', SLATE, 0.6);
+  s.addText('Dany', { x: 1.85, y: 2.22, w: 3.2, h: 0.4, fontSize: 20, bold: true, color: WHITE,
+    fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('Overall lead — owns the cycle, chairs the checkpoints, takes the strategy to sign-off',
+    { x: 1.85, y: 2.66, w: 10.3, h: 0.4, fontSize: 13, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
+  const leads = [
+    ['Tanay', 'Industry Solutions', 'Core-led transformation and core platforms across banking, funds and insurance, full SI'],
+    ['Rachel', 'AI and Data', 'Enterprise and core AI, use-case activation, data platforms'],
+    ['Clifford', 'Engineering', 'Cloud, integration, microservices, API and bespoke build'],
   ];
-  terms.forEach(([t, d], i) => {
-    const x = 0.7 + (i % 3) * 4.03, y = 1.95 + Math.floor(i / 3) * 1.16;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.02, rectRadius: 0.1,
-      fill: { color: i % 2 ? MIST : 'F2F6FC' } });
-    s.addText(t, { x: x + 0.28, y: y + 0.1, w: 3.3, h: 0.32, fontSize: 14, bold: true, color: NAVY,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(d, { x: x + 0.28, y: y + 0.42, w: 3.3, h: 0.56, fontSize: 10, color: BODY,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-  });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 6.7, w: 11.9, h: 0.62, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Offerings are how we are organised. Propositions are what the client buys. The catalogue is made of propositions, not offerings.',
-    { x: 1.0, y: 6.7, w: 11.3, h: 0.62, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addNotes(`Worth two minutes at kick-off. Most of the circular discussion in strategy work is two people using one word for different things.
-
-The distinction that matters most: an offering is an internal unit — how the portfolio is organised and where people sit. A proposition is what we take to market. Clients do not buy offerings; they buy propositions. So the catalogue is a list of propositions, and each one records which offerings it draws on.
-
-From that, integrated and focused fall out naturally. A proposition that needs two or more offerings is integrated — a greenfield digital bank setup needs all three. A proposition that genuinely sits inside one is focused — a cloud migration strategy never leaves Engineering. Integrated is the default; focused is permitted and sold as a way in.
-
-Two more worth holding: sector is not market — banking, funds and insurance are sectors, retail or corporate are segments within them, while Saudi, the UAE and Qatar are markets, and both carry a tier. And account plan means the firm’s single plan per client; what we produce attaches to it rather than competing with it.
-
-Pillar is used only for the structure of this strategy, so it should never be heard as a synonym for offering.`);
-}
-
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  head(s, 'The industry we mean', 'Financial services is three sectors, and they are not interchangeable.');
-  const segs = [
-    ['1', 'Banking', 'Priority sector', ['Retail, corporate and SME banking', 'Islamic banking', 'Payments and cards', 'Greenfield and challenger banks'], NAVY],
-    ['2', 'Funds', 'Second priority', ['Sovereign wealth funds', 'National and development funds', 'Fund and investment management', 'Investment operations and custody'], SLATE],
-    ['3', 'Insurance', 'Third priority', ['Life and general insurance', 'Takaful', 'Health insurance', 'Brokers and reinsurance'], NAVY],
-  ];
-  segs.forEach(([k, name, rank, items, c], i) => {
+  leads.forEach(([n, role, scope], i) => {
     const x = 0.7 + i * 4.03;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 3.85, h: 3.5, rectRadius: 0.12, fill: { color: MIST } });
-    s.addShape(pres.ShapeType.rect, { x, y: 2.0, w: 3.85, h: 0.95, fill: { color: c } });
-    s.addText(name, { x: x + 0.3, y: 2.08, w: 2.7, h: 0.42, fontSize: 19, bold: true, color: WHITE,
+    s.addShape(pres.ShapeType.roundRect, { x, y: 3.4, w: 3.85, h: 2.15, rectRadius: 0.12, fill: { color: MIST } });
+    disc(s, x + 0.3, 3.7, n.charAt(0), i % 2 ? SLATE : NAVY, 0.52);
+    s.addText(n, { x: x + 1.0, y: 3.68, w: 2.6, h: 0.4, fontSize: 19, bold: true, color: INK,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(rank, { x: x + 0.3, y: 2.5, w: 2.7, h: 0.35, fontSize: 11.5, color: ICE,
+    s.addText(role, { x: x + 0.3, y: 4.35, w: 3.25, h: 0.35, fontSize: 14, bold: true, color: NAVY,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(k, { x: x + 3.0, y: 2.1, w: 0.6, h: 0.7, align: 'right', fontSize: 30, bold: true,
-      color: 'FFFFFF', fontFace: HEAD, isTextBox: true, margin: 0 });
-    s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
-      { x: x + 0.3, y: 3.15, w: 3.25, h: 2.1, fontSize: 12, color: BODY, fontFace: SANS,
-        isTextBox: true, margin: 0, paraSpaceAfter: 8 });
+    s.addText(scope, { x: x + 0.3, y: 4.72, w: 3.25, h: 0.7, fontSize: 11.5, color: BODY, fontFace: SANS,
+      isTextBox: true, margin: 0 });
   });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.7, w: 11.9, h: 1.0, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Sector is a dimension throughout: every proposition says which sectors it serves, every account carries its sector, and targets are set by market and sector, not for FSI as a whole.',
-    { x: 1.0, y: 5.7, w: 11.3, h: 1.0, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.75, w: 11.9, h: 1.0, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('Each lead is a point of contact and a conduit: they take our thinking back into their own offering, test it with the FSI partners and directors there, and bring that view in. Nobody should meet this strategy for the first time when it is finished.',
+    { x: 1.0, y: 5.75, w: 11.3, h: 1.0, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addText('Segments within each sector are indicative; the cycle confirms which we actually pursue.',
-    { x: 0.7, y: 6.8, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
+  s.addText('Pillar ownership is assigned from this group at kick-off; wider contributors are pulled in per workstream.',
+    { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11.5, italic: true, color: MUTE, fontFace: SANS,
       isTextBox: true, margin: 0 });
-  s.addNotes(`Correcting the frame: this is a financial services strategy, not a banking strategy. Three sectors, in this priority order.
+  s.addNotes(`Core team as agreed: Dany leads overall; Tanay leads Industry Solutions; Rachel leads AI and Data; Clifford leads Engineering.
 
-1. Banking — the priority sector, and where most of the existing capability and credentials sit.
-2. Funds — sovereign wealth funds, national and development funds, and fund or investment management. Often a small number of very large institutions rather than a market of many, which changes how coverage and pursuit work: fewer accounts, longer cycles, far higher stakes per relationship.
-3. Insurance — life, general, takaful, health, brokers and reinsurance. Different core platforms, different regulators, different buyers.
+Note the shape difference: the three leads represent the three practices, while the workstreams are cut by pillar, which is deliberate — the strategy is one portfolio strategy, not three practice strategies stapled together. Each pillar therefore needs a named owner drawn from this group, with the other two contributing their practice view into it.
 
-They are not interchangeable. The core platform, the regulator, the buyer and the language all change between them, which is exactly why the domain-specific principle is stated per sector rather than per industry: a core banking reference does not win a policy administration programme.
+A workable split to propose at kick-off: Dany takes the ambition and the operating discipline; the offerings catalogue is owned jointly but chaired by one lead, since integrated propositions cut across all three practices; market and clients sits with whoever carries the strongest regional relationships; delivery and economics sits with the lead whose practice has the largest delivery footprint. Confirm rather than assume.
 
-Practical consequence for the cycle: sector is a column in the market prioritisation, the account list, the proposition catalogue and the revenue targets. Where we are thin — and funds and insurance are where we are thin — the strategy has to say whether we build, borrow, hire or partner into them, and the alliance map has to answer the platform question for each.`);
+Everything else — account partners, alliance leads, resourcing, finance — is pulled in per workstream and not standing members.
+
+The inclusion point matters as much as the ownership one. Each lead is the point of contact for the cycle, but they are also the conduit into their own offering: taking our emerging thinking to the FSI partners and directors there, collecting ideas we would otherwise miss, and testing conclusions before they harden. Two reasons. The obvious one is better content — the people in front of clients every week know things this group does not. The less obvious one is adoption: a strategy that arrives finished, from four people, gets complied with at best. One that people recognise their own input in gets used.
+
+Practically: each lead runs at least one working conversation inside their offering during weeks one and two, and brings back what they heard. It is a standing item at the weekly checkpoint, not an optional courtesy.`);
 }
+
+
 
 
 {
@@ -480,6 +447,47 @@ Context we already hold, to be validated rather than assumed during the cycle:
 - Offerings must be expressed as products and services with a buyer attached: who buys this, and what do they typically pay.`);
 }
 
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'The industry we mean', 'Pillar 1 \u00b7 financial services is three sectors, and they are not interchangeable.');
+  const segs = [
+    ['1', 'Banking', 'Priority sector', ['Retail, corporate and SME banking', 'Islamic banking', 'Payments and cards', 'Greenfield and challenger banks'], NAVY],
+    ['2', 'Funds', 'Second priority', ['Sovereign wealth funds', 'National and development funds', 'Fund and investment management', 'Investment operations and custody'], SLATE],
+    ['3', 'Insurance', 'Third priority', ['Life and general insurance', 'Takaful', 'Health insurance', 'Brokers and reinsurance'], NAVY],
+  ];
+  segs.forEach(([k, name, rank, items, c], i) => {
+    const x = 0.7 + i * 4.03;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 3.85, h: 3.5, rectRadius: 0.12, fill: { color: MIST } });
+    s.addShape(pres.ShapeType.rect, { x, y: 2.0, w: 3.85, h: 0.95, fill: { color: c } });
+    s.addText(name, { x: x + 0.3, y: 2.08, w: 2.7, h: 0.42, fontSize: 19, bold: true, color: WHITE,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(rank, { x: x + 0.3, y: 2.5, w: 2.7, h: 0.35, fontSize: 11.5, color: ICE,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText(k, { x: x + 3.0, y: 2.1, w: 0.6, h: 0.7, align: 'right', fontSize: 30, bold: true,
+      color: 'FFFFFF', fontFace: HEAD, isTextBox: true, margin: 0 });
+    s.addText(items.map((q, j) => ({ text: q, options: { bullet: true, breakLine: j < items.length - 1 } })),
+      { x: x + 0.3, y: 3.15, w: 3.25, h: 2.1, fontSize: 12, color: BODY, fontFace: SANS,
+        isTextBox: true, margin: 0, paraSpaceAfter: 8 });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.7, w: 11.9, h: 1.0, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('Sector is a dimension throughout: every proposition says which sectors it serves, every account carries its sector, and targets are set by market and sector, not for FSI as a whole.',
+    { x: 1.0, y: 5.7, w: 11.3, h: 1.0, valign: 'middle', fontSize: 13, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addText('Segments within each sector are indicative; the cycle confirms which we actually pursue.',
+    { x: 0.7, y: 6.8, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`Correcting the frame: this is a financial services strategy, not a banking strategy. Three sectors, in this priority order.
+
+1. Banking — the priority sector, and where most of the existing capability and credentials sit.
+2. Funds — sovereign wealth funds, national and development funds, and fund or investment management. Often a small number of very large institutions rather than a market of many, which changes how coverage and pursuit work: fewer accounts, longer cycles, far higher stakes per relationship.
+3. Insurance — life, general, takaful, health, brokers and reinsurance. Different core platforms, different regulators, different buyers.
+
+They are not interchangeable. The core platform, the regulator, the buyer and the language all change between them, which is exactly why the domain-specific principle is stated per sector rather than per industry: a core banking reference does not win a policy administration programme.
+
+Practical consequence for the cycle: sector is a column in the market prioritisation, the account list, the proposition catalogue and the revenue targets. Where we are thin — and funds and insurance are where we are thin — the strategy has to say whether we build, borrow, hire or partner into them, and the alliance map has to answer the platform question for each.`);
+}
 
 {
   const s = pres.addSlide();
@@ -895,51 +903,6 @@ Dependencies to watch: revenue targets cannot be set without the capacity view, 
 }
 
 
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  head(s, 'Who is doing this', 'The strategy development team.');
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 2.0, w: 11.9, h: 1.15, rectRadius: 0.1, fill: { color: NAVY } });
-  disc(s, 1.05, 2.28, 'D', SLATE, 0.6);
-  s.addText('Dany', { x: 1.85, y: 2.22, w: 3.2, h: 0.4, fontSize: 20, bold: true, color: WHITE,
-    fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText('Overall lead — owns the cycle, chairs the checkpoints, takes the strategy to sign-off',
-    { x: 1.85, y: 2.66, w: 10.3, h: 0.4, fontSize: 13, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
-  const leads = [
-    ['Tanay', 'Industry Solutions', 'Core-led transformation and core platforms across banking, funds and insurance, full SI'],
-    ['Rachel', 'AI and Data', 'Enterprise and core AI, use-case activation, data platforms'],
-    ['Clifford', 'Engineering', 'Cloud, integration, microservices, API and bespoke build'],
-  ];
-  leads.forEach(([n, role, scope], i) => {
-    const x = 0.7 + i * 4.03;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 3.4, w: 3.85, h: 2.15, rectRadius: 0.12, fill: { color: MIST } });
-    disc(s, x + 0.3, 3.7, n.charAt(0), i % 2 ? SLATE : NAVY, 0.52);
-    s.addText(n, { x: x + 1.0, y: 3.68, w: 2.6, h: 0.4, fontSize: 19, bold: true, color: INK,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(role, { x: x + 0.3, y: 4.35, w: 3.25, h: 0.35, fontSize: 14, bold: true, color: NAVY,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(scope, { x: x + 0.3, y: 4.72, w: 3.25, h: 0.7, fontSize: 11.5, color: BODY, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  });
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.75, w: 11.9, h: 1.0, rectRadius: 0.1, fill: { color: NAVY } });
-  s.addText('Each lead is a point of contact and a conduit: they take our thinking back into their own offering, test it with the FSI partners and directors there, and bring that view in. Nobody should meet this strategy for the first time when it is finished.',
-    { x: 1.0, y: 5.75, w: 11.3, h: 1.0, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addText('Pillar ownership is assigned from this group at kick-off; wider contributors are pulled in per workstream.',
-    { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11.5, italic: true, color: MUTE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addNotes(`Core team as agreed: Dany leads overall; Tanay leads Industry Solutions; Rachel leads AI and Data; Clifford leads Engineering.
-
-Note the shape difference: the three leads represent the three practices, while the workstreams are cut by pillar, which is deliberate — the strategy is one portfolio strategy, not three practice strategies stapled together. Each pillar therefore needs a named owner drawn from this group, with the other two contributing their practice view into it.
-
-A workable split to propose at kick-off: Dany takes the ambition and the operating discipline; the offerings catalogue is owned jointly but chaired by one lead, since integrated propositions cut across all three practices; market and clients sits with whoever carries the strongest regional relationships; delivery and economics sits with the lead whose practice has the largest delivery footprint. Confirm rather than assume.
-
-Everything else — account partners, alliance leads, resourcing, finance — is pulled in per workstream and not standing members.
-
-The inclusion point matters as much as the ownership one. Each lead is the point of contact for the cycle, but they are also the conduit into their own offering: taking our emerging thinking to the FSI partners and directors there, collecting ideas we would otherwise miss, and testing conclusions before they harden. Two reasons. The obvious one is better content — the people in front of clients every week know things this group does not. The less obvious one is adoption: a strategy that arrives finished, from four people, gets complied with at best. One that people recognise their own input in gets used.
-
-Practically: each lead runs at least one working conversation inside their offering during weeks one and two, and brings back what they heard. It is a standing item at the weekly checkpoint, not an optional courtesy.`);
-}
 
 
 
@@ -1195,7 +1158,7 @@ Three loops, deliberately different in purpose: weekly is deal-level and run by 
 
 The scorecard is designed so that the strategy's own principles are measurable. The mix KPI is the important one: if the share of revenue from integrated propositions does not move, we are back to selling in silos whatever the catalogue says.
 
-Still to set at sign-off: who chairs each forum, what decisions each can take without escalation, and where the strategy log lives so it stays current rather than being rebuilt each quarter.`);
+Still to set at sign-off: who chairs each forum, what decisions each can take without escalation, and where the strategy template lives so it stays current rather than being rebuilt each quarter.`);
 }
 
 /* Appendix divider */
@@ -1205,12 +1168,12 @@ Still to set at sign-off: who chairs each forum, what decisions each can take wi
   s.addShape(pres.ShapeType.ellipse, { x: 9.6, y: 3.6, w: 5.2, h: 5.2, fill: { color: SLATE, transparency: 50 } });
   s.addText('Appendix', { x: 0.9, y: 2.6, w: 8, h: 0.9, fontSize: 44, bold: true, color: WHITE,
     fontFace: HEAD, isTextBox: true, margin: 0 });
-  s.addText('Blank templates for every artefact the cycle produces', { x: 0.95, y: 3.6, w: 8.5, h: 0.5,
+  s.addText('The strategy template — a placeholder for every answer the cycle produces', { x: 0.95, y: 3.6, w: 8.5, h: 0.5,
     fontSize: 17, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addText('These are the working formats. They are filled during the three weeks and become the strategy record.',
     { x: 0.95, y: 4.25, w: 8.5, h: 0.6, fontSize: 13.5, italic: true, color: '9AA7C4',
       fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addNotes(`The appendix is the strategy log: the templates we fill in as the cycle runs. Each one maps to a workstream artefact, so at sign-off the completed appendix is the strategy itself, not a separate write-up.
+  s.addNotes(`The appendix is the strategy template: the templates we fill in as the cycle runs. Each one maps to a workstream artefact, so at sign-off the completed appendix is the strategy itself, not a separate write-up.
 
 Keep them as living tables — one file, versioned, updated at each weekly checkpoint rather than rebuilt at the end.`);
 }
@@ -1220,11 +1183,13 @@ Keep them as living tables — one file, versioned, updated at each weekly check
   const s = pres.addSlide();
   s.background = { color: WHITE };
   head(s, 'Template — the strategy on a page', 'The completed strategy on one sheet. Filled at sign-off, from the artefacts that follow.');
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 2.0, w: 11.9, h: 0.9, rectRadius: 0.1,
-    fill: { color: WHITE }, line: { color: NAVY, width: 1.25 } });
-  s.addText('AMBITION', { x: 1.0, y: 2.0, w: 2.0, h: 0.9, valign: 'middle', fontSize: 12, bold: true,
-    color: NAVY, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addShape(pres.ShapeType.line, { x: 3.2, y: 2.62, w: 9.1, h: 0, line: { color: 'C9D4E6', width: 1 } });
+  [['VISION', 0.7], ['AMBITION', 6.8]].forEach(([lab, x]) => {
+    s.addShape(pres.ShapeType.roundRect, { x, y: 1.95, w: 5.8, h: 0.85, rectRadius: 0.1,
+      fill: { color: WHITE }, line: { color: NAVY, width: 1.25 } });
+    s.addText(lab, { x: x + 0.28, y: 1.95, w: 1.6, h: 0.85, valign: 'middle', fontSize: 11.5, bold: true,
+      color: NAVY, charSpacing: 1.4, fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addShape(pres.ShapeType.line, { x: x + 2.0, y: 2.52, w: 3.5, h: 0, line: { color: 'C9D4E6', width: 1 } });
+  });
   const cols = [
     ['Market and clients', ['Markets and sectors', 'Top accounts and offerings', 'Revenue: gross / net']],
     ['Propositions', ['Integrated', 'Use cases', 'Archetypes']],
@@ -1233,13 +1198,13 @@ Keep them as living tables — one file, versioned, updated at each weekly check
   ];
   cols.forEach(([t, labels], i) => {
     const x = 0.7 + i * 3.02, w = 2.84;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 3.1, w, h: 2.6, rectRadius: 0.1,
+    s.addShape(pres.ShapeType.roundRect, { x, y: 3.0, w, h: 2.65, rectRadius: 0.1,
       fill: { color: WHITE }, line: { color: 'C9D4E6', width: 1 } });
-    s.addShape(pres.ShapeType.rect, { x, y: 3.1, w, h: 0.55, fill: { color: i % 2 ? SLATE : NAVY } });
-    s.addText(t, { x: x + 0.16, y: 3.1, w: w - 0.32, h: 0.55, valign: 'middle', fontSize: 11.5, bold: true,
+    s.addShape(pres.ShapeType.rect, { x, y: 3.0, w, h: 0.55, fill: { color: i % 2 ? SLATE : NAVY } });
+    s.addText(t, { x: x + 0.16, y: 3.0, w: w - 0.32, h: 0.55, valign: 'middle', fontSize: 11.5, bold: true,
       color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
     labels.forEach((l, j) => {
-      const ly = 3.9 + j * 0.62;
+      const ly = 3.82 + j * 0.62;
       s.addText(l, { x: x + 0.22, y: ly - 0.02, w: 1.55, h: 0.3, fontSize: 10.5, color: MUTE,
         fontFace: SANS, isTextBox: true, margin: 0 });
       s.addShape(pres.ShapeType.line, { x: x + 0.22, y: ly + 0.33, w: w - 0.44, h: 0,
@@ -1256,7 +1221,7 @@ Keep them as living tables — one file, versioned, updated at each weekly check
   s.addText('DISCIPLINE', { x: 1.0, y: 6.56, w: 2.1, h: 0.58, valign: 'middle', fontSize: 11.5, bold: true,
     color: NAVY, charSpacing: 1.4, fontFace: SANS, isTextBox: true, margin: 0 });
   s.addShape(pres.ShapeType.line, { x: 3.2, y: 6.96, w: 9.1, h: 0, line: { color: 'C9D4E6', width: 1 } });
-  s.addText('One sheet, one version, dated. Everything behind it lives in the artefacts that follow.',
+  s.addText('One sheet, one version, dated \u2014 aligned to the portfolio and industry strategies. Everything behind it is in the templates that follow.',
     { x: 0.7, y: 7.22, w: 11.9, h: 0.28, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
       isTextBox: true, margin: 0 });
   s.addNotes(`This is the actual strategy, in the form it will be presented and carried: one sheet.
@@ -1458,6 +1423,30 @@ tmplSlide('Template — eminence calendar', 'Pillar 4 · Route to market · one 
   `Channels in scope: published views and articles, conference stages and flagship FSI events, executive workshops, seminars and roundtables, podcasts and webinars, and joint activity with alliance partners.
 
 Measurement should be concrete: inbound enquiries, meetings created, shortlist and RFP invitations — not impressions.`);
+
+tmplSlide('Template — differentiation and proof', 'Pillar 4 \u00b7 Route to market \u00b7 one row per claim we make.',
+  ['The claim we make', 'Who it beats', 'Why it holds', 'Proof we have', 'Proof to build', 'Owner'],
+  [2.4, 1.5, 2.4, 2.2, 2.1, 1.3], 6,
+  'A claim with no proof is a boast. Anything in the last column becomes an initiative.',
+  `The answer to why us and not them, written down rather than improvised in the room.
+
+One row per claim. Who it beats matters, because the counter differs: an internal team, a lower-cost integrator, a product vendor and a global SI each need a different argument, and losing pursuits usually means the wrong one was used.
+
+Proof we have should name things \u2014 a programme, a reference, an asset a client can see working \u2014 not adjectives. Proof to build is the honest column, and every entry in it should appear in the initiative register with an owner and a date.
+
+Expect the thinnest rows to be sector credentials in funds and insurance. Better to see that here than to discover it in a pursuit.`);
+
+tmplSlide('Template — operating rhythm', 'The discipline \u00b7 one row per forum.',
+  ['Forum', 'Purpose', 'Frequency', 'Chair', 'Decisions it can take', 'Escalates to'],
+  [2.1, 2.6, 1.4, 1.4, 2.7, 1.7], 6,
+  'A forum that cannot decide anything is a status meeting. Name what each one can settle without escalation.',
+  `The management system behind the strategy, recorded so it survives the people who set it up.
+
+Three loops to fill in at minimum: the weekly pursuit review owned by account owners, the monthly review of pipeline, coverage, initiatives and talent against target, and the quarterly review that re-tests the choices themselves rather than only the numbers.
+
+The column that does the work is decisions it can take. Without it, forums drift into reporting and every real decision waits for someone who is not in the room. Escalates to closes the loop \u2014 where a decision goes when it exceeds that forum.
+
+Where the FSI industry strategy already runs a forum, we join it rather than create a parallel one, and this table should say which.`);
 
 tmplSlide('Template — initiative register', 'Across the pillars \u00b7 one row per initiative that runs past the cycle.',
   ['Initiative', 'Pillar', 'Outcome it delivers', 'Owner', 'Next milestone', 'By when'],

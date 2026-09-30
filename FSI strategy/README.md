@@ -47,7 +47,7 @@ Five parts, each opening with a divider slide.
 **Part five — After sign-off**
 18. Governing the execution — rhythm, scorecard, decision rights
 
-## Appendix — the strategy log
+## Appendix — the strategy template
 
 Slide 4 shows the *shape* of the strategy; the appendix holds the strategy
 itself in template form. Slides 15 onward: a blank
