@@ -8,3 +8,6 @@ datapipes/bal_data/*
 .idea/*
 dump_Ab/*
 tmp_debug/*install/
+
+# Packaged deliverables (rebuildable from the tracked sources)
+FSI strategy/*.zip
