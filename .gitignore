@@ -9,5 +9,3 @@ datapipes/bal_data/*
 dump_Ab/*
 tmp_debug/*install/
 
-# Packaged deliverables (rebuildable from the tracked sources)
-FSI strategy/*.zip
