@@ -66,7 +66,7 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
     ['Three', 'What the strategy must cover', 'The architecture \u00b7 sectors, markets and tiers \u00b7 the catalogue \u00b7 delivery and economics \u00b7 why us \u00b7 alliances and eminence', 9],
     ['Four', 'How we build it', 'The approach \u00b7 workstreams \u00b7 the journey \u00b7 how we run it \u00b7 the session plan \u00b7 what could derail it', 6],
     ['Five', 'What comes next', 'Initiatives that outlive the cycle \u00b7 governing the execution', 2],
-    ['Six', 'Inputs', 'What we sell today \u00b7 the accounts we are already in', 2],
+    ['Six', 'Strategy inputs', 'What we sell today \u00b7 the priority account list \u00b7 this year\u2019s targets', 3],
   ];
   parts5.forEach(([n, t, d, count], i) => {
     const y = 1.9 + i * 0.8;
@@ -1169,11 +1169,11 @@ Still to set at sign-off: who chairs each forum, what decisions each can take wi
   s.addShape(pres.ShapeType.ellipse, { x: 9.8, y: 3.4, w: 5.6, h: 5.6, fill: { color: SLATE, transparency: 55 } });
   s.addText('PART SIX', { x: 0.9, y: 2.15, w: 5, h: 0.4, fontSize: 13, bold: true, color: '9AA7C4',
     charSpacing: 2, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText('Inputs', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
+  s.addText('Strategy inputs', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
     fontFace: HEAD, isTextBox: true, margin: 0 });
   s.addText('Where we stand today — the starting position the cycle works from.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5,
     fontSize: 15, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText(['Current market propositions, by offering', 'Current priority FSI accounts'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 1 } })),
+  s.addText(['Current propositions, offering by offering', 'The FSI industry priority account list', 'Current FY financial targets, and our share'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 2 } })),
     { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
       isTextBox: true, margin: 0, paraSpaceAfter: 7 });
 }
@@ -1205,7 +1205,7 @@ List what each offering actually sells today in FSI, in the words used with clie
 Two things to look for once it is filled in: propositions that exist in three slightly different versions across the offerings, which is a sign we are not integrated; and propositions nobody has sold in the last year, which belong in the catalogue only if someone will own reviving them.`);
 }
 
-tmplSlide('Current priority FSI accounts', 'Inputs \u00b7 where we already have a relationship today.',
+tmplSlide('The priority account list', 'Strategy inputs \u00b7 the FSI industry priority account list as it stands today.',
   ['Account', 'Sector', 'Market', 'Relationship owner', 'What we do there today', 'Status'],
   [2.3, 1.4, 1.3, 2.0, 3.2, 1.7], 7,
   'Today\u2019s position, not the target list \u2014 the target list is an output of the cycle, and this is an input to it.',
@@ -1214,6 +1214,45 @@ tmplSlide('Current priority FSI accounts', 'Inputs \u00b7 where we already have 
 Status should say what the relationship actually is: delivering, dormant, a single project, a framework agreement, or a relationship held elsewhere in the firm that we have not yet used.
 
 This feeds the tiering exercise without pre-empting it. An account we are already in is not automatically tier one, and an account we have never worked with can be, if the opportunity justifies the investment.`);
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'This year’s numbers', 'Strategy inputs · current FY financial targets for FSI, and how much of that sits with us.');
+  const heads = ['Measure', 'FSI total, current FY', 'EAI&D share', 'Our share of it'];
+  const colX = [0.7, 4.2, 7.3, 10.0];
+  const colW = [3.4, 3.0, 2.6, 2.6];
+  s.addShape(pres.ShapeType.rect, { x: 0.7, y: 2.0, w: 11.9, h: 0.5, fill: { color: NAVY } });
+  heads.forEach((h, i) => {
+    s.addText(h, { x: colX[i] + 0.2, y: 2.0, w: colW[i] - 0.3, h: 0.5, valign: 'middle', fontSize: 12,
+      bold: true, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+  });
+  ['Revenue', 'Sales and bookings', 'Pipeline', 'Headcount deployed'].forEach((m, r) => {
+    const y = 2.5 + r * 0.72;
+    s.addShape(pres.ShapeType.rect, { x: 0.7, y, w: 11.9, h: 0.72,
+      fill: { color: r % 2 ? MIST : 'F7FAFD' } });
+    s.addText(m, { x: colX[0] + 0.2, y, w: colW[0] - 0.3, h: 0.72, valign: 'middle', fontSize: 12.5,
+      color: INK, fontFace: SANS, isTextBox: true, margin: 0 });
+    [1, 2, 3].forEach(i => {
+      s.addShape(pres.ShapeType.line, { x: colX[i] + 0.2, y: y + 0.48, w: colW[i] - 0.5, h: 0,
+        line: { color: 'C9D4E6', width: 1 } });
+    });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.6, w: 11.9, h: 0.9, rectRadius: 0.1, fill: { color: NAVY } });
+  s.addText('The ambition we set has to reconcile to these: a number that ignores this year’s plan is an aspiration, and a number that only repeats it is not a strategy.',
+    { x: 1.0, y: 5.6, w: 11.3, h: 0.9, valign: 'middle', fontSize: 12.5, color: ICE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addText('Split by sector and market where the plan already does. Source from finance, not from memory.',
+    { x: 0.7, y: 6.6, w: 11.9, h: 0.35, fontSize: 11.5, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`The financial starting point, and the one input people most often skip because it is uncomfortable.
+
+Two figures per measure: what FSI as a whole carries this financial year, and how much of that sits with EAI&D. The third column — our share of it — is the one that provokes the useful conversation: if we hold a small slice of a large FSI number, the strategy is about capture; if we hold most of it already, the strategy is about growing the whole.
+
+Split by sector and market wherever the plan already does, since banking, funds and insurance will not carry equal weight and the tiering work later depends on knowing that.
+
+Source it from finance rather than from memory or a partner’s recollection, and date it. Everything downstream — the ambition, the revenue targets by account, the capacity plan — reconciles back to this sheet.`);
+}
 
 {
   const s = pres.addSlide();
