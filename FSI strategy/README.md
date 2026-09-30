@@ -47,6 +47,10 @@ Five parts, each opening with a divider slide.
 **Part five — After sign-off**
 18. Governing the execution — rhythm, scorecard, decision rights
 
+**Part six — Inputs**
+- What we sell today — current market propositions by offering
+- Current priority FSI accounts — where we already have a relationship
+
 ## Appendix — the strategy template
 
 Slide 4 shows the *shape* of the strategy; the appendix holds the strategy

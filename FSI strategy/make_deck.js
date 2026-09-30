@@ -59,26 +59,27 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'How this pack runs', 'Five parts, in the order the strategy actually gets built.');
+  head(s, 'How this pack runs', 'Six parts, in the order the strategy actually gets built.');
   const parts5 = [
     ['One', 'The frame', 'What this journey is, how it fits, and who is involved', 3],
     ['Two', 'The destination', 'Vision drivers \u00b7 candidate statements \u00b7 principles', 3],
     ['Three', 'What the strategy must cover', 'The architecture \u00b7 sectors, markets and tiers \u00b7 the catalogue \u00b7 delivery and economics \u00b7 why us \u00b7 alliances and eminence', 9],
     ['Four', 'How we build it', 'The approach \u00b7 workstreams \u00b7 the journey \u00b7 how we run it \u00b7 the session plan \u00b7 what could derail it', 6],
     ['Five', 'What comes next', 'Initiatives that outlive the cycle \u00b7 governing the execution', 2],
+    ['Six', 'Inputs', 'What we sell today \u00b7 the accounts we are already in', 2],
   ];
   parts5.forEach(([n, t, d, count], i) => {
-    const y = 1.95 + i * 0.98;
-    s.addShape(pres.ShapeType.roundRect, { x: 0.7, y, w: 11.9, h: 0.85, rectRadius: 0.1,
+    const y = 1.9 + i * 0.8;
+    s.addShape(pres.ShapeType.roundRect, { x: 0.7, y, w: 11.9, h: 0.74, rectRadius: 0.1,
       fill: { color: i % 2 ? MIST : 'F2F6FC' } });
-    s.addShape(pres.ShapeType.rect, { x: 0.7, y, w: 1.9, h: 0.85, fill: { color: i % 2 ? SLATE : NAVY } });
-    s.addText('PART ' + n.toUpperCase(), { x: 0.7, y, w: 1.9, h: 0.85, align: 'center', valign: 'middle',
+    s.addShape(pres.ShapeType.rect, { x: 0.7, y, w: 1.9, h: 0.74, fill: { color: i % 2 ? SLATE : NAVY } });
+    s.addText('PART ' + n.toUpperCase(), { x: 0.7, y, w: 1.9, h: 0.74, align: 'center', valign: 'middle',
       fontSize: 11.5, bold: true, color: WHITE, charSpacing: 1, fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(t, { x: 2.85, y: y + 0.1, w: 4.2, h: 0.35, fontSize: 15.5, bold: true, color: INK,
+    s.addText(t, { x: 2.85, y: y + 0.06, w: 4.2, h: 0.34, fontSize: 14.5, bold: true, color: INK,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(d, { x: 2.85, y: y + 0.45, w: 8.4, h: 0.32, fontSize: 11, color: MUTE,
+    s.addText(d, { x: 2.85, y: y + 0.4, w: 8.4, h: 0.3, fontSize: 10.5, color: MUTE,
       fontFace: SANS, isTextBox: true, margin: 0 });
-    s.addText(count + (count === 1 ? ' slide' : ' slides'), { x: 11.1, y, w: 1.3, h: 0.85,
+    s.addText(count + (count === 1 ? ' slide' : ' slides'), { x: 11.1, y, w: 1.3, h: 0.74,
       align: 'right', valign: 'middle', fontSize: 11, color: MUTE, fontFace: SANS, isTextBox: true, margin: 0 });
   });
   s.addText('Appendix: a blank template for every artefact the cycle produces — the strategy template itself.',
@@ -1162,6 +1163,58 @@ Still to set at sign-off: who chairs each forum, what decisions each can take wi
 }
 
 /* Appendix divider */
+{
+  const s = pres.addSlide();
+  s.background = { color: NAVY };
+  s.addShape(pres.ShapeType.ellipse, { x: 9.8, y: 3.4, w: 5.6, h: 5.6, fill: { color: SLATE, transparency: 55 } });
+  s.addText('PART SIX', { x: 0.9, y: 2.15, w: 5, h: 0.4, fontSize: 13, bold: true, color: '9AA7C4',
+    charSpacing: 2, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText('Inputs', { x: 0.88, y: 2.6, w: 8.5, h: 0.95, fontSize: 38, bold: true, color: WHITE,
+    fontFace: HEAD, isTextBox: true, margin: 0 });
+  s.addText('Where we stand today — the starting position the cycle works from.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5,
+    fontSize: 15, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText(['Current market propositions, by offering', 'Current priority FSI accounts'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 1 } })),
+    { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
+      isTextBox: true, margin: 0, paraSpaceAfter: 7 });
+}
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'What we sell today', 'Inputs · current market propositions by offering, as they stand before the cycle.');
+  const offs = [['Industry Solutions', NAVY], ['AI and Data', SLATE], ['Engineering', NAVY]];
+  offs.forEach(([t, c], i) => {
+    const x = 0.7 + i * 4.03;
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 3.85, h: 4.45, rectRadius: 0.12,
+      fill: { color: WHITE }, line: { color: 'C9D4E6', width: 1 } });
+    s.addShape(pres.ShapeType.rect, { x, y: 2.0, w: 3.85, h: 0.6, fill: { color: c } });
+    s.addText(t, { x: x + 0.25, y: 2.0, w: 3.35, h: 0.6, valign: 'middle', fontSize: 14, bold: true,
+      color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
+    for (let r = 0; r < 6; r++) {
+      s.addShape(pres.ShapeType.line, { x: x + 0.3, y: 3.05 + r * 0.55, w: 3.25, h: 0,
+        line: { color: 'E1E8F2', width: 1 } });
+    }
+  });
+  s.addText('One line per proposition we take to market today. Mark which are integrated and which sit inside a single offering.',
+    { x: 0.7, y: 6.6, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: SLATE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`The honest starting position, gathered before week one rather than debated during it.
+
+List what each offering actually sells today in FSI, in the words used with clients — not the aspirational catalogue. Mark each as integrated or focused, because the gap between this picture and the catalogue we design is one of the most useful outputs of the baseline step.
+
+Two things to look for once it is filled in: propositions that exist in three slightly different versions across the offerings, which is a sign we are not integrated; and propositions nobody has sold in the last year, which belong in the catalogue only if someone will own reviving them.`);
+}
+
+tmplSlide('Current priority FSI accounts', 'Inputs \u00b7 where we already have a relationship today.',
+  ['Account', 'Sector', 'Market', 'Relationship owner', 'What we do there today', 'Status'],
+  [2.3, 1.4, 1.3, 2.0, 3.2, 1.7], 7,
+  'Today\u2019s position, not the target list \u2014 the target list is an output of the cycle, and this is an input to it.',
+  `Where we already are, before any prioritisation. Sourced from the firm's account plans and the pipeline rather than from memory.
+
+Status should say what the relationship actually is: delivering, dormant, a single project, a framework agreement, or a relationship held elsewhere in the firm that we have not yet used.
+
+This feeds the tiering exercise without pre-empting it. An account we are already in is not automatically tier one, and an account we have never worked with can be, if the opportunity justifies the investment.`);
+
 {
   const s = pres.addSlide();
   s.background = { color: NAVY };
