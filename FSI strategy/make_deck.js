@@ -268,7 +268,7 @@ Practically: each lead runs at least one working conversation inside their offer
   head(s, 'What the vision has to earn', 'Six drivers, agreed before the words. Every candidate is tested against them.');
   const dr = [
     ['No seams', 'One accountable team across every stream, with our alliances counted as part of what we bring — not a separate arrangement.'],
-    ['Where others stall', 'The programmes that go sideways in other hands. Said through language, never as carrying or underwriting risk.'],
+    ['Where others stall', 'The programmes that go sideways in other hands. Implied in how we describe the work, never promised as carrying risk.'],
     ['Speed that holds', 'Every month a platform is not live is cost carried or revenue missed \u2014 but fast only counts if it survives production.'],
     ['Outside and in', 'What the institution takes to market, and how it runs inside — smarter operations and better tools for its people.'],
     ['AI in the engine, not on the badge', 'In what we build and how we deliver. AI-native is oversubscribed; the credibility is in the proof, not the claim.'],
@@ -352,7 +352,7 @@ Whichever is chosen, the ambition then puts numbers and a date against it.`);
   s.background = { color: WHITE };
   head(s, 'Principles we hold going in', 'Constraints on the answers, agreed before the work starts.');
   const pr = [
-    ['Integrated, not siloed', 'Cross-pillar propositions are the default catalogue; single-pillar sales are an entry point, not the destination.'],
+    ['Integrated, not siloed', 'Cross-offering propositions are the default catalogue; a single-offering sale is an entry point, not the destination.'],
     ['Named accounts, not averages', 'The output is a specific target list with owners, not a market-size view.'],
     ['Sized and priced', 'Every proposition carries a buyer, an indicative deal size and a price band.'],
     ['Covered by a partner', 'Every priority account has one accountable owner and a defined partner play.'],
@@ -1228,7 +1228,7 @@ Still to set at sign-off: who chairs each forum, what decisions each can take wi
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
-  head(s, 'What we sell today', 'Inputs · current market propositions by offering, as they stand before the cycle.');
+  head(s, 'What we sell today', 'Strategy inputs · current propositions, offering by offering — mostly sold in silo.');
   const offs = [['Industry Solutions', NAVY], ['AI and Data', SLATE], ['Engineering', NAVY]];
   offs.forEach(([t, c], i) => {
     const x = 0.7 + i * 4.03;
@@ -1255,7 +1255,7 @@ Two things to look for once it is filled in: propositions that exist in three sl
 tmplSlide('The priority account list', 'Strategy inputs \u00b7 the FSI industry priority account list as it stands today.',
   ['Account', 'Sector', 'Market', 'Relationship owner', 'What we do there today', 'Status'],
   [2.3, 1.4, 1.3, 2.0, 3.2, 1.7], 7,
-  'Today\u2019s position, not the target list \u2014 the target list is an output of the cycle, and this is an input to it.',
+  'Today\u2019s position. The target list is an output of the cycle.',
   `Where we already are, before any prioritisation. Sourced from the firm's account plans and the pipeline rather than from memory.
 
 Status should say what the relationship actually is: delivering, dormant, a single project, a framework agreement, or a relationship held elsewhere in the firm that we have not yet used.
@@ -1486,7 +1486,7 @@ Cadence keeps this honest — an owner with no contact rhythm is a name on a pag
 tmplSlide('Template — proposition catalogue', 'Pillar 2 · Propositions · one row per proposition.',
   ['Proposition', 'Sectors it serves', 'Offerings involved', 'Buyer per sector', 'Archetypes permitted'],
   [2.6, 2.1, 2.2, 2.4, 2.6], 6,
-  'Integrated propositions first. A single-pillar offer is recorded as a variant, not as its own row.',
+  'Integrated propositions first; a single-offering proposition is recorded as an archetype rather than its own row.',
   `The principle bites hardest here: the catalogue is integrated propositions across Industry Solutions, Data and AI, and Engineering and Cloud. Focused offers such as enterprise AI are recorded as permitted variants of an integrated proposition and sold as entry points.
 
 Buyer means the actual role that signs, and it differs by sector: COO, CIO or head of retail banking in a bank; COO or head of investment operations in a fund; chief underwriting or claims officer in an insurer.`);
@@ -1566,7 +1566,7 @@ Measurement should be concrete: inbound enquiries, meetings created, shortlist a
 tmplSlide('Template — differentiation and proof', 'Pillar 4 \u00b7 Route to market \u00b7 one row per claim we make.',
   ['The claim we make', 'Who it beats', 'Why it holds', 'Proof we have', 'Proof to build', 'Owner'],
   [2.4, 1.5, 2.4, 2.2, 2.1, 1.3], 6,
-  'A claim with no proof is a boast. Anything in the last column becomes an initiative.',
+  'Anything in the last column becomes an initiative, with an owner and a date.',
   `The answer to why us and not them, written down rather than improvised in the room.
 
 One row per claim. Who it beats matters, because the counter differs: an internal team, a lower-cost integrator, a product vendor and a global SI each need a different argument, and losing pursuits usually means the wrong one was used.
@@ -1578,7 +1578,7 @@ Expect the thinnest rows to be sector credentials in funds and insurance. Better
 tmplSlide('Template — operating rhythm', 'The discipline \u00b7 one row per forum.',
   ['Forum', 'Purpose', 'Frequency', 'Chair', 'Decisions it can take', 'Escalates to'],
   [2.1, 2.6, 1.4, 1.4, 2.7, 1.7], 6,
-  'A forum that cannot decide anything is a status meeting. Name what each one can settle without escalation.',
+  'Name what each forum can settle without escalation, and where anything larger goes.',
   `The management system behind the strategy, recorded so it survives the people who set it up.
 
 Three loops to fill in at minimum: the weekly pursuit review owned by account owners, the monthly review of pipeline, coverage, initiatives and talent against target, and the quarterly review that re-tests the choices themselves rather than only the numbers.
@@ -1590,7 +1590,7 @@ Where the FSI industry strategy already runs a forum, we join it rather than cre
 tmplSlide('Template — initiative register', 'Across the pillars \u00b7 one row per initiative that runs past the cycle.',
   ['Initiative', 'Pillar', 'Outcome it delivers', 'Owner', 'Next milestone', 'By when'],
   [2.5, 1.7, 3.0, 1.5, 1.8, 1.4], 6,
-  'Reviewed monthly alongside the numbers. An initiative without an owner and a date is a wish.',
+  'Reviewed monthly alongside the numbers. Every row carries an owner, a milestone and a date.',
   `Where the work that outlives the three weeks is recorded and tracked.
 
 The register is built in week three as part of the activation plan, not invented later. Each row states what changes when it is done, in terms someone could verify \u2014 not \"improve proposal quality\" but \"a current, modular proposal library covering the committed propositions, used in the next three pursuits\".
@@ -1604,7 +1604,7 @@ Keep the register short. Six to eight live initiatives is a portfolio; twenty is
 tmplSlide('Template — execution scorecard', 'The discipline · one row per measure.',
   ['Measure', 'What it tells us', 'Target', 'Frequency', 'Owner', 'Forum'],
   [2.4, 3.2, 1.6, 1.5, 1.6, 1.6], 6,
-  'Every measure has an owner and a forum. A measure nobody presents is a measure nobody acts on.',
+  'Every measure carries an owner and the forum it is presented in.',
   `The scorecard behind the operating rhythm. Keep it short — six to eight measures — so the review stays a decision meeting rather than a reporting one.
 
 The measure to fight for is the mix: share of revenue coming from integrated propositions. It is the only number that tells us whether the integrated-not-siloed principle survived contact with the market.`);
