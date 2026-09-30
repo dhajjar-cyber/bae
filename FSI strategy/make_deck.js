@@ -1377,49 +1377,6 @@ Keep it dated and versioned. When the quarterly review changes a choice, this sh
 }
 
 /* Appendix — proposition one-pager */
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  head(s, 'Template — proposition one-pager', 'One sheet per proposition in the catalogue. Every dimension on a single page.');
-  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.95, w: 11.9, h: 0.72, rectRadius: 0.1,
-    fill: { color: NAVY } });
-  s.addText('PROPOSITION', { x: 1.0, y: 1.95, w: 2.1, h: 0.72, valign: 'middle', fontSize: 11.5, bold: true,
-    color: ICE, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addShape(pres.ShapeType.line, { x: 3.2, y: 2.42, w: 5.4, h: 0, line: { color: '5C6E96', width: 1 } });
-  s.addText('LEAD OFFERING', { x: 8.9, y: 1.95, w: 2.4, h: 0.72, valign: 'middle', fontSize: 9.5,
-    bold: true, color: '9AA7C4', charSpacing: 1, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addShape(pres.ShapeType.line, { x: 11.3, y: 2.42, w: 1.1, h: 0, line: { color: '5C6E96', width: 1 } });
-  const boxes = [
-    'What it is, and the use cases we lead with',
-    'Sectors it serves, and the buyer in each',
-    'Archetypes and permitted variants',
-    'Target markets and accounts',
-    'Deal size and price band',
-    'Delivery construct, accelerators, ADR and margin',
-    'AI and innovation embedded in it',
-    'Alliance behind it, and what they bring',
-    'Credentials, eminence hooks and key roles',
-  ];
-  boxes.forEach((label, i) => {
-    const x = 0.7 + (i % 3) * 4.03, y = 2.85 + Math.floor(i / 3) * 1.4;
-    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.25, rectRadius: 0.1,
-      fill: { color: WHITE }, line: { color: 'C9D4E6', width: 1 } });
-    s.addText(label, { x: x + 0.2, y: y + 0.08, w: 3.45, h: 0.45, fontSize: 10.5, bold: true, color: NAVY,
-      fontFace: SANS, isTextBox: true, margin: 0 });
-    [0, 1].forEach(k => {
-      s.addShape(pres.ShapeType.line, { x: x + 0.2, y: y + 0.72 + k * 0.32, w: 3.45, h: 0,
-        line: { color: 'E1E8F2', width: 1 } });
-    });
-  });
-  s.addText('One page per proposition. If a box cannot be filled, the proposition is not ready for the catalogue.',
-    { x: 0.7, y: 7.0, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addNotes(`The summary sheet for each proposition, pulling every dimension we have discussed onto one page: what it is and the use cases, the buyer, the permitted archetypes, where and to whom we sell it, the price band, the delivery construct with ADR and margin, the AI and innovation content, the alliance behind it, and the credentials and roles needed to sell and deliver it.
-
-It doubles as the readiness test. The principles bite here: if the AI and innovation box is empty, the proposition breaches the embedded-AI principle. If the delivery construct and margin box is empty, it is priced without knowing whether it makes money. If the credentials box is empty, we cannot yet sell it in this domain. An unfillable box is a gap, not a formatting problem.
-
-Keep one sheet per proposition rather than a long catalogue document — it is what a partner takes into an account conversation.`);
-}
 
 function tmplSlide(title, sub, cols, colW, rowCount, footer, notes) {
   const s = pres.addSlide();
@@ -1487,15 +1444,59 @@ tmplSlide('Template — coverage and ownership', 'Pillar 1 · who carries EAI&D 
 
 Cadence keeps this honest — an owner with no contact rhythm is a name on a page.`);
 
-tmplSlide('Template — proposition catalogue', 'Pillar 2 · Propositions · one row per proposition.',
-  ['Proposition', 'Sectors it serves', 'Offerings involved', 'Buyer per sector', 'Archetypes permitted'],
-  [2.6, 2.1, 2.2, 2.4, 2.6], 6,
-  'Integrated propositions first; a single-offering proposition is recorded as an archetype rather than its own row.',
+tmplSlide('Template — proposition catalogue', 'Pillar 2 · Propositions · the index — one row per proposition.',
+  ['Proposition', 'Offerings involved', 'Integrated or focused', 'Sectors it serves', 'Status'],
+  [3.0, 2.6, 2.0, 2.5, 1.8], 7,
+  'The index to the catalogue. Detail for each one lives on its proposition one-pager.',
   `The principle bites hardest here: the catalogue is integrated propositions across Industry Solutions, Data and AI, and Engineering and Cloud. Focused offers such as enterprise AI are recorded as permitted variants of an integrated proposition and sold as entry points.
 
 Buyer means the actual role that signs, and it differs by sector: COO, CIO or head of retail banking in a bank; COO or head of investment operations in a fund; chief underwriting or claims officer in an insurer.`);
 
-tmplSlide('Template — sizing and pricing', 'Pillar 3 · Delivery and economics · one row per proposition.',
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Template — proposition one-pager', 'One sheet per proposition in the catalogue. Every dimension on a single page.');
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 1.95, w: 11.9, h: 0.72, rectRadius: 0.1,
+    fill: { color: NAVY } });
+  s.addText('PROPOSITION', { x: 1.0, y: 1.95, w: 2.1, h: 0.72, valign: 'middle', fontSize: 11.5, bold: true,
+    color: ICE, charSpacing: 1.5, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addShape(pres.ShapeType.line, { x: 3.2, y: 2.42, w: 5.4, h: 0, line: { color: '5C6E96', width: 1 } });
+  s.addText('LEAD OFFERING', { x: 8.9, y: 1.95, w: 2.4, h: 0.72, valign: 'middle', fontSize: 9.5,
+    bold: true, color: '9AA7C4', charSpacing: 1, fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addShape(pres.ShapeType.line, { x: 11.3, y: 2.42, w: 1.1, h: 0, line: { color: '5C6E96', width: 1 } });
+  const boxes = [
+    'What it is, and the use cases we lead with',
+    'Sectors it serves, and the buyer in each',
+    'Archetypes and permitted variants',
+    'Target markets and accounts',
+    'Deal size and price band',
+    'Delivery construct, accelerators, ADR and margin',
+    'AI and innovation embedded in it',
+    'Alliance behind it, and what they bring',
+    'Credentials, eminence hooks and key roles',
+  ];
+  boxes.forEach((label, i) => {
+    const x = 0.7 + (i % 3) * 4.03, y = 2.85 + Math.floor(i / 3) * 1.4;
+    s.addShape(pres.ShapeType.roundRect, { x, y, w: 3.85, h: 1.25, rectRadius: 0.1,
+      fill: { color: WHITE }, line: { color: 'C9D4E6', width: 1 } });
+    s.addText(label, { x: x + 0.2, y: y + 0.08, w: 3.45, h: 0.45, fontSize: 10.5, bold: true, color: NAVY,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    [0, 1].forEach(k => {
+      s.addShape(pres.ShapeType.line, { x: x + 0.2, y: y + 0.72 + k * 0.32, w: 3.45, h: 0,
+        line: { color: 'E1E8F2', width: 1 } });
+    });
+  });
+  s.addText('One page per proposition. If a box cannot be filled, the proposition is not ready for the catalogue.',
+    { x: 0.7, y: 7.0, w: 11.9, h: 0.35, fontSize: 11, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`The summary sheet for each proposition, pulling every dimension we have discussed onto one page: what it is and the use cases, the buyer, the permitted archetypes, where and to whom we sell it, the price band, the delivery construct with ADR and margin, the AI and innovation content, the alliance behind it, and the credentials and roles needed to sell and deliver it.
+
+It doubles as the readiness test. The principles bite here: if the AI and innovation box is empty, the proposition breaches the embedded-AI principle. If the delivery construct and margin box is empty, it is priced without knowing whether it makes money. If the credentials box is empty, we cannot yet sell it in this domain. An unfillable box is a gap, not a formatting problem.
+
+Keep one sheet per proposition rather than a long catalogue document — it is what a partner takes into an account conversation.`);
+}
+
+tmplSlide('Template — market pricing', 'Pillar 3 · Delivery and economics · one row per proposition.',
   ['Proposition', 'What drives scope', 'Typical deal size', 'Market price band', 'Notes'],
   [2.6, 3.2, 2.0, 2.1, 2.0], 6,
   'Bands, not point prices. Name the drivers that move the number.',
@@ -1503,7 +1504,7 @@ tmplSlide('Template — sizing and pricing', 'Pillar 3 · Delivery and economics
 
 Same discipline for data platform work, AI activation, and cloud and integration engagements.`);
 
-tmplSlide('Template — proposition economics', 'Pillar 3 · Delivery and economics · one row per proposition.',
+tmplSlide('Template — our economics', 'Pillar 3 · Delivery and economics · one row per proposition.',
   ['Proposition', 'Assets and accelerators', 'Price basis', 'On %', 'Near %', 'Off %', 'Blended ADR', 'Target GM'],
   [2.1, 2.3, 1.7, 1.0, 1.1, 1.0, 1.5, 1.2], 6,
   'Assets are what make the construct hold: reuse raises margin at the same price and shortens time to value.',
