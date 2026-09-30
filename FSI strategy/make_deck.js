@@ -64,7 +64,7 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
     ['One', 'The frame', 'What this journey is, how it fits, and who is involved', 3],
     ['Two', 'The destination', 'Vision drivers \u00b7 candidate statements \u00b7 principles', 3],
     ['Three', 'What the strategy must cover', 'The architecture \u00b7 sectors, markets and tiers \u00b7 the catalogue \u00b7 delivery and economics \u00b7 why us \u00b7 alliances and eminence', 9],
-    ['Four', 'How we build it', 'The approach \u00b7 workstreams \u00b7 the journey \u00b7 how we run it \u00b7 the session plan \u00b7 what could derail it', 6],
+    ['Four', 'How we build it', 'The approach \u00b7 divide and converge \u00b7 workstreams \u00b7 the journey \u00b7 sessions \u00b7 risks', 7],
     ['Five', 'What comes next', 'Initiatives that outlive the cycle \u00b7 governing the execution', 2],
     ['Six', 'Strategy inputs', 'What we sell today \u00b7 the priority account list \u00b7 this year\u2019s targets', 3],
   ];
@@ -819,7 +819,7 @@ Internal eminence matters as much as external here. The FS partners and director
     fontFace: HEAD, isTextBox: true, margin: 0 });
   s.addText('The approach, the owners and the calendar.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5, fontSize: 15, color: ICE, fontFace: SANS,
     isTextBox: true, margin: 0 });
-  s.addText(['The six-step approach', 'Workstreams and who owns them', 'The three-week journey', 'How we run the cycle', 'Who meets, and when', 'What could derail this'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 5 } })),
+  s.addText(['The six-step approach', 'Divide, then converge', 'Workstreams and who owns them', 'The three-week journey', 'How we run the cycle', 'Who meets, and when', 'What could derail this'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 6 } })),
     { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
       isTextBox: true, margin: 0, paraSpaceAfter: 7 });
 }
@@ -831,7 +831,7 @@ Internal eminence matters as much as external here. The FS partners and director
   const steps = [
     ['Mobilise', ['Choose the vision, then frame the ambition', 'Confirm scope, principles and owners'], 'Week 1'],
     ['Baseline', ['Credentials, pipeline and current wins', 'Who we have today: dedicated and shared'], 'Week 1'],
-    ['Define', ['Markets, sectors and candidate accounts', 'Integrated proposition catalogue'], 'Weeks 1–2'],
+    ['Define', ['Offering views, then merged into one catalogue', 'Markets, sectors and candidate accounts'], 'Weeks 1–2'],
     ['Quantify', ['Price bands, ADR and target margin', 'Revenue per account, gross and net, against capacity'], 'Week 2'],
     ['Commit', ['Account ownership and coverage', 'Team, eminence and activation plans signed off'], 'Week 3'],
     ['Socialise', ['Present to the wider FSI community', 'Hand initiatives to their owners'], 'Week 3+'],
@@ -859,6 +859,53 @@ Note on Quantify: pricing will not reduce to a single number per offering. Core 
 Baseline also covers people: who we have today, dedicated and shared.`);
 }
 
+
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  head(s, 'Divide, then converge', 'Each offering works its own view first — then we merge it into something integrated.');
+  const lanes = [['Industry Solutions', NAVY], ['AI and Data', SLATE], ['Engineering', NAVY]];
+  lanes.forEach(([t, c], i) => {
+    const y = 2.1 + i * 1.15;
+    s.addShape(pres.ShapeType.roundRect, { x: 0.7, y, w: 4.5, h: 0.95, rectRadius: 0.1, fill: { color: MIST } });
+    s.addShape(pres.ShapeType.rect, { x: 0.7, y, w: 0.16, h: 0.95, fill: { color: c } });
+    s.addText(t, { x: 1.05, y: y + 0.06, w: 3.3, h: 0.35, fontSize: 13, bold: true, color: INK,
+      fontFace: SANS, isTextBox: true, margin: 0 });
+    s.addText('Propositions, accounts and capability, seen from this offering', { x: 1.05, y: y + 0.42,
+      w: 3.3, h: 0.45, fontSize: 10.5, color: BODY, fontFace: SANS, isTextBox: true, margin: 0 });
+    const cy = y + 0.475, ty = 3.7;
+    s.addShape(pres.ShapeType.line, { x: 5.3, y: Math.min(cy, ty), w: 1.1, h: Math.abs(ty - cy),
+      flipV: cy > ty, line: { color: SLATE, width: 1.25, endArrowType: 'triangle' } });
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 6.45, y: 2.9, w: 2.7, h: 1.6, rectRadius: 0.12, fill: { color: NAVY } });
+  s.addText('Integration\nsession', { x: 6.45, y: 2.9, w: 2.7, h: 1.6, align: 'center', valign: 'middle',
+    fontSize: 15, bold: true, color: WHITE, fontFace: SANS, isTextBox: true, margin: 0, lineSpacing: 18 });
+  s.addShape(pres.ShapeType.line, { x: 9.25, y: 3.7, w: 0.7, h: 0,
+    line: { color: SLATE, width: 1.25, endArrowType: 'triangle' } });
+  s.addShape(pres.ShapeType.roundRect, { x: 10.05, y: 2.55, w: 2.55, h: 2.3, rectRadius: 0.12,
+    fill: { color: WHITE }, line: { color: NAVY, width: 1.25 } });
+  s.addText('What comes out', { x: 10.25, y: 2.7, w: 2.2, h: 0.3, fontSize: 12, bold: true, color: NAVY,
+    fontFace: SANS, isTextBox: true, margin: 0 });
+  s.addText(['Integrated propositions', 'Account-level plays', 'One catalogue, not three'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 2 } })),
+    { x: 10.25, y: 3.1, w: 2.2, h: 1.6, fontSize: 11, color: BODY, fontFace: SANS, isTextBox: true,
+      margin: 0, paraSpaceAfter: 6 });
+  s.addShape(pres.ShapeType.roundRect, { x: 0.7, y: 5.75, w: 11.9, h: 0.95, rectRadius: 0.1, fill: { color: MIST } });
+  s.addText('The weekly rhythm: diverge early in the week, converge before it closes. Nothing carries into the next week un-merged, and the integration session is where abstraction and refactoring happen — not in the gate.',
+    { x: 1.0, y: 5.75, w: 11.3, h: 0.95, valign: 'middle', fontSize: 12.5, color: BODY, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addText('Applies through Baseline, Define and Quantify — the three steps where the work is actually generated.',
+    { x: 0.7, y: 6.85, w: 11.9, h: 0.35, fontSize: 11.5, italic: true, color: MUTE, fontFace: SANS,
+      isTextBox: true, margin: 0 });
+  s.addNotes(`How the team actually works inside the sprint, and the answer to a fair question: if everything has to be integrated, how do four people cover this much ground in three weeks?
+
+Divide. Each offering lead works their own view first, because that is where the knowledge is: what we sell today, which accounts we serve, what capability we hold, and — the important part — where their offering could extend into something larger. That is a single-offering lens deliberately, and it is faster than trying to think integrated from a blank page.
+
+Converge. We come together to abstract and refactor: three overlapping proposition lists become one catalogue; three account views become an account-level play; near-duplicates get merged rather than all three surviving. This is where integration is actually created, and it needs to be a working session, not a report-back.
+
+The rhythm is weekly, not once: diverge early in the week, converge before it closes, so nothing carries over un-merged. It applies through Baseline, Define and Quantify — Mobilise and Commit are collective by nature.
+
+One warning. Convergence is where the integrated-not-siloed principle is either honoured or quietly abandoned. If the converged output is still recognisably three lists stapled together, the session has not done its job — and that is worth calling out in the room rather than at sign-off.`);
+}
 
 {
   const s = pres.addSlide();
@@ -913,7 +960,7 @@ Dependencies to watch: revenue targets cannot be set without the capacity view, 
   head(s, 'The three-week journey', 'Three weeks, three gates, one decision.');
   const weeks = [
     ['Week 1', 'Frame', ['Agree the vision and the ambition', 'Baseline current position and credentials', 'Prioritise markets and sectors', 'Build the account longlist', 'Draft the proposition catalogue', 'Baseline the team we have today'], 'Gate: agreed market and sector priorities'],
-    ['Week 2', 'Define', ['Lock propositions and permitted variants', 'Benchmark deal sizes and pricing', 'Set delivery construct, ADR and margin', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
+    ['Week 2', 'Define', ['Converge the offering views into integrated propositions', 'Benchmark deal sizes and pricing', 'Set delivery construct, ADR and margin', 'Shortlist target accounts', 'Map alliances to offerings', 'Size the capacity each target implies'], 'Gate: agreed catalogue and shortlist'],
     ['Week 3', 'Commit', ['Set revenue targets by account, offering and market', 'Assign an owner to every account', 'Agree the team model and recruitment plan', 'Set the eminence calendar', 'Sign off, then socialise to the FSI community'], 'Gate: strategy signed off'],
   ];
   weeks.forEach(([w, label, acts, gate], i) => {
