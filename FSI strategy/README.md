@@ -48,7 +48,7 @@ Five parts, each opening with a divider slide.
 18. Governing the execution — rhythm, scorecard, decision rights
 
 **Part six — Strategy inputs**
-- What we sell today — current propositions, offering by offering
+- Industry Solutions today · AI and Data today · Engineering today — current propositions, one table per offering
 - The priority account list — the FSI industry list as it stands
 - This year's numbers — current FY FSI targets and the EAI&D share
 

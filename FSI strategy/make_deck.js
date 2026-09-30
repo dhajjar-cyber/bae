@@ -66,7 +66,7 @@ This deck is the plan for developing the FSI strategy, not the strategy. Target:
     ['Three', 'What the strategy must cover', 'The architecture \u00b7 sectors, markets and tiers \u00b7 the catalogue \u00b7 delivery and economics \u00b7 why us \u00b7 alliances and eminence', 9],
     ['Four', 'How we build it', 'The approach \u00b7 divide and converge \u00b7 workstreams \u00b7 the journey \u00b7 sessions \u00b7 risks', 7],
     ['Five', 'What comes next', 'Initiatives that outlive the cycle \u00b7 governing the execution', 2],
-    ['Six', 'Strategy inputs', 'What we sell today \u00b7 the priority account list \u00b7 this year\u2019s targets', 3],
+    ['Six', 'Strategy inputs', 'What we sell today, by offering \u00b7 the priority account list \u00b7 this year\u2019s targets', 5],
   ];
   parts5.forEach(([n, t, d, count], i) => {
     const y = 1.9 + i * 0.8;
@@ -1220,37 +1220,41 @@ Still to set at sign-off: who chairs each forum, what decisions each can take wi
     fontFace: HEAD, isTextBox: true, margin: 0 });
   s.addText('Where we stand today — the starting position the cycle works from.', { x: 0.93, y: 3.65, w: 8.3, h: 0.5,
     fontSize: 15, color: ICE, fontFace: SANS, isTextBox: true, margin: 0 });
-  s.addText(['Current propositions, offering by offering', 'The FSI industry priority account list', 'Current FY financial targets, and our share'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 2 } })),
+  s.addText(['Current propositions, one slide per offering', 'The FSI industry priority account list', 'Current FY financial targets, and our share'].map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < 2 } })),
     { x: 0.93, y: 4.4, w: 8.3, h: 1.8, fontSize: 12.5, color: '9AA7C4', fontFace: SANS,
       isTextBox: true, margin: 0, paraSpaceAfter: 7 });
 }
 
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  head(s, 'What we sell today', 'Strategy inputs · current propositions, offering by offering — mostly sold in silo.');
-  const offs = [['Industry Solutions', NAVY], ['AI and Data', SLATE], ['Engineering', NAVY]];
-  offs.forEach(([t, c], i) => {
-    const x = 0.7 + i * 4.03;
-    s.addShape(pres.ShapeType.roundRect, { x, y: 2.0, w: 3.85, h: 4.45, rectRadius: 0.12,
-      fill: { color: WHITE }, line: { color: 'C9D4E6', width: 1 } });
-    s.addShape(pres.ShapeType.rect, { x, y: 2.0, w: 3.85, h: 0.6, fill: { color: c } });
-    s.addText(t, { x: x + 0.25, y: 2.0, w: 3.35, h: 0.6, valign: 'middle', fontSize: 14, bold: true,
-      color: WHITE, fontFace: SANS, isTextBox: true, margin: 0 });
-    for (let r = 0; r < 6; r++) {
-      s.addShape(pres.ShapeType.line, { x: x + 0.3, y: 3.05 + r * 0.55, w: 3.25, h: 0,
-        line: { color: 'E1E8F2', width: 1 } });
-    }
-  });
-  s.addText('One line per proposition we take to market today. Mark which are integrated and which sit inside a single offering.',
-    { x: 0.7, y: 6.6, w: 11.9, h: 0.4, fontSize: 12, italic: true, color: SLATE, fontFace: SANS,
-      isTextBox: true, margin: 0 });
-  s.addNotes(`The honest starting position, gathered before week one rather than debated during it.
 
-List what each offering actually sells today in FSI, in the words used with clients — not the aspirational catalogue. Mark each as integrated or focused, because the gap between this picture and the catalogue we design is one of the most useful outputs of the baseline step.
+tmplSlide('Industry Solutions today', 'Strategy inputs \u00b7 the propositions we sell today, one row each.',
+  ['Proposition', 'What it is', 'Integrated or focused', 'Who buys it'],
+  [2.7, 4.9, 1.9, 2.4], 7,
+  'As sold today, in the words used with clients \u2014 not the catalogue we intend to build.',
+  `Core-led transformation and core platform work across the three sectors, plus the full systems-integration role. Expect the longest-running propositions here, and the ones most likely to already be described differently by different partners.
 
-Two things to look for once it is filled in: propositions that exist in three slightly different versions across the offerings, which is a sign we are not integrated; and propositions nobody has sold in the last year, which belong in the catalogue only if someone will own reviving them.`);
-}
+Fill this before week one rather than debating it during the baseline session. Two things to look for once all three are on the table: the same proposition appearing in slightly different forms across offerings, which is the silo showing; and propositions nobody has sold in the last year, which carry into the catalogue only if someone owns reviving them.
+
+Integrated or focused is the column that starts the useful argument. Most of what sits here today will be marked focused, and the gap between that and the catalogue we design is one of the most useful outputs of the baseline step.`);
+
+tmplSlide('AI and Data today', 'Strategy inputs \u00b7 the propositions we sell today, one row each.',
+  ['Proposition', 'What it is', 'Integrated or focused', 'Who buys it'],
+  [2.7, 4.9, 1.9, 2.4], 7,
+  'As sold today, in the words used with clients \u2014 not the catalogue we intend to build.',
+  `Enterprise and core AI, use-case activation, and the data platform work underneath it. Watch for propositions that are really capabilities \u2014 a platform build is not a proposition until it names the buyer and the outcome.
+
+Fill this before week one rather than debating it during the baseline session. Two things to look for once all three are on the table: the same proposition appearing in slightly different forms across offerings, which is the silo showing; and propositions nobody has sold in the last year, which carry into the catalogue only if someone owns reviving them.
+
+Integrated or focused is the column that starts the useful argument. Most of what sits here today will be marked focused, and the gap between that and the catalogue we design is one of the most useful outputs of the baseline step.`);
+
+tmplSlide('Engineering today', 'Strategy inputs \u00b7 the propositions we sell today, one row each.',
+  ['Proposition', 'What it is', 'Integrated or focused', 'Who buys it'],
+  [2.7, 4.9, 1.9, 2.4], 7,
+  'As sold today, in the words used with clients \u2014 not the catalogue we intend to build.',
+  `Cloud, integration, microservices, API and bespoke build. The most likely home of genuinely focused propositions, such as a cloud migration strategy that never leaves this offering.
+
+Fill this before week one rather than debating it during the baseline session. Two things to look for once all three are on the table: the same proposition appearing in slightly different forms across offerings, which is the silo showing; and propositions nobody has sold in the last year, which carry into the catalogue only if someone owns reviving them.
+
+Integrated or focused is the column that starts the useful argument. Most of what sits here today will be marked focused, and the gap between that and the catalogue we design is one of the most useful outputs of the baseline step.`);
 
 tmplSlide('The priority account list', 'Strategy inputs \u00b7 the FSI industry priority account list as it stands today.',
   ['Account', 'Sector', 'Market', 'Relationship owner', 'What we do there today', 'Status'],
